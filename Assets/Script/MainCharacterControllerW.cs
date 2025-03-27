@@ -25,7 +25,9 @@ public class MainCharacterControllerW : MonoBehaviour
 
     void Update()
     {
+    
         processInputs();
+        //Move();
         //Animated();
 
     }
