@@ -15,14 +15,14 @@ public class MainCamera : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void FixedUpdate()
     {
         Move();
     }
 
     private void Move()
     {
-        var nextPosition = Vector3.Lerp(transform.position, mainCharacter_transform.position + _offset, Time.deltaTime * speed);
+        var nextPosition = Vector3.Lerp(transform.position, mainCharacter_transform.position + _offset, Time.fixedDeltaTime * speed);
         transform.position = nextPosition;
     }
 }
