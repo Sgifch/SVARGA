@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class inventoryManager : MonoBehaviour
@@ -8,10 +9,15 @@ public class inventoryManager : MonoBehaviour
     public Transform inventoryPanel;
     public bool isOpened;
 
+    bool collisionStay = false;
+    Collider2D collision = null;
+
     public List<inventorySlot> slots = new List<inventorySlot>();
-    // Start is called before the first frame update
+
     void Start()
     {
+        UIPanel.SetActive(false);
+
         for (int i=0; i < inventoryPanel.childCount; i++)
         {
             if (inventoryPanel.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
@@ -21,10 +27,9 @@ public class inventoryManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab)) // DS: потом переставить на всё меню
+        if (Input.GetKeyDown(KeyCode.Tab)) //Открытие меню
         {
             isOpened = !isOpened;
             if (isOpened)
@@ -36,5 +41,54 @@ public class inventoryManager : MonoBehaviour
                 UIPanel.SetActive(false);
             }
         }
+
+        if (collisionStay) //Подбирается предмет
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (collision.gameObject.tag == "item")
+                {
+                    AddItem(collision.gameObject.GetComponent<Item>().item, collision.gameObject.GetComponent<Item>().amount);
+                    Destroy(collision.gameObject);
+                }
+            }
+        }
     }
+
+   
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        collisionStay = true;
+        this.collision = collision;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        collisionStay = false;
+        this.collision = collision;
+    }
+
+    private void AddItem(itemScriptableObject _item, int _amount)
+    {
+        foreach (inventorySlot slot in slots)
+        {
+            if(slot.item == _item)
+            {
+                slot.amount += _amount;
+            }
+        }
+
+        foreach (inventorySlot slot in slots)
+        {
+            if (slot.isEmpty == true)
+            {
+                slot.item = _item;
+                slot.amount = _amount;
+                slot.isEmpty = false;
+                break;
+            }
+        }
+    }
+
 }

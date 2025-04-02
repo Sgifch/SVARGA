@@ -7,6 +7,7 @@ public enum ItemType {food, weapon}
 public class itemScriptableObject : ScriptableObject
 {
     public ItemType itemType;
+    public GameObject itemObject;
     public string itemName;
     public int maximumAmaunt;
     public string itemDescription;
