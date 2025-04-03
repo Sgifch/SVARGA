@@ -85,6 +85,7 @@ public class inventoryManager : MonoBehaviour
             {
                 slot.item = _item;
                 slot.amount = _amount;
+                slot.SetIcon(_item.icon);
                 slot.isEmpty = false;
                 break;
             }
