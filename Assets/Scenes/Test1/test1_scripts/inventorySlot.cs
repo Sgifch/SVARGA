@@ -23,4 +23,9 @@ public class inventorySlot : MonoBehaviour
         iconItem.GetComponent<Image>().color=new Color (1,1,1,1);
         iconItem.GetComponent<Image>().sprite = icon;
     }
+
+    public void AddAmount(int amount)
+    {
+        itemAmount.text = amount.ToString();
+    }
 }
