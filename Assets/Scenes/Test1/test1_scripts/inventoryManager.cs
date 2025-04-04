@@ -71,35 +71,32 @@ public class inventoryManager : MonoBehaviour
 
     private void AddItem(itemScriptableObject _item, int _amount)
     {
-        /*foreach (inventorySlot slot in slots)
-        {
-            if(slot.item == _item)
-            {
-                Debug.Log("1");
-                slot.amount += _amount;
-                slot.AddAmount(_amount);
-            }
-        }*/
-
         foreach (inventorySlot slot in slots)
         {
             if (slot.item == _item)
             {
-                Debug.Log("1");
-                _amount+=slot.amount;
-                slot.AddAmount(_amount);
-                break;
-            }
-            else if (slot.isEmpty == true)
-            {
-                slot.item = _item;
-                slot.amount = _amount;
-                slot.SetIcon(_item.icon);
-                slot.AddAmount(_amount);
-                slot.isEmpty = false;
+                if (slot.amount + _amount  <= _item.maximumAmaunt)
+                {
+                    slot.amount += _amount;
+                    slot.itemAmount.text = slot.amount.ToString();
+                    return;
+                }
                 break;
             }
         }
+        foreach (inventorySlot slot in slots)
+        {
+            if (slot.isEmpty == true)
+            {
+                slot.item = _item;
+                slot.amount = _amount;
+                slot.isEmpty = false;
+                slot.SetIcon(_item.icon);
+                slot.itemAmount.text = _amount.ToString();
+                break;
+            }
+        }
+       
     }
 
 }
