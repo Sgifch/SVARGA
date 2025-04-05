@@ -6,13 +6,16 @@ using UnityEngine;
 public class inventoryManager : MonoBehaviour
 {
     public GameObject UIPanel;
+    public GameObject UIPanelFast;
     public Transform inventoryPanel;
+    public Transform inventoryPanelFast;
     public bool isOpened;
 
     bool collisionStay = false;
     Collider2D collision = null;
 
-    public List<inventorySlot> slots = new List<inventorySlot>();
+    public List<inventorySlot> slots = new List<inventorySlot>(); //Список инвентаря
+    public List<inventorySlot> slotsFast = new List<inventorySlot>(); //Список быстрого инвентаря
 
     void Start()
     {
@@ -25,19 +28,29 @@ public class inventoryManager : MonoBehaviour
                 slots.Add(inventoryPanel.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
             }
         }
+
+        for (int i=0; i < inventoryPanelFast.childCount; i++)
+        {
+            if (inventoryPanelFast.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+            {
+                slotsFast.Add(inventoryPanelFast.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+            }
+        }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab)) //Открытие меню
+        if (Input.GetKeyDown(KeyCode.Tab)) //Открытие меню и закрытие предметов быстрого доступа
         {
             isOpened = !isOpened;
             if (isOpened)
             {
+                UIPanelFast.SetActive(false);
                 UIPanel.SetActive(true);
             }
             else
             {
+                UIPanelFast.SetActive(true);
                 UIPanel.SetActive(false);
             }
         }
@@ -53,6 +66,11 @@ public class inventoryManager : MonoBehaviour
                 }
             }
         }
+
+        FastSlots(); //Копирование предметов из первых 6 слотов
+                     //Игрок не должен с ними взаимодействовать
+                     //Они нужны только для отображения предметов
+
     }
 
    
@@ -97,6 +115,18 @@ public class inventoryManager : MonoBehaviour
             }
         }
        
+    }
+
+    private void FastSlots() //Копирование предметов из первых 6 слотов
+    {
+        for (int i =0; i < inventoryPanelFast.childCount; i++)
+        {
+            if (slots[i].isEmpty == false)
+            {
+                slotsFast[i].itemAmount.text = slots[i].amount.ToString();
+                slotsFast[i].SetIcon(slots[i].item.icon);
+            }   
+        }
     }
 
 }
