@@ -6,9 +6,20 @@ using UnityEngine;
 public class inventoryManager : MonoBehaviour
 {
     public GameObject UIPanel;
-    public GameObject UIPanelFast;
     public Transform inventoryPanel;
+
+    public GameObject UIPanelFast;
     public Transform inventoryPanelFast;
+
+    public GameObject UIPanelArmor;
+    public Transform inventoryArmor;
+
+    public GameObject UIPanelWeapon;
+    public Transform inventoryWeapon;
+
+    public GameObject UIPanelWeaponFast;
+    public Transform inventoryWeaponFast;
+
     public bool isOpened;
 
     bool collisionStay = false;
@@ -16,12 +27,15 @@ public class inventoryManager : MonoBehaviour
 
     public List<inventorySlot> slots = new List<inventorySlot>(); //Список инвентаря
     public List<inventorySlot> slotsFast = new List<inventorySlot>(); //Список быстрого инвентаря
+    public List<inventorySlot> slotsArmor = new List<inventorySlot>(); //возможно стоит переделать слотс ну это в будущем
+    public List<inventorySlot> slotsWeapon = new List<inventorySlot>();
+    public List<inventorySlot> slotsWeaponFast = new List<inventorySlot>();
 
     void Start()
     {
         UIPanel.SetActive(false);
 
-        for (int i=0; i < inventoryPanel.childCount; i++)
+        for (int i=0; i < inventoryPanel.childCount; i++) //мб этот блок потом засунуть в одну функцию для удобства
         {
             if (inventoryPanel.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
             {
@@ -34,6 +48,30 @@ public class inventoryManager : MonoBehaviour
             if (inventoryPanelFast.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
             {
                 slotsFast.Add(inventoryPanelFast.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+            }
+        }
+
+        for (int i = 0; i < inventoryArmor.childCount; i++)
+        {
+            if (inventoryArmor.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+            {
+                slotsArmor.Add(inventoryArmor.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+            }
+        }
+
+        for (int i = 0; i < inventoryWeapon.childCount; i++)
+        {
+            if (inventoryWeapon.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+            {
+                slotsWeapon.Add(inventoryWeapon.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+            }
+        }
+
+        for (int i = 0; i < inventoryWeaponFast.childCount; i++)
+        {
+            if (inventoryWeaponFast.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+            {
+                slotsWeaponFast.Add(inventoryWeaponFast.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
             }
         }
     }
@@ -67,7 +105,7 @@ public class inventoryManager : MonoBehaviour
             }
         }
 
-        FastSlots(); //Копирование предметов из первых 6 слотов
+        CopySlots(); //Копирование предметов из первых 6 слотов
                      //Игрок не должен с ними взаимодействовать
                      //Они нужны только для отображения предметов
 
@@ -117,15 +155,24 @@ public class inventoryManager : MonoBehaviour
        
     }
 
-    private void FastSlots() //Копирование предметов из первых 6 слотов
+    private void CopySlots() //Копирование предметов из первых 6 слотов
     {
-        for (int i =0; i < inventoryPanelFast.childCount; i++)
+        for (int i =0; i < inventoryPanelFast.childCount; i++) //Скорее всего тут есть проблема с тем когда слот остаётся пкстым
         {
             if (slots[i].isEmpty == false)
             {
                 slotsFast[i].itemAmount.text = slots[i].amount.ToString();
                 slotsFast[i].SetIcon(slots[i].item.icon);
             }   
+        }
+
+        for (int i = 0; i < inventoryWeaponFast.childCount; i++)
+        {
+            if (slotsWeapon[i].isEmpty == false)
+            {
+                slotsWeaponFast[i].itemAmount.text = slotsWeapon[i].amount.ToString();
+                slotsWeaponFast[i].SetIcon(slots[i].item.icon);
+            }
         }
     }
 
