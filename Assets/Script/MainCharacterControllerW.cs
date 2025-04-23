@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainCharacterControllerW : MonoBehaviour
 {
+
+    //Движения и физика
     public Animator anim;
 
     public float speed;
@@ -17,10 +20,31 @@ public class MainCharacterControllerW : MonoBehaviour
 
     private Vector2 LastmoveD;
 
+    //Доступ к статам
+    public characterStat stat;
 
+    //Поинты здоровья и маны
+    public float changeHealthPoint;
+    public float changeMannaPoint;
+
+    public Image imageHealthBar;
+    public Image imageMannaBar;
+
+    //Реакция на касание врага
+    public bool enemyTouch;
+
+    Collision2D collider = null;
     void Start()
     {
-        
+        enemyTouch = false;
+    
+        changeHealthPoint = (float)(stat.healthPoint) / (stat.maxHealthPoint);
+        changeMannaPoint = (float)(stat.mannaPoint) / (stat.maxMannaPoint);
+
+        imageHealthBar.fillAmount = changeHealthPoint;
+        //imageMannaBar.fillAmount = changeMannaPoint;
+
+
     }
 
     void Update()
@@ -30,6 +54,13 @@ public class MainCharacterControllerW : MonoBehaviour
         //Move();
         //Animated();
 
+        if (enemyTouch)
+        {
+            if (collider.gameObject.tag == "enemyStatic")
+            {
+                Attack();
+            }
+        }
     }
 
     void FixedUpdate()
@@ -50,9 +81,30 @@ public class MainCharacterControllerW : MonoBehaviour
         moveD = new Vector2(LeftRight, ForwardBehind).normalized;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        enemyTouch = true;
+        collider = collision;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        enemyTouch = false;
+        collider = collision;
+    }
+
     void Move()
     {
         rb.velocity = new Vector2(moveD.x * speed, moveD.y * speed); 
+    }
+
+    void Attack()
+    {
+        enemyProfile attackPoint = collider.gameObject.GetComponent<enemy>().enemyStat;
+        stat.healthPoint = stat.healthPoint - attackPoint.attack;
+
+        changeHealthPoint = (float)(stat.healthPoint) / stat.maxHealthPoint;
+        imageHealthBar.fillAmount = changeHealthPoint;
     }
 
     /*void Animated()

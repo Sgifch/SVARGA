@@ -12,5 +12,6 @@ public class itemScriptableObject : ScriptableObject
     public string itemName;
     public int maximumAmaunt;
     public string itemDescription;
+
 }
 
