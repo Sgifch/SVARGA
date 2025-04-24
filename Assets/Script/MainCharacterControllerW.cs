@@ -33,6 +33,9 @@ public class MainCharacterControllerW : MonoBehaviour
     //Реакция на касание врага
     public bool enemyTouch;
 
+    //Время
+    private float time = 0f;
+
     Collision2D collider = null;
     void Start()
     {
@@ -42,13 +45,14 @@ public class MainCharacterControllerW : MonoBehaviour
         changeMannaPoint = (float)(stat.mannaPoint) / (stat.maxMannaPoint);
 
         imageHealthBar.fillAmount = changeHealthPoint;
-        //imageMannaBar.fillAmount = changeMannaPoint;
+        imageMannaBar.fillAmount = changeMannaPoint;
 
 
     }
 
     void Update()
     {
+        time += Time.deltaTime;
     
         processInputs();
         //Move();
@@ -101,10 +105,19 @@ public class MainCharacterControllerW : MonoBehaviour
     void Attack()
     {
         enemyProfile attackPoint = collider.gameObject.GetComponent<enemy>().enemyStat;
-        stat.healthPoint = stat.healthPoint - attackPoint.attack;
+        float intervalTime = collider.gameObject.GetComponent<enemy>().intervalAttack;
 
-        changeHealthPoint = (float)(stat.healthPoint) / stat.maxHealthPoint;
-        imageHealthBar.fillAmount = changeHealthPoint;
+        if (time >= intervalTime)
+        {
+            stat.healthPoint = stat.healthPoint - attackPoint.attack;
+
+            changeHealthPoint = (float)(stat.healthPoint) / stat.maxHealthPoint;
+            imageHealthBar.fillAmount = changeHealthPoint;
+            time = 0;
+
+            print("Attack");
+        }
+        
     }
 
     /*void Animated()

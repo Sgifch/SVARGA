@@ -20,6 +20,8 @@ public class inventoryManager : MonoBehaviour
     public GameObject UIPanelWeaponFast;
     public Transform inventoryWeaponFast;
 
+    public GameObject barPanel;
+
     public bool isOpened;
 
     bool collisionStay = false;
@@ -85,11 +87,13 @@ public class inventoryManager : MonoBehaviour
             {
                 UIPanelFast.SetActive(false);
                 UIPanel.SetActive(true);
+                barPanel.SetActive(false);
             }
             else
             {
                 UIPanelFast.SetActive(true);
                 UIPanel.SetActive(false);
+                barPanel.SetActive(true);
             }
         }
 
@@ -105,7 +109,7 @@ public class inventoryManager : MonoBehaviour
             }
         }
 
-        //CopySlots(); //Копирование предметов из первых 6 слотов
+        CopySlots(); //Копирование предметов из первых 6 слотов
                      //Игрок не должен с ними взаимодействовать
                      //Они нужны только для отображения предметов
 
@@ -163,7 +167,12 @@ public class inventoryManager : MonoBehaviour
             {
                 slotsFast[i].itemAmount.text = slots[i].amount.ToString();
                 slotsFast[i].SetIcon(slots[i].item.icon);
-            }   
+            }
+            else
+            {
+                slotsFast[i].itemAmount.text = "";
+                slotsFast[i].SetIcon(null);
+            }
         }
 
         for (int i = 0; i < inventoryWeaponFast.childCount; i++)

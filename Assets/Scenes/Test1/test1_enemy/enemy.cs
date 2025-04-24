@@ -5,5 +5,5 @@ using UnityEngine;
 public class enemy : MonoBehaviour
 {
     public enemyProfile enemyStat;
-
+    public float intervalAttack;
 }
