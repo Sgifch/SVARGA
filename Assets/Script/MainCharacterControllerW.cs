@@ -47,7 +47,7 @@ public class MainCharacterControllerW : MonoBehaviour
         imageHealthBar.fillAmount = changeHealthPoint;
         imageMannaBar.fillAmount = changeMannaPoint;
 
-
+        //проблема с отслеживанием здоровь мб надо почитать про Awake
     }
 
     void Update()
