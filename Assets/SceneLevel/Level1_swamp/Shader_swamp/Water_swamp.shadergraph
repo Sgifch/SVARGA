@@ -498,7 +498,7 @@
         "m_SerializableColors": []
     },
     "m_Texture": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"dded3157e204a26498b34f905516dd7d\",\"type\":3}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"205ab57b04418c340b90d483f642bab8\",\"type\":3}}",
         "m_Guid": ""
     }
 }
@@ -808,7 +808,7 @@
     "m_ShaderOutputName": "A",
     "m_StageCapability": 3,
     "m_Value": {
-        "e00": 0.009999999776482582,
+        "e00": 0.029999999329447748,
         "e01": 0.0,
         "e02": 0.0,
         "e03": 0.0,
@@ -1395,7 +1395,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Scale",
     "m_StageCapability": 3,
-    "m_Value": 80.0,
+    "m_Value": 60.0,
     "m_DefaultValue": 500.0,
     "m_Labels": []
 }
