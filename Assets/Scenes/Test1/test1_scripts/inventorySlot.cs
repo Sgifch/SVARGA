@@ -20,8 +20,16 @@ public class inventorySlot : MonoBehaviour
 
     public void SetIcon(Sprite icon)
     {
-        iconItem.GetComponent<Image>().color=new Color (1,1,1,1);
-        iconItem.GetComponent<Image>().sprite = icon;
+        if (icon != null)
+        {
+            iconItem.GetComponent<Image>().color=new Color (1,1,1,1);
+            iconItem.GetComponent<Image>().sprite = icon;
+        }
+        else
+        {
+            iconItem.GetComponent<Image>().color = new Color(1, 1, 1, 0);
+        }
+        
     }
 
     public void AddAmount(int amount)

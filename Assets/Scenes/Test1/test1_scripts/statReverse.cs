@@ -6,7 +6,7 @@ public class statReverse : MonoBehaviour
 {
     public characterStat characterStat;
     //Этот скрипт потом нужно удалить
-    void Start()
+    void Awake()
     {
         characterStat.healthPoint = 20;
     }
