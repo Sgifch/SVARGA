@@ -175,6 +175,7 @@ public class inventoryManager : MonoBehaviour
             }
         }
 
+        //Для части слотов с отображением оружия нужно потом переделать
         for (int i = 0; i < inventoryWeaponFast.childCount; i++)
         {
             if (slotsWeapon[i].isEmpty == false)
@@ -183,6 +184,12 @@ public class inventoryManager : MonoBehaviour
                 slotsWeaponFast[i].SetIcon(slots[i].item.icon);
             }
         }
+    }
+
+    //Выбор предмета в одном из 6 слотов
+    private void SelectFastSlot()
+    {
+
     }
 
 }
