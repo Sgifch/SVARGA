@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 05a803c2bc9456343b3b225dc5167de5
+guid: c0e4ecd2e6f1ade41863809acc133f0f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7472972188498984661
-    second: Background54_0
+      213: 1478035022896937403
+    second: IconBarV3_0
+  - first:
+      213: 9088216529296456809
+    second: IconBarV3_1
+  - first:
+      213: 2312557621389811999
+    second: IconBarV3_2
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -122,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Background54_0
+      name: IconBarV3_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 180
-        height: 52
+        width: 157
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,8 +142,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b210528536baa4890800000000000000
-      internalID: -7472972188498984661
+      spriteID: bb9bb59b509038410800000000000000
+      internalID: 1478035022896937403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconBarV3_1
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 34
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96c7c8e28c4df1e70800000000000000
+      internalID: 9088216529296456809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconBarV3_2
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 25
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f11ef8977ead71020800000000000000
+      internalID: 2312557621389811999
       vertices: []
       indices: 
       edges: []
@@ -153,7 +201,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Background54_0: -7472972188498984661
+      IconBarV3_0: 1478035022896937403
+      IconBarV3_1: 9088216529296456809
+      IconBarV3_2: 2312557621389811999
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
