@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class inventoryManager : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class inventoryManager : MonoBehaviour
     public GameObject UIPanelWeaponFast;
     public Transform inventoryWeaponFast;
 
+    public Transform panelSelectSlot;
+
     public GameObject barPanel;
 
     public bool isOpened;
@@ -34,6 +37,7 @@ public class inventoryManager : MonoBehaviour
     public List<inventorySlot> slotsArmor = new List<inventorySlot>(); //возможно стоит переделать слотс ну это в будущем
     public List<inventorySlot> slotsWeapon = new List<inventorySlot>();
     public List<inventorySlot> slotsWeaponFast = new List<inventorySlot>();
+    public List<GameObject> selectSlot = new List<GameObject>();
 
     void Start()
     {
@@ -78,6 +82,15 @@ public class inventoryManager : MonoBehaviour
                 slotsWeaponFast.Add(inventoryWeaponFast.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
             }
         }
+
+        //Картинки, указывающие на выбранный слот
+        for (int i = 0; i < 6; i++)
+        {
+
+            selectSlot[i].SetActive(false);
+        }
+
+
     }
 
     void Update()
@@ -111,29 +124,30 @@ public class inventoryManager : MonoBehaviour
             }
         }
 
+        //Выбор одного из 6 слотов
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            indexSlot = 1;
+            SelectSlot(1);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            indexSlot = 2;
+            SelectSlot(2);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            indexSlot = 3;
+            SelectSlot(3);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            indexSlot = 4;
+            SelectSlot(4);
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            indexSlot = 5;
+            SelectSlot(5);
         }
         if (Input.GetKeyDown(KeyCode.Alpha6))
         {
-            indexSlot = 6;
+            SelectSlot(6);
         }
 
         CopySlots(); //Копирование предметов из первых 6 слотов
@@ -214,8 +228,16 @@ public class inventoryManager : MonoBehaviour
     }
 
     //Выбор предмета в одном из 6 слотов
-    private void SelectFastSlot()
+    public void SelectSlot(int _indexSlot)
     {
+        indexSlot = _indexSlot;
+
+        for (int i = 0; i < 6; i++)
+        {
+            selectSlot[i].SetActive(false);
+        }
+
+        selectSlot[indexSlot - 1].SetActive(true);
 
     }
 

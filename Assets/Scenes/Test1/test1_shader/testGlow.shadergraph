@@ -857,7 +857,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"7712ac7f66b8ec943a592dea6a6a42f9\",\"type\":3}}",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -878,10 +878,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -862.4000244140625,
-            "y": 410.3999938964844,
-            "width": 128.800048828125,
-            "height": 33.5999755859375
+            "x": -932.0,
+            "y": 326.3999938964844,
+            "width": 128.79998779296876,
+            "height": 33.600006103515628
         }
     },
     "m_Slots": [
@@ -1000,10 +1000,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1153.599853515625,
-            "y": 176.80001831054688,
-            "width": 207.99993896484376,
-            "height": 431.9999084472656
+            "x": -1176.7999267578125,
+            "y": 73.5999984741211,
+            "width": 208.0,
+            "height": 431.9999694824219
         }
     },
     "m_Slots": [
@@ -1138,8 +1138,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -779.199951171875,
-            "y": 330.4000244140625,
+            "x": -771.1998901367188,
+            "y": 348.0,
             "width": 207.99993896484376,
             "height": 432.0
         }
@@ -1507,10 +1507,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1274.39990234375,
-            "y": 83.1999740600586,
-            "width": 129.5999755859375,
-            "height": 33.600006103515628
+            "x": -1355.199951171875,
+            "y": 86.40001678466797,
+            "width": 130.39990234375,
+            "height": 33.599998474121097
         }
     },
     "m_Slots": [
