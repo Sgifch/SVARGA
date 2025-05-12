@@ -24,6 +24,8 @@ public class inventoryManager : MonoBehaviour
 
     public bool isOpened;
 
+    public int indexSlot;
+
     bool collisionStay = false;
     Collider2D collision = null;
 
@@ -107,6 +109,31 @@ public class inventoryManager : MonoBehaviour
                     Destroy(collision.gameObject);
                 }
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            indexSlot = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            indexSlot = 2;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            indexSlot = 3;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            indexSlot = 4;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            indexSlot = 5;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            indexSlot = 6;
         }
 
         CopySlots(); //Копирование предметов из первых 6 слотов
