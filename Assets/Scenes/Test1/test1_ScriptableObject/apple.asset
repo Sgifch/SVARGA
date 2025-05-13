@@ -18,4 +18,4 @@ MonoBehaviour:
   itemName: 
   maximumAmaunt: 2
   itemDescription: 
-  healthAmount: 0
+  healthAmount: 2

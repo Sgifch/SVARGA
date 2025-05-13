@@ -25,9 +25,11 @@ public class inventoryManager : MonoBehaviour
 
     public GameObject barPanel;
 
+    public MainCharacterControllerW mainCharacter;
+
     public bool isOpened;
 
-    public int indexSlot;
+    public int indexSlot; //индекс выбранного слота
 
     bool collisionStay = false;
     Collider2D collision = null;
@@ -150,6 +152,11 @@ public class inventoryManager : MonoBehaviour
             SelectSlot(6);
         }
 
+        if (Input.GetMouseButtonDown(1))
+        {
+            UseItem(indexSlot);
+        }
+
         CopySlots(); //Копирование предметов из первых 6 слотов
                      //Игрок не должен с ними взаимодействовать
                      //Они нужны только для отображения предметов
@@ -239,6 +246,43 @@ public class inventoryManager : MonoBehaviour
 
         selectSlot[indexSlot - 1].SetActive(true);
 
+    }
+
+    //Использование предмета
+    public void UseItem(int _indexSlot)
+    {
+        int _index = _indexSlot - 1;
+
+        if (slots[_index].item != null)
+        {
+            Debug.Log("Slot" + (_indexSlot-1).ToString());
+            if (slots[_index].item.itemType is ItemType.food) //Если объект еда
+            {
+                mainCharacter.UseFood(slots[_index]);
+                SubtractionItem(_index);
+
+                Debug.Log("Еда");
+            }
+        }
+    }
+
+    public void SubtractionItem(int _index) //Отнять предмет
+    {
+        int _amount = slots[_index].amount;
+        if (_amount > 1)
+        {
+            slots[_index].amount = slots[_index].amount-1;
+            slots[_index].itemAmount.text = slots[_index].amount.ToString();
+        }
+        else
+        {
+            slots[_index].amount = 0;
+            slots[_index].itemAmount.text = "";
+            slots[_index].SetIcon(null);
+            slots[_index].isEmpty = true;
+            slots[_index].item = null;
+
+        }
     }
 
 }

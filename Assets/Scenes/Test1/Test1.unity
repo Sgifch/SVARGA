@@ -10896,6 +10896,7 @@ MonoBehaviour:
   inventoryWeaponFast: {fileID: 1491209265}
   panelSelectSlot: {fileID: 0}
   barPanel: {fileID: 828244662}
+  mainCharacter: {fileID: 1383163332}
   isOpened: 0
   indexSlot: 0
   slots: []
@@ -10956,6 +10957,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1383163332 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5167105779214294684, guid: fbfb9190307e39a419b55031dff8b024, type: 3}
+  m_PrefabInstance: {fileID: 9061671676278324992}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383163326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6d364309207ef4f8094847b625ac5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1467324192
 GameObject:
   m_ObjectHideFlags: 0
@@ -11269,6 +11281,7 @@ MonoBehaviour:
   inventoryWeaponFast: {fileID: 0}
   panelSelectSlot: {fileID: 0}
   barPanel: {fileID: 0}
+  mainCharacter: {fileID: 0}
   isOpened: 0
   indexSlot: 0
   slots: []
@@ -11755,7 +11768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6869739085913838045, guid: 0691bcf8a7e77ba46b9b736b5514000e, type: 3}
       propertyPath: orthographic size
-      value: 3.9375
+      value: 5.140625
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11775,9 +11788,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2206025410062614538, guid: 069c972a56daaa94b8cde977db01c0b3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e72fa13e1c392ca4dbb653b36d66b0e8, type: 3}
     - target: {fileID: 2974977708730654631, guid: 069c972a56daaa94b8cde977db01c0b3, type: 3}
       propertyPath: m_Name
       value: BarPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854603079371013100, guid: 069c972a56daaa94b8cde977db01c0b3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fef1c7f7e1079924081b86938625cec7, type: 3}
+    - target: {fileID: 3854603079371013100, guid: 069c972a56daaa94b8cde977db01c0b3, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854603079371013100, guid: 069c972a56daaa94b8cde977db01c0b3, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854603079371013100, guid: 069c972a56daaa94b8cde977db01c0b3, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6210941056294807869, guid: 069c972a56daaa94b8cde977db01c0b3, type: 3}
       propertyPath: m_Camera

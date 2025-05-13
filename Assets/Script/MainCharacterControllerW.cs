@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -118,6 +119,21 @@ public class MainCharacterControllerW : MonoBehaviour
             print("Attack");
         }
         
+    }
+
+    public void UseFood(inventorySlot useItem)
+    {
+        foodItem food = (foodItem)useItem.item; //явное преобразование к классу
+        int recoveryHealth = food.healthAmount;
+        stat.healthPoint = stat.healthPoint + recoveryHealth;
+
+        ChangeHealth();
+    }
+
+    public void ChangeHealth()
+    {
+        changeHealthPoint = (float)(stat.healthPoint) / stat.maxHealthPoint;
+        imageHealthBar.fillAmount = changeHealthPoint;
     }
 
     /*void Animated()

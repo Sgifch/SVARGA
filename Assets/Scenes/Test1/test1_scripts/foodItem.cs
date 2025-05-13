@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "foodItem", menuName ="Inventory/Items/New foodItem")] //создания ассета
 public class foodItem : itemScriptableObject
 {
-    public float healthAmount;
+    public int healthAmount;
 
     private void Start()
     {
