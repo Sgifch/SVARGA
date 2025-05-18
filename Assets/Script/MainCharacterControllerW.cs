@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class MainCharacterControllerW : MonoBehaviour
 {
+    //Косметика
+    public Sprite spriteInGrass;
 
     //Движения и физика
     public Animator anim;
@@ -86,6 +88,7 @@ public class MainCharacterControllerW : MonoBehaviour
         moveD = new Vector2(LeftRight, ForwardBehind).normalized;
     }
 
+    //Столкновения
     private void OnCollisionEnter2D(Collision2D collision)
     {
         enemyTouch = true;
@@ -98,6 +101,20 @@ public class MainCharacterControllerW : MonoBehaviour
         collider = collision;
     }
 
+    //Триггер
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "grass")
+        {
+            ChangeSprite(true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        
+    }
+
     void Move()
     {
         rb.velocity = new Vector2(moveD.x * speed, moveD.y * speed); 
@@ -105,7 +122,7 @@ public class MainCharacterControllerW : MonoBehaviour
 
     void Attack()
     {
-        enemyProfile attackPoint = collider.gameObject.GetComponent<enemy>().enemyStat;
+        enemyProfile attackPoint = collider.gameObject.GetComponent<enemy>().enemyStat;  //Эту часть переделать для разных врагов а то фигня
         float intervalTime = collider.gameObject.GetComponent<enemy>().intervalAttack;
 
         if (time >= intervalTime)
@@ -144,4 +161,12 @@ public class MainCharacterControllerW : MonoBehaviour
         anim.SetFloat("LastmoveDx", LastmoveD.x);
         anim.SetFloat("LastmoveDy", LastmoveD.y);
     }*/
+
+    public void ChangeSprite(bool change)
+    {
+        if (change)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = spriteInGrass;
+        }
+    }
 }

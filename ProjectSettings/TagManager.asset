@@ -6,6 +6,7 @@ TagManager:
   tags:
   - item
   - enemyStatic
+  - grass
   layers:
   - Default
   - TransparentFX
