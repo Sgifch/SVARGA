@@ -58,8 +58,8 @@ public class MainCharacterControllerW : MonoBehaviour
         time += Time.deltaTime;
     
         processInputs();
-        //Move();
-        //Animated();
+        Move();
+        Animated();
 
         if (enemyTouch)
         {
@@ -153,14 +153,14 @@ public class MainCharacterControllerW : MonoBehaviour
         imageHealthBar.fillAmount = changeHealthPoint;
     }
 
-    /*void Animated()
+    void Animated()
     {
         anim.SetFloat("RouteFB", moveD.y);
         anim.SetFloat("RouteLR", moveD.x);
         anim.SetFloat("moveD", moveD.magnitude);
         anim.SetFloat("LastmoveDx", LastmoveD.x);
         anim.SetFloat("LastmoveDy", LastmoveD.y);
-    }*/
+    }
 
     public void ChangeSprite(bool change)
     {
