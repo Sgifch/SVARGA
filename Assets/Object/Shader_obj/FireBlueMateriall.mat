@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FireRedMaterial
+  m_Name: FireBlueMateriall
   m_Shader: {fileID: -6465566751694194690, guid: 2d2144051edfa794a8ddc00cc0ba6a3b, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -73,6 +73,6 @@ Material:
     - _EnableExternalAlpha: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _FireColor: {r: 12.547775, g: 4.5975585, b: 0.8759763, a: 0}
+    - _FireColor: {r: 0, g: 1.7073923, b: 15.698113, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
