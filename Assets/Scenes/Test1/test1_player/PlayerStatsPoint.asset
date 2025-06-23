@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealthPoint: 20
   maxMannaPoint: 20
-  healthPoint: 0
+  healthPoint: 20
   mannaPoint: 20
