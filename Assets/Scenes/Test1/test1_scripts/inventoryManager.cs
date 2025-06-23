@@ -77,13 +77,13 @@ public class inventoryManager : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < inventoryWeaponFast.childCount; i++)
+        /*for (int i = 0; i < inventoryWeaponFast.childCount; i++)
         {
             if (inventoryWeaponFast.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
             {
                 slotsWeaponFast.Add(inventoryWeaponFast.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
             }
-        }
+        }*/
 
         //Картинки, указывающие на выбранный слот
         for (int i = 0; i < 6; i++)
@@ -224,14 +224,14 @@ public class inventoryManager : MonoBehaviour
         }
 
         //Для части слотов с отображением оружия нужно потом переделать
-        for (int i = 0; i < inventoryWeaponFast.childCount; i++)
+        /*for (int i = 0; i < inventoryWeaponFast.childCount; i++)
         {
             if (slotsWeapon[i].isEmpty == false)
             {
                 slotsWeaponFast[i].itemAmount.text = slotsWeapon[i].amount.ToString();
                 slotsWeaponFast[i].SetIcon(slots[i].item.icon);
             }
-        }
+        }*/
     }
 
     //Выбор предмета в одном из 6 слотов

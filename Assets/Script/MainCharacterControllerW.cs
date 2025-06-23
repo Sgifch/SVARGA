@@ -40,6 +40,7 @@ public class MainCharacterControllerW : MonoBehaviour
     private float time = 0f;
 
     Collision2D collider = null;
+    Collider2D collider_tr = null;
     void Start()
     {
         enemyTouch = false;
@@ -50,7 +51,6 @@ public class MainCharacterControllerW : MonoBehaviour
         imageHealthBar.fillAmount = changeHealthPoint;
         imageMannaBar.fillAmount = changeMannaPoint;
 
-        //проблема с отслеживанием здоровь мб надо прочитать про Awake
     }
 
     void Update()
@@ -63,10 +63,7 @@ public class MainCharacterControllerW : MonoBehaviour
 
         if (enemyTouch)
         {
-            if (collider.gameObject.tag == "enemyStatic")
-            {
-                Attack();
-            }
+            AttackEnemyStatic();
         }
     }
 
@@ -104,15 +101,29 @@ public class MainCharacterControllerW : MonoBehaviour
     //“риггер
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "grass")
+        /*if (collision.gameObject.tag == "grass")
         {
             ChangeSprite(true);
+        }*/
+
+        switch (collision.gameObject.tag)
+        {
+            case "enemyStatic":
+                enemyTouch = true;
+                collider_tr = collision;
+                break;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        switch (collision.gameObject.tag)
+        {
+            case "enemyStatic":
+                enemyTouch = false;
+                collider_tr = null;
+                break;
+        }
     }
 
     void Move()
@@ -120,10 +131,10 @@ public class MainCharacterControllerW : MonoBehaviour
         rb.velocity = new Vector2(moveD.x * speed, moveD.y * speed); 
     }
 
-    void Attack()
+    void AttackEnemyStatic()
     {
-        enemyProfile attackPoint = collider.gameObject.GetComponent<enemy>().enemyStat;  //Ёту часть переделать дл€ разных врагов а то фигн€
-        float intervalTime = collider.gameObject.GetComponent<enemy>().intervalAttack;
+        enemyProfile attackPoint = collider_tr.gameObject.GetComponent<enemy>().enemyStat;  //Ёту часть переделать дл€ разных врагов а то фигн€
+        float intervalTime = collider_tr.gameObject.GetComponent<enemy>().intervalAttack;
 
         if (time >= intervalTime)
         {
