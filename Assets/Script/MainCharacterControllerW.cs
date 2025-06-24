@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MainCharacterControllerW : MonoBehaviour
 {
@@ -33,17 +34,21 @@ public class MainCharacterControllerW : MonoBehaviour
     public Image imageHealthBar;
     public Image imageMannaBar;
 
+    //Подсказки
+    public GameObject signPanel;
+
     //Реакция на касание врага
-    public bool enemyTouch;
+    public bool enemyStaticTouch;
 
     //Время
     private float time = 0f;
 
+    //Коллайдеры
     Collision2D collider = null;
     Collider2D collider_tr = null;
     void Start()
     {
-        enemyTouch = false;
+        enemyStaticTouch = false;
     
         changeHealthPoint = (float)(stat.healthPoint) / (stat.maxHealthPoint);
         changeMannaPoint = (float)(stat.mannaPoint) / (stat.maxMannaPoint);
@@ -61,10 +66,11 @@ public class MainCharacterControllerW : MonoBehaviour
         Move();
         Animated();
 
-        if (enemyTouch)
+        if (enemyStaticTouch)
         {
             AttackEnemyStatic();
         }
+
     }
 
     void FixedUpdate()
@@ -88,13 +94,13 @@ public class MainCharacterControllerW : MonoBehaviour
     //Столкновения
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        enemyTouch = true;
+        enemyStaticTouch = true;
         collider = collision;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        enemyTouch = false;
+        enemyStaticTouch = false;
         collider = collision;
     }
 
@@ -109,8 +115,13 @@ public class MainCharacterControllerW : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "enemyStatic":
-                enemyTouch = true;
+                enemyStaticTouch = true;
                 collider_tr = collision;
+                break;
+
+            case "sign":
+                collider_tr = collision;
+                SignShow(true);
                 break;
         }
     }
@@ -120,7 +131,12 @@ public class MainCharacterControllerW : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "enemyStatic":
-                enemyTouch = false;
+                enemyStaticTouch = false;
+                collider_tr = null;
+                break;
+
+            case "sign":
+                SignShow(false);
                 collider_tr = null;
                 break;
         }
@@ -162,6 +178,26 @@ public class MainCharacterControllerW : MonoBehaviour
     {
         changeHealthPoint = (float)(stat.healthPoint) / stat.maxHealthPoint;
         imageHealthBar.fillAmount = changeHealthPoint;
+    }
+
+    public void SignShow(bool active)
+    {
+        if (active)
+        {
+            signPanel.SetActive(true);
+
+            TMP_Text text_sign = signPanel.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>(); //Мб это потом объявить в Start а то как то по тупому
+            print("1");
+            string _text = collider_tr.GetComponent<TextSign>().text;
+            print("2");
+            text_sign.text = _text;
+            print("3");
+            print("Show");
+        }
+        else
+        {
+            signPanel.SetActive(false);
+        }
     }
 
     void Animated()
