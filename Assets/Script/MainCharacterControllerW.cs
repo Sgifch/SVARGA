@@ -8,7 +8,8 @@ using TMPro;
 public class MainCharacterControllerW : MonoBehaviour
 {
     //Косметика
-    public Sprite spriteInGrass;
+    public Sprite spriteInGrass; // потом убрать
+    private Material mainCharacterMaterial;
 
     //Движения и физика
     public Animator anim;
@@ -39,6 +40,9 @@ public class MainCharacterControllerW : MonoBehaviour
 
     //Реакция на касание врага
     public bool enemyStaticTouch;
+    public bool takeDamage = false;
+    public float _timeDamage = 1f;
+    private float timeDamage = 0f;
 
     //Время
     private float time = 0f;
@@ -56,11 +60,14 @@ public class MainCharacterControllerW : MonoBehaviour
         imageHealthBar.fillAmount = changeHealthPoint;
         imageMannaBar.fillAmount = changeMannaPoint;
 
+        mainCharacterMaterial = GetComponent<SpriteRenderer>().material;
+
     }
 
     void Update()
     {
         time += Time.deltaTime;
+        timeDamage += Time.deltaTime;
     
         processInputs();
         Move();
@@ -69,6 +76,13 @@ public class MainCharacterControllerW : MonoBehaviour
         if (enemyStaticTouch)
         {
             AttackEnemyStatic();
+        }
+
+        if (timeDamage >= _timeDamage)
+        {
+            takeDamage = false;
+            Damage();
+            timeDamage = 0f;
         }
 
     }
@@ -147,10 +161,15 @@ public class MainCharacterControllerW : MonoBehaviour
         rb.velocity = new Vector2(moveD.x * speed, moveD.y * speed); 
     }
 
-    void AttackEnemyStatic()
+    //Блок урона --------------------------------------------------------------------
+    void AttackEnemyStatic() //Урон от недвижимых врагов 
     {
         enemyProfile attackPoint = collider_tr.gameObject.GetComponent<enemy>().enemyStat;  //Эту часть переделать для разных врагов а то фигня
         float intervalTime = collider_tr.gameObject.GetComponent<enemy>().intervalAttack;
+
+        takeDamage = true;
+
+        Damage();
 
         if (time >= intervalTime)
         {
@@ -165,6 +184,7 @@ public class MainCharacterControllerW : MonoBehaviour
         
     }
 
+    //Блок использования вещей инвентаря -------------------------------------------------
     public void UseFood(inventorySlot useItem)
     {
         foodItem food = (foodItem)useItem.item; //Явное преобразование к классу
@@ -200,6 +220,7 @@ public class MainCharacterControllerW : MonoBehaviour
         }
     }
 
+    //Блок апимации----------------------------------------------------------------------------------
     void Animated()
     {
         anim.SetFloat("RouteFB", moveD.y);
@@ -209,6 +230,10 @@ public class MainCharacterControllerW : MonoBehaviour
         anim.SetFloat("LastmoveDy", LastmoveD.y);
     }
 
+    void Damage()
+    {
+        mainCharacterMaterial.SetFloat("_takeDamage", takeDamage ? 1f : 0f);
+    }
     public void ChangeSprite(bool change)
     {
         if (change)

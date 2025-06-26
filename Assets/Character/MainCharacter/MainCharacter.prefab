@@ -205,7 +205,10 @@ MonoBehaviour:
   changeMannaPoint: 0
   imageHealthBar: {fileID: 0}
   imageMannaBar: {fileID: 0}
-  enemyTouch: 0
+  signPanel: {fileID: 0}
+  enemyStaticTouch: 0
+  takeDamage: 0
+  _timeDamage: 1
 --- !u!114 &6396156261152944558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +234,7 @@ MonoBehaviour:
   panelSelectSlot: {fileID: 0}
   barPanel: {fileID: 0}
   mainCharacter: {fileID: 1029483399505645837}
-  isOpened: 0
+  isOpened: 1
   indexSlot: 0
   slots: []
   slotsFast: []
