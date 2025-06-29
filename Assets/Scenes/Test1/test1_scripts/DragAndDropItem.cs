@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 /// IPointerDownHandler - Следит за нажатиями мышки по объекту на котором висит этот скрипт
 /// IPointerUpHandler - Следит за отпусканием мышки по объекту на котором висит этот скрипт
 /// IDragHandler - Следит за тем не водим ли мы нажатую мышку по объекту
@@ -36,7 +37,7 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         // Делаем так чтобы нажатия мышкой не игнорировали эту картинку
         GetComponentInChildren<Image>().raycastTarget = false;
         // Делаем наш DraggableObject ребенком InventoryPanel чтобы DraggableObject был над другими слотами инвенторя
-        transform.SetParent(transform.parent.parent);
+        transform.SetParent(transform.parent.parent.parent);
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -87,12 +88,23 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         GameObject iconGO = newSlot.iconItem;
         TMP_Text itemAmountText = newSlot.itemAmount;
 
+        if (newSlot.weaponSlot)
+        {
+            if (!(oldSlot.item.itemType is ItemType.sword))
+            {
+                return;
+                /*newSlot.item = oldSlot.item;
+                newSlot.amount = oldSlot.amount;*/
+            }
+        }
+
         // Заменяем значения newSlot на значения oldSlot
         newSlot.item = oldSlot.item;
         newSlot.amount = oldSlot.amount;
+
         if (oldSlot.isEmpty == false)
         {
-            newSlot.SetIcon(oldSlot.iconItem.GetComponent<Image>().sprite);
+            newSlot.SetIcon(newSlot.item.icon);
             newSlot.itemAmount.text = oldSlot.amount.ToString();
         }
         else
@@ -109,7 +121,7 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         oldSlot.amount = amount;
         if (isEmpty == false)
         {
-            oldSlot.SetIcon(iconGO.GetComponent<Image>().sprite);
+            oldSlot.SetIcon(oldSlot.item.icon);
             oldSlot.itemAmount.text = amount.ToString();
         }
         else

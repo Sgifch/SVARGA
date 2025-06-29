@@ -1914,8 +1914,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0010000467, y: 0.00019991398, z: 0}
-    m_Extent: {x: 3.1880999, y: 3.1969, z: 0}
+    m_Center: {x: 0.00029993057, y: -0.0010499954, z: 0}
+    m_Extent: {x: 3.197, y: 3.19655, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -7042,34 +7042,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1984910401}
     m_Modifications:
-    - target: {fileID: 2763051188379043352, guid: 069c972a56daaa94b8cde977db01c0b3, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 198.10999
-      objectReference: {fileID: 0}
-    - target: {fileID: 2763051188379043352, guid: 069c972a56daaa94b8cde977db01c0b3, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -48.916016
-      objectReference: {fileID: 0}
     - target: {fileID: 2974977708730654631, guid: 069c972a56daaa94b8cde977db01c0b3, type: 3}
       propertyPath: m_Name
       value: HealthBarPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 5060125980721850549, guid: 069c972a56daaa94b8cde977db01c0b3, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 154.39001
-      objectReference: {fileID: 0}
-    - target: {fileID: 5060125980721850549, guid: 069c972a56daaa94b8cde977db01c0b3, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -80.606995
       objectReference: {fileID: 0}
     - target: {fileID: 6210941056294807869, guid: 069c972a56daaa94b8cde977db01c0b3, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 620750644}
-    - target: {fileID: 6210941056294807869, guid: 069c972a56daaa94b8cde977db01c0b3, type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6770678163214930910, guid: 069c972a56daaa94b8cde977db01c0b3, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -11681,8 +11661,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0017499924, y: -0.00080001354, z: 0}
-    m_Extent: {x: 3.64995, y: 3.6569, z: 0}
+    m_Center: {x: -0.0024499893, y: -0.0061500072, z: 0}
+    m_Extent: {x: 3.64445, y: 3.65155, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -13064,10 +13044,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 620750644}
-    - target: {fileID: 3464248745061396871, guid: 891537a2031e780418c85157fc5ae1ce, type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3562342606603815396, guid: 891537a2031e780418c85157fc5ae1ce, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -13335,6 +13311,10 @@ PrefabInstance:
     - target: {fileID: 6911718074380233591, guid: 891537a2031e780418c85157fc5ae1ce, type: 3}
       propertyPath: m_Name
       value: inventory
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911718074380233591, guid: 891537a2031e780418c85157fc5ae1ce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7198459575285311416, guid: 891537a2031e780418c85157fc5ae1ce, type: 3}
       propertyPath: m_AnchorMax.y
@@ -15220,10 +15200,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5060051716341666691, guid: 5b143fa311ec03342ad716734bd7bedb, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 67.19119
-      objectReference: {fileID: 0}
     - target: {fileID: 5722491121456454884, guid: 5b143fa311ec03342ad716734bd7bedb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -15252,14 +15228,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 620750644}
-    - target: {fileID: 6926700220224098840, guid: 5b143fa311ec03342ad716734bd7bedb, type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6926700220224098840, guid: 5b143fa311ec03342ad716734bd7bedb, type: 3}
-      propertyPath: m_PixelPerfect
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7026389767325956688, guid: 5b143fa311ec03342ad716734bd7bedb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -17270,7 +17238,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 4, y: -9, z: 0}
+  - first: {x: -5, y: -8, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 4
@@ -17280,11 +17248,11 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -5, y: -8, z: 0}
+  - first: {x: 5, y: -7, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -17408,9 +17376,9 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 9d5744b254838984b90272b491d06ebc, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 238765932f6f36c42a70c0ba8b9ab54f, type: 2}
-  - m_RefCount: 4
-    m_Data: {fileID: 11400000, guid: 9c44079322b7a774689361427649e6d3, type: 2}
   - m_RefCount: 5
+    m_Data: {fileID: 11400000, guid: 9c44079322b7a774689361427649e6d3, type: 2}
+  - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 8818ddefb5e1b584ab9e4a635473c2e9, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 063a7fe738804c343914411df58252ab, type: 2}
@@ -17423,9 +17391,9 @@ Tilemap:
     m_Data: {fileID: -2999931296351823802, guid: ac02d4a0b6bebec40871adfc9cd1492f, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -2731225458556729804, guid: ac02d4a0b6bebec40871adfc9cd1492f, type: 3}
-  - m_RefCount: 4
-    m_Data: {fileID: 2845872160221932305, guid: ac02d4a0b6bebec40871adfc9cd1492f, type: 3}
   - m_RefCount: 5
+    m_Data: {fileID: 2845872160221932305, guid: ac02d4a0b6bebec40871adfc9cd1492f, type: 3}
+  - m_RefCount: 4
     m_Data: {fileID: 2123789492930340911, guid: ac02d4a0b6bebec40871adfc9cd1492f, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 4011177986667855135, guid: ac02d4a0b6bebec40871adfc9cd1492f, type: 3}
@@ -27214,6 +27182,10 @@ PrefabInstance:
     - target: {fileID: 6986874611369706114, guid: 448dba1a42b682c41b2a08e2bc0cd5e4, type: 3}
       propertyPath: m_Name
       value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986874611369706114, guid: 448dba1a42b682c41b2a08e2bc0cd5e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9054820991943246028, guid: 448dba1a42b682c41b2a08e2bc0cd5e4, type: 3}
       propertyPath: m_AnchoredPosition.y
