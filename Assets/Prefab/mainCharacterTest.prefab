@@ -125,6 +125,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6d364309207ef4f8094847b625ac5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteInGrass: {fileID: 0}
   anim: {fileID: 0}
   speed: 5
   rb: {fileID: 2899757411819675354}
+  axesPlayer: {fileID: 0}
+  stat: {fileID: 0}
+  dataItem: {fileID: 0}
+  changeHealthPoint: 0
+  changeMannaPoint: 0
+  imageHealthBar: {fileID: 0}
+  imageMannaBar: {fileID: 0}
+  signPanel: {fileID: 0}
+  enemyStaticTouch: 0
+  takeDamage: 0
+  _timeDamage: 1

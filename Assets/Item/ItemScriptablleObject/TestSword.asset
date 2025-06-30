@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestSword
   m_EditorClassIdentifier: 
   itemType: 1
-  itemObject: {fileID: 0}
+  itemObject: {fileID: 7002774343774682614, guid: 1d3831c971672d548a995bcc76215f95, type: 3}
   icon: {fileID: 6545382614753218560, guid: c2bf51b67265988448ed4fb196525580, type: 3}
   itemName: TestSword
   maximumAmaunt: 1

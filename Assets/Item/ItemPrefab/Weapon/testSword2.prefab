@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8973759562345021992}
   - component: {fileID: 8563043246154424864}
   - component: {fileID: 1620640070709460267}
+  - component: {fileID: 6667474828350997655}
   m_Layer: 0
   m_Name: testSword2
   m_TagString: item
@@ -28,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 8236065994339467271}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.66, y: 1.82, z: 0}
-  m_LocalScale: {x: 0.3439, y: 0.7455373, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0.1334945, b: 0, a: 1}
   m_FlipX: 0
@@ -136,3 +137,25 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.09733842, y: 0}
   m_Radius: 0.59878
+--- !u!95 &6667474828350997655
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8236065994339467271}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9191c4dc9ce1af345a01299dd92239d4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

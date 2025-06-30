@@ -22,13 +22,14 @@ public class MainCharacterControllerW : MonoBehaviour
     float LeftRight;
 
     private Vector2 moveD;
-
     private Vector2 LastmoveD;
+
+    public Transform axesPlayer;
 
     //Доступ к статам
     public characterStat stat;
+    public inventoryManager dataItem;
 
-    //Поинты здоровья и маны
     public float changeHealthPoint;
     public float changeMannaPoint;
 
@@ -68,10 +69,16 @@ public class MainCharacterControllerW : MonoBehaviour
     {
         time += Time.deltaTime;
         timeDamage += Time.deltaTime;
-    
+
         processInputs();
-        Move();
-        Animated();
+        //Move();
+        //Animated();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            print("Атака1");
+            AttackWeapon();
+        }
 
         if (enemyStaticTouch)
         {
@@ -161,7 +168,7 @@ public class MainCharacterControllerW : MonoBehaviour
         rb.velocity = new Vector2(moveD.x * speed, moveD.y * speed); 
     }
 
-    //Блок урона --------------------------------------------------------------------
+    //Блок получения урона --------------------------------------------------------------------
     void AttackEnemyStatic() //Урон от недвижимых врагов 
     {
         enemyProfile attackPoint = collider_tr.gameObject.GetComponent<enemy>().enemyStat;  //Эту часть переделать для разных врагов а то фигня
@@ -182,6 +189,23 @@ public class MainCharacterControllerW : MonoBehaviour
             print("Attack");
         }
         
+    }
+
+    //Блок нанесения урона----------------------------------------------------------------
+    void AttackWeapon()
+    {
+        if (dataItem.slotsWeapon[0] != null)
+        {
+
+            inventorySlot weapon = dataItem.slotsWeapon[0];
+            Vector3 spawnPosition = gameObject.transform.position;
+            GameObject attackWeapon = Instantiate(weapon.item.itemObject, spawnPosition, gameObject.transform.rotation, gameObject.transform);
+            Animator animWeapon = attackWeapon.GetComponent<Animator>();
+
+            animWeapon.SetFloat("LastMoveDx", LastmoveD.x);
+            animWeapon.SetFloat("LastMoveDy", LastmoveD.y);
+            animWeapon.SetTrigger("Attack");
+        }
     }
 
     //Блок использования вещей инвентаря -------------------------------------------------
