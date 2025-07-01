@@ -72,7 +72,7 @@ public class MainCharacterControllerW : MonoBehaviour
 
         processInputs();
         //Move();
-        //Animated();
+        Animated();
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -199,7 +199,8 @@ public class MainCharacterControllerW : MonoBehaviour
 
             inventorySlot weapon = dataItem.slotsWeapon[0];
             Vector3 spawnPosition = gameObject.transform.position;
-            GameObject attackWeapon = Instantiate(weapon.item.itemObject, spawnPosition, gameObject.transform.rotation, gameObject.transform);
+            Vector3 displacement = new Vector3(-0.29f, -0.3f, 0f); //Ѕудет измен€тьс€ в зависимости от положени€
+            GameObject attackWeapon = Instantiate(weapon.item.itemObject, spawnPosition + displacement, gameObject.transform.rotation, gameObject.transform);
             Animator animWeapon = attackWeapon.GetComponent<Animator>();
 
             animWeapon.SetFloat("LastMoveDx", LastmoveD.x);
@@ -231,12 +232,8 @@ public class MainCharacterControllerW : MonoBehaviour
             signPanel.SetActive(true);
 
             TMP_Text text_sign = signPanel.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>(); //ћб это потом объ€вить в Start а то как то по тупому
-            print("1");
             string _text = collider_tr.GetComponent<TextSign>().text;
-            print("2");
             text_sign.text = _text;
-            print("3");
-            print("Show");
         }
         else
         {
