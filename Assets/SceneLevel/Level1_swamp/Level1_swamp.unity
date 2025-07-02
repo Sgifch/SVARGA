@@ -1914,8 +1914,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0027999878, y: -0.0068000555, z: 0}
-    m_Extent: {x: 3.1946, y: 3.1885, z: 0}
+    m_Center: {x: -0.0028499365, y: -0.0049500465, z: 0}
+    m_Extent: {x: 3.18885, y: 3.18805, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -9832,6 +9832,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: d248f56683d8199409c820b46d15d116, type: 2}
+    - target: {fileID: 4530802861926478335, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4530802861926478335, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6396156261152944558, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
       propertyPath: UIPanel
       value: 
@@ -11685,8 +11693,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0033000708, y: 0.0014500618, z: 0}
-    m_Extent: {x: 3.65, y: 3.64605, z: 0}
+    m_Center: {x: 0.0033999681, y: 0.00039994717, z: 0}
+    m_Extent: {x: 3.6483998, y: 3.6481, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

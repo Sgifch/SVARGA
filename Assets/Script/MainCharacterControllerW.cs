@@ -24,7 +24,7 @@ public class MainCharacterControllerW : MonoBehaviour
     private Vector2 moveD;
     private Vector2 LastmoveD;
 
-    public Transform axesPlayer;
+    public bool displacementAttack = false;
 
     //Доступ к статам
     public characterStat stat;
@@ -97,6 +97,32 @@ public class MainCharacterControllerW : MonoBehaviour
     void FixedUpdate()
     {
         Move();
+
+        if (displacementAttack) //Сдвиг при атаке (мб потом более оптимизировано сделать)
+        {
+            string _lastAxes = LastAxes();
+
+            switch (_lastAxes)
+            {
+                case "u":
+                    rb.velocity = new Vector2(0f, 7f); 
+                    break;
+
+                case "d":
+                    rb.velocity = new Vector2(0f, -7f);
+                    break;
+
+                case "l":
+                    rb.velocity = new Vector2(-7f, 0f);
+                    break;
+
+                case "r":
+                    rb.velocity = new Vector2(7f, 0f);
+                    break;
+            }
+
+            displacementAttack = false;
+        }
     }
 
     void processInputs()
@@ -110,6 +136,7 @@ public class MainCharacterControllerW : MonoBehaviour
         }
 
         moveD = new Vector2(LeftRight, ForwardBehind).normalized;
+
     }
 
     //Столкновения
@@ -163,9 +190,41 @@ public class MainCharacterControllerW : MonoBehaviour
         }
     }
 
+    //Блок движения --------------------------------------------------------------------------
     void Move()
     {
         rb.velocity = new Vector2(moveD.x * speed, moveD.y * speed); 
+    }
+
+    public string LastAxes()
+    {
+        string lastAxes = " ";
+
+        if (Mathf.Approximately(LastmoveD.x, 0f) && Mathf.Approximately(LastmoveD.y, -1f))
+        {
+            // Действия для направления вниз
+            lastAxes = "d";
+
+        }
+        else if (Mathf.Approximately(LastmoveD.x, 1f) && Mathf.Approximately(LastmoveD.y, 0f))
+        {
+            // Действия для направления вправо
+            lastAxes = "r";
+        }
+        else if (Mathf.Approximately(LastmoveD.x, 0f) && Mathf.Approximately(LastmoveD.y, 1f))
+        {
+            // Действия для направления вверх
+            lastAxes = "u";
+        }
+        else if (Mathf.Approximately(LastmoveD.x, -1f) && Mathf.Approximately(LastmoveD.y, 0f))
+        {
+            // Действия для направления влево
+            lastAxes = "l";
+        }
+
+        print(lastAxes);
+
+        return lastAxes;
     }
 
     //Блок получения урона --------------------------------------------------------------------
@@ -199,9 +258,13 @@ public class MainCharacterControllerW : MonoBehaviour
 
             inventorySlot weapon = dataItem.slotsWeapon[0];
             Vector3 spawnPosition = gameObject.transform.position;
-            Vector3 displacement = new Vector3(-0.29f, -0.3f, 0f); //Будет изменяться в зависимости от положения
-            GameObject attackWeapon = Instantiate(weapon.item.itemObject, spawnPosition + displacement, gameObject.transform.rotation, gameObject.transform);
+            Vector3 shift = new Vector3(-0.29f, -0.3f, 0f); //Будет изменяться в зависимости от положения
+            Vector2 displacement = new Vector2(0, 1000);
+            displacementAttack = true;
+
+            GameObject attackWeapon = Instantiate(weapon.item.itemObject, spawnPosition + shift, gameObject.transform.rotation, gameObject.transform);
             Animator animWeapon = attackWeapon.GetComponent<Animator>();
+            print(LastmoveD);
 
             animWeapon.SetFloat("LastMoveDx", LastmoveD.x);
             animWeapon.SetFloat("LastMoveDy", LastmoveD.y);
