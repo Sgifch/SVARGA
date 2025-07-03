@@ -24,7 +24,8 @@ public class MainCharacterControllerW : MonoBehaviour
     private Vector2 moveD;
     private Vector2 LastmoveD;
 
-    public bool displacementAttack = false;
+    public bool isAttack = false;
+    public bool isShiftAttack = false;
 
     //Доступ к статам
     public characterStat stat;
@@ -74,7 +75,7 @@ public class MainCharacterControllerW : MonoBehaviour
         //Move();
         Animated();
 
-        if (Input.GetMouseButtonDown(0)&& !dataItem.isOpened)
+        if (Input.GetMouseButtonDown(0) && !dataItem.isOpened && !isAttack)
         {
             
             AttackWeapon();
@@ -96,9 +97,12 @@ public class MainCharacterControllerW : MonoBehaviour
 
     void FixedUpdate()
     {
+
         Move();
 
-        if (displacementAttack) //Сдвиг при атаке (мб потом более оптимизировано сделать)
+       
+
+        if (isShiftAttack) //Сдвиг при атаке (мб потом более оптимизировано сделать)
         {
             string _lastAxes = LastAxes();
 
@@ -121,12 +125,14 @@ public class MainCharacterControllerW : MonoBehaviour
                     break;
             }
 
-            displacementAttack = false;
+            isShiftAttack = false;
+
         }
     }
 
     void processInputs()
     {
+
         ForwardBehind = Input.GetAxisRaw("Vertical");
         LeftRight = Input.GetAxisRaw("Horizontal");
 
@@ -260,11 +266,12 @@ public class MainCharacterControllerW : MonoBehaviour
             Vector3 spawnPosition = gameObject.transform.position;
             Vector3 shift = new Vector3(0f, -0.35f, 0f); //Будет изменяться в зависимости от положения
    
-            displacementAttack = true;
+            isAttack = true;
+            isShiftAttack = true;
 
             GameObject attackWeapon = Instantiate(weapon.item.itemObject, spawnPosition + shift, gameObject.transform.rotation, gameObject.transform);
             Animator animWeapon = attackWeapon.GetComponent<Animator>();
-            print(LastmoveD);
+            
 
             animWeapon.SetFloat("LastMoveDx", LastmoveD.x);
             animWeapon.SetFloat("LastMoveDy", LastmoveD.y);
