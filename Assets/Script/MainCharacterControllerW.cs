@@ -74,9 +74,9 @@ public class MainCharacterControllerW : MonoBehaviour
         //Move();
         Animated();
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)&& !dataItem.isOpened)
         {
-            print("Атака1");
+            
             AttackWeapon();
         }
 
@@ -253,13 +253,13 @@ public class MainCharacterControllerW : MonoBehaviour
     //Блок нанесения урона----------------------------------------------------------------
     void AttackWeapon()
     {
-        if (dataItem.slotsWeapon[0] != null)
+        if (!dataItem.slotsWeapon[0].isEmpty)
         {
 
             inventorySlot weapon = dataItem.slotsWeapon[0];
             Vector3 spawnPosition = gameObject.transform.position;
-            Vector3 shift = new Vector3(-0.29f, -0.3f, 0f); //Будет изменяться в зависимости от положения
-            Vector2 displacement = new Vector2(0, 1000);
+            Vector3 shift = new Vector3(0f, -0.35f, 0f); //Будет изменяться в зависимости от положения
+   
             displacementAttack = true;
 
             GameObject attackWeapon = Instantiate(weapon.item.itemObject, spawnPosition + shift, gameObject.transform.rotation, gameObject.transform);
@@ -268,6 +268,9 @@ public class MainCharacterControllerW : MonoBehaviour
 
             animWeapon.SetFloat("LastMoveDx", LastmoveD.x);
             animWeapon.SetFloat("LastMoveDy", LastmoveD.y);
+            anim.SetFloat("LastmoveDx", LastmoveD.x);
+            anim.SetFloat("LastmoveDy", LastmoveD.y);
+            anim.SetTrigger("Attack");
             animWeapon.SetTrigger("Attack");
         }
     }
