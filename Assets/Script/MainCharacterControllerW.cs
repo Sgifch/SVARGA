@@ -24,6 +24,7 @@ public class MainCharacterControllerW : MonoBehaviour
     private Vector2 moveD;
     private Vector2 LastmoveD;
 
+    public bool isMove = false;
     public bool isAttack = false;
     public bool isShiftAttack = false;
 
@@ -75,7 +76,7 @@ public class MainCharacterControllerW : MonoBehaviour
         //Move();
         Animated();
 
-        if (Input.GetMouseButtonDown(0) && !dataItem.isOpened && !isAttack)
+        if (Input.GetMouseButtonDown(0) && !dataItem.isOpened && !isAttack && !isMove)
         {
             
             AttackWeapon();
@@ -100,7 +101,7 @@ public class MainCharacterControllerW : MonoBehaviour
 
         Move();
 
-       
+        isMove = rb.velocity.magnitude > 0.1f;
 
         if (isShiftAttack) //Сдвиг при атаке (мб потом более оптимизировано сделать)
         {
@@ -199,7 +200,7 @@ public class MainCharacterControllerW : MonoBehaviour
     //Блок движения --------------------------------------------------------------------------
     void Move()
     {
-        rb.velocity = new Vector2(moveD.x * speed, moveD.y * speed); 
+        rb.velocity = new Vector2(moveD.x * speed, moveD.y * speed);
     }
 
     public string LastAxes()
@@ -264,8 +265,29 @@ public class MainCharacterControllerW : MonoBehaviour
 
             inventorySlot weapon = dataItem.slotsWeapon[0];
             Vector3 spawnPosition = gameObject.transform.position;
+
             Vector3 shift = new Vector3(0f, -0.35f, 0f); //Будет изменяться в зависимости от положения
-   
+            string _lastAxes = LastAxes();
+
+            switch (_lastAxes)
+            {
+                case "u":
+                    shift = new Vector3(0f, 0.1f, 0f);
+                    break;
+
+                case "d":
+                    shift = new Vector3(0f, -0.35f, 0f);
+                    break;
+
+                case "l":
+                    shift = new Vector3(-0.15f, -0.35f, 0f);
+                    break;
+
+                case "r":
+                    shift = new Vector3(0.15f, -0.35f, 0f);
+                    break;
+            }
+
             isAttack = true;
             isShiftAttack = true;
 
