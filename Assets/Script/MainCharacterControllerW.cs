@@ -229,8 +229,6 @@ public class MainCharacterControllerW : MonoBehaviour
             lastAxes = "l";
         }
 
-        print(lastAxes);
-
         return lastAxes;
     }
 

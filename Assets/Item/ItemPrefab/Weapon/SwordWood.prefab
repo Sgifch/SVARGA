@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7001138273957261300}
   - component: {fileID: 6217958604356861634}
   - component: {fileID: 6371996260406592301}
+  - component: {fileID: 4221855675949411705}
   m_Layer: 0
   m_Name: SwordWood
   m_TagString: item
@@ -121,7 +122,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0005309917, y: -0.2686801}
+  m_Offset: {x: -0.0005309284, y: -0.3166672}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 1}
@@ -131,7 +132,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.06136138, y: 0.5391464}
+  m_Size: {x: 0.18932694, y: 0.63512063}
   m_EdgeRadius: 0
 --- !u!114 &6217958604356861634
 MonoBehaviour:
@@ -169,3 +170,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4221855675949411705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2595154827602962897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44a4a8b3757879b41ba2e88bb2dec371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
