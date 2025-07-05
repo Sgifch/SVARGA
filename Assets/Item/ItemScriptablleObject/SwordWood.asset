@@ -18,5 +18,5 @@ MonoBehaviour:
   itemName: Wood Sword
   maximumAmaunt: 1
   itemDescription: 
-  damage: 1
+  damage: 3
   effect: {fileID: 0}
