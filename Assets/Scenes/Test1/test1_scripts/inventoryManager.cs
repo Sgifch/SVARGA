@@ -118,10 +118,19 @@ public class inventoryManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (collision.gameObject.tag == "item")
+                if (collision.gameObject.tag == "item") //переделать под switchCase
                 {
                     AddItem(collision.gameObject.GetComponent<Item>().item, collision.gameObject.GetComponent<Item>().amount);
                     Destroy(collision.gameObject);
+                }
+                else if (collision.gameObject.tag == "WeaponSpawn")
+                {
+                    if (!collision.gameObject.GetComponent<WeaponSpawnScript>().isEmpty)
+                    {
+                        GameObject _weapon = collision.gameObject.GetComponent<WeaponSpawnScript>().spawnItem;
+                        AddItem(_weapon.GetComponent<Item>().item, 1);
+                        collision.gameObject.GetComponent<WeaponSpawnScript>().TakeItem();
+                    }
                 }
             }
         }
