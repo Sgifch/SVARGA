@@ -13,15 +13,18 @@ public class WeaponSpawnScript : MonoBehaviour
                                 //Для контроля уровня сделать потом ScriptableObject
 
     private GameObject _spawnItem;
+    private Transform _effect;
     void Start()
     {
         Vector3 spawnPosition = gameObject.transform.position + shiftSpawnPosition;
         _spawnItem = Instantiate(spawnItem, spawnPosition, shiftSpawnRotation, gameObject.transform);
+        _effect = gameObject.transform.GetChild(0);
     }
 
     public void TakeItem()
     {
         Destroy(_spawnItem);
+        Destroy(_effect.gameObject);
         isEmpty = true;
     }
 }
