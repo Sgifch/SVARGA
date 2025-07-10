@@ -56,7 +56,7 @@ Material:
     - _EnableExternalAlpha: 0
     - _blinkDuration: 2
     - _blinkFrequency: 0
-    - _blinkSpeed: 20
+    - _blinkSpeed: 35
     - _takeDamage: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

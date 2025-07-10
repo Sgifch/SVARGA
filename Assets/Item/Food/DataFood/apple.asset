@@ -16,6 +16,6 @@ MonoBehaviour:
   itemObject: {fileID: 3408268646583160109, guid: 277d87dcc99962e4ca0c954b89eb9465, type: 3}
   icon: {fileID: 21300000, guid: ebe196c4ba36c314b903337f65ab5e6f, type: 3}
   itemName: 
-  maximumAmaunt: 2
+  maximumAmaunt: 99
   itemDescription: 
   healthAmount: 2
