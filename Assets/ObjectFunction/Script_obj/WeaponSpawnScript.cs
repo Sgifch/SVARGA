@@ -8,7 +8,7 @@ public class WeaponSpawnScript : MonoBehaviour
     public GameObject spawnItem;
     public Vector3 shiftSpawnPosition;
     public Quaternion shiftSpawnRotation;
-
+   
     public bool isEmpty = false; //Это потом должно ишрать свою роль при создании сохранений
                                 //Для контроля уровня сделать потом ScriptableObject
 

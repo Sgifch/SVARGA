@@ -7,6 +7,9 @@ public class PuppetScript : MonoBehaviour
     public EnemyScriptableObject puppetStats;
     public int currentHealthPoint;
     public bool isDead = false;
+    public GameObject effectDeath;
+    public Vector3 shiftSpawnEffect;
+
     private void Start()
     {
         currentHealthPoint = puppetStats.healthPoint;
@@ -14,6 +17,8 @@ public class PuppetScript : MonoBehaviour
 
     public void Dead()
     {
+        Vector3 spawnPosition = gameObject.transform.position + shiftSpawnEffect;
+        Instantiate(effectDeath, spawnPosition, gameObject.transform.rotation);
         Destroy(gameObject);
     }
 
