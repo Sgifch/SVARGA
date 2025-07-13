@@ -250,7 +250,6 @@ public class MainCharacterControllerW : MonoBehaviour
             imageHealthBar.fillAmount = changeHealthPoint;
             time = 0;
 
-            print("Attack");
         }
         
     }
@@ -303,7 +302,7 @@ public class MainCharacterControllerW : MonoBehaviour
     }
 
     //Ѕлок использовани€ вещей инвентар€ -------------------------------------------------
-    public void UseFood(inventorySlot useItem)
+    public void UseFood(inventorySlot useItem) //засунуть потом в другой код
     {
         foodItem food = (foodItem)useItem.item; //явное преобразование к классу
         int recoveryHealth = food.healthAmount;

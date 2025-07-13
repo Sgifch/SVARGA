@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 6093552912300744450}
   - component: {fileID: 1029483399505645837}
   - component: {fileID: 6396156261152944558}
+  - component: {fileID: 5403319387733519631}
   m_Layer: 0
   m_Name: MainCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: d248f56683d8199409c820b46d15d116, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -200,7 +201,11 @@ MonoBehaviour:
   anim: {fileID: 8455419827983548799}
   speed: 3
   rb: {fileID: 4530802861926478335}
+  isMove: 0
+  isAttack: 0
+  isShiftAttack: 0
   stat: {fileID: 11400000, guid: 5bd6636900214184ea55b69cba9c55e9, type: 2}
+  dataItem: {fileID: 6396156261152944558}
   changeHealthPoint: 0
   changeMannaPoint: 0
   imageHealthBar: {fileID: 0}
@@ -208,7 +213,7 @@ MonoBehaviour:
   signPanel: {fileID: 0}
   enemyStaticTouch: 0
   takeDamage: 0
-  _timeDamage: 1
+  _timeDamage: 4
 --- !u!114 &6396156261152944558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,3 +253,20 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &5403319387733519631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529339929942784907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7e473255f955d489c99d179864bcc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stat: {fileID: 0}
+  currentHealthPoint: 0
+  currentMannaPoint: 0
+  healthBar: {fileID: 0}
+  mannaBar: {fileID: 0}
