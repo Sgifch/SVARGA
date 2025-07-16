@@ -9,10 +9,8 @@ public class ControllHealthPoint : MonoBehaviour
     private State stateH = State.Idle; //Состояние здоровья игрока
 
     public float currentHealthPoint;
-    public float currentMannaPoint;
 
     public Image healthBar;
-    public Image mannaBar;
 
     private int attackPoint;
     private float timeDamage;
@@ -56,7 +54,7 @@ public class ControllHealthPoint : MonoBehaviour
     }
 
     //Продолжительное восстановление
-    public void TimeRecovery(float _timeRecovery, float _intervalTimeRecovery, int _recoveryPoint)
+    /*public void TimeRecovery(float _timeRecovery, float _intervalTimeRecovery, int _recoveryPoint)
     {
         recoveryPoint = _recoveryPoint;
         timeRecovery = _timeRecovery;
@@ -85,17 +83,17 @@ public class ControllHealthPoint : MonoBehaviour
             intervalTimeRecovery = 0;
         }
 
-    }
+    }*/
 
     //Единовременный урон
     public void Damage(int _attackPoint)
     {
-        stat.healthPoint = stat.healthPoint - attackPoint;
+        stat.healthPoint = stat.healthPoint - _attackPoint;
         ChangeHealthBar();
     }
 
     //Продолжительный урон
-    public void TimeDamage(float _timeDamage, float _intervalTimeDamage, int _attackPoint)
+    /*public void TimeDamage(float _timeDamage, float _intervalTimeDamage, int _attackPoint)
     {
         attackPoint = _attackPoint;
         timeDamage = _timeDamage;
@@ -124,7 +122,7 @@ public class ControllHealthPoint : MonoBehaviour
             intervalTimeDamage = 0;
         }
         
-    }
+    }*/
 
     private void Update()
     {
@@ -137,7 +135,7 @@ public class ControllHealthPoint : MonoBehaviour
             case State.ContinuosDamage:
                 currentTimeAttack += Time.deltaTime;
                 currentIntervalTimeAttack += Time.deltaTime;
-                AttackTimeDamage();
+                //AttackTimeDamage();
                 break;
 
         }
@@ -146,7 +144,7 @@ public class ControllHealthPoint : MonoBehaviour
         {
             currentTimeRecovery += Time.deltaTime;
             currentIntervalTimeRecovery += Time.deltaTime;
-            HealthTimeRecovery();
+            //HealthTimeRecovery();
         }
     }
 }

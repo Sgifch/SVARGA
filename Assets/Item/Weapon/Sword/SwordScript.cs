@@ -20,8 +20,8 @@ public class SwordScript : MonoBehaviour
         
         if (collision.gameObject.tag == "Enemy")
         {
-            PuppetScript enemyProfile = collision.gameObject.GetComponent<PuppetScript>(); // ¬от это переделать дл€ всех врагов а то бредо или сделать скрипт с здоровьем
-            enemyProfile.TakeDamage(_damage);
+            EnemyControllHealthPoint enemyProfile = collision.gameObject.GetComponent<EnemyControllHealthPoint>(); // ¬от это переделать дл€ всех врагов а то бредо или сделать скрипт с здоровьем
+            enemyProfile.Damage(_damage);
         }
     }
 }

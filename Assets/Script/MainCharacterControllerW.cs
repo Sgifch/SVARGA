@@ -84,7 +84,7 @@ public class MainCharacterControllerW : MonoBehaviour
 
         if (enemyStaticTouch)
         {
-            AttackEnemyStatic();
+            //AttackEnemyStatic();
         }
 
         if (timeDamage >= _timeDamage)

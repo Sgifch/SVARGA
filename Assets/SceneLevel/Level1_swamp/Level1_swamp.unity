@@ -1036,7 +1036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6869739085913838045, guid: 0691bcf8a7e77ba46b9b736b5514000e, type: 3}
       propertyPath: orthographic size
-      value: 5.625
+      value: 6.384677
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2245,8 +2245,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0025999546, y: 0.0021500587, z: 0}
-    m_Extent: {x: 3.1949, y: 3.19485, z: 0}
+    m_Center: {x: 0.008000016, y: -0.0046999454, z: 0}
+    m_Extent: {x: 3.1897001, y: 3.1908, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -10011,9 +10011,11 @@ GameObject:
   - component: {fileID: 675783631}
   - component: {fileID: 675783630}
   - component: {fileID: 675783634}
+  - component: {fileID: 675783635}
+  - component: {fileID: 675783636}
   m_Layer: 0
   m_Name: GolemTest
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10137,6 +10139,36 @@ MonoBehaviour:
   roamingDistanceMax: 7
   roamingDistanceMin: 3
   roamingTimerMax: 2
+--- !u!114 &675783635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675783629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 606bb53ab6c331e4eb02eb3efb51d970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyProfile: {fileID: 11400000, guid: 9f4710c3daeca854e894fc3931b33264, type: 2}
+  intervalAttack: 2
+--- !u!114 &675783636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675783629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aff220ced84be984b8a921a4974098ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyProfile: {fileID: 11400000, guid: 9f4710c3daeca854e894fc3931b33264, type: 2}
+  currentHealthPoint: 0
+  effectDeath: {fileID: 3956628512124227960, guid: 06c72c8a24a487842bfc2618ae5c9d19, type: 3}
+  shiftSpawnEffect: {x: 0, y: 0, z: 0}
 --- !u!1 &676803867
 GameObject:
   m_ObjectHideFlags: 0
@@ -11409,6 +11441,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: d248f56683d8199409c820b46d15d116, type: 2}
+    - target: {fileID: 5403319387733519631, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: stat
+      value: 
+      objectReference: {fileID: 11400000, guid: 5bd6636900214184ea55b69cba9c55e9, type: 2}
+    - target: {fileID: 5403319387733519631, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 371710088}
     - target: {fileID: 6396156261152944558, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
       propertyPath: UIPanel
       value: 
@@ -13853,8 +13893,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.005300045, y: 0.005100012, z: 0}
-    m_Extent: {x: 3.649, y: 3.6528, z: 0}
+    m_Center: {x: 0.000100016594, y: 0.00395, z: 0}
+    m_Extent: {x: 3.6488, y: 3.6540499, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -23439,8 +23479,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0016999245, y: 0.00090003014, z: 0}
-    m_Extent: {x: 3.184, y: 3.1896, z: 0}
+    m_Center: {x: 0.008749962, y: -0.00274992, z: 0}
+    m_Extent: {x: 3.18955, y: 3.19205, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
