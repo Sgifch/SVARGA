@@ -162,17 +162,9 @@ public class MainCharacterControllerW : MonoBehaviour
     //Триггер
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        /*if (collision.gameObject.tag == "grass")
-        {
-            ChangeSprite(true);
-        }*/
 
         switch (collision.gameObject.tag)
         {
-            case "enemyStatic":
-                enemyStaticTouch = true;
-                collider_tr = collision;
-                break;
 
             case "sign":
                 collider_tr = collision;
@@ -185,10 +177,6 @@ public class MainCharacterControllerW : MonoBehaviour
     {
         switch (collision.gameObject.tag)
         {
-            case "enemyStatic":
-                enemyStaticTouch = false;
-                collider_tr = null;
-                break;
 
             case "sign":
                 SignShow(false);
@@ -230,28 +218,6 @@ public class MainCharacterControllerW : MonoBehaviour
         }
 
         return lastAxes;
-    }
-
-    //Блок получения урона --------------------------------------------------------------------
-    void AttackEnemyStatic() //Урон от недвижимых врагов 
-    {
-        enemyProfile attackPoint = collider_tr.gameObject.GetComponent<enemy>().enemyStat;  //Эту часть переделать для разных врагов а то фигня
-        float intervalTime = collider_tr.gameObject.GetComponent<enemy>().intervalAttack;
-
-        takeDamage = true;
-
-        Damage();
-
-        if (time >= intervalTime)
-        {
-            stat.healthPoint = stat.healthPoint - attackPoint.attack;
-
-            changeHealthPoint = (float)(stat.healthPoint) / stat.maxHealthPoint;
-            imageHealthBar.fillAmount = changeHealthPoint;
-            time = 0;
-
-        }
-        
     }
 
     //Блок нанесения урона----------------------------------------------------------------

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9017939145817545316}
   - component: {fileID: 2857782976576912373}
   - component: {fileID: 1176186573827381089}
-  - component: {fileID: 7695252497291350047}
+  - component: {fileID: 2668534202052241904}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: enemyStatic
@@ -132,7 +132,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.96875}
   m_EdgeRadius: 0
---- !u!114 &7695252497291350047
+--- !u!114 &2668534202052241904
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,8 +141,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8819073815307112481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5df7a4d36d409114485ec54254fe5ba2, type: 3}
+  m_Script: {fileID: 11500000, guid: 41a1525ba6af18c4ca42a1e132df74ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyStat: {fileID: 11400000, guid: defa05913701a104ba55431a6259b0a7, type: 2}
-  intervalAttack: 1
+  enemyProfile: {fileID: 11400000, guid: 46a22ce1e71ba8340a1e532372fb0ea8, type: 2}
+  intervalAttack: 2

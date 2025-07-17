@@ -43,7 +43,7 @@ public class inventoryManager : MonoBehaviour
 
     void Start()
     {
-        UIPanel.SetActive(false);
+      
 
         for (int i=0; i < inventoryPanel.childCount; i++) //мб этот блок потом засунуть в одну функцию для удобства
         {
@@ -92,6 +92,10 @@ public class inventoryManager : MonoBehaviour
             selectSlot[i].SetActive(false);
         }
 
+        selectSlot[0].SetActive(true);
+        SelectSlot(1);
+
+        UIPanel.SetActive(false);
 
     }
 
@@ -264,13 +268,11 @@ public class inventoryManager : MonoBehaviour
 
         if (slots[_index].item != null)
         {
-            Debug.Log("Slot" + (_indexSlot-1).ToString());
-            if (slots[_index].item.itemType is ItemType.food) //Если объект еда
+            if (slots[_index].item.itemType is ItemType.food) //Если объект еда (Сделать через switch)
             {
                 mainCharacter.UseFood(slots[_index]);
                 SubtractionItem(_index);
 
-                Debug.Log("Еда");
             }
         }
     }

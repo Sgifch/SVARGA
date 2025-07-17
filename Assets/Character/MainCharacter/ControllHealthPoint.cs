@@ -1,45 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ControllHealthPoint : MonoBehaviour
 {
     public characterStat stat;
+    public float flashTime = 1f;
+    public AnimationCurve flashCurve;
+    public GameObject effectDamage;
     private State stateH = State.Idle; //Состояние здоровья игрока
 
-    public float currentHealthPoint;
-
-    public Image healthBar;
-
-    private int attackPoint;
-    private float timeDamage;
-    private float intervalTimeDamage;
-    private float currentTimeAttack;
-    private float currentIntervalTimeAttack;
-
-    private int recoveryPoint;
-    private float timeRecovery;
-    private float intervalTimeRecovery;
-    private float currentTimeRecovery;
-    private float currentIntervalTimeRecovery;
-
-    private bool isRecovery = false;
-
+    private float currentHealthPoint;
+    private GameObject healthBar;
+    private Material material;
+    private Coroutine _hitDamageEffect;
     private enum State
     {
         Idle,
         ContinuosDamage
     }
 
-    //Изменеение урона в bar
+    private void Awake()
+    {
+        healthBar = GameObject.Find("HealthBar");
+        material = GetComponent<SpriteRenderer>().material;
+    }
+
+    //Изменеение размера полоски в bar
     public void ChangeHealthBar() 
     {
         currentHealthPoint = (float)(stat.healthPoint) / stat.maxHealthPoint;
-        healthBar.fillAmount = currentHealthPoint;
+        healthBar.GetComponent<Image>().fillAmount = currentHealthPoint;
     }
 
-    //Единовременное востановление
+    //Востановление
     public void Recovery(int _recoveryPoint)
     {
         stat.healthPoint = stat.healthPoint + _recoveryPoint;
@@ -53,98 +50,44 @@ public class ControllHealthPoint : MonoBehaviour
         ChangeHealthBar();
     }
 
-    //Продолжительное восстановление
-    /*public void TimeRecovery(float _timeRecovery, float _intervalTimeRecovery, int _recoveryPoint)
-    {
-        recoveryPoint = _recoveryPoint;
-        timeRecovery = _timeRecovery;
-        intervalTimeRecovery = _intervalTimeRecovery;
-
-        isRecovery = true;
-    }
-
-    private void HealthTimeRecovery()
-    {
-        if (currentTimeRecovery < timeRecovery)
-        {
-            if (currentIntervalTimeRecovery >= intervalTimeRecovery)
-            {
-                stat.healthPoint = stat.healthPoint + attackPoint;
-                currentIntervalTimeRecovery = 0;
-                ChangeHealthBar();
-            }
-
-        }
-        else
-        {
-            isRecovery = false;
-            recoveryPoint = 0;
-            timeRecovery = 0;
-            intervalTimeRecovery = 0;
-        }
-
-    }*/
-
-    //Единовременный урон
+    //Урон
     public void Damage(int _attackPoint)
     {
         stat.healthPoint = stat.healthPoint - _attackPoint;
         ChangeHealthBar();
+        DamageEffect();
     }
 
-    //Продолжительный урон
-    /*public void TimeDamage(float _timeDamage, float _intervalTimeDamage, int _attackPoint)
+    //Эффект получения урона
+    public void DamageEffect()
     {
-        attackPoint = _attackPoint;
-        timeDamage = _timeDamage;
-        intervalTimeDamage = _intervalTimeDamage;
+        if (_hitDamageEffect != null)
+        {
+            StopCoroutine(_hitDamageEffect);
+        }
+        // Запускаем новую корутину свечения
+        _hitDamageEffect = StartCoroutine(HitDamageEffect());
+        Instantiate(effectDamage, gameObject.transform.position, gameObject.transform.rotation);
 
-        stateH = State.ContinuosDamage;
     }
 
-    private void AttackTimeDamage()
+    private IEnumerator HitDamageEffect()
     {
-        if (currentTimeAttack < timeDamage)
-        {
-            if (currentIntervalTimeAttack >= intervalTimeDamage)
-            {
-                stat.healthPoint = stat.healthPoint - attackPoint;
-                currentIntervalTimeAttack = 0;
-                ChangeHealthBar();
-            }
-            
-        }
-        else
-        {
-            stateH = State.Idle;
-            attackPoint = 0;
-            timeDamage = 0;
-            intervalTimeDamage = 0;
-        }
+        float timer = 0f;
         
-    }*/
-
-    private void Update()
-    {
-        switch (stateH)
+        while (timer < flashTime)
         {
-            default:
-            case State.Idle:
-                break;
+            float normalizedTime = timer / flashTime;
+            // Получаем значение из кривой для текущего момента времени
+            float flashAmount = flashCurve.Evaluate(normalizedTime);
 
-            case State.ContinuosDamage:
-                currentTimeAttack += Time.deltaTime;
-                currentIntervalTimeAttack += Time.deltaTime;
-                //AttackTimeDamage();
-                break;
+            material.SetFloat("_flashAmount", flashAmount); // Устанавливаем интенсивность свечения в шейдере
 
+            timer += Time.deltaTime; // Увеличиваем таймер на время, прошедшее с последнего кадра
+            yield return null; // Ждем до следующего кадра
         }
 
-        if (isRecovery)
-        {
-            currentTimeRecovery += Time.deltaTime;
-            currentIntervalTimeRecovery += Time.deltaTime;
-            //HealthTimeRecovery();
-        }
+        material.SetFloat("_flashAmount", 0f);
+        _hitDamageEffect = null;
     }
 }

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 34101753873605566}
   - component: {fileID: 783667507011814800}
-  - component: {fileID: 6376546409233093838}
   - component: {fileID: 5467917562367751908}
+  - component: {fileID: 2253140553523761900}
   m_Layer: 0
   m_Name: Puppet
   m_TagString: Enemy
@@ -86,23 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6376546409233093838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 696327885509340816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 074b4749913d1954fb08722ef2545fb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puppetStats: {fileID: 11400000, guid: db87ac3381f1187428d67917ebdb051c, type: 2}
-  currentHealthPoint: 0
-  isDead: 0
-  effectDeath: {fileID: 3956628512124227960, guid: 06c72c8a24a487842bfc2618ae5c9d19, type: 3}
-  shiftSpawnEffect: {x: 0, y: 0, z: 0}
 --- !u!61 &5467917562367751908
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,3 +132,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2253140553523761900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696327885509340816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aff220ced84be984b8a921a4974098ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyProfile: {fileID: 11400000, guid: db87ac3381f1187428d67917ebdb051c, type: 2}
+  currentHealthPoint: 0
+  effectDeath: {fileID: 3956628512124227960, guid: 06c72c8a24a487842bfc2618ae5c9d19, type: 3}
+  shiftSpawnEffect: {x: 0, y: 0, z: 0}

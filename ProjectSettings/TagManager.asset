@@ -10,6 +10,7 @@ TagManager:
   - sign
   - Enemy
   - WeaponSpawn
+  - HealthBar
   layers:
   - Default
   - TransparentFX

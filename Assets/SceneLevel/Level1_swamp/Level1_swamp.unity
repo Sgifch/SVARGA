@@ -2245,8 +2245,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.008000016, y: -0.0046999454, z: 0}
-    m_Extent: {x: 3.1897001, y: 3.1908, z: 0}
+    m_Center: {x: 0.0035500526, y: 0.0039999485, z: 0}
+    m_Extent: {x: 3.18675, y: 3.188, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -11422,6 +11422,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1029483399505645837, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1029483399505645837, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
       propertyPath: signPanel
       value: 
       objectReference: {fileID: 829376630}
@@ -11446,9 +11450,53 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 5bd6636900214184ea55b69cba9c55e9, type: 2}
     - target: {fileID: 5403319387733519631, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: flashTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403319387733519631, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 371710088}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403319387733519631, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: effectDamage
+      value: 
+      objectReference: {fileID: 8238514059131387485, guid: e969a850252868948a20f1d9bc741e64, type: 3}
+    - target: {fileID: 5403319387733519631, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: flashCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403319387733519631, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: flashCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403319387733519631, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: flashCurve.m_Curve.Array.data[1].time
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403319387733519631, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: flashCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403319387733519631, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: flashCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403319387733519631, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: flashCurve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403319387733519631, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: flashCurve.m_Curve.Array.data[1].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403319387733519631, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: flashCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403319387733519631, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: flashCurve.m_Curve.Array.data[1].outSlope
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6396156261152944558, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
       propertyPath: UIPanel
       value: 
@@ -11556,7 +11604,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1529339929942784907, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1265838459}
   m_SourcePrefab: {fileID: 100100000, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
 --- !u!4 &914808817 stripped
 Transform:
@@ -13893,8 +13944,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.000100016594, y: 0.00395, z: 0}
-    m_Extent: {x: 3.6488, y: 3.6540499, z: 0}
+    m_Center: {x: -0.0017999411, y: -0.0022000074, z: 0}
+    m_Extent: {x: 3.6528, y: 3.6475, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -16112,6 +16163,23 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 891537a2031e780418c85157fc5ae1ce, type: 3}
+--- !u!1 &1265838451 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1529339929942784907, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+  m_PrefabInstance: {fileID: 914808816}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1265838459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265838451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae342cb056e9d54b929f5df6bd7c705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1267757814 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3908386437234053272, guid: fbfb9190307e39a419b55031dff8b024, type: 3}
@@ -23479,8 +23547,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.008749962, y: -0.00274992, z: 0}
-    m_Extent: {x: 3.18955, y: 3.19205, z: 0}
+    m_Center: {x: -0.0020500422, y: 0.0051499605, z: 0}
+    m_Extent: {x: 3.19705, y: 3.1907501, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
