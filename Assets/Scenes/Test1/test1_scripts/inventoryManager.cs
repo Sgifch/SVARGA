@@ -18,8 +18,8 @@ public class inventoryManager : MonoBehaviour
     public GameObject UIPanelWeapon;
     public Transform inventoryWeapon;
 
-    public GameObject UIPanelWeaponFast;
-    public Transform inventoryWeaponFast;
+    public GameObject weaponFastPanel;
+    public Transform _weaponFastPanel;
 
     public Transform panelSelectSlot;
 
@@ -41,6 +41,11 @@ public class inventoryManager : MonoBehaviour
     public List<inventorySlot> slotsWeaponFast = new List<inventorySlot>();
     public List<GameObject> selectSlot = new List<GameObject>();
 
+    private void Awake()
+    {
+        weaponFastPanel = GameObject.Find("WeaponFastPanel");
+        _weaponFastPanel = weaponFastPanel.transform.GetChild(0).GetComponent<Transform>();
+    }
     void Start()
     {
       
@@ -77,13 +82,14 @@ public class inventoryManager : MonoBehaviour
             }
         }
 
-        /*for (int i = 0; i < inventoryWeaponFast.childCount; i++)
+        //Слоты для отображения оружия
+        for (int i = 0; i < _weaponFastPanel.childCount; i++)
         {
-            if (inventoryWeaponFast.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+            if (_weaponFastPanel.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
             {
-                slotsWeaponFast.Add(inventoryWeaponFast.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+                slotsWeaponFast.Add(_weaponFastPanel.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
             }
-        }*/
+        }
 
         //Картинки, указывающие на выбранный слот
         for (int i = 0; i < 6; i++)
@@ -107,12 +113,14 @@ public class inventoryManager : MonoBehaviour
             if (isOpened)
             {
                 UIPanelFast.SetActive(false);
+                weaponFastPanel.SetActive(false);
                 UIPanel.SetActive(true);
                 barPanel.SetActive(false);
             }
             else
             {
                 UIPanelFast.SetActive(true);
+                weaponFastPanel.SetActive(true);
                 UIPanel.SetActive(false);
                 barPanel.SetActive(true);
             }
@@ -237,14 +245,18 @@ public class inventoryManager : MonoBehaviour
         }
 
         //Для части слотов с отображением оружия нужно потом переделать
-        /*for (int i = 0; i < inventoryWeaponFast.childCount; i++)
+        for (int i = 0; i < _weaponFastPanel.childCount; i++)
         {
             if (slotsWeapon[i].isEmpty == false)
             {
-                slotsWeaponFast[i].itemAmount.text = slotsWeapon[i].amount.ToString();
-                slotsWeaponFast[i].SetIcon(slots[i].item.icon);
+                //slotsWeaponFast[i].itemAmount.text = slotsWeapon[i].amount.ToString();
+                slotsWeaponFast[i].SetIcon(slotsWeapon[i].item.icon);
             }
-        }*/
+            else
+            {
+                slotsWeaponFast[i].SetIcon(null);
+            }
+        }
     }
 
     //Выбор предмета в одном из 6 слотов

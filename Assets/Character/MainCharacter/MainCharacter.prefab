@@ -265,8 +265,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7e473255f955d489c99d179864bcc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stat: {fileID: 0}
-  currentHealthPoint: 0
-  currentMannaPoint: 0
-  healthBar: {fileID: 0}
-  mannaBar: {fileID: 0}
+  stat: {fileID: 11400000, guid: 5bd6636900214184ea55b69cba9c55e9, type: 2}
+  flashTime: 0.2
+  flashCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.2
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  effectDamage: {fileID: 8238514059131387485, guid: e969a850252868948a20f1d9bc741e64, type: 3}

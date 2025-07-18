@@ -9,9 +9,24 @@ public class EnemyControllHealthPoint : MonoBehaviour
     public float currentHealthPoint;
     public GameObject effectDeath;
     public Vector3 shiftSpawnEffect;
-    private void Start()
+    public float flashTime = 0.5f;
+    public AnimationCurve flashCurve;
+    public GameObject effectDamage;
+
+    private Material material;
+    private Coroutine _hitDamageEffect;
+    private void Awake()
     {
         currentHealthPoint = enemyProfile.healthPoint;
+        if (gameObject.transform.GetChild(0) != null)
+        {
+            material = gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().material;
+        }
+        else
+        {
+            material = gameObject.GetComponent<SpriteRenderer>().material;
+        }
+
     }
     public void Damage(int _attackPoint)
     {
@@ -19,7 +34,15 @@ public class EnemyControllHealthPoint : MonoBehaviour
         if(currentHealthPoint <= 0)
         {
             Dead();
-        }  
+        }
+        
+        if (_hitDamageEffect != null)
+        {
+            StopCoroutine(_hitDamageEffect);
+        }
+
+        _hitDamageEffect = StartCoroutine(HitDamageEffect());
+        Instantiate(effectDamage, gameObject.transform.position, gameObject.transform.rotation);
     }
 
     public void Dead()
@@ -27,5 +50,25 @@ public class EnemyControllHealthPoint : MonoBehaviour
         Vector3 spawnPosition = gameObject.transform.position + shiftSpawnEffect;
         Instantiate(effectDeath, spawnPosition, gameObject.transform.rotation);
         Destroy(gameObject);
+    }
+
+    private IEnumerator HitDamageEffect()
+    {
+        float timer = 0f;
+
+        while (timer < flashTime)
+        {
+            float normalizedTime = timer / flashTime;
+            // Получаем значение из кривой для текущего момента времени
+            float flashAmount = flashCurve.Evaluate(normalizedTime);
+
+            material.SetFloat("_flashAmount", flashAmount); // Устанавливаем интенсивность свечения в шейдере
+
+            timer += Time.deltaTime; // Увеличиваем таймер на время, прошедшее с последнего кадра
+            yield return null; // Ждем до следующего кадра
+        }
+
+        material.SetFloat("_flashAmount", 0f);
+        _hitDamageEffect = null;
     }
 }

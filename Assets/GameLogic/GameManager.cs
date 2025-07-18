@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
     public characterStat stat;
     public Transform spawnPoint;
-    public Transform player;
+    public GameObject player;
 
     public GameObject screenDeath;
-    void Start()
+    void Awake()
     {
-        
+        player = GameObject.FindWithTag("Player");
     }
 
     void Update()
@@ -31,9 +32,8 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
+        player.GetComponent<ControllHealthPoint>().FullRecovery();
         Time.timeScale = 1;
-        screenDeath.SetActive(false);
-        player.position = spawnPoint.position;
-        stat.healthPoint = stat.maxHealthPoint;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
