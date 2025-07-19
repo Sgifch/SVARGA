@@ -11,8 +11,12 @@ public class ControllHealthPoint : MonoBehaviour
     public float flashTime = 1f;
     public AnimationCurve flashCurve;
     public GameObject effectDamage;
+
+    public bool useGameManager;
+
     private State stateH = State.Idle; //Состояние здоровья игрока
 
+    private GameObject gameManager;
     private float currentHealthPoint;
     private GameObject healthBar;
     private Material material;

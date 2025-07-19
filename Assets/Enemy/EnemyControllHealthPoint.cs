@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyControllHealthPoint : MonoBehaviour
@@ -12,6 +13,9 @@ public class EnemyControllHealthPoint : MonoBehaviour
     public float flashTime = 0.5f;
     public AnimationCurve flashCurve;
     public GameObject effectDamage;
+
+    public bool useGameManager = false;
+    private GameObject gameManager;
 
     private Material material;
     private Coroutine _hitDamageEffect;
@@ -27,6 +31,10 @@ public class EnemyControllHealthPoint : MonoBehaviour
             material = gameObject.GetComponent<SpriteRenderer>().material;
         }
 
+        if (useGameManager)
+        {
+            gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        }
     }
     public void Damage(int _attackPoint)
     {
@@ -49,6 +57,10 @@ public class EnemyControllHealthPoint : MonoBehaviour
     {
         Vector3 spawnPosition = gameObject.transform.position + shiftSpawnEffect;
         Instantiate(effectDeath, spawnPosition, gameObject.transform.rotation);
+        if (useGameManager)
+        {
+            gameManager.GetComponent<GameManager>().ActivateTrigger();
+        }
         Destroy(gameObject);
     }
 
