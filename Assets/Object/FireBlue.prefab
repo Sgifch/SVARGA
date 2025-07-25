@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 884890383965993146}
   - component: {fileID: 4699701025754328413}
   m_Layer: 0
-  m_Name: Fire_blue_0
+  m_Name: FireBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
