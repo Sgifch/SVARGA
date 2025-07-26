@@ -19,7 +19,7 @@ public class MainCharacterAnimScript : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        MainCharacterControllerW function = animator.gameObject.GetComponent <MainCharacterControllerW> ();
+        ControllMove function = animator.gameObject.GetComponent <ControllMove> ();
         function.isAttack = false;
     }
 

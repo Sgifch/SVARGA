@@ -1,20 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
-public class MainCharacterControllerW : MonoBehaviour
+public class ControllMove : MonoBehaviour
 {
-
     //Движения и физика
     public Animator anim;
     public float speed;
     public Rigidbody2D rb;
 
-    float ForwardBehind;
-    float LeftRight;
+    private float ForwardBehind;
+    private float LeftRight;
 
     private Vector2 moveD;
     private Vector2 LastmoveD;
@@ -24,12 +20,14 @@ public class MainCharacterControllerW : MonoBehaviour
     public bool isShiftAttack = false;
 
     //Доступ к статам
-    public characterStat stat;
     public inventoryManager dataItem;
 
 
     void Start()
     {
+        anim = gameObject.GetComponent<Animator>();
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        dataItem = gameObject.GetComponent<inventoryManager>();
 
     }
 
@@ -41,7 +39,7 @@ public class MainCharacterControllerW : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && !dataItem.isOpened && !isAttack && !isMove)
         {
-            
+
             AttackWeapon();
         }
 
@@ -61,7 +59,7 @@ public class MainCharacterControllerW : MonoBehaviour
             switch (_lastAxes)
             {
                 case "u":
-                    rb.velocity = new Vector2(0f, 7f); 
+                    rb.velocity = new Vector2(0f, 7f);
                     break;
 
                 case "d":
@@ -88,7 +86,7 @@ public class MainCharacterControllerW : MonoBehaviour
         ForwardBehind = Input.GetAxisRaw("Vertical");
         LeftRight = Input.GetAxisRaw("Horizontal");
 
-        if ((ForwardBehind == 0 && LeftRight == 0) && moveD.x != 0 || moveD.y != 0) 
+        if ((ForwardBehind == 0 && LeftRight == 0) && moveD.x != 0 || moveD.y != 0)
         {
             LastmoveD = moveD;
         }
@@ -168,7 +166,7 @@ public class MainCharacterControllerW : MonoBehaviour
 
             GameObject attackWeapon = Instantiate(weapon.item.itemObject, spawnPosition + shift, gameObject.transform.rotation, gameObject.transform);
             Animator animWeapon = attackWeapon.GetComponent<Animator>();
-            
+
 
             animWeapon.SetFloat("LastMoveDx", LastmoveD.x);
             animWeapon.SetFloat("LastMoveDy", LastmoveD.y);
@@ -177,15 +175,6 @@ public class MainCharacterControllerW : MonoBehaviour
             anim.SetTrigger("Attack");
             animWeapon.SetTrigger("Attack");
         }
-    }
-
-    //Блок использования вещей инвентаря -------------------------------------------------
-    public void UseFood(inventorySlot useItem) //засунуть потом в другой код
-    {
-        foodItem food = (foodItem)useItem.item; //Явное преобразование к классу
-        int recoveryHealth = food.healthAmount;
-        stat.healthPoint = stat.healthPoint + recoveryHealth;
-
     }
 
     //Блок апимации----------------------------------------------------------------------------------

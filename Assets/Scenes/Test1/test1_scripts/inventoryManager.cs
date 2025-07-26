@@ -6,30 +6,28 @@ using UnityEngine.UI;
 
 public class inventoryManager : MonoBehaviour
 {
-    public GameObject UIPanel;
-    public Transform inventoryPanel;
+    private GameObject UI;
 
-    public GameObject UIPanelFast;
-    public Transform inventoryPanelFast;
+    private GameObject inventory;
+    private Transform inventoryPanel;
 
-    public GameObject UIPanelArmor;
-    public Transform inventoryArmor;
+    private GameObject UIPanelFast;
+    private Transform inventoryPanelFast;
 
-    public GameObject UIPanelWeapon;
-    public Transform inventoryWeapon;
+    private GameObject UIPanelArmor;
+    private Transform inventoryArmor;
 
-    public GameObject weaponFastPanel;
-    public Transform _weaponFastPanel;
+    private GameObject UIPanelWeapon;
+    private Transform inventoryWeapon;
 
-    public Transform panelSelectSlot;
+    private GameObject UIWeaponFast;
+    private Transform weaponFastPanel;
 
-    public GameObject barPanel;
-
-    public MainCharacterControllerW mainCharacter;
+    private GameObject barPanel;
 
     public bool isOpened;
 
-    public int indexSlot; //индекс выбранного слота
+    public int indexSlot; 
 
     bool collisionStay = false;
     Collider2D collision = null;
@@ -43,26 +41,43 @@ public class inventoryManager : MonoBehaviour
 
     private void Awake()
     {
-        weaponFastPanel = GameObject.Find("WeaponFastPanel");
-        _weaponFastPanel = weaponFastPanel.transform.GetChild(0).GetComponent<Transform>();
+        UI = GameObject.Find("UI");
+
+        inventory = UI.transform.GetChild(0).gameObject;
+        inventoryPanel = inventory.transform;
+
+        UIPanelArmor = inventoryPanel.GetChild(0).GetChild(1).GetChild(0).gameObject;
+        inventoryArmor = UIPanelArmor.transform;
+
+        UIPanelWeapon = inventoryPanel.GetChild(0).GetChild(1).GetChild(1).gameObject;
+        inventoryWeapon = UIPanelWeapon.transform;
+
+        UIPanelFast = UI.transform.GetChild(1).gameObject;
+        inventoryPanelFast = UIPanelFast.transform;
+
+        UIWeaponFast = UI.transform.GetChild(2).gameObject;
+        weaponFastPanel = UIWeaponFast.transform;
+
+        barPanel = UI.transform.GetChild(3).gameObject;
+
     }
     void Start()
     {
       
 
-        for (int i=0; i < inventoryPanel.childCount; i++) //мб этот блок потом засунуть в одну функцию для удобства
+        for (int i=0; i < inventoryPanel.GetChild(0).GetChild(0).childCount; i++) //мб этот блок потом засунуть в одну функцию для удобства
         {
-            if (inventoryPanel.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+            if (inventoryPanel.GetChild(0).GetChild(0).GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
             {
-                slots.Add(inventoryPanel.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+                slots.Add(inventoryPanel.GetChild(0).GetChild(0).GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
             }
         }
 
-        for (int i=0; i < inventoryPanelFast.childCount; i++)
+        for (int i=0; i < inventoryPanelFast.GetChild(1).childCount; i++)
         {
-            if (inventoryPanelFast.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+            if (inventoryPanelFast.GetChild(1).GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
             {
-                slotsFast.Add(inventoryPanelFast.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+                slotsFast.Add(inventoryPanelFast.GetChild(1).GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
             }
         }
 
@@ -83,12 +98,17 @@ public class inventoryManager : MonoBehaviour
         }
 
         //Слоты для отображения оружия
-        for (int i = 0; i < _weaponFastPanel.childCount; i++)
+        for (int i = 0; i < weaponFastPanel.GetChild(0).childCount; i++)
         {
-            if (_weaponFastPanel.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+            if (weaponFastPanel.GetChild(0).GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
             {
-                slotsWeaponFast.Add(_weaponFastPanel.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+                slotsWeaponFast.Add(weaponFastPanel.GetChild(0).GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
             }
+        }
+
+        for (int i=0; i < inventoryPanelFast.GetChild(1).childCount; i++)
+        {
+            selectSlot.Add(inventoryPanelFast.GetChild(1).GetChild(i).GetChild(1).gameObject);
         }
 
         //Картинки, указывающие на выбранный слот
@@ -101,7 +121,7 @@ public class inventoryManager : MonoBehaviour
         selectSlot[0].SetActive(true);
         SelectSlot(1);
 
-        UIPanel.SetActive(false);
+        inventory.SetActive(false);
 
     }
 
@@ -113,15 +133,15 @@ public class inventoryManager : MonoBehaviour
             if (isOpened)
             {
                 UIPanelFast.SetActive(false);
-                weaponFastPanel.SetActive(false);
-                UIPanel.SetActive(true);
+                UIWeaponFast.SetActive(false);
+                inventory.SetActive(true);
                 barPanel.SetActive(false);
             }
             else
             {
                 UIPanelFast.SetActive(true);
-                weaponFastPanel.SetActive(true);
-                UIPanel.SetActive(false);
+                UIWeaponFast.SetActive(true);
+                inventory.SetActive(false);
                 barPanel.SetActive(true);
             }
         }
@@ -228,9 +248,10 @@ public class inventoryManager : MonoBehaviour
        
     }
 
-    private void CopySlots() //Копирование предметов из первых 6 слотов
+    //Копирование слотов
+    private void CopySlots()
     {
-        for (int i =0; i < inventoryPanelFast.childCount; i++) //Скорее всего тут есть проблема с тем когда слот остаётся пкстым
+        for (int i =0; i < inventoryPanelFast.GetChild(1).childCount; i++)
         {
             if (slots[i].isEmpty == false)
             {
@@ -245,7 +266,7 @@ public class inventoryManager : MonoBehaviour
         }
 
         //Для части слотов с отображением оружия нужно потом переделать
-        for (int i = 0; i < _weaponFastPanel.childCount; i++)
+        for (int i = 0; i < weaponFastPanel.GetChild(0).childCount; i++)
         {
             if (slotsWeapon[i].isEmpty == false)
             {
@@ -273,18 +294,20 @@ public class inventoryManager : MonoBehaviour
 
     }
 
-    //Использование предмета
+    //Использование предметов---------------------------------------------------------------------------
     public void UseItem(int _indexSlot)
     {
         int _index = _indexSlot - 1;
 
         if (slots[_index].item != null)
         {
-            if (slots[_index].item.itemType is ItemType.food) //Если объект еда (Сделать через switch)
+            switch (slots[_index].item.itemType)
             {
-                mainCharacter.UseFood(slots[_index]);
-                SubtractionItem(_index);
-
+                case ItemType.food:
+                    foodItem food = (foodItem)slots[_index].item;
+                    gameObject.GetComponent<ControllHealthPoint>().Recovery(food.healthAmount);
+                    SubtractionItem(_index);
+                    break;
             }
         }
     }

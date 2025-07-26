@@ -75,6 +75,7 @@ public class ControllHealthPoint : MonoBehaviour
 
     }
 
+    //Ёффект получени€ урона
     private IEnumerator HitDamageEffect()
     {
         float timer = 0f;
