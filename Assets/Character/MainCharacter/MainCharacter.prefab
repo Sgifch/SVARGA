@@ -157,7 +157,6 @@ MonoBehaviour:
   isMove: 0
   isAttack: 0
   isShiftAttack: 0
-  stat: {fileID: 11400000, guid: 5bd6636900214184ea55b69cba9c55e9, type: 2}
   dataItem: {fileID: 0}
 --- !u!114 &6396156261152944558
 MonoBehaviour:
@@ -171,19 +170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4271a082b4149f64dafc0c4f740d1868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIPanel: {fileID: 0}
-  inventoryPanel: {fileID: 0}
-  UIPanelFast: {fileID: 0}
-  inventoryPanelFast: {fileID: 0}
-  UIPanelArmor: {fileID: 0}
-  inventoryArmor: {fileID: 0}
-  UIPanelWeapon: {fileID: 0}
-  inventoryWeapon: {fileID: 0}
-  weaponFastPanel: {fileID: 0}
-  _weaponFastPanel: {fileID: 0}
-  panelSelectSlot: {fileID: 0}
-  barPanel: {fileID: 0}
-  mainCharacter: {fileID: 0}
   isOpened: 1
   indexSlot: 0
   slots: []
@@ -191,13 +177,7 @@ MonoBehaviour:
   slotsArmor: []
   slotsWeapon: []
   slotsWeaponFast: []
-  selectSlot:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  selectSlot: []
 --- !u!114 &5403319387733519631
 MonoBehaviour:
   m_ObjectHideFlags: 0

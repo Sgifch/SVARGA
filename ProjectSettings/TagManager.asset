@@ -12,6 +12,8 @@ TagManager:
   - WeaponSpawn
   - HealthBar
   - GameManager
+  - Rooms
+  - GenerationManager
   layers:
   - Default
   - TransparentFX
