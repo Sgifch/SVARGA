@@ -52,7 +52,7 @@ public class ControllMove : MonoBehaviour
 
         isMove = rb.velocity.magnitude > 0.1f;
 
-        if (isShiftAttack) //Сдвиг при атаке (мб потом более оптимизировано сделать)
+        if (isShiftAttack) //Сдвиг при атаке (мб потом более оптимизировано сделать) Сделать под состояния???
         {
             string _lastAxes = LastAxes();
 

@@ -20,26 +20,47 @@ public class RoomSpawner : MonoBehaviour
     public bool isSpawn = false;
     private float waitTime = 3f;
 
-    private int counterRight = 0;
-
     private void Start()
     {
         variants = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomVariants>();
         managerGeneration = GameObject.FindGameObjectWithTag("GenerationManager").GetComponent<ManagerLevelGeneration>();
-        Destroy(gameObject, waitTime);
-        Invoke("Spawn", 0.2f);
+        //Destroy(gameObject, waitTime);
+        Invoke("Spawn", 0.5f);
+        
     }
 
     public void Spawn()
     {
+
         if (!isSpawn)
         {
             switch (direction)
             {
                 case Direction.Up:
+                    if (managerGeneration.counterUp < managerGeneration.maxUp)
+                    {
+                        rand = Random.Range(0, variants.upRoom.Length);
+                        Instantiate(variants.upRoom[rand], transform.position, transform.rotation);
+                        managerGeneration.counterUp++;
+                    }
+                    else
+                    {
+                        Instantiate(variants.endUpRoom, transform.position, transform.rotation);
+                    }
                     break;
 
                 case Direction.Down:
+
+                    if (managerGeneration.counterDown < managerGeneration.maxDown)
+                    {
+                        rand = Random.Range(0, variants.downRoom.Length);
+                        Instantiate(variants.downRoom[rand], transform.position, transform.rotation);
+                        managerGeneration.counterDown++;
+                    }
+                    else
+                    {
+                        Instantiate(variants.endDownRoom, transform.position, transform.rotation);
+                    }
                     break;
 
                 case Direction.Right:
@@ -52,9 +73,8 @@ public class RoomSpawner : MonoBehaviour
                     }
                     else
                     {
-                        //Спавн затычки
+                        Instantiate(variants.endRightRoom, transform.position, transform.rotation);
                     }
-
                         break;
 
                 case Direction.Left:
@@ -62,6 +82,15 @@ public class RoomSpawner : MonoBehaviour
             }
 
             isSpawn = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "RoomPoint" && collision.GetComponent<RoomSpawner>().isSpawn)
+        {
+            print("deletRoom");
+            Destroy(gameObject);
         }
     }
 }

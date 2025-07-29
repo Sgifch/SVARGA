@@ -8,4 +8,9 @@ public class RoomVariants : MonoBehaviour
     public GameObject[] downRoom;
     public GameObject[] rightRoom;
     public GameObject[] leftRoom;
+
+    public GameObject endUpRoom;
+    public GameObject endDownRoom;
+    public GameObject endRightRoom;
+    public GameObject endLeftRoom;
 }
