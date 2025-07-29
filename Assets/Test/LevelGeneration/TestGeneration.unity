@@ -2566,8 +2566,10 @@ MonoBehaviour:
   - {fileID: 7167564259850860525, guid: 55efc383e1dbfae4f97756a365dc58be, type: 3}
   downRoom:
   - {fileID: 7167564259850860525, guid: 6cc4c5c474abbae46bce65a120a8d13e, type: 3}
+  - {fileID: 7167564259850860525, guid: e69402509afba2b4cab9119ce88c3a21, type: 3}
   rightRoom:
   - {fileID: 7167564259850860525, guid: bf549296f0267554da92d8b67158c89e, type: 3}
+  - {fileID: 7167564259850860525, guid: 93ce7e8b8a58898409e996200b92246a, type: 3}
   leftRoom: []
   endUpRoom: {fileID: 7167564259850860525, guid: 5ceca4aa3bbe2594993e3d94380b0495, type: 3}
   endDownRoom: {fileID: 7167564259850860525, guid: e69402509afba2b4cab9119ce88c3a21, type: 3}
@@ -2617,10 +2619,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a157ba4b8c903d54a9173d4287827ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxUp: 2
-  maxDown: 2
-  maxLeft: 2
-  maxRight: 4
+  maxUp: 3
+  maxDown: 3
+  maxLeft: 3
+  maxRight: 5
   counterUp: 0
   counterDown: 0
   counterLeft: 0

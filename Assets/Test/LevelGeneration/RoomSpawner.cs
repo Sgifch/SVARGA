@@ -18,6 +18,7 @@ public class RoomSpawner : MonoBehaviour
     private ManagerLevelGeneration managerGeneration;
     private int rand;
     public bool isSpawn = false;
+    //public bool isColl
     private float waitTime = 3f;
 
     private void Start()
@@ -25,7 +26,7 @@ public class RoomSpawner : MonoBehaviour
         variants = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomVariants>();
         managerGeneration = GameObject.FindGameObjectWithTag("GenerationManager").GetComponent<ManagerLevelGeneration>();
         //Destroy(gameObject, waitTime);
-        Invoke("Spawn", 0.5f);
+        Invoke("Spawn", 3f);
         
     }
 
@@ -85,11 +86,16 @@ public class RoomSpawner : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "RoomPoint" && collision.GetComponent<RoomSpawner>().isSpawn)
+        if (collision.CompareTag("RoomPoint") && collision.GetComponent<RoomSpawner>().isSpawn)
         {
-            print("deletRoom");
+
+            print(transform.parent.gameObject + ": Delete Room");
+            Destroy(gameObject);
+        }
+        else if (collision.CompareTag("RoomPoint"))
+        {
             Destroy(gameObject);
         }
     }
