@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ManagerLevelGeneration : MonoBehaviour
 {
-    [Header("Количество уровней")]
+    [Header("Количество комнат")]
     public int maxUp;
     public int maxDown;
     public int maxLeft;
@@ -15,7 +15,19 @@ public class ManagerLevelGeneration : MonoBehaviour
     public int counterLeft;
     public int counterRight;
 
-    public GameObject wall;
+    [Header("Список комнат")]
+    public RoomData roomData;
+
+    [Header("Частота появления комнат")]
+    public int fTreasureRoom = 1;
+    public int fNormalRoom = 5;
+
+    private RoomVariants roomList;
+    private void Awake()
+    {
+        roomList = GameObject.Find("Rooms").GetComponent<RoomVariants>();
+        CreateListRoom();
+    }
     void Start()
     {
         
@@ -27,8 +39,44 @@ public class ManagerLevelGeneration : MonoBehaviour
         
     }
 
-    public void WallSpawn()
+    //Загрузка массива комнат
+    private void CreateListRoom()
     {
+        for(int i=0; i<fNormalRoom; i++)
+        {
+            foreach (GameObject room in roomData.normalRoomUp)
+            {
+                roomList.upRoom.Add(room);
+            }
 
+            foreach (GameObject room in roomData.normalRoomDown)
+            {
+                roomList.downRoom.Add(room);
+            }
+
+            foreach (GameObject room in roomData.normalRoomRight)
+            {
+                roomList.rightRoom.Add(room);
+            }
+
+        }
+
+        for (int i = 0; i<fTreasureRoom; i++)
+        {
+            foreach (GameObject room in roomData.treasureRoomUp)
+            {
+                roomList.upRoom.Add(room);
+            }
+
+            foreach (GameObject room in roomData.treasureRoomDown)
+            {
+                roomList.downRoom.Add(room);
+            }
+
+            foreach (GameObject room in roomData.treasureRoomRight)
+            {
+                roomList.rightRoom.Add(room);
+            }
+        }
     }
 }

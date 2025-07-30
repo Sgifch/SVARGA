@@ -27,8 +27,8 @@ public class RoomSpawner : MonoBehaviour
     {
         variants = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomVariants>();
         managerGeneration = GameObject.FindGameObjectWithTag("GenerationManager").GetComponent<ManagerLevelGeneration>();
-        //Destroy(gameObject, waitTime);
-        Invoke("Spawn", 1f);
+        Destroy(gameObject, waitTime);
+        Invoke("Spawn", 0.5f);
         //Destroy(gameObject, waitTime);
         
     }
@@ -43,7 +43,7 @@ public class RoomSpawner : MonoBehaviour
                 case Direction.Up:
                     if (managerGeneration.counterUp < managerGeneration.maxUp)
                     {
-                        rand = Random.Range(0, variants.upRoom.Length);
+                        rand = Random.Range(0, variants.upRoom.Count);
                         Instantiate(variants.upRoom[rand], transform.position, transform.rotation);
                         managerGeneration.counterUp++;
                     }
@@ -57,7 +57,7 @@ public class RoomSpawner : MonoBehaviour
 
                     if (managerGeneration.counterDown < managerGeneration.maxDown)
                     {
-                        rand = Random.Range(0, variants.downRoom.Length);
+                        rand = Random.Range(0, variants.downRoom.Count);
                         Instantiate(variants.downRoom[rand], transform.position, transform.rotation);
                         managerGeneration.counterDown++;
                     }
@@ -71,7 +71,7 @@ public class RoomSpawner : MonoBehaviour
 
                     if (managerGeneration.counterRight<managerGeneration.maxRight) 
                     {
-                        rand = Random.Range(0, variants.rightRoom.Length);
+                        rand = Random.Range(0, variants.rightRoom.Count);
                         Instantiate(variants.rightRoom[rand], transform.position, transform.rotation);
                         managerGeneration.counterRight++;
                     }

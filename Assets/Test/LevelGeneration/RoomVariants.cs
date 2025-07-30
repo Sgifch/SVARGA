@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class RoomVariants : MonoBehaviour
 {
-    public GameObject[] upRoom;
-    public GameObject[] downRoom;
-    public GameObject[] rightRoom;
-    public GameObject[] leftRoom;
+    public List<GameObject> upRoom = new List<GameObject>();
+    public List<GameObject> downRoom = new List<GameObject>();
+    public List<GameObject> rightRoom = new List<GameObject>();
+    public List<GameObject> leftRoom = new List<GameObject>();
 
     public GameObject endUpRoom;
     public GameObject endDownRoom;
     public GameObject endRightRoom;
-    public GameObject endLeftRoom;
 }
