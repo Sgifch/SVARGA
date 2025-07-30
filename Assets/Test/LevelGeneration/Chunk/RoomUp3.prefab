@@ -524,6 +524,10 @@ PrefabInstance:
       propertyPath: direction
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7707808046589900200, guid: fb94446b8ca06ec4e8e8ca44ba35b01a, type: 3}
+      propertyPath: shiftWall.x
+      value: -30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

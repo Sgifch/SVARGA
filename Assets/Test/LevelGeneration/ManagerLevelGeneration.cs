@@ -14,6 +14,8 @@ public class ManagerLevelGeneration : MonoBehaviour
     public int counterDown;
     public int counterLeft;
     public int counterRight;
+
+    public GameObject wall;
     void Start()
     {
         
@@ -23,5 +25,10 @@ public class ManagerLevelGeneration : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void WallSpawn()
+    {
+
     }
 }

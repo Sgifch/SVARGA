@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 0
+  wall: {fileID: 5778103140477970176, guid: 796b67d3542f1684d9e6ef1a5bb48858, type: 3}
+  shiftWall: {x: 0, y: 0, z: 0}
   isSpawn: 0
 --- !u!58 &1403097007582194699
 CircleCollider2D:

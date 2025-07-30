@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RoomSpawner : MonoBehaviour
 {
     public Direction direction;
+    public GameObject wall;
+    public Vector3 shiftWall;
     public enum Direction
     {
         Up,
         Down,
         Right,
-        Left,
         None
     }
 
@@ -19,14 +21,15 @@ public class RoomSpawner : MonoBehaviour
     private int rand;
     public bool isSpawn = false;
     //public bool isColl
-    private float waitTime = 3f;
+    private float waitTime = 2f;
 
     private void Start()
     {
         variants = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomVariants>();
         managerGeneration = GameObject.FindGameObjectWithTag("GenerationManager").GetComponent<ManagerLevelGeneration>();
         //Destroy(gameObject, waitTime);
-        Invoke("Spawn", 3f);
+        Invoke("Spawn", 1f);
+        //Destroy(gameObject, waitTime);
         
     }
 
@@ -77,9 +80,6 @@ public class RoomSpawner : MonoBehaviour
                         Instantiate(variants.endRightRoom, transform.position, transform.rotation);
                     }
                         break;
-
-                case Direction.Left:
-                    break;
             }
 
             isSpawn = true;
@@ -92,11 +92,31 @@ public class RoomSpawner : MonoBehaviour
         {
 
             print(transform.parent.gameObject + ": Delete Room");
+            wallSpawn();
             Destroy(gameObject);
         }
         else if (collision.CompareTag("RoomPoint"))
         {
+            wallSpawn();
             Destroy(gameObject);
+        }
+    }
+
+    private void wallSpawn()
+    {
+        switch (direction)
+        {
+            case Direction.Up:
+                Instantiate(wall, transform.position + shiftWall, transform.rotation); //Потом rotation переделать под стены
+                break;
+
+            case Direction.Down:
+                Instantiate(wall, transform.position + shiftWall, transform.rotation);
+                break;
+
+            case Direction.Right:
+                Instantiate(wall, transform.position + shiftWall, transform.rotation);
+                break;
         }
     }
 }
