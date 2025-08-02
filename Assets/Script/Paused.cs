@@ -54,8 +54,28 @@ public class Paused : MonoBehaviour
 
     public void ChangeResolution(int index) //Изменение разрешения
     {
+        resolutionDropdown.ClearOptions();
+        resolutions = Screen.resolutions;
+        List<string> options = new List<string>();
+
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            string option = resolutions[i].width + " x " + resolutions[i].height;
+            options.Add(option);
+
+            if (resolutions[i].Equals(Screen.currentResolution))
+            {
+                currResolutionIndex = i;
+            }
+        }
+
+        resolutionDropdown.AddOptions(options); //Добавление элементов в выпадающий список
+        resolutionDropdown.value = currResolutionIndex; //Выделение пункта с текущим разрешением
+        resolutionDropdown.RefreshShownValue(); //Обновление отображаемого значения
+
         currResolutionIndex = index;
     }
+
 
     public void ChangeFullscreenMode(bool val) //Включение или отключение полноэкранного режима
     {
@@ -70,5 +90,13 @@ public class Paused : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void SaveSettings()
+    {
+        audioMixer.SetFloat("MasterVolume", volume); 
+        QualitySettings.SetQualityLevel(quality); 
+        Screen.fullScreen = isFullscreen; 
+        Screen.SetResolution(Screen.resolutions[currResolutionIndex].width, Screen.resolutions[currResolutionIndex].height, isFullscreen); 
     }
 }
