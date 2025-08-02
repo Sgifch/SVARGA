@@ -4178,6 +4178,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1171716413}
     m_Modifications:
+    - target: {fileID: 437294206708884607, guid: f7643d0738872cb43a8e1f66c6b5e1d0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852065430859417307, guid: f7643d0738872cb43a8e1f66c6b5e1d0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8070609617530953184, guid: f7643d0738872cb43a8e1f66c6b5e1d0, type: 3}
       propertyPath: m_Name
       value: Fontain
