@@ -25,7 +25,7 @@ public class ManagerLevelGeneration : MonoBehaviour
     private RoomVariants roomList;
     private void Awake()
     {
-        roomList = GameObject.Find("Rooms").GetComponent<RoomVariants>();
+        roomList = GameObject.Find("RoomsList").GetComponent<RoomVariants>();
         CreateListRoom();
     }
     void Start()
