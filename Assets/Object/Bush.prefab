@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9066735661257103312}
   - component: {fileID: 6372206990602290524}
   - component: {fileID: 4873703805416116037}
+  - component: {fileID: 861157973466088232}
   m_Layer: 0
   m_Name: Bush
   m_TagString: Untagged
@@ -158,3 +159,19 @@ PolygonCollider2D:
       - {x: 0.546875, y: -1.265625}
       - {x: 0.859375, y: -1.140625}
   m_UseDelaunayMesh: 0
+--- !u!114 &861157973466088232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7993294811994483300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa0352a4d56abd42ad2fc69deb72448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 3.1477969, y: 2.5116587, z: 4}
+  m_Center: {x: 0.0047878027, y: -0.010195732, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
