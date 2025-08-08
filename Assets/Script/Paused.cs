@@ -11,6 +11,8 @@ public class Paused : MonoBehaviour
     GameObject pause;
     [SerializeField]
     GameObject settings;
+    [SerializeField]
+    GameObject exit;
 
     public float volume = 0; //Громкость
     public int quality = 0; //Качество
@@ -23,6 +25,8 @@ public class Paused : MonoBehaviour
     void Start()
     {
         pause.SetActive(false);
+        settings.SetActive(false);
+        exit.SetActive(false);
     }
 
     // Update is called once per frame
@@ -47,6 +51,11 @@ public class Paused : MonoBehaviour
         settings.SetActive(true);
     }
 
+    public void SettingsOff()
+    {
+        settings.SetActive(false);
+    }
+
     public void ChangeVolume(float val) //Изменение звука
     {
         volume = val;
@@ -54,6 +63,8 @@ public class Paused : MonoBehaviour
 
     public void ChangeResolution(int index) //Изменение разрешения
     {
+        currResolutionIndex = index;
+
         resolutionDropdown.ClearOptions();
         resolutions = Screen.resolutions;
         List<string> options = new List<string>();
@@ -72,10 +83,7 @@ public class Paused : MonoBehaviour
         resolutionDropdown.AddOptions(options); //Добавление элементов в выпадающий список
         resolutionDropdown.value = currResolutionIndex; //Выделение пункта с текущим разрешением
         resolutionDropdown.RefreshShownValue(); //Обновление отображаемого значения
-
-        currResolutionIndex = index;
     }
-
 
     public void ChangeFullscreenMode(bool val) //Включение или отключение полноэкранного режима
     {
@@ -85,6 +93,16 @@ public class Paused : MonoBehaviour
     public void ChangeQuality(int index) //Изменение качества
     {
         quality = index;
+    }
+
+    public void Exit()
+    {
+        exit.SetActive(true);
+    }
+
+    public void NotQuitGame()
+    {
+        exit.SetActive(false);
     }
 
     public void QuitGame()
