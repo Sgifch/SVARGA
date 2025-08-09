@@ -16,10 +16,10 @@ public class ChangeRoom : MonoBehaviour
         None
     }
 
-    public Vector3 shiftUp;
-    public Vector3 shiftDown;
-    public Vector3 shiftRight;
-    public Vector3 shiftLeft;
+    private Vector3 shiftUp = new Vector3(0, 27, 0);
+    private Vector3 shiftDown = new Vector3(0, -27, 0);
+    private Vector3 shiftRight = new Vector3(27, 0, 0);
+    private Vector3 shiftLeft = new Vector3(-27, 0, 0);
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

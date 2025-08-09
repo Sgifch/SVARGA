@@ -13,14 +13,16 @@ MonoBehaviour:
   m_Name: Rooms
   m_EditorClassIdentifier: 
   normalRoomUp:
-  - {fileID: 7167564259850860525, guid: 5ceca4aa3bbe2594993e3d94380b0495, type: 3}
-  - {fileID: 7167564259850860525, guid: 55efc383e1dbfae4f97756a365dc58be, type: 3}
-  - {fileID: 7167564259850860525, guid: 21c2ae42b2d39ef44a5a140800136ae4, type: 3}
+  - {fileID: 1408261893143539913, guid: 04196e091f1d09a499177d0eb52eb5a6, type: 3}
+  - {fileID: 4542873534139513156, guid: 280654e410b8b7e46b5c0530bc7200c5, type: 3}
   normalRoomDown:
-  - {fileID: 7167564259850860525, guid: 6cc4c5c474abbae46bce65a120a8d13e, type: 3}
+  - {fileID: 1870126366426237156, guid: 541de2c9304916041935b29fcce60e2f, type: 3}
+  - {fileID: 8853933765062144779, guid: c01480be269307e468ae4e4f0814e3ae, type: 3}
   normalRoomRight:
-  - {fileID: 7167564259850860525, guid: bf549296f0267554da92d8b67158c89e, type: 3}
-  - {fileID: 7167564259850860525, guid: 93ce7e8b8a58898409e996200b92246a, type: 3}
+  - {fileID: 8451588089423106039, guid: b93cc9b3a9bf9a84b9e86fa0c4db7e12, type: 3}
+  - {fileID: 1996935996618939890, guid: 457aac87a185480458bf3bdc3f7424ea, type: 3}
+  - {fileID: 2268450392165311147, guid: 6c7997bc723a97d478f1e6f086210b81, type: 3}
+  - {fileID: 162213941839092134, guid: 847a77fe4427c834c8b913e0e0af5eaf, type: 3}
   treasureRoomUp:
   - {fileID: 7167564259850860525, guid: 463a13b1ec071754ab12b9552802ca5f, type: 3}
   treasureRoomDown:
