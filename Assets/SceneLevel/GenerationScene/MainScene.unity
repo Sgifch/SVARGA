@@ -255,19 +255,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7278093775393994346, guid: 63b477be85122a144b82bfd44db43033, type: 3}
       propertyPath: m_Color.b
-      value: 0.38679248
+      value: 0.17194541
       objectReference: {fileID: 0}
     - target: {fileID: 7278093775393994346, guid: 63b477be85122a144b82bfd44db43033, type: 3}
       propertyPath: m_Color.g
-      value: 0.31033763
+      value: 0.23584908
       objectReference: {fileID: 0}
     - target: {fileID: 7278093775393994346, guid: 63b477be85122a144b82bfd44db43033, type: 3}
       propertyPath: m_Color.r
-      value: 0.1766109
+      value: 0.05651477
       objectReference: {fileID: 0}
     - target: {fileID: 7278093775393994346, guid: 63b477be85122a144b82bfd44db43033, type: 3}
       propertyPath: m_Intensity
-      value: 1.36
+      value: 1.85
       objectReference: {fileID: 0}
     - target: {fileID: 7278093775393994346, guid: 63b477be85122a144b82bfd44db43033, type: 3}
       propertyPath: m_LightOrder
@@ -593,6 +593,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8745705916967253935, guid: e6246da43cdde484a902e35a7e1fef47, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: c8e4ce55c3e2d5d42b812d65c806453d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

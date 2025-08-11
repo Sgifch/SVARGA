@@ -16,3 +16,6 @@ MonoBehaviour:
   maxMannaPoint: 20
   healthPoint: 20
   mannaPoint: 20
+  exp: 0
+  lvl: 1
+  maxExp: 64000000c80000002c010000

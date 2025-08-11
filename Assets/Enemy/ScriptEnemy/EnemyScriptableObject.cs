@@ -9,5 +9,7 @@ public class EnemyScriptableObject : ScriptableObject
     public string name;
     public int healthPoint;
     public int attackPoint;
+
+    public int exp;
  
 }

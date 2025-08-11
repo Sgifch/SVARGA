@@ -16,6 +16,7 @@ TagManager:
   - GenerationManager
   - Room
   - RoomPoint
+  - UI
   layers:
   - Default
   - TransparentFX

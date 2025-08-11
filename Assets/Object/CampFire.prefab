@@ -367,7 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Size: {x: 0.858577, y: 0.7449405, z: 4}
   m_Center: {x: -0.004037738, y: -0.45667398, z: 0}
-  m_Area: 0
+  m_Area: 1
   m_AffectedAgents: ffffffff
 --- !u!1 &7463910229969345132
 GameObject:

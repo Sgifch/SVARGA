@@ -9,4 +9,11 @@ public class characterStat : ScriptableObject
     public int maxMannaPoint;
     public int healthPoint;
     public int mannaPoint;
+
+    public int exp;
+    public int lvl = 1;
+    public List<int> maxExp = new List<int>();
+    public int upPoints; //«а эти очки можно будет что-то прокачать
 }
+
+

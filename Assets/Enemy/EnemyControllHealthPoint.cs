@@ -57,6 +57,11 @@ public class EnemyControllHealthPoint : MonoBehaviour
     {
         Vector3 spawnPosition = gameObject.transform.position + shiftSpawnEffect;
         Instantiate(effectDeath, spawnPosition, gameObject.transform.rotation);
+
+        GameObject player = GameObject.FindWithTag("Player");
+        player.GetComponent<ControllStat>().AddExp(enemyProfile.exp);
+
+
         if (useGameManager)
         {
             gameManager.GetComponent<GameManager>().ActivateTrigger();
