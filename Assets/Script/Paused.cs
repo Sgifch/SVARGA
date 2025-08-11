@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement; 
 using UnityEngine.Audio; 
@@ -18,7 +19,7 @@ public class Paused : MonoBehaviour
     public int quality = 0; //Качество
     public bool isFullscreen = false; //Полноэкранный режим
     public AudioMixer audioMixer; //Регулятор громкости
-    public Dropdown resolutionDropdown; //Список с разрешениями для игры
+    public TMP_Dropdown resolutionDropdown; //Список с разрешениями для игры
     private Resolution[] resolutions; //Список доступных разрешений
     private int currResolutionIndex = 0; //Текущее разрешение
 

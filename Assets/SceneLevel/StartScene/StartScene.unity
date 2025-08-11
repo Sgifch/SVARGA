@@ -806,7 +806,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.458
   m_Color: {r: 0.51320755, g: 0.9615114, b: 1, a: 1}
-  m_Intensity: 1.35
+  m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -1297,6 +1297,10 @@ PrefabInstance:
       propertyPath: isFullscreen
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8337724721903393922, guid: 0691bcf8a7e77ba46b9b736b5514000e, type: 3}
+      propertyPath: resolutionDropdown
+      value: 
+      objectReference: {fileID: 661446119}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2109,7 +2113,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.458
   m_Color: {r: 0.71132076, g: 0.97671944, b: 1, a: 1}
-  m_Intensity: 1.46
+  m_Intensity: 0.98
   m_LightVolumeIntensity: 0.09
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -12349,6 +12353,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9017939145817545316, guid: 26e6f020c99e74941a8ca9fb589a106e, type: 3}
   m_PrefabInstance: {fileID: 1130594568}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &661446119 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8313854144754185587, guid: 8403e7280027d1d429be76eac6ea4126, type: 3}
+  m_PrefabInstance: {fileID: 4411517931061377599}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &667160604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16170,7 +16185,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.458
   m_Color: {r: 0.51320755, g: 0.9615114, b: 1, a: 1}
-  m_Intensity: 1.29
+  m_Intensity: 0.76
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -20899,7 +20914,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.458
   m_Color: {r: 0.51320755, g: 0.9615114, b: 1, a: 1}
-  m_Intensity: 1.35
+  m_Intensity: 0.61
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -38635,15 +38650,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7278093775393994346, guid: 63b477be85122a144b82bfd44db43033, type: 3}
       propertyPath: m_Color.b
-      value: 0.3138889
+      value: 0.26415092
       objectReference: {fileID: 0}
     - target: {fileID: 7278093775393994346, guid: 63b477be85122a144b82bfd44db43033, type: 3}
       propertyPath: m_Color.g
-      value: 0.33962262
+      value: 0.18828051
       objectReference: {fileID: 0}
     - target: {fileID: 7278093775393994346, guid: 63b477be85122a144b82bfd44db43033, type: 3}
       propertyPath: m_Color.r
-      value: 0.16148093
+      value: 0.09818439
       objectReference: {fileID: 0}
     - target: {fileID: 7278093775393994346, guid: 63b477be85122a144b82bfd44db43033, type: 3}
       propertyPath: m_Intensity
