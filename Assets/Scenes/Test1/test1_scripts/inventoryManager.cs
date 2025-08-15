@@ -24,9 +24,10 @@ public class inventoryManager : MonoBehaviour
     private Transform weaponFastPanel;
 
     private GameObject barPanel;
+    public GameObject upgradeMenu;
 
     public bool isOpened;
-
+    private bool isKipisheOpen = false;
     public int indexSlot; 
 
     bool collisionStay = false;
@@ -129,21 +130,7 @@ public class inventoryManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab)) //Открытие меню и закрытие предметов быстрого доступа
         {
-            isOpened = !isOpened;
-            if (isOpened)
-            {
-                UIPanelFast.SetActive(false);
-                UIWeaponFast.SetActive(false);
-                inventory.SetActive(true);
-                barPanel.SetActive(false);
-            }
-            else
-            {
-                UIPanelFast.SetActive(true);
-                UIWeaponFast.SetActive(true);
-                inventory.SetActive(false);
-                barPanel.SetActive(true);
-            }
+            MenuControll();
         }
 
         if (collisionStay) //Подбирается предмет
@@ -164,6 +151,7 @@ public class inventoryManager : MonoBehaviour
                         collision.gameObject.GetComponent<WeaponSpawnScript>().TakeItem();
                     }
                 }
+
             }
         }
 
@@ -202,6 +190,36 @@ public class inventoryManager : MonoBehaviour
                      //Игрок не должен с ними взаимодействовать
                      //Они нужны только для отображения предметов
 
+    }
+
+    public void ControllHUD(bool open)
+    {
+        if (open)
+        {
+
+        }
+        else
+        {
+
+        }
+    }
+    public void MenuControll()
+    {
+        isOpened = !isOpened;
+        if (isOpened)
+        {
+            UIPanelFast.SetActive(false);
+            UIWeaponFast.SetActive(false);
+            inventory.SetActive(true);
+            barPanel.SetActive(false);
+        }
+        else
+        {
+            UIPanelFast.SetActive(true);
+            UIWeaponFast.SetActive(true);
+            inventory.SetActive(false);
+            barPanel.SetActive(true);
+        }
     }
 
    
