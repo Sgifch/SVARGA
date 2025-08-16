@@ -11,9 +11,11 @@ public class UIControll : MonoBehaviour
 
     [Header("Прочие меню")]
     public GameObject upgradeMenu;
+    public GameObject developerMenu;
 
     private bool isStay = false;
-    private bool isOpen = false;
+    public bool isOpen = false;
+    private bool isOpenDev = false; 
     private Collider2D collision;
 
     private void Update()
@@ -28,7 +30,7 @@ public class UIControll : MonoBehaviour
                     {
                         case "Kipishe":
                             ControllActiveHUD(false);
-                            ControllActiveOtherMenu(true);
+                            ControllActiveOtherMenu(upgradeMenu, true);
                             break;
                     }
                     isOpen = true;
@@ -37,10 +39,28 @@ public class UIControll : MonoBehaviour
                 {
                     isOpen = false;
                     ControllActiveHUD(true);
-                    ControllActiveOtherMenu(false);
+                    ControllActiveOtherMenu(upgradeMenu, false);
                 }
             }
         }
+
+
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            if (!isOpenDev)
+            {
+                ControllActiveHUD(false);
+                developerMenu.SetActive(true);
+                isOpenDev = true;
+            }
+            else
+            {
+                developerMenu.SetActive(false);
+                ControllActiveHUD(true);
+                isOpenDev = false;
+            }
+        }
+
     }
     public void ControllActiveHUD(bool active)
     {
@@ -49,9 +69,9 @@ public class UIControll : MonoBehaviour
         HealthBarPanel.SetActive(active);
     }
 
-    public void ControllActiveOtherMenu(bool active)
+    public void ControllActiveOtherMenu(GameObject menu, bool active)
     {
-        upgradeMenu.SetActive(active);
+        menu.SetActive(active);
     }
 
     private void OnTriggerEnter2D(Collider2D _collision)
@@ -64,7 +84,7 @@ public class UIControll : MonoBehaviour
     {
         isStay = false;
         ControllActiveHUD(true);
-        ControllActiveOtherMenu(false);
+        ControllActiveOtherMenu(upgradeMenu, false);
         collision = null;
     }
 }

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5403319387733519631}
   - component: {fileID: 1355885648326942784}
   - component: {fileID: 5458271906684977953}
+  - component: {fileID: 4161853432117312438}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Player
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: -76531923231765067, guid: c0b7b179aea49ca46a03f658ec167b64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -171,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4271a082b4149f64dafc0c4f740d1868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeMenu: {fileID: 0}
   isOpened: 1
   indexSlot: 0
   slots: []
@@ -231,7 +233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a0dbaf7633308a4a929ff34710e9c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStat: {fileID: 11400000, guid: 5bd6636900214184ea55b69cba9c55e9, type: 2}
+  playerConfig: {fileID: 11400000, guid: 5bd6636900214184ea55b69cba9c55e9, type: 2}
+  playerStat: {fileID: 0}
   expBar: {fileID: 0}
   expText: {fileID: 0}
   levelText: {fileID: 0}
@@ -272,3 +275,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0.008463144, y: -0.14551848}
   m_Size: {x: 0.53820896, y: 0.8708414}
   m_Direction: 0
+--- !u!114 &4161853432117312438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529339929942784907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f55dbabdc104b47bc09cb05fb24b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryFast: {fileID: 0}
+  WeaponFastPanel: {fileID: 0}
+  HealthBarPanel: {fileID: 0}
+  upgradeMenu: {fileID: 0}

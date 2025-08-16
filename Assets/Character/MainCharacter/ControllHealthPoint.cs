@@ -14,8 +14,6 @@ public class ControllHealthPoint : MonoBehaviour
 
     public bool useGameManager;
 
-    private State stateH = State.Idle; //Состояние здоровья игрока
-
     private GameObject gameManager;
     private float currentHealthPoint;
     private GameObject healthBar;

@@ -13,15 +13,24 @@ public class GameManager : MonoBehaviour
     public GameObject triggerZone;
     public GameObject signPanel;
 
+    public PlayerStatManager playerStat;
+
     public GameObject screenDeath;
     private int counterEnemy;
     void Awake()
     {
+        playerStat = GameObject.Find("PlayerStatManager").GetComponent<PlayerStatManager>();
         player = GameObject.FindWithTag("Player");
+
+        if (PlayerPrefs.HasKey("exp"))
+        {
+            playerStat.LoadStat();
+        }
     }
 
     private void Start()
     {
+
         signPanel.SetActive(false);
     }
 

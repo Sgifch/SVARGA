@@ -130,7 +130,10 @@ public class inventoryManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab)) //Открытие меню и закрытие предметов быстрого доступа
         {
-            MenuControll();
+            if (!gameObject.GetComponent<UIControll>().isOpen)
+            {
+                MenuControll();
+            }
         }
 
         if (collisionStay) //Подбирается предмет

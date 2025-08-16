@@ -6,13 +6,16 @@ using UnityEngine.UI;
 
 public class ControllStat : MonoBehaviour
 {
-    public characterStat playerStat;
-
+    public characterStat playerConfig;
+    public PlayerStatManager playerStat;
+    
     public Image expBar;
     public TMP_Text expText;
     public TMP_Text levelText;
     void Awake()
     {
+        playerStat = GameObject.Find("PlayerStatManager").GetComponent<PlayerStatManager>();
+
         GameObject UI = GameObject.FindWithTag("UI");
         expBar = UI.transform.GetChild(0).GetChild(0).GetChild(2).GetChild(1).GetComponent<Image>();
         expText = UI.transform.GetChild(0).GetChild(0).GetChild(2).GetChild(1).GetChild(0).GetComponent<TMP_Text>();
@@ -26,11 +29,11 @@ public class ControllStat : MonoBehaviour
     {
         playerStat.exp += _exp;
 
-        if (playerStat.exp >= playerStat.maxExp[playerStat.lvl - 1])
+        if (playerStat.exp >= playerConfig.maxExp[playerStat.lvl])
         {
-            playerStat.exp -= playerStat.maxExp[playerStat.lvl - 1];
+            playerStat.exp -= playerConfig.maxExp[playerStat.lvl];
             playerStat.lvl++;
-            playerStat.upPoints++;
+            playerStat.upPoint++;
         }
 
         ShowExpInformation();
@@ -38,10 +41,10 @@ public class ControllStat : MonoBehaviour
 
     public void ShowExpInformation()
     {
-        levelText.text = playerStat.lvl.ToString();
-        expText.text = playerStat.exp.ToString() + " / " + playerStat.maxExp[playerStat.lvl - 1].ToString();
+        levelText.text = (playerStat.lvl + 1).ToString();
+        expText.text = playerStat.exp.ToString() + " / " + playerConfig.maxExp[playerStat.lvl].ToString();
 
-        float currentExp = (float)(playerStat.exp) / playerStat.maxExp[playerStat.lvl-1];
+        float currentExp = (float)(playerStat.exp) / playerConfig.maxExp[playerStat.lvl];
         expBar.fillAmount = currentExp;
     }
 }
