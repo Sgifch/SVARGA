@@ -33,8 +33,9 @@ public class KipisheFunction : MonoBehaviour
         {
             if (playerStat.maxHP < maxUpgradeHP)
             {
-                playerStat.maxHP += playerConfig.upgradeHP[playerStat.lvl];
+                playerStat.maxHP += playerConfig.upgradeHP[playerStat.lvl - 1];
                 playerStat.upPoint--;
+                GameObject.FindWithTag("Player").GetComponent<ControllHealthPoint>().FullRecovery();
                 ShowKipishe();
             }
         }
@@ -46,7 +47,7 @@ public class KipisheFunction : MonoBehaviour
         {
             if (playerStat.maxManna < maxUpgradeManna)
             {
-                playerStat.maxManna += playerConfig.upgradeManna[playerStat.lvl];
+                playerStat.maxManna += playerConfig.upgradeManna[playerStat.lvl-1];
                 playerStat.upPoint--;
                 ShowKipishe();
             }
@@ -59,7 +60,7 @@ public class KipisheFunction : MonoBehaviour
         {
             if (playerStat.strong < maxUpgradeStrong)
             {
-                playerStat.strong += playerConfig.upgradeStrong[playerStat.lvl];
+                playerStat.strong += playerConfig.upgradeStrong[playerStat.lvl-1];
                 playerStat.upPoint--;
                 ShowKipishe();
             }
@@ -96,6 +97,8 @@ public class KipisheFunction : MonoBehaviour
         }
     }
 
+    //Подсчёт максимальновозможных статов
+    //Сделано для удобства
     public void CountingMaxStat()
     {
         foreach (int stat in playerConfig.upgradeHP)

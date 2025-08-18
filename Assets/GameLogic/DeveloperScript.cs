@@ -36,4 +36,9 @@ public class DeveloperScript : MonoBehaviour
         }
     }
 
+    public void Damage()
+    {
+        player.GetComponent<ControllHealthPoint>().Damage(10);
+    }
+
 }

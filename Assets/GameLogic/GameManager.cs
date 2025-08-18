@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (stat.healthPoint <= 0)
+        if (playerStat.currentHP <= 0)
         {
             Death();
         }

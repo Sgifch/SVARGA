@@ -1296,10 +1296,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCharacter
       objectReference: {fileID: 0}
-    - target: {fileID: 3102873742186281715, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
-      propertyPath: m_SortingOrder
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 4161853432117312438, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
       propertyPath: upgradeMenu
       value: 
@@ -1658,6 +1654,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205681299}
   m_CullTransparentMesh: 1
+--- !u!1 &214363847 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1015837468390584284, guid: 8403e7280027d1d429be76eac6ea4126, type: 3}
+  m_PrefabInstance: {fileID: 2138607363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &217297999 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3873079032391127626, guid: 601ff616990435244bd510cf0888ad63, type: 3}
@@ -4672,6 +4673,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6508947524231799683, guid: e6244dffbdd8bd541b5bc6fdc8ae8356, type: 3}
   m_PrefabInstance: {fileID: 893932848}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &551283906 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3191944729269949591, guid: 8403e7280027d1d429be76eac6ea4126, type: 3}
+  m_PrefabInstance: {fileID: 2138607363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &571441891 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1197701887626652487, guid: 8fd676182571f9f4c9c45269a84a8cb6, type: 3}
@@ -7525,9 +7531,9 @@ MonoBehaviour:
   spawnPoint: {fileID: 0}
   player: {fileID: 0}
   triggerZone: {fileID: 0}
-  signPanel: {fileID: 0}
+  signPanel: {fileID: 551283906}
   playerStat: {fileID: 0}
-  screenDeath: {fileID: 0}
+  screenDeath: {fileID: 214363847}
 --- !u!4 &1095154156
 Transform:
   m_ObjectHideFlags: 0
@@ -20092,10 +20098,6 @@ PrefabInstance:
     - target: {fileID: 8671602104062599434, guid: 8403e7280027d1d429be76eac6ea4126, type: 3}
       propertyPath: m_Name
       value: UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 8743034301109604449, guid: 8403e7280027d1d429be76eac6ea4126, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8849889491386849614, guid: 8403e7280027d1d429be76eac6ea4126, type: 3}
       propertyPath: m_AnchorMax.y

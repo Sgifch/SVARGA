@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 20
-  currentHP: 0
+  currentHP: 20
   maxManna: 20
   currentManna: 0
   strong: 5

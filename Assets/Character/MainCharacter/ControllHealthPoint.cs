@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class ControllHealthPoint : MonoBehaviour
 {
-    public characterStat stat;
+    //public characterStat stat;
+    public PlayerStatManager playerStat;
     public float flashTime = 1f;
     public AnimationCurve flashCurve;
     public GameObject effectDamage;
@@ -29,33 +30,41 @@ public class ControllHealthPoint : MonoBehaviour
     {
         healthBar = GameObject.Find("HealthBar");
         material = GetComponent<SpriteRenderer>().material;
+        playerStat = GameObject.Find("PlayerStatManager").GetComponent<PlayerStatManager>();
+    }
+    private void Start()
+    {
+        ChangeHealthBar();
     }
 
     //Изменеение размера полоски в bar
     public void ChangeHealthBar() 
     {
-        currentHealthPoint = (float)(stat.healthPoint) / stat.maxHealthPoint;
+        currentHealthPoint = (float)(playerStat.currentHP) / playerStat.maxHP;
         healthBar.GetComponent<Image>().fillAmount = currentHealthPoint;
     }
 
     //Востановление
     public void Recovery(int _recoveryPoint)
     {
-        stat.healthPoint = stat.healthPoint + _recoveryPoint;
+        if(playerStat.currentHP > playerStat.maxHP)
+        {
+            playerStat.currentHP = playerStat.currentHP + _recoveryPoint;
+        }
         ChangeHealthBar();
     }
 
     //Полное восстановление
     public void FullRecovery()
     {
-        stat.healthPoint = stat.maxHealthPoint;
+        playerStat.currentHP = playerStat.maxHP;
         ChangeHealthBar();
     }
 
     //Урон
     public void Damage(int _attackPoint)
     {
-        stat.healthPoint = stat.healthPoint - _attackPoint;
+        playerStat.currentHP = playerStat.currentHP - _attackPoint;
         ChangeHealthBar();
         DamageEffect();
     }

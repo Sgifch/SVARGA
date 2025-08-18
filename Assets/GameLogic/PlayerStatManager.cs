@@ -9,8 +9,10 @@ public class PlayerStatManager : MonoBehaviour
 
     public int maxHP;
     public int currentHP;
+
     public int maxManna;
     public int currentManna;
+
     public int strong;
 
     public int exp;

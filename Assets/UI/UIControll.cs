@@ -30,6 +30,7 @@ public class UIControll : MonoBehaviour
                     {
                         case "Kipishe":
                             ControllActiveHUD(false);
+                            collision.gameObject.GetComponent<KipisheFunction>().ShowKipishe();
                             ControllActiveOtherMenu(upgradeMenu, true);
                             break;
                     }
@@ -84,7 +85,10 @@ public class UIControll : MonoBehaviour
     {
         isStay = false;
         ControllActiveHUD(true);
-        ControllActiveOtherMenu(upgradeMenu, false);
+        if(upgradeMenu != null)
+        {
+            ControllActiveOtherMenu(upgradeMenu, false);
+        }
         collision = null;
     }
 }
