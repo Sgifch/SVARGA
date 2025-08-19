@@ -14,6 +14,12 @@ public class Paused : MonoBehaviour
     GameObject settings;
     [SerializeField]
     GameObject exit;
+    [SerializeField]
+    GameObject healthbar;
+    [SerializeField]
+    GameObject weaponfast;
+    [SerializeField]
+    GameObject inventoryfast;
 
     public float volume = 0; //Громкость
     public int quality = 0; //Качество
@@ -28,6 +34,24 @@ public class Paused : MonoBehaviour
         pause.SetActive(false);
         settings.SetActive(false);
         exit.SetActive(false);
+        resolutionDropdown.ClearOptions();
+        resolutions = Screen.resolutions;
+        List<string> options = new List<string>();
+
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            string option = resolutions[i].width + " x " + resolutions[i].height;
+            options.Add(option);
+
+            if (resolutions[i].Equals(Screen.currentResolution))
+            {
+                currResolutionIndex = i;
+            }
+        }
+
+        resolutionDropdown.AddOptions(options); //Добавление элементов в выпадающий список
+        resolutionDropdown.value = currResolutionIndex; //Выделение пункта с текущим разрешением
+        resolutionDropdown.RefreshShownValue(); //Обновление отображаемого значения
     }
 
     // Update is called once per frame
@@ -37,6 +61,9 @@ public class Paused : MonoBehaviour
         {
             pause.SetActive(true);
             Time.timeScale = 0;
+            healthbar.SetActive(false);
+            weaponfast.SetActive(false);
+            inventoryfast.SetActive(false); 
         }
     }
 
@@ -45,6 +72,9 @@ public class Paused : MonoBehaviour
         pause.SetActive(false);
         Time.timeScale = 1;
         settings.SetActive(false);
+        healthbar.SetActive(true);
+        weaponfast.SetActive(true);
+        inventoryfast.SetActive(true);
     }
 
     public void Settings()
@@ -65,25 +95,6 @@ public class Paused : MonoBehaviour
     public void ChangeResolution(int index) //Изменение разрешения
     {
         currResolutionIndex = index;
-
-        resolutionDropdown.ClearOptions();
-        resolutions = Screen.resolutions;
-        List<string> options = new List<string>();
-
-        for (int i = 0; i < resolutions.Length; i++)
-        {
-            string option = resolutions[i].width + " x " + resolutions[i].height;
-            options.Add(option);
-
-            if (resolutions[i].Equals(Screen.currentResolution))
-            {
-                currResolutionIndex = i;
-            }
-        }
-
-        resolutionDropdown.AddOptions(options); //Добавление элементов в выпадающий список
-        resolutionDropdown.value = currResolutionIndex; //Выделение пункта с текущим разрешением
-        resolutionDropdown.RefreshShownValue(); //Обновление отображаемого значения
     }
 
     public void ChangeFullscreenMode(bool val) //Включение или отключение полноэкранного режима

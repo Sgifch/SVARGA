@@ -1299,9 +1299,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 773634562}
     - target: {fileID: 8337724721903393922, guid: 0691bcf8a7e77ba46b9b736b5514000e, type: 3}
+      propertyPath: healthbar
+      value: 
+      objectReference: {fileID: 1515099939}
+    - target: {fileID: 8337724721903393922, guid: 0691bcf8a7e77ba46b9b736b5514000e, type: 3}
+      propertyPath: weaponfast
+      value: 
+      objectReference: {fileID: 99263483}
+    - target: {fileID: 8337724721903393922, guid: 0691bcf8a7e77ba46b9b736b5514000e, type: 3}
       propertyPath: isFullscreen
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8337724721903393922, guid: 0691bcf8a7e77ba46b9b736b5514000e, type: 3}
+      propertyPath: inventoryfast
+      value: 
+      objectReference: {fileID: 1123046869}
     - target: {fileID: 8337724721903393922, guid: 0691bcf8a7e77ba46b9b736b5514000e, type: 3}
       propertyPath: resolutionDropdown
       value: 
