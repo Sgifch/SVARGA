@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PlayerStatManager : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class PlayerStatManager : MonoBehaviour
     //—юда нужно будет перенести здоровье, манну спелы и тд
 
     public int maxHP;
+    public int currentMaxHP; //если этот стат будет работать то надо потом подправить
     public int currentHP;
 
     public int maxManna;
@@ -18,6 +21,15 @@ public class PlayerStatManager : MonoBehaviour
     public int exp;
     public int lvl;
     public int upPoint;
+
+    public int currentStrong;
+
+    private void Start()
+    {
+        currentStrong = strong;
+        currentMaxHP = maxHP;
+
+    }
 
     public void SaveStat()
     {

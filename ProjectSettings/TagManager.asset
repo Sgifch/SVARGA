@@ -18,6 +18,8 @@ TagManager:
   - RoomPoint
   - UI
   - Kipishe
+  - PlayerStatManager
+  - DamageCanvas
   layers:
   - Default
   - TransparentFX

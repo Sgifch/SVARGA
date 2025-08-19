@@ -13,6 +13,9 @@ public class UIControll : MonoBehaviour
     public GameObject upgradeMenu;
     public GameObject developerMenu;
 
+    [Header("Ёффекты урона")]
+    public GameObject damageText;
+
     private bool isStay = false;
     public bool isOpen = false;
     private bool isOpenDev = false; 
@@ -20,7 +23,7 @@ public class UIControll : MonoBehaviour
 
     private void Update()
     {
-        if (isStay)
+        /*if (isStay)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -43,7 +46,7 @@ public class UIControll : MonoBehaviour
                     ControllActiveOtherMenu(upgradeMenu, false);
                 }
             }
-        }
+        }*/
 
 
         if (Input.GetKeyDown(KeyCode.F3))
@@ -62,6 +65,33 @@ public class UIControll : MonoBehaviour
             }
         }
 
+    }
+    public void UphradeMenu()
+    {
+        if (!isOpen)
+        {
+            ControllActiveHUD(false);
+            collision.gameObject.GetComponent<KipisheFunction>().ShowKipishe();
+            ControllActiveOtherMenu(upgradeMenu, true);
+            
+            isOpen = true;
+        }
+        else
+        {
+            isOpen = false;
+            ControllActiveHUD(true);
+            ControllActiveOtherMenu(upgradeMenu, false);
+        }
+    }
+
+    public void UpgradeMenuClose()
+    {
+        ControllActiveHUD(true);
+        if (upgradeMenu != null)
+        {
+            ControllActiveOtherMenu(upgradeMenu, false);
+        }
+        collision = null;
     }
     public void ControllActiveHUD(bool active)
     {
@@ -83,12 +113,6 @@ public class UIControll : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D _collision)
     {
-        isStay = false;
-        ControllActiveHUD(true);
-        if(upgradeMenu != null)
-        {
-            ControllActiveOtherMenu(upgradeMenu, false);
-        }
-        collision = null;
+
     }
 }

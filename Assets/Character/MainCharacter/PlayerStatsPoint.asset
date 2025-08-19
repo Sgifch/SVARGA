@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealthPoint: 20
   maxMannaPoint: 20
-  healthPoint: 10
+  healthPoint: 20
   mannaPoint: 20
   baseHP: 20
   baseManna: 20
-  baseStrong: 5
+  baseStrong: 1
   upgradeHP: 0a000000140000001e000000
   upgradeManna: 0a000000140000001e000000
   upgradeStrong: 0a000000140000001e000000

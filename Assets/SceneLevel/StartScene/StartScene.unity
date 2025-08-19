@@ -19809,6 +19809,10 @@ PrefabInstance:
         \u0432 \u0441\u043E\u043E\u0442\u0432\u0435\u0442\u0441\u0432\u0443\u044E\u0449\u0443\u044E
         \u044F\u0447\u0435\u0439\u043A\u0443"
       objectReference: {fileID: 0}
+    - target: {fileID: 6348382526924759758, guid: d5f496063dd25104f8464070bb04a479, type: 3}
+      propertyPath: signPanel
+      value: 
+      objectReference: {fileID: 829376630}
     - target: {fileID: 6899361666409351113, guid: d5f496063dd25104f8464070bb04a479, type: 3}
       propertyPath: m_Icon
       value: 
@@ -21823,7 +21827,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1197701887626652487, guid: 8fd676182571f9f4c9c45269a84a8cb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5126004
+      value: -1.58
       objectReference: {fileID: 0}
     - target: {fileID: 1197701887626652487, guid: 8fd676182571f9f4c9c45269a84a8cb6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22919,13 +22923,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1029785188}
     m_Modifications:
+    - target: {fileID: 884890383965993146, guid: 8fd676182571f9f4c9c45269a84a8cb6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1197701887626652487, guid: 8fd676182571f9f4c9c45269a84a8cb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.3423464
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 1197701887626652487, guid: 8fd676182571f9f4c9c45269a84a8cb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7657034
+      value: 1.79
       objectReference: {fileID: 0}
     - target: {fileID: 1197701887626652487, guid: 8fd676182571f9f4c9c45269a84a8cb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -25187,6 +25195,10 @@ PrefabInstance:
       value: "\u041E\u0441\u0442\u043E\u0440\u043E\u0436\u043D\u043E \u0432\u043F\u0435\u0440\u0435\u0434\u0438
         \u043B\u043E\u0432\u0443\u0448\u043A\u0438"
       objectReference: {fileID: 0}
+    - target: {fileID: 6348382526924759758, guid: d5f496063dd25104f8464070bb04a479, type: 3}
+      propertyPath: signPanel
+      value: 
+      objectReference: {fileID: 829376630}
     - target: {fileID: 6899361666409351113, guid: d5f496063dd25104f8464070bb04a479, type: 3}
       propertyPath: m_Icon
       value: 
@@ -35598,6 +35610,10 @@ PrefabInstance:
         E, \u0447\u0442\u043E\u0431\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C
         \u041F\u041A\u041C"
       objectReference: {fileID: 0}
+    - target: {fileID: 6348382526924759758, guid: d5f496063dd25104f8464070bb04a479, type: 3}
+      propertyPath: signPanel
+      value: 
+      objectReference: {fileID: 829376630}
     - target: {fileID: 6899361666409351113, guid: d5f496063dd25104f8464070bb04a479, type: 3}
       propertyPath: m_Icon
       value: 
@@ -36651,6 +36667,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1029785188}
     m_Modifications:
+    - target: {fileID: 884890383965993146, guid: 8fd676182571f9f4c9c45269a84a8cb6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1197701887626652487, guid: 8fd676182571f9f4c9c45269a84a8cb6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.742905

@@ -8,11 +8,6 @@ public class TextSign : MonoBehaviour
     public string _text;
     public GameObject signPanel;
 
-    private void Awake()
-    {
-        signPanel = GameObject.Find("SignPanel");
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")

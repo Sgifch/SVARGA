@@ -154,6 +154,10 @@ public class inventoryManager : MonoBehaviour
                         collision.gameObject.GetComponent<WeaponSpawnScript>().TakeItem();
                     }
                 }
+                else if (collision.gameObject.tag == "Kipishe")
+                {
+                    gameObject.GetComponent<UIControll>().UphradeMenu();
+                }
 
             }
         }
@@ -236,7 +240,10 @@ public class inventoryManager : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         collisionStay = false;
-        this.collision = collision;
+        if (collision.gameObject.tag == "Kipishe")
+        {
+            gameObject.GetComponent<UIControll>().UpgradeMenuClose();
+        }
     }
 
     private void AddItem(itemScriptableObject _item, int _amount)
