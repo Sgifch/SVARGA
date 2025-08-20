@@ -2568,6 +2568,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5989638652724171614}
     m_Modifications:
+    - target: {fileID: 6372206990602290524, guid: 88e08a06be4d69646a109067b36125c3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7993294811994483300, guid: 88e08a06be4d69646a109067b36125c3, type: 3}
       propertyPath: m_Name
       value: Bush
@@ -3497,6 +3501,14 @@ PrefabInstance:
     - target: {fileID: 2717083937145438061, guid: 4717df358f5deb844a5dc77093681f29, type: 3}
       propertyPath: m_Name
       value: tree_4 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108431204359769576, guid: 4717df358f5deb844a5dc77093681f29, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068915370113986612, guid: 4717df358f5deb844a5dc77093681f29, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

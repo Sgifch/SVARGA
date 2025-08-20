@@ -7,7 +7,7 @@ public class RoomSpawner : MonoBehaviour
 {
     public Direction direction;
     public GameObject wall;
-    public Vector3 shiftWall;
+    private float shiftWall = 35;
     public enum Direction
     {
         Up,
@@ -107,15 +107,15 @@ public class RoomSpawner : MonoBehaviour
         switch (direction)
         {
             case Direction.Up:
-                Instantiate(wall, transform.position + shiftWall, transform.rotation); //Потом rotation переделать под стены
+                Instantiate(wall, transform.position - new Vector3(0f, shiftWall, 0f), transform.rotation); //Потом rotation переделать под стены
                 break;
 
             case Direction.Down:
-                Instantiate(wall, transform.position + shiftWall, transform.rotation);
+                Instantiate(wall, transform.position + new Vector3(0f, shiftWall, 0f), transform.rotation);
                 break;
 
             case Direction.Right:
-                Instantiate(wall, transform.position + shiftWall, transform.rotation);
+                Instantiate(wall, transform.position - new Vector3(shiftWall, 0f, 0f), transform.rotation);
                 break;
         }
     }

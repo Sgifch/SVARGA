@@ -59,7 +59,9 @@ public class UIControll : MonoBehaviour
         {
             ControllActiveHUD(false);
             collision.gameObject.GetComponent<KipisheFunction>().ShowKipishe();
+            Animator anim = upgradeMenu.GetComponent<Animator>();
             ControllActiveOtherMenu(upgradeMenu, true);
+            anim.SetTrigger("Open");
             
             isOpen = true;
         }
@@ -78,6 +80,7 @@ public class UIControll : MonoBehaviour
         if (upgradeMenu != null)
         {
             ControllActiveOtherMenu(upgradeMenu, false);
+            isOpen = false;
         }
         collision = null;
     }

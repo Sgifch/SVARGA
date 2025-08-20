@@ -2094,10 +2094,14 @@ PrefabInstance:
     - target: {fileID: 3357466785946344610, guid: 1b2d403ccd518f84090d842fbb7d335e, type: 3}
       propertyPath: wall
       value: 
-      objectReference: {fileID: 2209217328960444715, guid: 40e7d40188b39c34eb9f0698ff046dc8, type: 3}
+      objectReference: {fileID: 8824418828747763544, guid: 752cceafc9e703443b02893d5c711e39, type: 3}
     - target: {fileID: 3357466785946344610, guid: 1b2d403ccd518f84090d842fbb7d335e, type: 3}
       propertyPath: direction
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357466785946344610, guid: 1b2d403ccd518f84090d842fbb7d335e, type: 3}
+      propertyPath: shiftWall
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2626,10 +2630,14 @@ PrefabInstance:
     - target: {fileID: 3357466785946344610, guid: 1b2d403ccd518f84090d842fbb7d335e, type: 3}
       propertyPath: wall
       value: 
-      objectReference: {fileID: 2209217328960444715, guid: 40e7d40188b39c34eb9f0698ff046dc8, type: 3}
+      objectReference: {fileID: 8824418828747763544, guid: 752cceafc9e703443b02893d5c711e39, type: 3}
     - target: {fileID: 3357466785946344610, guid: 1b2d403ccd518f84090d842fbb7d335e, type: 3}
       propertyPath: direction
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357466785946344610, guid: 1b2d403ccd518f84090d842fbb7d335e, type: 3}
+      propertyPath: shiftWall
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4044,7 +4052,11 @@ PrefabInstance:
     - target: {fileID: 3357466785946344610, guid: 1b2d403ccd518f84090d842fbb7d335e, type: 3}
       propertyPath: wall
       value: 
-      objectReference: {fileID: 2209217328960444715, guid: 40e7d40188b39c34eb9f0698ff046dc8, type: 3}
+      objectReference: {fileID: 861072395935635947, guid: 46fa1709c40dff140a0616ecb49a70d8, type: 3}
+    - target: {fileID: 3357466785946344610, guid: 1b2d403ccd518f84090d842fbb7d335e, type: 3}
+      propertyPath: shiftWall
+      value: 45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
