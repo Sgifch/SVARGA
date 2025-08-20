@@ -26,7 +26,7 @@ public class SwordScript : MonoBehaviour
         {
             EnemyControllHealthPoint enemyProfile = collision.gameObject.GetComponent<EnemyControllHealthPoint>();
             sumDamage = _damage + _strong;
-
+            GameObject.FindWithTag("Player").GetComponent<UIControll>().DamageUI(sumDamage);
             enemyProfile.Damage(sumDamage);
         }
     }

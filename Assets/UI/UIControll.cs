@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UIControll : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class UIControll : MonoBehaviour
     public GameObject developerMenu;
 
     [Header("Эффекты урона")]
-    public GameObject damageText;
+    public TMP_Text damageText;
 
     private bool isStay = false;
     public bool isOpen = false;
@@ -23,31 +24,7 @@ public class UIControll : MonoBehaviour
 
     private void Update()
     {
-        /*if (isStay)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                if (!isOpen)
-                {
-                    switch (collision.gameObject.tag)
-                    {
-                        case "Kipishe":
-                            ControllActiveHUD(false);
-                            collision.gameObject.GetComponent<KipisheFunction>().ShowKipishe();
-                            ControllActiveOtherMenu(upgradeMenu, true);
-                            break;
-                    }
-                    isOpen = true;
-                }
-                else
-                {
-                    isOpen = false;
-                    ControllActiveHUD(true);
-                    ControllActiveOtherMenu(upgradeMenu, false);
-                }
-            }
-        }*/
-
+        
 
         if (Input.GetKeyDown(KeyCode.F3))
         {
@@ -66,7 +43,17 @@ public class UIControll : MonoBehaviour
         }
 
     }
-    public void UphradeMenu()
+
+    public void DamageUI(int sumDamage)
+    {
+        Animator anim = damageText.GetComponent<Animator>();
+        damageText.text = sumDamage.ToString();
+        anim.SetTrigger("Attack");
+        
+    }
+
+    //Открытие закрытие меню улучшения
+    public void UpgradeMenu()
     {
         if (!isOpen)
         {
@@ -84,6 +71,7 @@ public class UIControll : MonoBehaviour
         }
     }
 
+    //Закрыть меню улучшения
     public void UpgradeMenuClose()
     {
         ControllActiveHUD(true);
@@ -93,6 +81,8 @@ public class UIControll : MonoBehaviour
         }
         collision = null;
     }
+
+    //Открыте закрытие HUD меню
     public void ControllActiveHUD(bool active)
     {
         inventoryFast.SetActive(active);

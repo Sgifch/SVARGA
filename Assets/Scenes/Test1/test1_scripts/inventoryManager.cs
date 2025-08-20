@@ -156,7 +156,7 @@ public class inventoryManager : MonoBehaviour
                 }
                 else if (collision.gameObject.tag == "Kipishe")
                 {
-                    gameObject.GetComponent<UIControll>().UphradeMenu();
+                    gameObject.GetComponent<UIControll>().UpgradeMenu();
                 }
 
             }

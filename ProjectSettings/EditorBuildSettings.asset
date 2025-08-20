@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/SceneLevel/StartScene/StartScene.unity
     guid: 6933ef1c3d9c1094ba262df6173fa55b
   - enabled: 0
-    path: Assets/SceneLevel/GenerationScene/MainScene.unity
+    path: Assets/SceneLevel/GenerationScene/GenerationScene.unity
     guid: 84d4887910a0a0842beec4c5f60add75
   - enabled: 1
     path: Assets/SceneLevel/LobbyScene/Lobby.unity
