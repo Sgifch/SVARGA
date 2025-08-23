@@ -69,6 +69,7 @@ public class UIControll : MonoBehaviour
         {
             isOpen = false;
             ControllActiveHUD(true);
+            
             ControllActiveOtherMenu(upgradeMenu, false);
         }
     }
