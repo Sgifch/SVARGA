@@ -807,6 +807,10 @@ PrefabInstance:
       propertyPath: endDownRoom
       value: 
       objectReference: {fileID: 4796771862078491848, guid: b4cc05fae25cf824b84b0ae17c17a96b, type: 3}
+    - target: {fileID: 8337956814599927929, guid: 440429b048f9dad4db7d6f45f5cc1ad4, type: 3}
+      propertyPath: endRightRoom
+      value: 
+      objectReference: {fileID: 162213941839092134, guid: e7d5d740fc2e2d549b123ea37efa7422, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
