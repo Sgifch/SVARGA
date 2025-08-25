@@ -10,7 +10,7 @@ public class SceneLoader : MonoBehaviour
 
     public void Awake()
     {
-        playerStat = GameObject.Find("PlayerStatManager").GetComponent<PlayerStatManager>();
+        playerStat = GameObject.FindWithTag("PlayerStatManager").GetComponent<PlayerStatManager>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

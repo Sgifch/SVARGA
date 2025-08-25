@@ -39,6 +39,11 @@ public class ManagerLevelGeneration : MonoBehaviour
         
     }
 
+    public void EndGeneration()
+    {
+
+    }
+
     //Загрузка массива комнат
     private void CreateListRoom()
     {
