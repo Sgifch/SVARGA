@@ -168,10 +168,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2333910649842690979, guid: 72d2bdcf750f44244999951a80d4edc9, type: 3}
-      propertyPath: fTreasureRoom
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7490941539670458864, guid: 72d2bdcf750f44244999951a80d4edc9, type: 3}
       propertyPath: m_Name
       value: GenerationManager
