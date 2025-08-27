@@ -10511,6 +10511,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6244dffbdd8bd541b5bc6fdc8ae8356, type: 3}
+--- !u!1001 &1936776925
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 690645450911779922, guid: 7673002995f853143b038fcadcc4e246, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.0455055
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: 7673002995f853143b038fcadcc4e246, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.1081991
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: 7673002995f853143b038fcadcc4e246, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: 7673002995f853143b038fcadcc4e246, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: 7673002995f853143b038fcadcc4e246, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: 7673002995f853143b038fcadcc4e246, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: 7673002995f853143b038fcadcc4e246, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: 7673002995f853143b038fcadcc4e246, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: 7673002995f853143b038fcadcc4e246, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: 7673002995f853143b038fcadcc4e246, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595154827602962897, guid: 7673002995f853143b038fcadcc4e246, type: 3}
+      propertyPath: m_Name
+      value: SwordWood
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7673002995f853143b038fcadcc4e246, type: 3}
 --- !u!1 &1940638405
 GameObject:
   m_ObjectHideFlags: 0
@@ -18208,6 +18265,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6667206441244479824, guid: 8403e7280027d1d429be76eac6ea4126, type: 3}
+      propertyPath: m_Name
+      value: UIPanel
+      objectReference: {fileID: 0}
     - target: {fileID: 6831723576611395120, guid: 8403e7280027d1d429be76eac6ea4126, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -19848,3 +19909,4 @@ SceneRoots:
   - {fileID: 4612048432075826306}
   - {fileID: 1095154156}
   - {fileID: 2720038105580577729}
+  - {fileID: 1936776925}

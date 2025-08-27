@@ -34,6 +34,8 @@ public class RoomManager : MonoBehaviour
         if (currentEnemy.transform.childCount == 0)
         {
             //Что происходит после победы
+            //Подсчёт пройденных комнат
+            WallDestroy();
         }
 
     }
@@ -47,5 +49,23 @@ public class RoomManager : MonoBehaviour
         shiftPositionY = Random.Range(-maxShiftPosition, maxShiftPosition);
 
         Instantiate(enemy.enemyList[enemy.enemyList.Count - 1], transform.position + new Vector3(shiftPositionX, shiftPositionY, 0), transform.rotation, currentEnemy.transform);
+    }
+
+    public void WallSpawn()
+    {
+        foreach (GameObject _wall in wall)
+        {
+            Instantiate(spawnEffect, _wall.transform.position, _wall.transform.rotation);
+            _wall.SetActive(true);
+        }
+    }
+
+    public void WallDestroy()
+    {
+        foreach (GameObject _wall in wall)
+        {
+            Instantiate(spawnEffect, _wall.transform.position, _wall.transform.rotation);
+            Destroy(_wall);
+        }
     }
 }

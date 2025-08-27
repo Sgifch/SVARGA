@@ -410,4 +410,4 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   effectDamage: {fileID: 8238514059131387485, guid: e969a850252868948a20f1d9bc741e64, type: 3}
-  useGameManager: 1
+  useGameManager: 0
