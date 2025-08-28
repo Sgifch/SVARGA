@@ -225,6 +225,7 @@ public class inventoryManager : MonoBehaviour
             UIPanelFast.SetActive(true);
             UIWeaponFast.SetActive(true);
             inventory.SetActive(false);
+            gameObject.GetComponent<UIControll>().InventoryClose();
             barPanel.SetActive(true);
         }
     }

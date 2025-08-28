@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class GenerationStatManager : MonoBehaviour
 {
+    public int counterRoom;
+
+    public void Awake()
+    {
+        LoadStatGeneration();
+    }
     public void SaveStatGeneration()
     {
-
+        PlayerPrefs.SetInt("counterRoom", counterRoom);
     }
 
     public void LoadStatGeneration()
     {
-
+        if (PlayerPrefs.HasKey("counterRoom"))
+        {
+            counterRoom = PlayerPrefs.GetInt("counterRoom");
+        }
     }
 }

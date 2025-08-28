@@ -5,6 +5,10 @@ using TMPro;
 
 public class UIControll : MonoBehaviour
 {
+    [Header("Инвентарь")]
+    public GameObject informationUI;
+    public TMP_Text counterRoomText;
+
     [Header("HUD элементы")]
     public GameObject inventoryFast;
     public GameObject WeaponFastPanel;
@@ -21,6 +25,8 @@ public class UIControll : MonoBehaviour
     public bool isOpen = false;
     private bool isOpenDev = false; 
     private Collider2D collision;
+
+    //Вот это всё потом переделать под отделльный элемент на сцене
 
     private void Update()
     {
@@ -44,6 +50,7 @@ public class UIControll : MonoBehaviour
 
     }
 
+    //Появление цифр при нанесении урона
     public void DamageUI(int sumDamage)
     {
         Animator anim = damageText.GetComponent<Animator>();
@@ -84,6 +91,20 @@ public class UIControll : MonoBehaviour
             isOpen = false;
         }
         collision = null;
+    }
+
+    public void InventoryClose()
+    {
+        if (informationUI != null)
+        {
+            informationUI.SetActive(false);
+        }
+    }
+
+    public void InformationUIOpen()
+    {
+        counterRoomText.text = GameObject.FindWithTag("GenerationManager").GetComponent<GenerationStatManager>().counterRoom.ToString();
+        informationUI.SetActive(true);
     }
 
     //Открыте закрытие HUD меню

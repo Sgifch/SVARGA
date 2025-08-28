@@ -35,7 +35,9 @@ public class RoomManager : MonoBehaviour
         {
             //Что происходит после победы
             //Подсчёт пройденных комнат
+            GameObject.FindWithTag("GenerationManager").GetComponent<GenerationStatManager>().counterRoom++;
             WallDestroy();
+            Destroy(gameObject);
         }
 
     }

@@ -33,7 +33,6 @@ public class ManagerLevelGeneration : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
