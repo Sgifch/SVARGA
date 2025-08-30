@@ -27,6 +27,7 @@ public class RestartScene : MonoBehaviour
             if(collision.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E))
             {
                 GameObject.FindWithTag("GenerationManager").GetComponent<GenerationStatManager>().SaveStatGeneration();
+                GameObject.FindWithTag("PlayerStatManager").GetComponent<PlayerStatManager>().SaveStat();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }

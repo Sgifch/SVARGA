@@ -7,6 +7,7 @@ public class SceneLoader : MonoBehaviour
 {
     public PlayerStatManager playerStat;
     public string sceneName;
+    public bool useGeneration;
 
     public void Awake()
     {
@@ -17,6 +18,10 @@ public class SceneLoader : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             playerStat.SaveStat();
+            if (useGeneration)
+            {
+                GameObject.FindWithTag("GenerationManager").GetComponent<GenerationStatManager>().DeleteStatGeneration();
+            }
             SceneManager.LoadScene(sceneName);
         }
     }

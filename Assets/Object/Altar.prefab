@@ -182,4 +182,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStat: {fileID: 0}
-  sceneName: 1
+  sceneName: Lobby
+  useGeneration: 1

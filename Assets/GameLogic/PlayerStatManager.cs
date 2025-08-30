@@ -40,6 +40,7 @@ public class PlayerStatManager : MonoBehaviour
         PlayerPrefs.SetInt("maxHP", maxHP);
         PlayerPrefs.SetInt("maxManna", maxManna);
         PlayerPrefs.SetInt("strong", strong);
+        PlayerPrefs.SetInt("currentHP", currentHP);
     }
 
     public void LoadStat()
@@ -51,5 +52,6 @@ public class PlayerStatManager : MonoBehaviour
         maxHP = PlayerPrefs.GetInt("maxHP");
         maxManna = PlayerPrefs.GetInt("maxManna");
         strong = PlayerPrefs.GetInt("strong");
+        currentHP = PlayerPrefs.GetInt("currentHP");
     }
 }

@@ -27,6 +27,11 @@ public class DeveloperScript : MonoBehaviour
         player.GetComponent<ControllStat>().AddExp(100);
     }
 
+    public void FullRecovery()
+    {
+        player.GetComponent<ControllHealthPoint>().FullRecovery();
+    }
+
     public void UpdInterface()
     {
         KipisheFunction kipishe = GameObject.FindWithTag("Kipishe").GetComponent<KipisheFunction>();

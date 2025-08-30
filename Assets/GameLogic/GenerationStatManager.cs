@@ -22,4 +22,9 @@ public class GenerationStatManager : MonoBehaviour
             counterRoom = PlayerPrefs.GetInt("counterRoom");
         }
     }
+
+    public void DeleteStatGeneration()
+    {
+        PlayerPrefs.DeleteKey("counterRoom");
+    }
 }
