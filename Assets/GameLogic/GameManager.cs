@@ -22,11 +22,11 @@ public class GameManager : MonoBehaviour
         playerStat = GameObject.Find("PlayerStatManager").GetComponent<PlayerStatManager>();
         player = GameObject.FindWithTag("Player");
 
-        if (PlayerPrefs.HasKey("exp"))
+        if (PlayerPrefs.HasKey("maxHP"))
         {
             playerStat.LoadStat();
         }
-    }
+    }   
 
     private void Start()
     {
