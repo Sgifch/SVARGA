@@ -18,6 +18,7 @@ public class WeaponSpawnScript : MonoBehaviour
     {
         Vector3 spawnPosition = gameObject.transform.position + shiftSpawnPosition;
         _spawnItem = Instantiate(spawnItem, spawnPosition, shiftSpawnRotation, gameObject.transform);
+        _spawnItem.GetComponent<Animator>().SetTrigger("Spawn");
         _effect = gameObject.transform.GetChild(0);
     }
 

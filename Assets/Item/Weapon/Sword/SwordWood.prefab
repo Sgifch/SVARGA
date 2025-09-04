@@ -185,6 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   _damage: 0
+  _strong: 0
 --- !u!50 &-4203194319431874153
 Rigidbody2D:
   serializedVersion: 4
