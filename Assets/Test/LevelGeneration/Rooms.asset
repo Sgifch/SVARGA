@@ -23,9 +23,7 @@ MonoBehaviour:
   - {fileID: 1996935996618939890, guid: 457aac87a185480458bf3bdc3f7424ea, type: 3}
   - {fileID: 2268450392165311147, guid: 6c7997bc723a97d478f1e6f086210b81, type: 3}
   - {fileID: 162213941839092134, guid: 847a77fe4427c834c8b913e0e0af5eaf, type: 3}
-  treasureRoomUp:
-  - {fileID: 7167564259850860525, guid: 463a13b1ec071754ab12b9552802ca5f, type: 3}
-  treasureRoomDown:
-  - {fileID: 7167564259850860525, guid: d90ffbda055c3f64aaa0a472e65db269, type: 3}
+  treasureRoomUp: []
+  treasureRoomDown: []
   treasureRoomRight:
-  - {fileID: 7167564259850860525, guid: 4734fce75e31ef5498fcd181ff9efe85, type: 3}
+  - {fileID: 1794158718321781746, guid: 9327eee618969604999b6145ea3fa127, type: 3}
