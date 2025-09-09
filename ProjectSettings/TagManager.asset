@@ -20,6 +20,7 @@ TagManager:
   - Kipishe
   - PlayerStatManager
   - DamageCanvas
+  - Fontain
   layers:
   - Default
   - TransparentFX

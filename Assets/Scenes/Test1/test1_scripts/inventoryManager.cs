@@ -158,6 +158,11 @@ public class inventoryManager : MonoBehaviour
                 {
                     gameObject.GetComponent<UIControll>().UpgradeMenu();
                 }
+                else if (collision.gameObject.tag == "Fontain")
+                {
+                    gameObject.GetComponent<UIControll>().FontainMenu();
+                    isOpened = true;
+                }
 
             }
         }

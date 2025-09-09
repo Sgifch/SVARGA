@@ -16,21 +16,51 @@ public class UIControll : MonoBehaviour
 
     [Header("Прочие меню")]
     public GameObject upgradeMenu;
+    public GameObject fontainMenu;
     public GameObject developerMenu;
 
     [Header("Эффекты урона")]
     public TMP_Text damageText;
 
-    private bool isStay = false;
+    public bool isFontain = false;
+
+
+    public bool isStay = false;
     public bool isOpen = false;
     private bool isOpenDev = false; 
     private Collider2D collision;
+
+    public enum StateUI
+    {
+        idle,
+        inventoryOpen,
+        otherMenuOpen,
+    }
+
+    private StateUI stateUI;
 
     //Вот это всё потом переделать под отделльный элемент на сцене
 
     private void Update()
     {
-        
+        switch (stateUI)
+        {
+            default:
+            case StateUI.idle:
+                isStay = false;
+                ControllActiveHUD(true);
+                break;
+
+            case StateUI.otherMenuOpen:
+                isStay = true;
+                ControllActiveHUD(false);
+                //закрытие инвентаря
+                break;
+
+            case StateUI.inventoryOpen:
+                isStay = true;
+                break;
+        }
 
         if (Input.GetKeyDown(KeyCode.F3))
         {
@@ -49,6 +79,25 @@ public class UIControll : MonoBehaviour
         }
 
     }
+    public void FontainMenu()
+    {
+        if (!isFontain)
+        {
+            fontainMenu.SetActive(true);
+            isFontain = true;
+            fontainMenu.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Open");
+            stateUI = StateUI.otherMenuOpen;
+        }
+        else
+        {
+            stateUI = StateUI.idle;
+            fontainMenu.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Close");
+            //fontainMenu.SetActive(false);
+            isFontain = false;
+            gameObject.GetComponent<inventoryManager>().isOpened = false; //временно
+        }
+    }
+
 
     //Появление цифр при нанесении урона
     public void DamageUI(int sumDamage)

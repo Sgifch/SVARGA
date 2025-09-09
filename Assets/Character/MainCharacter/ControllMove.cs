@@ -33,8 +33,10 @@ public class ControllMove : MonoBehaviour
 
     void Update()
     {
-
-        processInputs();
+        if (!gameObject.GetComponent<UIControll>().isStay)
+        {
+            processInputs();
+        }
         Animated();
 
         if (Input.GetMouseButtonDown(0) && !dataItem.isOpened && !isAttack && !isMove)
