@@ -21,6 +21,7 @@ TagManager:
   - PlayerStatManager
   - DamageCanvas
   - Fontain
+  - FontainUI
   layers:
   - Default
   - TransparentFX

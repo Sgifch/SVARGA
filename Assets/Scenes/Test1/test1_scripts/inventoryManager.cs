@@ -158,9 +158,9 @@ public class inventoryManager : MonoBehaviour
                 {
                     gameObject.GetComponent<UIControll>().UpgradeMenu();
                 }
-                else if (collision.gameObject.tag == "Fontain")
-                {
-                    gameObject.GetComponent<UIControll>().FontainMenu();
+                else if (collision.gameObject.tag == "Fontain" && !collision.gameObject.GetComponent<FontainFunction>().isTake)
+                { 
+                    gameObject.GetComponent<UIControll>().FontainMenu(collision.gameObject);
                     isOpened = true;
                 }
 
@@ -252,7 +252,7 @@ public class inventoryManager : MonoBehaviour
         }
     }
 
-    private void AddItem(itemScriptableObject _item, int _amount)
+    public void AddItem(itemScriptableObject _item, int _amount)
     {
         foreach (inventorySlot slot in slots)
         {

@@ -97,6 +97,13 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
                 newSlot.amount = oldSlot.amount;*/
             }
         }
+        if (newSlot.equipmentSlot)
+        {
+            if(!(oldSlot.item.itemType is ItemType.amulet))
+            {
+                return;
+            }
+        }
 
         // Заменяем значения newSlot на значения oldSlot
         newSlot.item = oldSlot.item;

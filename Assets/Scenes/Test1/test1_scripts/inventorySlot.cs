@@ -10,6 +10,7 @@ public class inventorySlot : MonoBehaviour
     public int amount;
     public bool isEmpty = true;
     public bool weaponSlot = false;
+    public bool equipmentSlot = false;
     public GameObject iconItem;
     public TMP_Text itemAmount;
 

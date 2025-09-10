@@ -79,10 +79,11 @@ public class UIControll : MonoBehaviour
         }
 
     }
-    public void FontainMenu()
+    public void FontainMenu(GameObject fontain)
     {
         if (!isFontain)
         {
+            fontain.GetComponent<FontainFunction>().FontainStart();
             fontainMenu.SetActive(true);
             isFontain = true;
             fontainMenu.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Open");
@@ -95,6 +96,7 @@ public class UIControll : MonoBehaviour
             //fontainMenu.SetActive(false);
             isFontain = false;
             gameObject.GetComponent<inventoryManager>().isOpened = false; //временно
+            fontain.GetComponent<FontainFunction>().FontainEnd();
         }
     }
 
