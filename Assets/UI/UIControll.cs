@@ -19,6 +19,8 @@ public class UIControll : MonoBehaviour
     public GameObject fontainMenu;
     public GameObject developerMenu;
 
+    public GameObject fontain;
+
     [Header("Ёффекты урона")]
     public TMP_Text damageText;
 
@@ -37,7 +39,7 @@ public class UIControll : MonoBehaviour
         otherMenuOpen,
     }
 
-    private StateUI stateUI;
+    public StateUI stateUI;
 
     //¬от это всЄ потом переделать под отделльный элемент на сцене
 
@@ -79,17 +81,18 @@ public class UIControll : MonoBehaviour
         }
 
     }
-    public void FontainMenu(GameObject fontain)
+    public void FontainMenu(GameObject _fontain)
     {
         if (!isFontain)
         {
+            fontain = _fontain;
             fontain.GetComponent<FontainFunction>().FontainStart();
             fontainMenu.SetActive(true);
             isFontain = true;
             fontainMenu.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Open");
             stateUI = StateUI.otherMenuOpen;
         }
-        else
+        /*else
         {
             stateUI = StateUI.idle;
             fontainMenu.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Close");
@@ -97,7 +100,7 @@ public class UIControll : MonoBehaviour
             isFontain = false;
             gameObject.GetComponent<inventoryManager>().isOpened = false; //временно
             fontain.GetComponent<FontainFunction>().FontainEnd();
-        }
+        }*/
     }
 
 

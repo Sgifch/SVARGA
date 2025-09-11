@@ -9,4 +9,6 @@ public class CradsItem : itemScriptableObject
     {
         itemType = ItemType.amulet;
     }
+
+    public List<Bonus> bonusList = new List<Bonus>();
 }

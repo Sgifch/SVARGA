@@ -103,6 +103,11 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             {
                 return;
             }
+            /*else
+            {
+                print("Это амулет");
+                newSlot.GetComponent<EquipmentInventory>().EquipmentAmulet();
+            }*/
         }
 
         // Заменяем значения newSlot на значения oldSlot
@@ -121,6 +126,11 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             newSlot.itemAmount.text = "";
         }
         
+        if (newSlot.equipmentSlot)
+        {
+            newSlot.GetComponent<EquipmentInventory>().EquipmentAmulet();
+        }
+      
         newSlot.isEmpty = oldSlot.isEmpty;
 
         // Заменяем значения oldSlot на значения newSlot сохраненные в переменных
@@ -137,7 +147,12 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             oldSlot.iconItem.GetComponent<Image>().sprite = null;
             oldSlot.itemAmount.text = "";
         }
-        
+
         oldSlot.isEmpty = isEmpty;
+
+        if (oldSlot.equipmentSlot)
+        {
+            oldSlot.GetComponent<EquipmentInventory>().UnequipmentAmulet();
+        }
     }
 }

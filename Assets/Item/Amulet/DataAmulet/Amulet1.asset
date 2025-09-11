@@ -18,3 +18,5 @@ MonoBehaviour:
   itemName: HealthAmulet
   maximumAmaunt: 1
   itemDescription: 
+  bonusList:
+  - {fileID: 11400000, guid: 1956c9e8ea14ca5469eef11eb5fef797, type: 2}

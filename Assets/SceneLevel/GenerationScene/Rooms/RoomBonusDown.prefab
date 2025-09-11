@@ -4415,6 +4415,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoomSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 929549432761377232, guid: 1b2d403ccd518f84090d842fbb7d335e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3357466785946344610, guid: 1b2d403ccd518f84090d842fbb7d335e, type: 3}
       propertyPath: wall
       value: 

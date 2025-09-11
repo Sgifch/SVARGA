@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine;
 using Unity.VisualScripting;
+using static UIControll;
 
 public class CardsOnClick : MonoBehaviour, IPointerClickHandler
 {
@@ -18,6 +19,20 @@ public class CardsOnClick : MonoBehaviour, IPointerClickHandler
             Destroy(transform.parent.GetChild(i).gameObject);
         }
 
+        CardsDestroy();
+
+    }
+
+    public void CardsDestroy()
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        player.GetComponent<UIControll>().stateUI = StateUI.idle;
+        player.GetComponent<UIControll>().fontainMenu.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Close");
+        Destroy(player.GetComponent<UIControll>().fontain.transform.parent.GetChild(0).gameObject);
+        //fontainMenu.SetActive(false);
+        player.GetComponent<UIControll>().fontain = null;
+        player.GetComponent<UIControll>().isFontain = false;
+        player.GetComponent<inventoryManager>().isOpened = false;
     }
 
 }
