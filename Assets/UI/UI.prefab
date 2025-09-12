@@ -5902,8 +5902,60 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8535201730335500901, guid: 891537a2031e780418c85157fc5ae1ce, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2155631310553526924}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 138721521698246370, guid: 891537a2031e780418c85157fc5ae1ce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6221543193526162819}
+    - targetCorrespondingSourceObject: {fileID: 923757471781617844, guid: 891537a2031e780418c85157fc5ae1ce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 190566006075974319}
+    - targetCorrespondingSourceObject: {fileID: 6387937640070094536, guid: 891537a2031e780418c85157fc5ae1ce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3941501507441594788}
+    - targetCorrespondingSourceObject: {fileID: 6492112393462379092, guid: 891537a2031e780418c85157fc5ae1ce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6485379556113959597}
   m_SourcePrefab: {fileID: 100100000, guid: 891537a2031e780418c85157fc5ae1ce, type: 3}
+--- !u!1 &408372371533228096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 138721521698246370, guid: 891537a2031e780418c85157fc5ae1ce, type: 3}
+  m_PrefabInstance: {fileID: 307936919614187170}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6221543193526162819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408372371533228096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43afdc5243a838148961b5a9c1b7832a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slot: {fileID: 0}
+  currentHealthBonus: 0
+  playerStatManager: {fileID: 0}
+--- !u!1 &619203689411569174 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 923757471781617844, guid: 891537a2031e780418c85157fc5ae1ce, type: 3}
+  m_PrefabInstance: {fileID: 307936919614187170}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &190566006075974319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619203689411569174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43afdc5243a838148961b5a9c1b7832a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slot: {fileID: 0}
+  currentHealthBonus: 0
+  playerStatManager: {fileID: 0}
 --- !u!224 &3270022352217193876 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2965469713840921398, guid: 891537a2031e780418c85157fc5ae1ce, type: 3}
@@ -5914,6 +5966,46 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4474726001252039232, guid: 891537a2031e780418c85157fc5ae1ce, type: 3}
   m_PrefabInstance: {fileID: 307936919614187170}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6692491499221645418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6387937640070094536, guid: 891537a2031e780418c85157fc5ae1ce, type: 3}
+  m_PrefabInstance: {fileID: 307936919614187170}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3941501507441594788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6692491499221645418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43afdc5243a838148961b5a9c1b7832a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slot: {fileID: 0}
+  currentHealthBonus: 0
+  playerStatManager: {fileID: 0}
+--- !u!1 &6800047498919974134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6492112393462379092, guid: 891537a2031e780418c85157fc5ae1ce, type: 3}
+  m_PrefabInstance: {fileID: 307936919614187170}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6485379556113959597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6800047498919974134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43afdc5243a838148961b5a9c1b7832a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slot: {fileID: 0}
+  currentHealthBonus: 0
+  playerStatManager: {fileID: 0}
 --- !u!224 &8229521550821723335 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8535201730335500901, guid: 891537a2031e780418c85157fc5ae1ce, type: 3}
