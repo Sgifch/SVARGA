@@ -6,22 +6,23 @@ using UnityEngine.UI;
 
 public class inventoryManager : MonoBehaviour
 {
-    private GameObject UI;
+    //private GameObject UI;
+    public GameObject UIControll;
 
     private GameObject inventory;
-    private Transform inventoryPanel;
+    //private Transform inventoryPanel;
 
-    private GameObject UIPanelFast;
-    private Transform inventoryPanelFast;
+    private GameObject inventoryFast;
+    //private Transform inventoryPanelFast;
 
-    private GameObject UIPanelArmor;
-    private Transform inventoryArmor;
+    private GameObject inventoryArmor;
+    //private Transform inventoryArmor;
 
-    private GameObject UIPanelWeapon;
-    private Transform inventoryWeapon;
+    private GameObject inventoryWeapon;
+    //private Transform inventoryWeapon;
 
-    private GameObject UIWeaponFast;
-    private Transform weaponFastPanel;
+    private GameObject weaponFast;
+    //private Transform weaponFastPanel;
 
     private GameObject barPanel;
     public GameObject upgradeMenu;
@@ -42,7 +43,7 @@ public class inventoryManager : MonoBehaviour
 
     private void Awake()
     {
-        UI = GameObject.Find("UI");
+        /*UI = GameObject.Find("UI");
 
         inventory = UI.transform.GetChild(0).gameObject;
         inventoryPanel = inventory.transform;
@@ -59,58 +60,71 @@ public class inventoryManager : MonoBehaviour
         UIWeaponFast = UI.transform.GetChild(2).gameObject;
         weaponFastPanel = UIWeaponFast.transform;
 
-        barPanel = UI.transform.GetChild(3).gameObject;
+        barPanel = UI.transform.GetChild(3).gameObject;*/
 
     }
-    void Start()
+    private void Start()
     {
-      
 
-        for (int i=0; i < inventoryPanel.GetChild(0).GetChild(0).childCount; i++) //мб этот блок потом засунуть в одну функцию для удобства
-        {
-            if (inventoryPanel.GetChild(0).GetChild(0).GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+
+            /*for (int i=0; i < inventoryPanel.GetChild(0).GetChild(0).childCount; i++) //мб этот блок потом засунуть в одну функцию для удобства
             {
-                slots.Add(inventoryPanel.GetChild(0).GetChild(0).GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+                if (inventoryPanel.GetChild(0).GetChild(0).GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+                {
+                    slots.Add(inventoryPanel.GetChild(0).GetChild(0).GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+                }
             }
-        }
 
-        for (int i=0; i < inventoryPanelFast.GetChild(1).childCount; i++)
-        {
-            if (inventoryPanelFast.GetChild(1).GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+            for (int i=0; i < inventoryPanelFast.GetChild(1).childCount; i++)
             {
-                slotsFast.Add(inventoryPanelFast.GetChild(1).GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+                if (inventoryPanelFast.GetChild(1).GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+                {
+                    slotsFast.Add(inventoryPanelFast.GetChild(1).GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+                }
             }
-        }
 
-        for (int i = 0; i < inventoryArmor.childCount; i++)
-        {
-            if (inventoryArmor.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+            for (int i = 0; i < inventoryArmor.childCount; i++)
             {
-                slotsArmor.Add(inventoryArmor.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+                if (inventoryArmor.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+                {
+                    slotsArmor.Add(inventoryArmor.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+                }
             }
-        }
 
-        for (int i = 0; i < inventoryWeapon.childCount; i++)
-        {
-            if (inventoryWeapon.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+            for (int i = 0; i < inventoryWeapon.childCount; i++)
             {
-                slotsWeapon.Add(inventoryWeapon.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+                if (inventoryWeapon.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+                {
+                    slotsWeapon.Add(inventoryWeapon.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+                }
             }
-        }
 
-        //Слоты для отображения оружия
-        for (int i = 0; i < weaponFastPanel.GetChild(0).childCount; i++)
-        {
-            if (weaponFastPanel.GetChild(0).GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+            //Слоты для отображения оружия
+            for (int i = 0; i < weaponFastPanel.GetChild(0).childCount; i++)
             {
-                slotsWeaponFast.Add(weaponFastPanel.GetChild(0).GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+                if (weaponFastPanel.GetChild(0).GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+                {
+                    slotsWeaponFast.Add(weaponFastPanel.GetChild(0).GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+                }
             }
-        }
 
-        for (int i=0; i < inventoryPanelFast.GetChild(1).childCount; i++)
-        {
-            selectSlot.Add(inventoryPanelFast.GetChild(1).GetChild(i).GetChild(1).gameObject);
-        }
+            for (int i=0; i < inventoryPanelFast.GetChild(1).childCount; i++)
+            {
+                selectSlot.Add(inventoryPanelFast.GetChild(1).GetChild(i).GetChild(1).gameObject);
+            }*/
+        UIControll = GameObject.FindWithTag("UIControll");
+        inventory = UIControll.GetComponent<UIControll>().inventory;
+        inventoryFast = UIControll.GetComponent<UIControll>().inventoryFast;
+        weaponFast = UIControll.GetComponent<UIControll>().weaponFast;
+        inventoryArmor = UIControll.GetComponent<UIControll>().inventoryArmor;
+        inventoryWeapon = UIControll.GetComponent<UIControll>().inventoryWeapon;
+
+        slots = UIControll.GetComponent<UIControll>().slots;
+        slotsFast = UIControll.GetComponent<UIControll>().slotsFast;
+        slotsArmor = UIControll.GetComponent<UIControll>().slotsArmor;
+        slotsWeapon = UIControll.GetComponent<UIControll>().slotsWeapon;
+        slotsWeaponFast = UIControll.GetComponent<UIControll>().slotsWeaponFast;
+
 
         //Картинки, указывающие на выбранный слот
         for (int i = 0; i < 6; i++)
@@ -132,7 +146,7 @@ public class inventoryManager : MonoBehaviour
         {
             if (!gameObject.GetComponent<UIControll>().isOpen)
             {
-                MenuControll();
+                //MenuControll();
             }
         }
 
@@ -215,25 +229,25 @@ public class inventoryManager : MonoBehaviour
 
         }
     }
-    public void MenuControll()
+    /*public void MenuControll()
     {
         isOpened = !isOpened;
         if (isOpened)
         {
-            UIPanelFast.SetActive(false);
+            inventoryFast.SetActive(false);
             UIWeaponFast.SetActive(false);
             inventory.SetActive(true);
             barPanel.SetActive(false);
         }
         else
         {
-            UIPanelFast.SetActive(true);
+            inventoryFast.SetActive(true);
             UIWeaponFast.SetActive(true);
             inventory.SetActive(false);
             gameObject.GetComponent<UIControll>().InventoryClose();
             barPanel.SetActive(true);
         }
-    }
+    }*/
 
    
 
@@ -285,7 +299,7 @@ public class inventoryManager : MonoBehaviour
     //Копирование слотов
     private void CopySlots()
     {
-        for (int i =0; i < inventoryPanelFast.GetChild(1).childCount; i++)
+        for (int i =0; i < inventoryFast.transform.GetChild(1).childCount; i++)
         {
             if (slots[i].isEmpty == false)
             {
@@ -300,7 +314,7 @@ public class inventoryManager : MonoBehaviour
         }
 
         //Для части слотов с отображением оружия нужно потом переделать
-        for (int i = 0; i < weaponFastPanel.GetChild(0).childCount; i++)
+        for (int i = 0; i < weaponFast.transform.transform.GetChild(0).childCount; i++)
         {
             if (slotsWeapon[i].isEmpty == false)
             {

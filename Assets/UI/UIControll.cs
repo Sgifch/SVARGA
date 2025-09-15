@@ -6,12 +6,15 @@ using TMPro;
 public class UIControll : MonoBehaviour
 {
     [Header("Инвентарь")]
+    public GameObject inventory;
+    public GameObject inventoryArmor;
+    public GameObject inventoryWeapon;
     public GameObject informationUI;
     public TMP_Text counterRoomText;
 
     [Header("HUD элементы")]
     public GameObject inventoryFast;
-    public GameObject WeaponFastPanel;
+    public GameObject weaponFast;
     public GameObject HealthBarPanel;
 
     [Header("Прочие меню")]
@@ -32,6 +35,14 @@ public class UIControll : MonoBehaviour
     private bool isOpenDev = false; 
     private Collider2D collision;
 
+    [Header("Слоты")]
+    public List<inventorySlot> slots = new List<inventorySlot>(); //Список инвентаря
+    public List<inventorySlot> slotsFast = new List<inventorySlot>(); //Список быстрого инвентаря
+    public List<inventorySlot> slotsArmor = new List<inventorySlot>(); //возможно стоит переделать слотс ну это в будущем
+    public List<inventorySlot> slotsWeapon = new List<inventorySlot>();
+    public List<inventorySlot> slotsWeaponFast = new List<inventorySlot>();
+    public List<GameObject> selectSlot = new List<GameObject>();
+
     public enum StateUI
     {
         idle,
@@ -42,6 +53,67 @@ public class UIControll : MonoBehaviour
     public StateUI stateUI;
 
     //Вот это всё потом переделать под отделльный элемент на сцене
+
+    public void Awake()
+    {
+        for (int i = 0; i < inventory.transform.GetChild(0).GetChild(0).childCount; i++) //мб этот блок потом засунуть в одну функцию для удобства
+        {
+            if (inventory.transform.GetChild(0).GetChild(0).GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+            {
+                slots.Add(inventory.transform.GetChild(0).GetChild(0).GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+            }
+        }
+
+        for (int i = 0; i < inventoryFast.transform.GetChild(1).childCount; i++)
+        {
+            if (inventoryFast.transform.GetChild(1).GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+            {
+                slotsFast.Add(inventoryFast.transform.GetChild(1).GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+            }
+        }
+
+        for (int i = 0; i < inventoryArmor.transform.childCount; i++)
+        {
+            if (inventoryArmor.transform.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+            {
+                slotsArmor.Add(inventoryArmor.transform.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+            }
+        }
+
+        for (int i = 0; i < inventoryWeapon.transform.childCount; i++)
+        {
+            if (inventoryWeapon.transform.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+            {
+                slotsWeapon.Add(inventoryWeapon.transform.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+            }
+        }
+
+        //Слоты для отображения оружия
+        for (int i = 0; i < weaponFast.transform.GetChild(0).childCount; i++)
+        {
+            if (weaponFast.transform.GetChild(0).GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+            {
+                slotsWeaponFast.Add(weaponFast.transform.GetChild(0).GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+            }
+        }
+
+        for (int i = 0; i < inventoryFast.transform.GetChild(1).childCount; i++)
+        {
+            selectSlot.Add(inventoryFast.transform.GetChild(1).GetChild(i).GetChild(1).gameObject);
+        }
+
+        //Картинки, указывающие на выбранный слот
+        /*for (int i = 0; i < 6; i++)
+        {
+
+            selectSlot[i].SetActive(false);
+        }
+
+        selectSlot[0].SetActive(true);
+        SelectSlot(1);
+
+        inventory.SetActive(false);*/
+    }
 
     private void Update()
     {
@@ -165,7 +237,7 @@ public class UIControll : MonoBehaviour
     public void ControllActiveHUD(bool active)
     {
         inventoryFast.SetActive(active);
-        WeaponFastPanel.SetActive(active);
+        weaponFast.SetActive(active);
         HealthBarPanel.SetActive(active);
     }
 

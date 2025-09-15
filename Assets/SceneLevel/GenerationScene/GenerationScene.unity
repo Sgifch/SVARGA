@@ -292,6 +292,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b2d403ccd518f84090d842fbb7d335e, type: 3}
+--- !u!1 &208350280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6606033016345087445, guid: 8403e7280027d1d429be76eac6ea4126, type: 3}
+  m_PrefabInstance: {fileID: 2079526918}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &283314344
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,6 +530,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8867197220506436672, guid: a82a953c39a0d1345a8e82c10a1a5900, type: 3}
   m_PrefabInstance: {fileID: 496850631}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &579164992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5405363920190005662, guid: 8403e7280027d1d429be76eac6ea4126, type: 3}
+  m_PrefabInstance: {fileID: 2079526918}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &644576336 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4745033845379937785, guid: 550043b3182e2244c867a16cde05f219, type: 3}
@@ -536,6 +546,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87553282529144649b895c114b8e62ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &701852893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 701852895}
+  - component: {fileID: 701852894}
+  m_Layer: 0
+  m_Name: UIContrioll
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &701852894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701852893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f55dbabdc104b47bc09cb05fb24b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 208350280}
+  inventoryArmor: {fileID: 579164992}
+  inventoryWeapon: {fileID: 996820288}
+  informationUI: {fileID: 2059610572}
+  counterRoomText: {fileID: 1880183292}
+  inventoryFast: {fileID: 1316561258}
+  weaponFast: {fileID: 1202726755}
+  HealthBarPanel: {fileID: 1833946337}
+  upgradeMenu: {fileID: 0}
+  fontainMenu: {fileID: 772769769}
+  developerMenu: {fileID: 878076016}
+  fontain: {fileID: 0}
+  damageText: {fileID: 1532578866}
+  isFontain: 0
+  isStay: 0
+  isOpen: 0
+  slots: []
+  slotsFast: []
+  slotsArmor: []
+  slotsWeapon: []
+  slotsWeaponFast: []
+  selectSlot: []
+  stateUI: 0
+--- !u!4 &701852895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701852893}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.6796384, y: 1.1878278, z: -0.16009372}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &772769769 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 185849779298581318, guid: 8403e7280027d1d429be76eac6ea4126, type: 3}
@@ -673,9 +750,17 @@ PrefabInstance:
       value: MainCharacter
       objectReference: {fileID: 0}
     - target: {fileID: 4161853432117312438, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 208350280}
+    - target: {fileID: 4161853432117312438, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
       propertyPath: damageText
       value: 
       objectReference: {fileID: 1532578866}
+    - target: {fileID: 4161853432117312438, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: weaponFast
+      value: 
+      objectReference: {fileID: 1202726755}
     - target: {fileID: 4161853432117312438, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
       propertyPath: fontainMenu
       value: 
@@ -697,6 +782,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1833946337}
     - target: {fileID: 4161853432117312438, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: inventoryArmor
+      value: 
+      objectReference: {fileID: 579164992}
+    - target: {fileID: 4161853432117312438, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
       propertyPath: WeaponFastPanel
       value: 
       objectReference: {fileID: 1202726755}
@@ -704,6 +793,10 @@ PrefabInstance:
       propertyPath: counterRoomText
       value: 
       objectReference: {fileID: 1880183292}
+    - target: {fileID: 4161853432117312438, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: inventoryWeapon
+      value: 
+      objectReference: {fileID: 996820288}
     - target: {fileID: 9044137165148984055, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.33
@@ -899,6 +992,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6246da43cdde484a902e35a7e1fef47, type: 3}
+--- !u!1 &996820288 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5955523591105981361, guid: 8403e7280027d1d429be76eac6ea4126, type: 3}
+  m_PrefabInstance: {fileID: 2079526918}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1171325827
 GameObject:
   m_ObjectHideFlags: 0
@@ -4076,3 +4174,4 @@ SceneRoots:
   - {fileID: 1171325830}
   - {fileID: 59359935}
   - {fileID: 1560687956}
+  - {fileID: 701852895}
