@@ -21,6 +21,8 @@ public class ControllMove : MonoBehaviour
 
     //Доступ к статам
     public inventoryManager dataItem;
+    public GameObject uiControll;
+
 
 
     void Start()
@@ -28,18 +30,19 @@ public class ControllMove : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         dataItem = gameObject.GetComponent<inventoryManager>();
+        uiControll = GameObject.FindWithTag("UIControll");
 
     }
 
     void Update()
     {
-        if (!gameObject.GetComponent<UIControll>().isStay)
+        if (!uiControll.GetComponent<UIControll>().isStay)
         {
             processInputs();
         }
         Animated();
 
-        if (Input.GetMouseButtonDown(0) && !dataItem.isOpened && !isAttack && !isMove)
+        if (Input.GetMouseButtonDown(0) && !uiControll.GetComponent<UIControll>().isStay && !isAttack && !isMove)
         {
 
             AttackWeapon();

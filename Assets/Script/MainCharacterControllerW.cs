@@ -39,11 +39,11 @@ public class MainCharacterControllerW : MonoBehaviour
         processInputs();
         Animated();
 
-        if (Input.GetMouseButtonDown(0) && !dataItem.isOpened && !isAttack && !isMove)
+        /*if (Input.GetMouseButtonDown(0) && !dataItem.isOpened && !isAttack && !isMove)
         {
             
             AttackWeapon();
-        }
+        }*/
 
     }
 

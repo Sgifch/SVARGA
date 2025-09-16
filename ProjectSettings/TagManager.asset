@@ -22,6 +22,7 @@ TagManager:
   - DamageCanvas
   - Fontain
   - FontainUI
+  - UIControll
   layers:
   - Default
   - TransparentFX

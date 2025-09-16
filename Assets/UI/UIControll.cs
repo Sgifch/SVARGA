@@ -31,9 +31,12 @@ public class UIControll : MonoBehaviour
 
 
     public bool isStay = false;
+    public bool isStayCollision = false;
+    public bool isInventoryOpen = false;
+    public bool isUpgradeMenu = false;
     public bool isOpen = false;
     private bool isOpenDev = false; 
-    private Collider2D collision;
+    public Collider2D collision;
 
     [Header("Слоты")]
     public List<inventorySlot> slots = new List<inventorySlot>(); //Список инвентаря
@@ -52,7 +55,6 @@ public class UIControll : MonoBehaviour
 
     public StateUI stateUI;
 
-    //Вот это всё потом переделать под отделльный элемент на сцене
 
     public void Awake()
     {
@@ -88,7 +90,6 @@ public class UIControll : MonoBehaviour
             }
         }
 
-        //Слоты для отображения оружия
         for (int i = 0; i < weaponFast.transform.GetChild(0).childCount; i++)
         {
             if (weaponFast.transform.GetChild(0).GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
@@ -102,17 +103,6 @@ public class UIControll : MonoBehaviour
             selectSlot.Add(inventoryFast.transform.GetChild(1).GetChild(i).GetChild(1).gameObject);
         }
 
-        //Картинки, указывающие на выбранный слот
-        /*for (int i = 0; i < 6; i++)
-        {
-
-            selectSlot[i].SetActive(false);
-        }
-
-        selectSlot[0].SetActive(true);
-        SelectSlot(1);
-
-        inventory.SetActive(false);*/
     }
 
     private void Update()
@@ -123,17 +113,59 @@ public class UIControll : MonoBehaviour
             case StateUI.idle:
                 isStay = false;
                 ControllActiveHUD(true);
+                inventory.SetActive(false);
+                informationUI.SetActive(false);
                 break;
 
             case StateUI.otherMenuOpen:
                 isStay = true;
                 ControllActiveHUD(false);
-                //закрытие инвентаря
                 break;
 
             case StateUI.inventoryOpen:
                 isStay = true;
+                inventory.SetActive(true);
+                ControllActiveHUD(false);
                 break;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab) && stateUI!=StateUI.otherMenuOpen)
+        {
+            if (!isInventoryOpen)
+            {
+                stateUI = StateUI.inventoryOpen;
+                isInventoryOpen = true;
+            }
+            else
+            {
+                stateUI = StateUI.idle;
+                isInventoryOpen = false;
+            }
+        }
+
+        if (collision != null && Input.GetKeyDown(KeyCode.E))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                switch (collision.gameObject.tag)
+                {
+                    case "Kipishe":
+                        UpgradeMenuOpen();
+                        break;
+
+                    case "Fontain":
+                        if (!collision.gameObject.GetComponent<FontainFunction>().isTake)
+                        {
+                            //проверка свободного мнста в инвентаре
+                            if(stateUI == StateUI.idle)
+                            {
+                                FontainMenu();
+                            }
+                            
+                        }
+                        break;
+                }
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.F3))
@@ -153,26 +185,12 @@ public class UIControll : MonoBehaviour
         }
 
     }
-    public void FontainMenu(GameObject _fontain)
+    public void FontainMenu()
     {
-        if (!isFontain)
-        {
-            fontain = _fontain;
-            fontain.GetComponent<FontainFunction>().FontainStart();
-            fontainMenu.SetActive(true);
-            isFontain = true;
-            fontainMenu.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Open");
-            stateUI = StateUI.otherMenuOpen;
-        }
-        /*else
-        {
-            stateUI = StateUI.idle;
-            fontainMenu.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Close");
-            //fontainMenu.SetActive(false);
-            isFontain = false;
-            gameObject.GetComponent<inventoryManager>().isOpened = false; //временно
-            fontain.GetComponent<FontainFunction>().FontainEnd();
-        }*/
+        collision.gameObject.GetComponent<FontainFunction>().FontainStart();
+        fontainMenu.SetActive(true);
+        fontainMenu.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Open");
+        stateUI = StateUI.otherMenuOpen;
     }
 
 
@@ -185,40 +203,45 @@ public class UIControll : MonoBehaviour
         
     }
 
-    //Открытие закрытие меню улучшения
-    public void UpgradeMenu()
+    //Меню улучшений-------------------------------------------------------------------------------------------------
+    public void UpgradeMenuOpen()
     {
-        if (!isOpen)
+        if (!isUpgradeMenu)
         {
-            ControllActiveHUD(false);
+            stateUI = StateUI.otherMenuOpen;
             collision.gameObject.GetComponent<KipisheFunction>().ShowKipishe();
             Animator anim = upgradeMenu.GetComponent<Animator>();
             ControllActiveOtherMenu(upgradeMenu, true);
             anim.SetTrigger("Open");
-            
-            isOpen = true;
+
+            isUpgradeMenu = true;
         }
         else
         {
-            isOpen = false;
-            ControllActiveHUD(true);
-            
-            ControllActiveOtherMenu(upgradeMenu, false);
+            isUpgradeMenu = false;
+            //ControllActiveOtherMenu(upgradeMenu, false);
+            Animator anim = upgradeMenu.GetComponent<Animator>();
+            anim.SetTrigger("Close");
+            stateUI = StateUI.idle;
         }
+ 
     }
 
-    //Закрыть меню улучшения
     public void UpgradeMenuClose()
     {
-        ControllActiveHUD(true);
+
         if (upgradeMenu != null)
         {
-            ControllActiveOtherMenu(upgradeMenu, false);
+            //ControllActiveOtherMenu(upgradeMenu, false);
+            Animator anim = upgradeMenu.GetComponent<Animator>();
+            anim.SetTrigger("Close");
             isOpen = false;
         }
+        stateUI = StateUI.idle;
         collision = null;
     }
 
+    //Инвентарь--------------------------------------------------------------------------------------------------------
     public void InventoryClose()
     {
         if (informationUI != null)
@@ -248,12 +271,13 @@ public class UIControll : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D _collision)
     {
-        isStay = true;
+        isStayCollision = true;
         collision = _collision;
     }
 
     private void OnTriggerExit2D(Collider2D _collision)
     {
-
+        isStayCollision = false;
+        collision = null;
     }
 }

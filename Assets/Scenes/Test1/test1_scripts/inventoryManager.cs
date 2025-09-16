@@ -6,29 +6,21 @@ using UnityEngine.UI;
 
 public class inventoryManager : MonoBehaviour
 {
-    //private GameObject UI;
     public GameObject UIControll;
 
     private GameObject inventory;
-    //private Transform inventoryPanel;
 
     private GameObject inventoryFast;
-    //private Transform inventoryPanelFast;
 
     private GameObject inventoryArmor;
-    //private Transform inventoryArmor;
 
     private GameObject inventoryWeapon;
-    //private Transform inventoryWeapon;
 
     private GameObject weaponFast;
-    //private Transform weaponFastPanel;
 
     private GameObject barPanel;
     public GameObject upgradeMenu;
 
-    public bool isOpened;
-    private bool isKipisheOpen = false;
     public int indexSlot; 
 
     bool collisionStay = false;
@@ -43,75 +35,10 @@ public class inventoryManager : MonoBehaviour
 
     private void Awake()
     {
-        /*UI = GameObject.Find("UI");
-
-        inventory = UI.transform.GetChild(0).gameObject;
-        inventoryPanel = inventory.transform;
-
-        UIPanelArmor = inventoryPanel.GetChild(0).GetChild(1).GetChild(0).gameObject;
-        inventoryArmor = UIPanelArmor.transform;
-
-        UIPanelWeapon = inventoryPanel.GetChild(0).GetChild(1).GetChild(1).gameObject;
-        inventoryWeapon = UIPanelWeapon.transform;
-
-        UIPanelFast = UI.transform.GetChild(1).gameObject;
-        inventoryPanelFast = UIPanelFast.transform;
-
-        UIWeaponFast = UI.transform.GetChild(2).gameObject;
-        weaponFastPanel = UIWeaponFast.transform;
-
-        barPanel = UI.transform.GetChild(3).gameObject;*/
 
     }
     private void Start()
     {
-
-
-            /*for (int i=0; i < inventoryPanel.GetChild(0).GetChild(0).childCount; i++) //мб этот блок потом засунуть в одну функцию для удобства
-            {
-                if (inventoryPanel.GetChild(0).GetChild(0).GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
-                {
-                    slots.Add(inventoryPanel.GetChild(0).GetChild(0).GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
-                }
-            }
-
-            for (int i=0; i < inventoryPanelFast.GetChild(1).childCount; i++)
-            {
-                if (inventoryPanelFast.GetChild(1).GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
-                {
-                    slotsFast.Add(inventoryPanelFast.GetChild(1).GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
-                }
-            }
-
-            for (int i = 0; i < inventoryArmor.childCount; i++)
-            {
-                if (inventoryArmor.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
-                {
-                    slotsArmor.Add(inventoryArmor.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
-                }
-            }
-
-            for (int i = 0; i < inventoryWeapon.childCount; i++)
-            {
-                if (inventoryWeapon.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
-                {
-                    slotsWeapon.Add(inventoryWeapon.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
-                }
-            }
-
-            //Слоты для отображения оружия
-            for (int i = 0; i < weaponFastPanel.GetChild(0).childCount; i++)
-            {
-                if (weaponFastPanel.GetChild(0).GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
-                {
-                    slotsWeaponFast.Add(weaponFastPanel.GetChild(0).GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
-                }
-            }
-
-            for (int i=0; i < inventoryPanelFast.GetChild(1).childCount; i++)
-            {
-                selectSlot.Add(inventoryPanelFast.GetChild(1).GetChild(i).GetChild(1).gameObject);
-            }*/
         UIControll = GameObject.FindWithTag("UIControll");
         inventory = UIControll.GetComponent<UIControll>().inventory;
         inventoryFast = UIControll.GetComponent<UIControll>().inventoryFast;
@@ -124,6 +51,7 @@ public class inventoryManager : MonoBehaviour
         slotsArmor = UIControll.GetComponent<UIControll>().slotsArmor;
         slotsWeapon = UIControll.GetComponent<UIControll>().slotsWeapon;
         slotsWeaponFast = UIControll.GetComponent<UIControll>().slotsWeaponFast;
+        selectSlot = UIControll.GetComponent<UIControll>().selectSlot;
 
 
         //Картинки, указывающие на выбранный слот
@@ -142,13 +70,6 @@ public class inventoryManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab)) //Открытие меню и закрытие предметов быстрого доступа
-        {
-            if (!gameObject.GetComponent<UIControll>().isOpen)
-            {
-                //MenuControll();
-            }
-        }
 
         if (collisionStay) //Подбирается предмет
         {
@@ -168,7 +89,7 @@ public class inventoryManager : MonoBehaviour
                         collision.gameObject.GetComponent<WeaponSpawnScript>().TakeItem();
                     }
                 }
-                else if (collision.gameObject.tag == "Kipishe")
+                /*else if (collision.gameObject.tag == "Kipishe")
                 {
                     gameObject.GetComponent<UIControll>().UpgradeMenu();
                 }
@@ -176,8 +97,7 @@ public class inventoryManager : MonoBehaviour
                 { 
                     gameObject.GetComponent<UIControll>().FontainMenu(collision.gameObject);
                     isOpened = true;
-                }
-
+                }*/
             }
         }
 
@@ -260,10 +180,6 @@ public class inventoryManager : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         collisionStay = false;
-        if (collision.gameObject.tag == "Kipishe")
-        {
-            gameObject.GetComponent<UIControll>().UpgradeMenuClose();
-        }
     }
 
     public void AddItem(itemScriptableObject _item, int _amount)
