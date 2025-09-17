@@ -783,11 +783,15 @@ MonoBehaviour:
   fontainMenu: {fileID: 7803874040817550094}
   developerMenu: {fileID: 1697245917998884905}
   fontain: {fileID: 0}
+  signPanel: {fileID: 0}
+  hintKey: {fileID: 0}
+  screenDeath: {fileID: 6971662107348326292}
   damageText: {fileID: 2897848073127246672}
   isFontain: 0
   isStay: 0
   isStayCollision: 0
   isInventoryOpen: 0
+  isUpgradeMenu: 0
   isOpen: 0
   collision: {fileID: 0}
   slots: []
@@ -3152,6 +3156,11 @@ GameObject:
 --- !u!1 &4359183531019801593 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5955523591105981361, guid: 8403e7280027d1d429be76eac6ea4126, type: 3}
+  m_PrefabInstance: {fileID: 7987322455297341512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6971662107348326292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1015837468390584284, guid: 8403e7280027d1d429be76eac6ea4126, type: 3}
   m_PrefabInstance: {fileID: 7987322455297341512}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7803874040817550094 stripped

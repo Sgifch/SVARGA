@@ -24,6 +24,14 @@ public class UIControll : MonoBehaviour
 
     public GameObject fontain;
 
+    [Header("ѕодсказки")]
+    public GameObject signPanel;
+    public GameObject hintKey;
+
+    [Header("Ёкран смерти")]
+    public GameObject screenDeath;
+
+
     [Header("Ёффекты урона")]
     public TMP_Text damageText;
 
