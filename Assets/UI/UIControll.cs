@@ -31,6 +31,8 @@ public class UIControll : MonoBehaviour
     [Header("Ёкран смерти")]
     public GameObject screenDeath;
 
+    [Header("ћеню паузы")]
+    public GameObject paused;
 
     [Header("Ёффекты урона")]
     public TMP_Text damageText;
@@ -43,7 +45,9 @@ public class UIControll : MonoBehaviour
     public bool isInventoryOpen = false;
     public bool isUpgradeMenu = false;
     public bool isOpen = false;
-    private bool isOpenDev = false; 
+    private bool isOpenDev = false;
+    public bool isHint = false;
+    public bool isSign = false;
     public Collider2D collision;
 
     [Header("—лоты")]
@@ -59,6 +63,7 @@ public class UIControll : MonoBehaviour
         idle,
         inventoryOpen,
         otherMenuOpen,
+        pausedOpen,
     }
 
     public StateUI stateUI;
@@ -127,13 +132,20 @@ public class UIControll : MonoBehaviour
 
             case StateUI.otherMenuOpen:
                 isStay = true;
+                HintClose();
                 ControllActiveHUD(false);
                 break;
 
             case StateUI.inventoryOpen:
                 isStay = true;
+                HintClose();
                 inventory.SetActive(true);
                 ControllActiveHUD(false);
+                break;
+
+            case StateUI.pausedOpen:
+                ControllActiveHUD(false);
+                paused.SetActive(true);
                 break;
         }
 
@@ -192,6 +204,11 @@ public class UIControll : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            stateUI = StateUI.pausedOpen; 
+        }
+
     }
     public void FontainMenu()
     {
@@ -235,20 +252,6 @@ public class UIControll : MonoBehaviour
  
     }
 
-    public void UpgradeMenuClose()
-    {
-
-        if (upgradeMenu != null)
-        {
-            //ControllActiveOtherMenu(upgradeMenu, false);
-            Animator anim = upgradeMenu.GetComponent<Animator>();
-            anim.SetTrigger("Close");
-            isOpen = false;
-        }
-        stateUI = StateUI.idle;
-        collision = null;
-    }
-
     //»нвентарь--------------------------------------------------------------------------------------------------------
     public void InventoryClose()
     {
@@ -264,7 +267,7 @@ public class UIControll : MonoBehaviour
         informationUI.SetActive(true);
     }
 
-    //ќткрыте закрытие HUD меню
+    //ќткрыте закрытие HUD меню-------------------------------------------------------------------------------
     public void ControllActiveHUD(bool active)
     {
         inventoryFast.SetActive(active);
@@ -277,15 +280,72 @@ public class UIControll : MonoBehaviour
         menu.SetActive(active);
     }
 
+    //”правление_всплывающими_подсказками-------------------------------------------------------------------
+    public void HintOpen()
+    {
+        string tag = collision.gameObject.tag;
+
+        if (tag == "Kipishe" || tag == "Fontain" || tag == "WeaponSpawn")
+        {
+            hintKey.GetComponent<Animator>().SetTrigger("Open");
+            isHint = true;
+        }
+    }
+
+    public void HintClose()
+    {
+        if (isHint)
+        {
+            hintKey.GetComponent<Animator>().SetTrigger("Close");
+            isHint = false;
+        }
+    }
+
+    //”правление_табличкой-----------------------------------------------------------------------------------
+    public void SignOpen(string text)
+    {
+        if (!isSign)
+        {
+            TMP_Text text_sign = signPanel.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>();
+            text_sign.text = text;
+            signPanel.GetComponent<Animator>().SetTrigger("Open");
+            isSign = true;
+        }
+    }
+
+    public void SignClose()
+    {
+        if (isSign)
+        {
+            signPanel.GetComponent<Animator>().SetTrigger("Close");
+            isSign = false;
+        }
+    }
+
+    //ћеню_паузы----------------------------------------------------------------------------------------------
+    public void PauseClose()
+    {
+        paused.SetActive(false);
+        stateUI = StateUI.idle;
+    }
+
+    //“риггеры------------------------------------------------------------------------------------------------
     private void OnTriggerEnter2D(Collider2D _collision)
     {
         isStayCollision = true;
         collision = _collision;
+
+        if (!isHint)
+        {
+            HintOpen();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D _collision)
     {
         isStayCollision = false;
         collision = null;
+
+        HintClose();
     }
 }

@@ -205,9 +205,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807192795595691415}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e80470c2ce5fbd4cb6edf33565e1d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pause: {fileID: 0}
+  settings: {fileID: 0}
+  exit: {fileID: 0}
+  healthbar: {fileID: 0}
+  weaponfast: {fileID: 0}
+  inventoryfast: {fileID: 0}
+  volume: 0
+  quality: 0
+  isFullscreen: 1
+  audioMixer: {fileID: 0}
+  resolutionDropdown: {fileID: 0}

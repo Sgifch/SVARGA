@@ -29,8 +29,11 @@ public class WeaponSpawnScript : MonoBehaviour
 
     private void Update()
     {
-        float t = Mathf.PingPong(Time.time * speed, 1f);
-        _spawnItem.transform.position = Vector3.Lerp(_itemPosition, _itemPosition+shiftAnim, t);
+        if (!isEmpty)
+        {
+            float t = Mathf.PingPong(Time.time * speed, 1f);
+            _spawnItem.transform.position = Vector3.Lerp(_itemPosition, _itemPosition + shiftAnim, t);
+        }
     }
 
     public void TakeItem()

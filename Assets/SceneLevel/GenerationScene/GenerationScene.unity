@@ -153,7 +153,6 @@ MonoBehaviour:
   spawnPoint: {fileID: 0}
   player: {fileID: 1330199368}
   triggerZone: {fileID: 0}
-  signPanel: {fileID: 0}
   playerStat: {fileID: 644576336}
   screenDeath: {fileID: 1332934944}
 --- !u!4 &59359935

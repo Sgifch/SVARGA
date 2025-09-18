@@ -57,24 +57,25 @@ public class Paused : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        /*if (Input.GetKeyDown(KeyCode.Escape))
         {
             pause.SetActive(true);
             Time.timeScale = 0;
             healthbar.SetActive(false);
             weaponfast.SetActive(false);
             inventoryfast.SetActive(false); 
-        }
+        }*/
     }
 
     public void PauseOff()
     {
-        pause.SetActive(false);
+        //pause.SetActive(false);
+        GameObject.FindWithTag("UIControll").GetComponent<UIControll>().PauseClose();
         Time.timeScale = 1;
-        settings.SetActive(false);
+        /*settings.SetActive(false);
         healthbar.SetActive(true);
         weaponfast.SetActive(true);
-        inventoryfast.SetActive(true);
+        inventoryfast.SetActive(true);*/
     }
 
     public void Settings()

@@ -5,14 +5,21 @@ using UnityEngine;
 
 public class TextSign : MonoBehaviour
 {
-    public string _text;
+    public string text;
     public GameObject signPanel;
+    public GameObject uiControll;
+
+    private void Start()
+    {
+        uiControll = GameObject.FindWithTag("UIControll");
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            SignPanelShow(true);
+            //SignPanelShow(true);
+            uiControll.GetComponent<UIControll>().SignOpen(text);
         }
     }
 
@@ -20,11 +27,12 @@ public class TextSign : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            SignPanelShow(false);
+            //SignPanelShow(false);
+            uiControll.GetComponent<UIControll>().SignClose();
         }
     }
 
-    public void SignPanelShow(bool active)
+    /*public void SignPanelShow(bool active)
     {
         if (active)
         {
@@ -37,5 +45,5 @@ public class TextSign : MonoBehaviour
         {
             signPanel.SetActive(false);
         }
-    }
+    }*/
 }

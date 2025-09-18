@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     public Transform spawnPoint;
     public GameObject player;
     public GameObject triggerZone;
-    public GameObject signPanel;
 
     public PlayerStatManager playerStat;
 
@@ -26,12 +25,13 @@ public class GameManager : MonoBehaviour
         {
             playerStat.LoadStat();
         }
+
+        screenDeath = GameObject.FindWithTag("UIControll").GetComponent<UIControll>().screenDeath;
     }   
 
     private void Start()
     {
 
-        signPanel.SetActive(false);
     }
 
     void Update()
