@@ -23,6 +23,7 @@ TagManager:
   - Fontain
   - FontainUI
   - UIControll
+  - Chest
   layers:
   - Default
   - TransparentFX

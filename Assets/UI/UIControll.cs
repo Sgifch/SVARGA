@@ -12,6 +12,8 @@ public class UIControll : MonoBehaviour
     public GameObject informationUI;
     public TMP_Text counterRoomText;
 
+    public GameObject inventoryChest; 
+
     [Header("HUD элементы")]
     public GameObject inventoryFast;
     public GameObject weaponFast;
@@ -48,6 +50,7 @@ public class UIControll : MonoBehaviour
     private bool isOpenDev = false;
     public bool isHint = false;
     public bool isSign = false;
+    public bool isChest = false;
     public Collider2D collision;
 
     [Header("Слоты")]
@@ -64,6 +67,7 @@ public class UIControll : MonoBehaviour
         inventoryOpen,
         otherMenuOpen,
         pausedOpen,
+        chestInventoryOpen,
     }
 
     public StateUI stateUI;
@@ -127,6 +131,7 @@ public class UIControll : MonoBehaviour
                 isStay = false;
                 ControllActiveHUD(true);
                 inventory.SetActive(false);
+                inventoryChest.SetActive(false);
                 informationUI.SetActive(false);
                 break;
 
@@ -146,6 +151,12 @@ public class UIControll : MonoBehaviour
             case StateUI.pausedOpen:
                 ControllActiveHUD(false);
                 paused.SetActive(true);
+                Time.timeScale = 0; 
+                break;
+
+            case StateUI.chestInventoryOpen:
+                inventoryChest.SetActive(true);
+                isChest = true;
                 break;
         }
 
@@ -183,6 +194,10 @@ public class UIControll : MonoBehaviour
                             }
                             
                         }
+                        break;
+
+                    case "Chest":
+                        ChestMenu();
                         break;
                 }
             }
@@ -267,6 +282,21 @@ public class UIControll : MonoBehaviour
         informationUI.SetActive(true);
     }
 
+    //Сундук-------------------------------------------------------------------------------------------------
+    public void ChestMenu()
+    {
+        if (!isChest)
+        {
+            stateUI = StateUI.chestInventoryOpen;
+        }
+        else
+        {
+            stateUI = StateUI.idle;
+            isChest = false;
+        }
+
+    }
+
     //Открыте закрытие HUD меню-------------------------------------------------------------------------------
     public void ControllActiveHUD(bool active)
     {
@@ -285,7 +315,7 @@ public class UIControll : MonoBehaviour
     {
         string tag = collision.gameObject.tag;
 
-        if (tag == "Kipishe" || tag == "Fontain" || tag == "WeaponSpawn")
+        if (tag == "Kipishe" || tag == "Fontain" || tag == "WeaponSpawn" || tag == "Chest")
         {
             hintKey.GetComponent<Animator>().SetTrigger("Open");
             isHint = true;

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9bc9b09426d61094880df4da1dfdb6b6
+guid: bc93fbf973cc1824794da0db5b981999
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -678692750047427489
-    second: SlotWeapon1v1_0
+      213: -3068635751097243570
+    second: SlotWeapon1v2_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -122,7 +122,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SlotWeapon1v1_0
+      name: SlotWeapon1v2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -136,8 +136,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f544ac92a8cc496f0800000000000000
-      internalID: -678692750047427489
+      spriteID: e48e8ceea040a65d0800000000000000
+      internalID: -3068635751097243570
       vertices: []
       indices: 
       edges: []
@@ -153,7 +153,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SlotWeapon1v1_0: -678692750047427489
+      SlotWeapon1v2_0: -3068635751097243570
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
