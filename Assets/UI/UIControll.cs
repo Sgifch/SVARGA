@@ -12,7 +12,9 @@ public class UIControll : MonoBehaviour
     public GameObject informationUI;
     public TMP_Text counterRoomText;
 
-    public GameObject inventoryChest; 
+    [Header ("Меню сундука")]
+    public GameObject inventoryChest;
+    public GameObject playerPanel;
 
     [Header("HUD элементы")]
     public GameObject inventoryFast;
@@ -155,6 +157,7 @@ public class UIControll : MonoBehaviour
                 break;
 
             case StateUI.chestInventoryOpen:
+                ControllActiveHUD(false);
                 inventoryChest.SetActive(true);
                 isChest = true;
                 break;
@@ -287,6 +290,7 @@ public class UIControll : MonoBehaviour
     {
         if (!isChest)
         {
+            GameObject.FindWithTag("Player").GetComponent<inventoryManager>().PlayerChestInventory(playerPanel);
             stateUI = StateUI.chestInventoryOpen;
         }
         else

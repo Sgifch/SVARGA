@@ -89,15 +89,6 @@ public class inventoryManager : MonoBehaviour
                         collision.gameObject.GetComponent<WeaponSpawnScript>().TakeItem();
                     }
                 }
-                /*else if (collision.gameObject.tag == "Kipishe")
-                {
-                    gameObject.GetComponent<UIControll>().UpgradeMenu();
-                }
-                else if (collision.gameObject.tag == "Fontain" && !collision.gameObject.GetComponent<FontainFunction>().isTake)
-                { 
-                    gameObject.GetComponent<UIControll>().FontainMenu(collision.gameObject);
-                    isOpened = true;
-                }*/
             }
         }
 
@@ -149,27 +140,6 @@ public class inventoryManager : MonoBehaviour
 
         }
     }
-    /*public void MenuControll()
-    {
-        isOpened = !isOpened;
-        if (isOpened)
-        {
-            inventoryFast.SetActive(false);
-            UIWeaponFast.SetActive(false);
-            inventory.SetActive(true);
-            barPanel.SetActive(false);
-        }
-        else
-        {
-            inventoryFast.SetActive(true);
-            UIWeaponFast.SetActive(true);
-            inventory.SetActive(false);
-            gameObject.GetComponent<UIControll>().InventoryClose();
-            barPanel.SetActive(true);
-        }
-    }*/
-
-   
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -292,6 +262,20 @@ public class inventoryManager : MonoBehaviour
             slots[_index].isEmpty = true;
             slots[_index].item = null;
 
+        }
+    }
+
+    public void PlayerChestInventory(GameObject PlayerPanel)
+    {
+        for (int i = 0; i < slots.Count; i++) //Сделать потом отдельный список
+        {
+            if (PlayerPanel.transform.GetChild(i).GetComponent<inventorySlot>() != null && slots[i].isEmpty) 
+            {
+                PlayerPanel.transform.GetChild(i).GetComponent<inventorySlot>().item = slots[i].item;
+                PlayerPanel.transform.GetChild(i).GetComponent<inventorySlot>().SetIcon(slots[i].item.icon);
+                PlayerPanel.transform.GetChild(i).GetComponent<inventorySlot>().AddAmount(slots[i].amount);
+                //slots.Add(inventory.transform.GetChild(0).GetChild(0).GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+            }
         }
     }
 
