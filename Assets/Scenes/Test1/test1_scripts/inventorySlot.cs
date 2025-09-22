@@ -36,6 +36,13 @@ public class inventorySlot : MonoBehaviour
 
     public void AddAmount(int amount)
     {
-        itemAmount.text = amount.ToString();
+        if( amount == 0)
+        {
+            itemAmount.text = " ";
+        }
+        else
+        {
+            itemAmount.text = amount.ToString();
+        }
     }
 }

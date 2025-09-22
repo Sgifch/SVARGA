@@ -19,7 +19,8 @@ public class inventoryManager : MonoBehaviour
     private GameObject weaponFast;
 
     private GameObject barPanel;
-    public GameObject upgradeMenu;
+
+    public GameObject inventoryPanel;
 
     public int indexSlot; 
 
@@ -32,6 +33,8 @@ public class inventoryManager : MonoBehaviour
     public List<inventorySlot> slotsWeapon = new List<inventorySlot>();
     public List<inventorySlot> slotsWeaponFast = new List<inventorySlot>();
     public List<GameObject> selectSlot = new List<GameObject>();
+
+    public List<inventorySlot> slotsCopy = new List<inventorySlot>();
 
     private void Awake()
     {
@@ -265,18 +268,59 @@ public class inventoryManager : MonoBehaviour
         }
     }
 
-    public void PlayerChestInventory(GameObject PlayerPanel)
+    public void SetSlots(List <inventorySlot> slotsList, GameObject panel)
     {
-        for (int i = 0; i < slots.Count; i++) //Сделать потом отдельный список
+        for (int i = 0; i < panel.transform.childCount-1; i++)
         {
-            if (PlayerPanel.transform.GetChild(i).GetComponent<inventorySlot>() != null && slots[i].isEmpty) 
+            if (!slotsList[i].isEmpty)
             {
-                PlayerPanel.transform.GetChild(i).GetComponent<inventorySlot>().item = slots[i].item;
-                PlayerPanel.transform.GetChild(i).GetComponent<inventorySlot>().SetIcon(slots[i].item.icon);
-                PlayerPanel.transform.GetChild(i).GetComponent<inventorySlot>().AddAmount(slots[i].amount);
-                //slots.Add(inventory.transform.GetChild(0).GetChild(0).GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+                panel.transform.GetChild(i).GetComponent<inventorySlot>().item = slotsList[i].item;
+                panel.transform.GetChild(i).GetComponent<inventorySlot>().SetIcon(slotsList[i].item.icon);
+                panel.transform.GetChild(i).GetComponent<inventorySlot>().AddAmount(slotsList[i].amount);
+                panel.transform.GetChild(i).GetComponent<inventorySlot>().amount = slotsList[i].amount;
+                panel.transform.GetChild(i).GetComponent<inventorySlot>().isEmpty = false;
+            }
+            else
+            {
+                panel.transform.GetChild(i).GetComponent<inventorySlot>().item = null;
+                panel.transform.GetChild(i).GetComponent<inventorySlot>().SetIcon(null);
+                panel.transform.GetChild(i).GetComponent<inventorySlot>().AddAmount(0);
+                panel.transform.GetChild(i).GetComponent<inventorySlot>().amount = 0;
+                panel.transform.GetChild(i).GetComponent<inventorySlot>().isEmpty = true;
             }
         }
+    }
+
+    public void ClearSlots(GameObject panel)
+    {
+        for (int i = 0; i < panel.transform.childCount - 1; i++)
+        {
+            if (!panel.transform.GetChild(i).GetComponent<inventorySlot>().isEmpty)
+            {
+                panel.transform.GetChild(i).GetComponent<inventorySlot>().item = null;
+                panel.transform.GetChild(i).GetComponent<inventorySlot>().SetIcon(null);
+                panel.transform.GetChild(i).GetComponent<inventorySlot>().AddAmount(0);
+                panel.transform.GetChild(i).GetComponent<inventorySlot>().amount = 0;
+                panel.transform.GetChild(i).GetComponent<inventorySlot>().isEmpty = true;
+            }
+        }
+    }
+
+    public void PlayerChestInventoryOpen(GameObject playerPanel)
+    {
+        //slotsCopy.AddRange(slots);
+        SetSlots(slots, playerPanel);
+
+    }
+
+    public void PlayerChestInventoryClose(GameObject playerPanel)
+    {
+        //slots.Clear();
+        //slots.AddRange(slotsCopy);
+
+        //slotsCopy.Clear();
+        //ClearSlots(playerPanel);
+        SetSlots(slots, inventoryPanel);
     }
 
 }

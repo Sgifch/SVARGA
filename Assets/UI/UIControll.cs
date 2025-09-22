@@ -159,6 +159,7 @@ public class UIControll : MonoBehaviour
             case StateUI.chestInventoryOpen:
                 ControllActiveHUD(false);
                 inventoryChest.SetActive(true);
+                isStay = true;
                 isChest = true;
                 break;
         }
@@ -290,18 +291,19 @@ public class UIControll : MonoBehaviour
     {
         if (!isChest)
         {
-            GameObject.FindWithTag("Player").GetComponent<inventoryManager>().PlayerChestInventory(playerPanel);
+            GameObject.FindWithTag("Player").GetComponent<inventoryManager>().PlayerChestInventoryOpen(playerPanel);
             stateUI = StateUI.chestInventoryOpen;
         }
         else
         {
+            GameObject.FindWithTag("Player").GetComponent<inventoryManager>().PlayerChestInventoryClose(playerPanel);
             stateUI = StateUI.idle;
             isChest = false;
         }
 
     }
 
-    //Открыте закрытие HUD меню-------------------------------------------------------------------------------
+    //Открыте_закрытие_HUD_меню-------------------------------------------------------------------------------
     public void ControllActiveHUD(bool active)
     {
         inventoryFast.SetActive(active);
