@@ -35,6 +35,7 @@ public class inventoryManager : MonoBehaviour
     public List<GameObject> selectSlot = new List<GameObject>();
 
     public List<inventorySlot> slotsCopy = new List<inventorySlot>();
+    public List<inventorySlot> slotsChest = new List<inventorySlot>();
 
     private void Awake()
     {
@@ -55,6 +56,7 @@ public class inventoryManager : MonoBehaviour
         slotsWeapon = UIControll.GetComponent<UIControll>().slotsWeapon;
         slotsWeaponFast = UIControll.GetComponent<UIControll>().slotsWeaponFast;
         selectSlot = UIControll.GetComponent<UIControll>().selectSlot;
+        slotsCopy = UIControll.GetComponent<UIControll>().slotsCopy;
 
 
         // артинки, указывающие на выбранный слот
@@ -308,7 +310,6 @@ public class inventoryManager : MonoBehaviour
 
     public void PlayerChestInventoryOpen(GameObject playerPanel)
     {
-        //slotsCopy.AddRange(slots);
         SetSlots(slots, playerPanel);
 
     }
@@ -320,7 +321,7 @@ public class inventoryManager : MonoBehaviour
 
         //slotsCopy.Clear();
         //ClearSlots(playerPanel);
-        SetSlots(slots, inventoryPanel);
+        SetSlots(slotsCopy, inventoryPanel);
     }
 
 }

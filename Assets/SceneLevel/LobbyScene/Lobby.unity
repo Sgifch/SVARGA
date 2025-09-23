@@ -2539,6 +2539,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 407514531}
     - target: {fileID: 6203973450467401348, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: chestPanel
+      value: 
+      objectReference: {fileID: 1456947542}
+    - target: {fileID: 6203973450467401348, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
       propertyPath: PlayerPanel
       value: 
       objectReference: {fileID: 73833885}

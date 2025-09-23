@@ -15,6 +15,7 @@ public class UIControll : MonoBehaviour
     [Header ("Меню сундука")]
     public GameObject inventoryChest;
     public GameObject playerPanel;
+    public GameObject chestPanel;
 
     [Header("HUD элементы")]
     public GameObject inventoryFast;
@@ -62,6 +63,9 @@ public class UIControll : MonoBehaviour
     public List<inventorySlot> slotsWeapon = new List<inventorySlot>();
     public List<inventorySlot> slotsWeaponFast = new List<inventorySlot>();
     public List<GameObject> selectSlot = new List<GameObject>();
+
+    public List<inventorySlot> slotsCopy = new List<inventorySlot>();
+    public List<inventorySlot> slotsChest = new List<inventorySlot>();
 
     public enum StateUI
     {
@@ -117,6 +121,22 @@ public class UIControll : MonoBehaviour
             }
         }
 
+        for (int i = 0; i < playerPanel.transform.childCount; i++)
+        {
+            if (playerPanel.transform.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+            {
+                slotsCopy.Add(playerPanel.transform.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+            }
+        }
+
+        for (int i = 0; i < chestPanel.transform.childCount; i++)
+        {
+            if (chestPanel.transform.GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
+            {
+                slotsChest.Add(chestPanel.transform.GetChild(i).GetComponent<inventorySlot>()); //добавление в лист
+            }
+        }
+
         for (int i = 0; i < inventoryFast.transform.GetChild(1).childCount; i++)
         {
             selectSlot.Add(inventoryFast.transform.GetChild(1).GetChild(i).GetChild(1).gameObject);
@@ -164,7 +184,7 @@ public class UIControll : MonoBehaviour
                 break;
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab) && stateUI!=StateUI.otherMenuOpen)
+        if (Input.GetKeyDown(KeyCode.Tab) && stateUI!=StateUI.otherMenuOpen && stateUI!=StateUI.chestInventoryOpen)
         {
             if (!isInventoryOpen)
             {
