@@ -178,6 +178,7 @@ public class UIControll : MonoBehaviour
 
             case StateUI.chestInventoryOpen:
                 ControllActiveHUD(false);
+                HintClose();
                 inventoryChest.SetActive(true);
                 isStay = true;
                 isChest = true;
@@ -206,6 +207,7 @@ public class UIControll : MonoBehaviour
                 {
                     case "Kipishe":
                         UpgradeMenuOpen();
+                        print("kipishe");
                         break;
 
                     case "Fontain":
