@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.IO;
 using UnityEngine.UI;
 
 public class inventoryManager : MonoBehaviour
@@ -37,6 +38,7 @@ public class inventoryManager : MonoBehaviour
     public List<inventorySlot> slotsCopy = new List<inventorySlot>();
     public List<inventorySlot> slotsChest = new List<inventorySlot>();
 
+    public string _fileName;
     private void Awake()
     {
 
@@ -134,15 +136,31 @@ public class inventoryManager : MonoBehaviour
 
     }
 
-    public void ControllHUD(bool open)
+    //Сохранение-загрузка-инвентаря--------------------------------------------------------------------------
+    public void SaveDataInventory()
     {
-        if (open)
+        StreamWriter sw = new StreamWriter(Application.persistentDataPath + "/" + _fileName);
+        for (int i = 0; i<slots.Count; i++)
         {
-
+            string json = JsonUtility.ToJson(slots[i]);
+            sw.WriteLine(json);
         }
-        else
-        {
+        sw.Close();
+    }
 
+    public void LoadDataInventory()
+    {
+        if(File.Exists(Application.persistentDataPath + "/" + _fileName))
+        {
+            string[] readed = File.ReadAllLines(Application.persistentDataPath + "/" + _fileName);
+            for (int i = 0; i < readed.Length; i++)
+            {
+                inventorySlot saveSlot;
+                saveSlot = JsonUtility.FromJson<inventorySlot>(readed[i]);
+                slots[i] = saveSlot;
+            }
+
+            SetSlots(slots, inventoryPanel);
         }
     }
 

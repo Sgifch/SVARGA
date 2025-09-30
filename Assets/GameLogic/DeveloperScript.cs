@@ -46,4 +46,14 @@ public class DeveloperScript : MonoBehaviour
         player.GetComponent<ControllHealthPoint>().Damage(10);
     }
 
+    public void SaveInventory()
+    {
+        GameObject.FindWithTag("Player").GetComponent<inventoryManager>().SaveDataInventory();
+    }
+
+    public void LoadInventory()
+    {
+        GameObject.FindWithTag("Player").GetComponent<inventoryManager>().LoadDataInventory();
+    }
+
 }
