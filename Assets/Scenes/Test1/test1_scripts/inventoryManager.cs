@@ -142,7 +142,8 @@ public class inventoryManager : MonoBehaviour
         StreamWriter sw = new StreamWriter(Application.persistentDataPath + "/" + _fileName);
         for (int i = 0; i<slots.Count; i++)
         {
-            string json = JsonUtility.ToJson(slots[i]);
+            InventoryDataSlot newSlot = new(slots[i]);
+            string json = JsonUtility.ToJson(newSlot);
             sw.WriteLine(json);
         }
         sw.Close();
@@ -155,9 +156,11 @@ public class inventoryManager : MonoBehaviour
             string[] readed = File.ReadAllLines(Application.persistentDataPath + "/" + _fileName);
             for (int i = 0; i < readed.Length; i++)
             {
-                inventorySlot saveSlot;
-                saveSlot = JsonUtility.FromJson<inventorySlot>(readed[i]);
-                slots[i] = saveSlot;
+                InventoryDataSlot saveSlot;
+                saveSlot = JsonUtility.FromJson<InventoryDataSlot>(readed[i]);
+                slots[i].item = saveSlot.item;
+                slots[i].amount = saveSlot.amount;
+                slots[i].isEmpty = saveSlot.isEmpty;
             }
 
             SetSlots(slots, inventoryPanel);

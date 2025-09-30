@@ -6,17 +6,13 @@ using TMPro;
 
 public class inventorySlot : MonoBehaviour
 {
-    [SerializeField]
-    public class inventoryData
-    {
-        public itemScriptableObject item;
-        public int amount;
-        public bool isEmpty = true;
-        public bool weaponSlot = false;
-        public bool equipmentSlot = false;
-        public GameObject iconItem;
-        public TMP_Text itemAmount;
-    }
+    public itemScriptableObject item;
+    public int amount;
+    public bool isEmpty = true;
+    public bool weaponSlot = false;
+    public bool equipmentSlot = false;
+    public GameObject iconItem;
+    public TMP_Text itemAmount;
 
     private void Awake()
     {
