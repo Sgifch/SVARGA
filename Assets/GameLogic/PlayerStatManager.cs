@@ -23,12 +23,13 @@ public class PlayerStatManager : MonoBehaviour
     public int upPoint;
 
     public int currentStrong;
+    public int _currentHealthBonus;
 
     private void Start()
     {
         currentStrong = strong;
         currentMaxHP = maxHP;
-
+        currentMaxHP += _currentHealthBonus;
     }
 
     public void SaveStat()
@@ -41,6 +42,14 @@ public class PlayerStatManager : MonoBehaviour
         PlayerPrefs.SetInt("maxManna", maxManna);
         PlayerPrefs.SetInt("strong", strong);
         PlayerPrefs.SetInt("currentHP", currentHP);
+
+        GameObject panellArmor = GameObject.FindWithTag("UIControll").GetComponent<UIControll>().inventoryArmor;
+        for (int i = 0; i<panellArmor.transform.childCount; i++)
+        {
+            _currentHealthBonus += panellArmor.transform.GetChild(i).GetComponent<EquipmentInventory>().currentHealthBonus;
+        }
+
+        PlayerPrefs.SetInt("_currentHealthBonus", _currentHealthBonus);
     }
 
     public void LoadStat()
@@ -53,5 +62,7 @@ public class PlayerStatManager : MonoBehaviour
         maxManna = PlayerPrefs.GetInt("maxManna");
         strong = PlayerPrefs.GetInt("strong");
         currentHP = PlayerPrefs.GetInt("currentHP");
+        _currentHealthBonus = PlayerPrefs.GetInt("_currentHealthBonus");
+        //currentMaxHP = PlayerPrefs.GetInt("currentMaxHP");
     }
 }

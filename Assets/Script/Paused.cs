@@ -54,28 +54,17 @@ public class Paused : MonoBehaviour
         resolutionDropdown.RefreshShownValue(); //Обновление отображаемого значения
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            pause.SetActive(true);
-            Time.timeScale = 0;
-            healthbar.SetActive(false);
-            weaponfast.SetActive(false);
-            inventoryfast.SetActive(false); 
-        }*/
+
     }
 
     public void PauseOff()
     {
-        //pause.SetActive(false);
         GameObject.FindWithTag("UIControll").GetComponent<UIControll>().PauseClose();
         Time.timeScale = 1;
-        /*settings.SetActive(false);
-        healthbar.SetActive(true);
-        weaponfast.SetActive(true);
-        inventoryfast.SetActive(true);*/
+
     }
 
     public void Settings()
@@ -129,5 +118,10 @@ public class Paused : MonoBehaviour
         QualitySettings.SetQualityLevel(quality); 
         Screen.fullScreen = isFullscreen; 
         Screen.SetResolution(Screen.resolutions[currResolutionIndex].width, Screen.resolutions[currResolutionIndex].height, isFullscreen); 
+    }
+
+    public void SaveLobby()
+    {
+        GameObject.FindWithTag("GameManager").GetComponent<GameManager>().SaveAll();
     }
 }

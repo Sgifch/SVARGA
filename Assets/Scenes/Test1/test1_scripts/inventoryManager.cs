@@ -13,9 +13,9 @@ public class inventoryManager : MonoBehaviour
 
     private GameObject inventoryFast;
 
-    private GameObject inventoryArmor;
+    private GameObject panelArmor;
 
-    private GameObject inventoryWeapon;
+    private GameObject panelWeapon;
 
     private GameObject weaponFast;
 
@@ -38,7 +38,10 @@ public class inventoryManager : MonoBehaviour
     public List<inventorySlot> slotsCopy = new List<inventorySlot>();
     public List<inventorySlot> slotsChest = new List<inventorySlot>();
 
-    public string _fileName;
+    public string _fileNameInventory;
+    public string _fileNameChest;
+    public string _fileNameArmor;
+    public string _fileNameWeapon;
     private void Awake()
     {
 
@@ -49,8 +52,8 @@ public class inventoryManager : MonoBehaviour
         inventory = UIControll.GetComponent<UIControll>().inventory;
         inventoryFast = UIControll.GetComponent<UIControll>().inventoryFast;
         weaponFast = UIControll.GetComponent<UIControll>().weaponFast;
-        inventoryArmor = UIControll.GetComponent<UIControll>().inventoryArmor;
-        inventoryWeapon = UIControll.GetComponent<UIControll>().inventoryWeapon;
+        panelArmor = UIControll.GetComponent<UIControll>().inventoryArmor;
+        panelWeapon = UIControll.GetComponent<UIControll>().inventoryWeapon;
 
         slots = UIControll.GetComponent<UIControll>().slots;
         slotsFast = UIControll.GetComponent<UIControll>().slotsFast;
@@ -59,6 +62,7 @@ public class inventoryManager : MonoBehaviour
         slotsWeaponFast = UIControll.GetComponent<UIControll>().slotsWeaponFast;
         selectSlot = UIControll.GetComponent<UIControll>().selectSlot;
         slotsCopy = UIControll.GetComponent<UIControll>().slotsCopy;
+        slotsChest = UIControll.GetComponent<UIControll>().slotsChest;
 
 
         //Картинки, указывающие на выбранный слот
@@ -72,6 +76,11 @@ public class inventoryManager : MonoBehaviour
         SelectSlot(1);
 
         inventory.SetActive(false);
+
+        LoadDataInventory();
+        LoadDataChest();
+        LoadArmor();
+        LoadWeapon();
 
     }
 
@@ -137,9 +146,9 @@ public class inventoryManager : MonoBehaviour
     }
 
     //Сохранение-загрузка-инвентаря--------------------------------------------------------------------------
-    public void SaveDataInventory()
+    public void SaveDataInventory() //Инвентарь
     {
-        StreamWriter sw = new StreamWriter(Application.persistentDataPath + "/" + _fileName);
+        StreamWriter sw = new StreamWriter(Application.persistentDataPath + "/" + _fileNameInventory);
         for (int i = 0; i<slots.Count; i++)
         {
             InventoryDataSlot newSlot = new(slots[i]);
@@ -151,9 +160,9 @@ public class inventoryManager : MonoBehaviour
 
     public void LoadDataInventory()
     {
-        if(File.Exists(Application.persistentDataPath + "/" + _fileName))
+        if(File.Exists(Application.persistentDataPath + "/" + _fileNameInventory))
         {
-            string[] readed = File.ReadAllLines(Application.persistentDataPath + "/" + _fileName);
+            string[] readed = File.ReadAllLines(Application.persistentDataPath + "/" + _fileNameInventory);
             for (int i = 0; i < readed.Length; i++)
             {
                 InventoryDataSlot saveSlot;
@@ -164,6 +173,97 @@ public class inventoryManager : MonoBehaviour
             }
 
             SetSlots(slots, inventoryPanel);
+        }
+    }
+
+    public void SaveArmor() //Броня
+    {
+        StreamWriter sw = new StreamWriter(Application.persistentDataPath + "/" + _fileNameArmor);
+        for (int i = 0; i < slotsArmor.Count; i++)
+        {
+            InventoryDataSlot newSlot = new(slotsArmor[i]);
+            string json = JsonUtility.ToJson(newSlot);
+            sw.WriteLine(json);
+        }
+        sw.Close();
+    }
+
+    public void LoadArmor()
+    {
+        if (File.Exists(Application.persistentDataPath + "/" + _fileNameArmor))
+        {
+            string[] readed = File.ReadAllLines(Application.persistentDataPath + "/" + _fileNameArmor);
+            for (int i = 0; i < readed.Length; i++)
+            {
+                InventoryDataSlot saveSlot;
+                saveSlot = JsonUtility.FromJson<InventoryDataSlot>(readed[i]);
+                slotsArmor[i].item = saveSlot.item;
+                slotsArmor[i].amount = saveSlot.amount;
+                slotsArmor[i].isEmpty = saveSlot.isEmpty;
+            }
+
+            SetSlots(slotsArmor, panelArmor);
+        }
+    }
+
+    public void SaveWeapon()
+    {
+        StreamWriter sw = new StreamWriter(Application.persistentDataPath + "/" + _fileNameWeapon);
+        for (int i = 0; i < slotsWeapon.Count; i++)
+        {
+            InventoryDataSlot newSlot = new(slotsWeapon[i]);
+            string json = JsonUtility.ToJson(newSlot);
+            sw.WriteLine(json);
+        }
+        sw.Close();
+    }
+
+    public void LoadWeapon()
+    {
+        if (File.Exists(Application.persistentDataPath + "/" + _fileNameWeapon))
+        {
+            string[] readed = File.ReadAllLines(Application.persistentDataPath + "/" + _fileNameWeapon);
+            for (int i = 0; i < readed.Length; i++)
+            {
+                InventoryDataSlot saveSlot;
+                saveSlot = JsonUtility.FromJson<InventoryDataSlot>(readed[i]);
+                slotsWeapon[i].item = saveSlot.item;
+                slotsWeapon[i].amount = saveSlot.amount;
+                slotsWeapon[i].isEmpty = saveSlot.isEmpty;
+            }
+
+            SetSlots(slotsWeapon, panelWeapon);
+        }
+    }
+
+    //Сохранение-загрузка-сундука-----------------------------------------------------------------------
+    public void SaveDataChest()
+    {
+        StreamWriter sw = new StreamWriter(Application.persistentDataPath + "/" + _fileNameChest);
+        for (int i = 0; i < slotsChest.Count; i++)
+        {
+            InventoryDataSlot newSlot = new(slotsChest[i]);
+            string json = JsonUtility.ToJson(newSlot);
+            sw.WriteLine(json);
+        }
+        sw.Close();
+    }
+
+    public void LoadDataChest()
+    {
+        if (File.Exists(Application.persistentDataPath + "/" + _fileNameChest))
+        {
+            string[] readed = File.ReadAllLines(Application.persistentDataPath + "/" + _fileNameChest);
+            for (int i = 0; i < readed.Length; i++)
+            {
+                InventoryDataSlot saveSlot;
+                saveSlot = JsonUtility.FromJson<InventoryDataSlot>(readed[i]);
+                slotsChest[i].item = saveSlot.item;
+                slotsChest[i].amount = saveSlot.amount;
+                slotsChest[i].isEmpty = saveSlot.isEmpty;
+            }
+
+            SetSlots(slotsChest, GameObject.FindWithTag("UIControll").GetComponent<UIControll>().chestPanel);
         }
     }
 
@@ -178,6 +278,7 @@ public class inventoryManager : MonoBehaviour
         collisionStay = false;
     }
 
+    //Добавление_предмета------------------------------------------------------------------
     public void AddItem(itemScriptableObject _item, int _amount)
     {
         foreach (inventorySlot slot in slots)
@@ -337,11 +438,6 @@ public class inventoryManager : MonoBehaviour
 
     public void PlayerChestInventoryClose(GameObject playerPanel)
     {
-        //slots.Clear();
-        //slots.AddRange(slotsCopy);
-
-        //slotsCopy.Clear();
-        //ClearSlots(playerPanel);
         SetSlots(slotsCopy, inventoryPanel);
     }
 

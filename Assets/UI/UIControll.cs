@@ -166,6 +166,7 @@ public class UIControll : MonoBehaviour
             case StateUI.inventoryOpen:
                 isStay = true;
                 HintClose();
+                SignClose();
                 inventory.SetActive(true);
                 ControllActiveHUD(false);
                 break;
@@ -397,6 +398,8 @@ public class UIControll : MonoBehaviour
         {
             HintOpen();
         }
+
+        Debug.Log(collision);
     }
 
     private void OnTriggerExit2D(Collider2D _collision)

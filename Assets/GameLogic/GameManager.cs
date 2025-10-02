@@ -25,13 +25,12 @@ public class GameManager : MonoBehaviour
         {
             playerStat.LoadStat();
         }
-
         screenDeath = GameObject.FindWithTag("UIControll").GetComponent<UIControll>().screenDeath;
     }   
 
     private void Start()
     {
-
+        //LoadAllInventory();
     }
 
     void Update()
@@ -62,5 +61,24 @@ public class GameManager : MonoBehaviour
         {
             triggerZone.GetComponent<TriggerEvent>().TriggerEventEnd();
         }
+    }
+
+    public void LoadAllInventory()
+    {
+        player.GetComponent<inventoryManager>().LoadDataInventory();
+        player.GetComponent<inventoryManager>().LoadDataChest();
+        player.GetComponent<inventoryManager>().LoadArmor();
+        player.GetComponent<inventoryManager>().LoadWeapon();
+    }
+
+    public void SaveAll()
+    {
+        player.GetComponent<inventoryManager>().SaveDataInventory();
+        player.GetComponent<inventoryManager>().SaveDataChest();
+        player.GetComponent<inventoryManager>().SaveArmor();
+        player.GetComponent<inventoryManager>().SaveWeapon();
+
+        playerStat.SaveStat();
+
     }
 }

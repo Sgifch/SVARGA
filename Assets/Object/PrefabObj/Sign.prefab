@@ -16,7 +16,7 @@ GameObject:
   m_Layer: 0
   m_Name: Sign
   m_TagString: sign
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -167,8 +167,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0080292225, y: -0.111460626}
-  m_Radius: 0.94844764
+  m_Offset: {x: -0.0080292225, y: 0.022220612}
+  m_Radius: 0.78235817
 --- !u!114 &6348382526924759758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,3 +182,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: 
+  signPanel: {fileID: 0}
+  uiControll: {fileID: 0}

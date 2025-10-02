@@ -56,4 +56,14 @@ public class DeveloperScript : MonoBehaviour
         GameObject.FindWithTag("Player").GetComponent<inventoryManager>().LoadDataInventory();
     }
 
+    public void SaveChest()
+    {
+        GameObject.FindWithTag("Player").GetComponent<inventoryManager>().SaveDataChest();
+    }
+
+    public void LoadChest()
+    {
+        GameObject.FindWithTag("Player").GetComponent<inventoryManager>().LoadDataChest();
+    }
+
 }
