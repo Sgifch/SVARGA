@@ -29,6 +29,7 @@ public class CardsOnClick : MonoBehaviour, IPointerClickHandler
         uiControll.GetComponent<UIControll>().fontainMenu.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Close");
         Destroy(uiControll.GetComponent<UIControll>().collision.transform.GetChild(0).gameObject);
         uiControll.GetComponent<UIControll>().isStay = false;
+        uiControll.GetComponent<UIControll>().collision.GetComponent<FontainFunction>().isTake = true;
     }
 
 }
