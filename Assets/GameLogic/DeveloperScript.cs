@@ -56,6 +56,11 @@ public class DeveloperScript : MonoBehaviour
         GameObject.FindWithTag("Player").GetComponent<inventoryManager>().LoadDataInventory();
     }
 
+    public void DestroyInventory()
+    {
+
+    }
+
     public void SaveChest()
     {
         GameObject.FindWithTag("Player").GetComponent<inventoryManager>().SaveDataChest();

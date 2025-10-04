@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7943589882752320550}
   - component: {fileID: 1532330456268137253}
   - component: {fileID: 2187077705661005601}
-  - component: {fileID: 2225891857750035192}
+  - component: {fileID: -3749988141020286486}
   m_Layer: 0
   m_Name: Altar
   m_TagString: Untagged
@@ -169,7 +169,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.84}
   m_Radius: 1.125
---- !u!114 &2225891857750035192
+--- !u!114 &-3749988141020286486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,9 +178,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 31104228771623996}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a717bc6b8da69834e9621795ddf3664b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2fb716642f153ba4cac1b641193b3351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStat: {fileID: 0}
-  sceneName: Lobby
-  useGeneration: 1

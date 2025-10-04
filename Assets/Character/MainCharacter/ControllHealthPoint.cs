@@ -34,18 +34,19 @@ public class ControllHealthPoint : MonoBehaviour
     }
     private void Start()
     {
-        ChangeHealthBar();
+        //ChangeHealthBar();
+        Invoke("ChangeHealthBar", 0.3f);
     }
 
     //Изменеение размера полоски в bar
     public void ChangeHealthBar() 
     {
-        currentHealthPoint = (float)(playerStat.currentHP) / playerStat.maxHP;
+        currentHealthPoint = (float)(playerStat.currentHP) / playerStat.currentMaxHP;
         healthBar.GetComponent<Image>().fillAmount = currentHealthPoint;
     }
 
     //Востановление
-    public void Recovery(int _recoveryPoint)
+    public void Recovery(int _recoveryPoint) //переделать
     {
         if(playerStat.currentHP < playerStat.maxHP)
         {

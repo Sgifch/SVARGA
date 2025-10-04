@@ -38,6 +38,10 @@ public class inventoryManager : MonoBehaviour
     public List<inventorySlot> slotsCopy = new List<inventorySlot>();
     public List<inventorySlot> slotsChest = new List<inventorySlot>();
 
+    [Header("Шанс потери предмета")]
+    public float lostChance;
+
+    [Header("Название файлов сохранения")]
     public string _fileNameInventory;
     public string _fileNameChest;
     public string _fileNameArmor;
@@ -309,7 +313,7 @@ public class inventoryManager : MonoBehaviour
        
     }
 
-    //Копирование слотов
+    //Копирование-слотов------------------------------------------------------------------------
     private void CopySlots()
     {
         for (int i =0; i < inventoryFast.transform.GetChild(1).childCount; i++)
@@ -341,7 +345,7 @@ public class inventoryManager : MonoBehaviour
         }
     }
 
-    //Выбор предмета в одном из 6 слотов
+    //Выбор-предмета-в-одном-из-6-слотов---------------------------------------------------------------
     public void SelectSlot(int _indexSlot)
     {
         indexSlot = _indexSlot;
@@ -373,7 +377,8 @@ public class inventoryManager : MonoBehaviour
         }
     }
 
-    public void SubtractionItem(int _index) //Отнять предмет
+    //Отнять-предемет-----------------------------------------------------------------------------------
+    public void SubtractionItem(int _index)
     {
         int _amount = slots[_index].amount;
         if (_amount > 1)
@@ -392,6 +397,57 @@ public class inventoryManager : MonoBehaviour
         }
     }
 
+    //Потеря-предметов------------------------------------------------------------------------------------
+    public void LostItem()
+    {
+        foreach (inventorySlot _slots in slots)
+        {
+            if (!_slots.isEmpty)
+            {
+                float rnd = Random.Range(0, 1);
+                if (rnd <= lostChance)
+                {
+                    if (_slots.amount == 1)
+                    {
+                        DestroyItem(_slots);
+                    }
+                    else
+                    {
+                        int rndAmount = Random.Range(1, _slots.amount);
+
+                        if(rndAmount == _slots.amount)
+                        {
+                            DestroyItem(_slots);
+                        }
+                        else
+                        {
+                            _slots.amount = _slots.amount - rndAmount;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    public void LostAmulet()
+    {
+        foreach(inventorySlot _slots in slots)
+        {
+            
+        }
+    }
+
+    public void DestroyItem(inventorySlot _slots) //уничтожение предмета если он остался один
+    {
+        _slots.amount = 0;
+        _slots.itemAmount.text = "";
+        _slots.SetIcon(null);
+        _slots.isEmpty = true;
+        _slots.item = null;
+    }
+
+    //Обновление-слотов-----------------------------------------------------------------------------------
     public void SetSlots(List <inventorySlot> slotsList, GameObject panel)
     {
         for (int i = 0; i < panel.transform.childCount-1; i++)

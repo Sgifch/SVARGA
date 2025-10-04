@@ -26,11 +26,13 @@ public class GameManager : MonoBehaviour
             playerStat.LoadStat();
         }
         screenDeath = GameObject.FindWithTag("UIControll").GetComponent<UIControll>().screenDeath;
+        //player.GetComponent<ControllHealthPoint>().ChangeHealthBar();
     }   
 
     private void Start()
     {
         //LoadAllInventory();
+        //GameObject.FindWithTag("UIControl");
     }
 
     void Update()
@@ -41,6 +43,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Смерти----------------------------------------------------------------------
     public void Death()
     {
         screenDeath.SetActive(true);
@@ -54,6 +57,29 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void RestartGeneration()
+    {
+        SaveAll();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void DeathGeneration()
+    {
+        player.GetComponent<inventoryManager>().LostItem();
+        player.GetComponent<ControllHealthPoint>().FullRecovery();
+        SaveAll();
+        Time.timeScale = 1;
+        SceneManager.LoadScene(1);
+        
+    }
+
+    public void ExitGeneration()
+    {
+        GameObject.FindWithTag("GenerationManager").GetComponent<GenerationStatManager>().DeleteStatGeneration();
+        SaveAll();
+        SceneManager.LoadScene(1);
+    }
+
     public void ActivateTrigger()
     {
         counterEnemy++;
@@ -61,6 +87,13 @@ public class GameManager : MonoBehaviour
         {
             triggerZone.GetComponent<TriggerEvent>().TriggerEventEnd();
         }
+    }
+
+    //Загрузки-сцен----------------------------------------------------------------------------------------------
+    public void LoadGeneration()
+    {
+        SaveAll();
+        SceneManager.LoadScene(2);
     }
 
     public void LoadAllInventory()

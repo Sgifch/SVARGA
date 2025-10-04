@@ -13,6 +13,8 @@ public class EquipmentInventory : MonoBehaviour
         //slots = gameObject.GetComponent<inventoryManager>().slotsWeapon;
         playerStatManager = GameObject.FindWithTag("PlayerStatManager");
         slot = gameObject.GetComponent<inventorySlot>();
+        playerStatManager.GetComponent<PlayerStatManager>().currentMaxHP += currentHealthBonus;
+
     }
     public void EquipmentAmulet()
     {
@@ -28,36 +30,13 @@ public class EquipmentInventory : MonoBehaviour
         }
 
         playerStatManager.GetComponent<PlayerStatManager>().currentMaxHP += currentHealthBonus;
-        /*foreach(inventorySlot _slots in slots)
-        {
-            if (!_slots.isEmpty)
-            {
-                CradsItem amulet = (CradsItem)_slots.item;
-                foreach(Bonus _bonus in amulet.bonusList)
-                {
-                    switch (_bonus.bonusName)
-                    {
-                        case "health":
-                            currentHealthBonus += _bonus.bonusUnit;
-                            break;
-                    }
-                }
-            }
-        }
+        GameObject.FindWithTag("Player").GetComponent<ControllHealthPoint>().ChangeHealthBar();
 
-        playerStatManager.GetComponent<PlayerStatManager>().currentMaxHP += currentHealthBonus;*/
     }
-
-    /*private void Update()
-    {
-        if (slot.isEmpty)
-        {
-            UnequipmentAmulet();
-        }
-    }*/
     public void UnequipmentAmulet()
     {
         playerStatManager.GetComponent<PlayerStatManager>().currentMaxHP -= currentHealthBonus;
         currentHealthBonus = 0;
+        GameObject.FindWithTag("Player").GetComponent<ControllHealthPoint>().ChangeHealthBar();
     }
 }
