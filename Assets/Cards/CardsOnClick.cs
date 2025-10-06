@@ -12,6 +12,7 @@ public class CardsOnClick : MonoBehaviour, IPointerClickHandler
     {
         itemScriptableObject item = gameObject.GetComponent<Item>().item;
         int amount = gameObject.GetComponent<Item>().amount;
+
         GameObject.FindWithTag("Player").GetComponent<inventoryManager>().AddItem(item, amount);
         for (int i=0; i<transform.parent.childCount; i++)
         {

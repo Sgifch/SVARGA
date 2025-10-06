@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
     public void ExitGeneration()
     {
         GameObject.FindWithTag("GenerationManager").GetComponent<GenerationStatManager>().DeleteStatGeneration();
+        player.GetComponent<inventoryManager>().LostAmulet();
         SaveAll();
         SceneManager.LoadScene(1);
     }

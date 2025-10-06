@@ -56,6 +56,11 @@ public class DeveloperScript : MonoBehaviour
         GameObject.FindWithTag("Player").GetComponent<inventoryManager>().LoadDataInventory();
     }
 
+    public void DestroyAllAmulet()
+    {
+        GameObject.FindWithTag("Player").GetComponent<inventoryManager>().LostAmulet();
+    }
+
     public void DestroyInventory()
     {
 

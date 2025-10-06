@@ -430,11 +430,26 @@ public class inventoryManager : MonoBehaviour
         }
     }
 
-    public void LostAmulet()
+    public void LostAmulet() //удаление-всех-оберегов-------------------------------------------------------------------------
     {
         foreach(inventorySlot _slots in slots)
         {
-            
+            if (!_slots.isEmpty)
+            {
+                if (_slots.item.itemType == ItemType.amulet)
+                {
+                    DestroyItem(_slots);
+                }
+            }
+        }
+
+        foreach(inventorySlot _slots in slotsArmor)
+        {
+            if (!_slots.isEmpty)
+            {
+                DestroyItem(_slots);
+                _slots.GetComponent<EquipmentInventory>().UnequipmentAmulet();
+            }
         }
     }
 
@@ -445,6 +460,24 @@ public class inventoryManager : MonoBehaviour
         _slots.SetIcon(null);
         _slots.isEmpty = true;
         _slots.item = null;
+    }
+
+    //Проверка-заполненности-инвентаря-----------------------------------------------------------------
+    public bool FullInventory()
+    {
+        bool empty = false;
+
+        foreach(inventorySlot _slots in slots)
+        {
+            if (_slots.isEmpty)
+            {
+                empty = true;
+                break;
+            }
+            
+        }
+
+        return empty;
     }
 
     //Обновление-слотов-----------------------------------------------------------------------------------
