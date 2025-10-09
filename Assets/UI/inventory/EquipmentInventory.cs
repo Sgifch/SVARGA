@@ -6,14 +6,16 @@ public class EquipmentInventory : MonoBehaviour
 {
     public inventorySlot slot;
     public int currentHealthBonus = 0;
-    public GameObject playerStatManager;
+    public int currentStrongBonus = 0;
+    public PlayerStatManager playerStatManager;
 
     public void Start()
     {
         //slots = gameObject.GetComponent<inventoryManager>().slotsWeapon;
-        playerStatManager = GameObject.FindWithTag("PlayerStatManager");
+        playerStatManager = GameObject.FindWithTag("PlayerStatManager").GetComponent<PlayerStatManager>();
         slot = gameObject.GetComponent<inventorySlot>();
-        playerStatManager.GetComponent<PlayerStatManager>().currentMaxHP += currentHealthBonus;
+        playerStatManager.currentMaxHP += currentHealthBonus;
+        playerStatManager.currentStrong += currentStrongBonus;
 
     }
     public void EquipmentAmulet()
@@ -26,17 +28,27 @@ public class EquipmentInventory : MonoBehaviour
                 case "health":
                     currentHealthBonus += _bonus.bonusUnit;
                     break;
+                case "strong":
+                    currentStrongBonus += _bonus.bonusUnit;
+                    break;
             }
         }
 
-        playerStatManager.GetComponent<PlayerStatManager>().currentMaxHP += currentHealthBonus;
+        playerStatManager.currentMaxHP += currentHealthBonus;
+        playerStatManager.currentStrong += currentStrongBonus;
         GameObject.FindWithTag("Player").GetComponent<ControllHealthPoint>().ChangeHealthBar();
 
     }
     public void UnequipmentAmulet()
     {
-        playerStatManager.GetComponent<PlayerStatManager>().currentMaxHP -= currentHealthBonus;
+        playerStatManager.currentMaxHP -= currentHealthBonus;
+        if (playerStatManager.currentHP > playerStatManager.currentMaxHP)
+        {
+            playerStatManager.currentHP = playerStatManager.currentMaxHP;
+        }
         currentHealthBonus = 0;
+
+        playerStatManager.currentStrong -= currentStrongBonus;
         GameObject.FindWithTag("Player").GetComponent<ControllHealthPoint>().ChangeHealthBar();
     }
 }

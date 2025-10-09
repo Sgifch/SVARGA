@@ -48,9 +48,16 @@ public class ControllHealthPoint : MonoBehaviour
     //Востановление
     public void Recovery(int _recoveryPoint) //переделать
     {
-        if(playerStat.currentHP < playerStat.maxHP)
+        if(playerStat.currentHP < playerStat.currentMaxHP)
         {
-            playerStat.currentHP = playerStat.currentHP + _recoveryPoint;
+            if((playerStat.currentMaxHP - playerStat.currentHP) <= _recoveryPoint)
+            {
+                playerStat.currentHP = playerStat.currentHP + _recoveryPoint;
+            }
+            else
+            {
+                playerStat.currentHP = playerStat.currentMaxHP;
+            }
         }
         ChangeHealthBar();
     }
