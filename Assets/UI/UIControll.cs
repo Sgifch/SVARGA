@@ -10,7 +10,12 @@ public class UIControll : MonoBehaviour
     public GameObject inventoryArmor;
     public GameObject inventoryWeapon;
     public GameObject informationUI;
+
+    [Header("Информационные элементы")]
     public TMP_Text counterRoomText;
+    public TMP_Text hpInf;
+    public TMP_Text mannaInf;
+    public TMP_Text strongInf;
 
     [Header ("Меню сундука")]
     public GameObject inventoryChest;
@@ -307,6 +312,11 @@ public class UIControll : MonoBehaviour
     {
         counterRoomText.text = GameObject.FindWithTag("GenerationManager").GetComponent<GenerationStatManager>().counterRoom.ToString();
         informationUI.SetActive(true);
+    }
+
+    public void UpgradeInventory()
+    {
+
     }
 
     //Сундук-------------------------------------------------------------------------------------------------
