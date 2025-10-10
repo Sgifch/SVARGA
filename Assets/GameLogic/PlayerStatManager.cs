@@ -14,6 +14,7 @@ public class PlayerStatManager : MonoBehaviour
     public int currentHP;
 
     public int maxManna;
+    public int currentMaxManna;
     public int currentManna;
 
     public int strong;
@@ -30,7 +31,9 @@ public class PlayerStatManager : MonoBehaviour
     {
         currentStrong = strong;
         currentMaxHP = maxHP;
+        currentMaxManna = maxManna;
         currentMaxHP += _currentHealthBonus;
+        GameObject.FindWithTag("UIControll").GetComponent<UIControll>().UpgradeInventory();
         //¬озможно здесь прописать обновление бара
     }
 
@@ -42,6 +45,7 @@ public class PlayerStatManager : MonoBehaviour
 
         PlayerPrefs.SetInt("maxHP", maxHP);
         PlayerPrefs.SetInt("maxManna", maxManna);
+        PlayerPrefs.SetInt("currentMaxManna", currentMaxManna);
         PlayerPrefs.SetInt("strong", strong);
         PlayerPrefs.SetInt("currentHP", currentHP);
 
@@ -68,6 +72,7 @@ public class PlayerStatManager : MonoBehaviour
 
         maxHP = PlayerPrefs.GetInt("maxHP");
         maxManna = PlayerPrefs.GetInt("maxManna");
+        currentMaxManna = PlayerPrefs.GetInt("currentMaxManna");
         strong = PlayerPrefs.GetInt("strong");
         currentHP = PlayerPrefs.GetInt("currentHP");
 

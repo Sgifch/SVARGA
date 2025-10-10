@@ -392,8 +392,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 247, y: -1.1600037}
-  m_SizeDelta: {x: 159.119, y: 50}
+  m_AnchoredPosition: {x: 257, y: 0}
+  m_SizeDelta: {x: 148.0837, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &43625999
 MonoBehaviour:
@@ -415,7 +415,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0421\u0438\u043B\u0430: 20"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 47ee2e0f208edee49a0d6f430d7cf56d, type: 2}
   m_sharedMaterial: {fileID: -3857126465713307473, guid: 47ee2e0f208edee49a0d6f430d7cf56d, type: 2}
@@ -2007,6 +2007,10 @@ PrefabInstance:
     - target: {fileID: 1529339929942784907, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
       propertyPath: m_Name
       value: MainCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529339929942784907, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1573041264316525218, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3936,6 +3940,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6203973450467401348, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: hpInf
+      value: 
+      objectReference: {fileID: 1413173781}
+    - target: {fileID: 6203973450467401348, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: mannaInf
+      value: 
+      objectReference: {fileID: 1690694205}
+    - target: {fileID: 6203973450467401348, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: strongInf
+      value: 
+      objectReference: {fileID: 43625999}
     - target: {fileID: 6203973450467401348, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
       propertyPath: upgradeMenu
       value: 
@@ -11824,7 +11840,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -227, y: -1.1600037}
+  m_AnchoredPosition: {x: -212, y: -1.1600037}
   m_SizeDelta: {x: 191.6, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1413173781
@@ -11847,7 +11863,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041E\u0417: 20/20"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 47ee2e0f208edee49a0d6f430d7cf56d, type: 2}
   m_sharedMaterial: {fileID: -3857126465713307473, guid: 47ee2e0f208edee49a0d6f430d7cf56d, type: 2}
@@ -13724,8 +13740,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.4429, y: -1.16}
-  m_SizeDelta: {x: 224.2723, y: 50}
+  m_AnchoredPosition: {x: 28, y: -1.16}
+  m_SizeDelta: {x: 195.8014, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1690694205
 MonoBehaviour:
@@ -13747,7 +13763,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041E\u041C: 20/20"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 47ee2e0f208edee49a0d6f430d7cf56d, type: 2}
   m_sharedMaterial: {fileID: -3857126465713307473, guid: 47ee2e0f208edee49a0d6f430d7cf56d, type: 2}

@@ -72,6 +72,8 @@ public class UIControll : MonoBehaviour
     public List<inventorySlot> slotsCopy = new List<inventorySlot>();
     public List<inventorySlot> slotsChest = new List<inventorySlot>();
 
+    private PlayerStatManager statManager;
+
     public enum StateUI
     {
         idle,
@@ -86,6 +88,8 @@ public class UIControll : MonoBehaviour
 
     public void Awake()
     {
+        statManager = GameObject.FindWithTag("PlayerStatManager").GetComponent<PlayerStatManager>();
+
         for (int i = 0; i < inventory.transform.GetChild(0).GetChild(0).childCount; i++) //мб этот блок потом засунуть в одну функцию для удобства
         {
             if (inventory.transform.GetChild(0).GetChild(0).GetChild(i).GetComponent<inventorySlot>() != null) //проверка компонента
@@ -195,6 +199,7 @@ public class UIControll : MonoBehaviour
         {
             if (!isInventoryOpen)
             {
+                UpgradeInventory();
                 stateUI = StateUI.inventoryOpen;
                 isInventoryOpen = true;
             }
@@ -316,7 +321,9 @@ public class UIControll : MonoBehaviour
 
     public void UpgradeInventory()
     {
-
+        hpInf.text = "ОЗ: " + statManager.currentHP.ToString() + "/" + statManager.currentMaxHP.ToString();
+        mannaInf.text = "ОМ: " + statManager.currentManna.ToString() + "/" + statManager.currentMaxManna.ToString();
+        strongInf.text = "Сила: " + statManager.currentStrong.ToString();
     }
 
     //Сундук-------------------------------------------------------------------------------------------------

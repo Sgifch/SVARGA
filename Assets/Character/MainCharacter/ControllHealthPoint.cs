@@ -19,7 +19,9 @@ public class ControllHealthPoint : MonoBehaviour
     private float currentHealthPoint;
     private GameObject healthBar;
     private Material material;
+
     private Coroutine _hitDamageEffect;
+    private Coroutine _DurationRecoveryFunction;
     private enum State
     {
         Idle,
@@ -45,7 +47,7 @@ public class ControllHealthPoint : MonoBehaviour
         healthBar.GetComponent<Image>().fillAmount = currentHealthPoint;
     }
 
-    //Востановление
+    //Востановление---------------------------------------------------------------------------------------------------------------
     public void Recovery(int _recoveryPoint) //переделать
     {
         if(playerStat.currentHP < playerStat.currentMaxHP)
@@ -69,7 +71,18 @@ public class ControllHealthPoint : MonoBehaviour
         ChangeHealthBar();
     }
 
-    //Урон
+    //Продолжительные восстановление
+    public void DurationRecovery(int _recoveryPoint, float _time, float _seconds)
+    {
+        if (_DurationRecoveryFunction != null)
+        {
+            StopCoroutine(_DurationRecoveryFunction);
+        }
+
+        _DurationRecoveryFunction = StartCoroutine(DurationRecoveryFunction(_recoveryPoint, _time, _seconds));
+    }
+
+    //Урон--------------------------------------------------------------------------------------------------------------------------
     public void Damage(int _attackPoint)
     {
         playerStat.currentHP = playerStat.currentHP - _attackPoint;
@@ -90,6 +103,7 @@ public class ControllHealthPoint : MonoBehaviour
 
     }
 
+    //Корутины-----------------------------------------------------------------------------------------------------------------------
     //Эффект получения урона
     private IEnumerator HitDamageEffect()
     {
@@ -109,5 +123,17 @@ public class ControllHealthPoint : MonoBehaviour
 
         material.SetFloat("_flashAmount", 0f);
         _hitDamageEffect = null;
+    }
+
+    private IEnumerator DurationRecoveryFunction(int _recoveryPoint, float _time, float _seconds)
+    {
+        float timer = 0f;
+        while(timer < _time)
+        {
+            Recovery(_recoveryPoint);
+            yield return new WaitForSeconds(_seconds);
+        }
+
+        _DurationRecoveryFunction = null;
     }
 }

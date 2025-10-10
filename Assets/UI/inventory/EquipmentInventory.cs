@@ -8,11 +8,16 @@ public class EquipmentInventory : MonoBehaviour
     public int currentHealthBonus = 0;
     public int currentStrongBonus = 0;
     public PlayerStatManager playerStatManager;
+    private GameObject player;
+    private UIControll uiControll;
 
     public void Start()
     {
         //slots = gameObject.GetComponent<inventoryManager>().slotsWeapon;
+        player = GameObject.FindWithTag("Player");
+        uiControll = GameObject.FindWithTag("UIControll").GetComponent<UIControll>();
         playerStatManager = GameObject.FindWithTag("PlayerStatManager").GetComponent<PlayerStatManager>();
+
         slot = gameObject.GetComponent<inventorySlot>();
         playerStatManager.currentMaxHP += currentHealthBonus;
         playerStatManager.currentStrong += currentStrongBonus;
@@ -36,7 +41,9 @@ public class EquipmentInventory : MonoBehaviour
 
         playerStatManager.currentMaxHP += currentHealthBonus;
         playerStatManager.currentStrong += currentStrongBonus;
-        GameObject.FindWithTag("Player").GetComponent<ControllHealthPoint>().ChangeHealthBar();
+        
+        player.GetComponent<ControllHealthPoint>().ChangeHealthBar();
+        uiControll.UpgradeInventory();
 
     }
     public void UnequipmentAmulet()
@@ -49,6 +56,7 @@ public class EquipmentInventory : MonoBehaviour
         currentHealthBonus = 0;
 
         playerStatManager.currentStrong -= currentStrongBonus;
-        GameObject.FindWithTag("Player").GetComponent<ControllHealthPoint>().ChangeHealthBar();
+        player.GetComponent<ControllHealthPoint>().ChangeHealthBar();
+        uiControll.UpgradeInventory();
     }
 }
