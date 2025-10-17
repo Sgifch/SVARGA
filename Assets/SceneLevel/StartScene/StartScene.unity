@@ -21936,7 +21936,11 @@ MonoBehaviour:
   - {fileID: 0}
   slotsCopy: []
   slotsChest: []
-  _fileName: 
+  lostChance: 0
+  _fileNameInventory: 
+  _fileNameChest: 
+  _fileNameArmor: 
+  _fileNameWeapon: 
 --- !u!61 &1267757819
 BoxCollider2D:
   m_ObjectHideFlags: 0

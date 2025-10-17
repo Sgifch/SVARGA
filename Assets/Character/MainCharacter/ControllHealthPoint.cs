@@ -125,13 +125,20 @@ public class ControllHealthPoint : MonoBehaviour
         _hitDamageEffect = null;
     }
 
-    private IEnumerator DurationRecoveryFunction(int _recoveryPoint, float _time, float _seconds)
+    private IEnumerator DurationRecoveryFunction(int _recoveryPoint, float _time, float _interval)
     {
         float timer = 0f;
+        float timerInv = 0f;
         while(timer < _time)
         {
-            Recovery(_recoveryPoint);
-            yield return new WaitForSeconds(_seconds);
+            if (timerInv > _interval)
+            {
+                Recovery(_recoveryPoint);
+                timerInv = 0f;
+            }
+            timer += Time.deltaTime;
+            timerInv += Time.deltaTime;
+            yield return null;
         }
 
         _DurationRecoveryFunction = null;

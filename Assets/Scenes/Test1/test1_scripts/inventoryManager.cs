@@ -373,6 +373,12 @@ public class inventoryManager : MonoBehaviour
                     gameObject.GetComponent<ControllHealthPoint>().Recovery(food.healthAmount);
                     SubtractionItem(_index);
                     break;
+
+                case ItemType.foodDuration:
+                    FoodItemDuration foodDuration = (FoodItemDuration)slots[_index].item;
+                    gameObject.GetComponent<ControllHealthPoint>().DurationRecovery(foodDuration.healthAmount, foodDuration.time, foodDuration.interval);
+                    SubtractionItem(_index);
+                    break;
             }
         }
     }

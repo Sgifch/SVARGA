@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1300319822d42145922e2db4affff86, type: 3}
-  m_Name: apple
+  m_Name: Garlic
   m_EditorClassIdentifier: 
   itemType: 0
-  itemObject: {fileID: 3408268646583160109, guid: 277d87dcc99962e4ca0c954b89eb9465, type: 3}
-  icon: {fileID: 21300000, guid: ebe196c4ba36c314b903337f65ab5e6f, type: 3}
-  itemName: "\u042F\u0431\u043B\u043E\u043A\u043E"
+  itemObject: {fileID: 3408268646583160109, guid: 34199f2923ca2704ea0138f973c935a2, type: 3}
+  icon: {fileID: -413594078, guid: e570d631d72832a4bbc09332125efaf5, type: 3}
+  itemName: "\u0427\u0435\u0441\u043D\u043E\u043A"
   maximumAmaunt: 16
   itemDescription: "\u0412\u043E\u0441\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0435\u0442
-    2 \u0435\u0434. \u041E\u0417"
-  healthAmount: 2
+    5 \u0435\u0434. \u041E\u0417"
+  healthAmount: 5
