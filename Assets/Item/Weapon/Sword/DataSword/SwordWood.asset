@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9acd23409981c864dac2f8e27ab9824a, type: 3}
   m_Name: SwordWood
   m_EditorClassIdentifier: 
-  itemType: 1
+  itemType: 2
   itemObject: {fileID: 2595154827602962897, guid: 7673002995f853143b038fcadcc4e246, type: 3}
   icon: {fileID: 21300000, guid: 25fb257a7a749a04b8b0d17143a776a3, type: 3}
   itemName: Wood Sword
