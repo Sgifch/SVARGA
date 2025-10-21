@@ -178,6 +178,7 @@ public class UIControll : MonoBehaviour
                 SignClose();
                 inventory.SetActive(true);
                 ControllActiveHUD(false);
+                Time.timeScale = 0;
                 break;
 
             case StateUI.pausedOpen:
@@ -205,6 +206,7 @@ public class UIControll : MonoBehaviour
             }
             else
             {
+                Time.timeScale = 1;
                 stateUI = StateUI.idle;
                 isInventoryOpen = false;
             }
