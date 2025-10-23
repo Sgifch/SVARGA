@@ -379,6 +379,18 @@ public class inventoryManager : MonoBehaviour
                     gameObject.GetComponent<ControllHealthPoint>().DurationRecovery(foodDuration.healthAmount, foodDuration.time, foodDuration.interval);
                     SubtractionItem(_index);
                     break;
+
+                case ItemType.unFood:
+                    UnFoodItem unFood = (UnFoodItem)slots[_index].item;
+                    gameObject.GetComponent<ControllHealthPoint>().Damage(unFood.unHealthAmount);
+                    SubtractionItem(_index);
+                    break;
+
+                case ItemType.unFoodDuration:
+                    UnFoodItemDuration unFoodDuration = (UnFoodItemDuration)slots[_index].item;
+                    gameObject.GetComponent<ControllHealthPoint>().DurationDamage(unFoodDuration.unHealthAmount, unFoodDuration.time, unFoodDuration.interval);
+                    SubtractionItem(_index);
+                    break;
             }
         }
     }

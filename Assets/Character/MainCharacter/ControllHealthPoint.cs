@@ -22,6 +22,7 @@ public class ControllHealthPoint : MonoBehaviour
 
     private Coroutine _hitDamageEffect;
     private Coroutine _DurationRecoveryFunction;
+    private Coroutine _DurationDamageFunction;
     private enum State
     {
         Idle,
@@ -85,6 +86,7 @@ public class ControllHealthPoint : MonoBehaviour
     //Урон--------------------------------------------------------------------------------------------------------------------------
     public void Damage(int _attackPoint)
     {
+        //Мб сделать проверку на отрицательно или равное 0 хп
         playerStat.currentHP = playerStat.currentHP - _attackPoint;
         ChangeHealthBar();
         DamageEffect();
@@ -101,6 +103,17 @@ public class ControllHealthPoint : MonoBehaviour
         _hitDamageEffect = StartCoroutine(HitDamageEffect());
         Instantiate(effectDamage, gameObject.transform.position, gameObject.transform.rotation);
 
+    }
+
+    //Продолжительный урон
+    public void DurationDamage(int _attackPoint, float _time, float _seconds)
+    {
+        if (_DurationDamageFunction != null)
+        {
+            StopCoroutine(_DurationDamageFunction);
+        }
+
+        _DurationDamageFunction = StartCoroutine(DurationDamageFunction(_attackPoint, _time, _seconds));
     }
 
     //Корутины-----------------------------------------------------------------------------------------------------------------------
@@ -125,6 +138,7 @@ public class ControllHealthPoint : MonoBehaviour
         _hitDamageEffect = null;
     }
 
+    //Продолжительное_восстановление
     private IEnumerator DurationRecoveryFunction(int _recoveryPoint, float _time, float _interval)
     {
         float timer = 0f;
@@ -142,5 +156,25 @@ public class ControllHealthPoint : MonoBehaviour
         }
 
         _DurationRecoveryFunction = null;
+    }
+
+    //Продолжительный_урон
+    private IEnumerator DurationDamageFunction(int _attackPoint, float _time, float _interval)
+    {
+        float timer = 0f;
+        float timerInv = 0f;
+        while (timer < _time)
+        {
+            if (timerInv > _interval)
+            {
+                Damage(_attackPoint);
+                timerInv = 0f;
+            }
+            timer += Time.deltaTime;
+            timerInv += Time.deltaTime;
+            yield return null;
+        }
+
+        _DurationDamageFunction = null;
     }
 }
