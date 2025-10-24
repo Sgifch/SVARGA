@@ -12,6 +12,7 @@ public class ControllHealthPoint : MonoBehaviour
     public float flashTime = 1f;
     public AnimationCurve flashCurve;
     public GameObject effectDamage;
+    public GameObject effectRecovery;
 
     public bool useGameManager;
 
@@ -49,7 +50,7 @@ public class ControllHealthPoint : MonoBehaviour
     }
 
     //Востановление---------------------------------------------------------------------------------------------------------------
-    public void Recovery(int _recoveryPoint) //переделать
+    public void Recovery(int _recoveryPoint)
     {
         if(playerStat.currentHP < playerStat.currentMaxHP)
         {
@@ -62,6 +63,7 @@ public class ControllHealthPoint : MonoBehaviour
                 playerStat.currentHP = playerStat.currentMaxHP;
             }
         }
+        Instantiate(effectRecovery, transform.position, transform.rotation, gameObject.transform);
         ChangeHealthBar();
     }
 
