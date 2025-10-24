@@ -9,8 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4576653002552819393}
-  - component: {fileID: 1719832591611459532}
-  - component: {fileID: 7768420912093910695}
+  - component: {fileID: 7243532891848657274}
   m_Layer: 0
   m_Name: SpawnBonus
   m_TagString: Untagged
@@ -33,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1719832591611459532
+--- !u!114 &7243532891848657274
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,24 +41,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 2250315048747326931}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5201c434313e1ec43a8eb27ab6d7bb22, type: 3}
+  m_Script: {fileID: 11500000, guid: 45e7638b52ec2bf47817d3a920edba59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item:
+  itemHealth:
   - {fileID: 3408268646583160109, guid: 277d87dcc99962e4ca0c954b89eb9465, type: 3}
-  - {fileID: 5682089955065107983, guid: 758860e6ebe17054a8dbb7d580e10682, type: 3}
+  - {fileID: 3408268646583160109, guid: fc0e8b44a69adf2419c265a1675851c0, type: 3}
+  - {fileID: 3408268646583160109, guid: 791cde783254d4b4da56ed7b07df4f39, type: 3}
+  - {fileID: 3408268646583160109, guid: b3ce4f15f03a40849935f38c7dab8ca4, type: 3}
+  - {fileID: 3408268646583160109, guid: 32a1d0a1f7f34ab4b820f22fa6fc36f4, type: 3}
+  - {fileID: 3408268646583160109, guid: 49808a53afc24fa4f89e2f94e26609e2, type: 3}
+  - {fileID: 3408268646583160109, guid: 34199f2923ca2704ea0138f973c935a2, type: 3}
+  - {fileID: 3408268646583160109, guid: 58261c5ff79767c478f09f69f719c444, type: 3}
+  - {fileID: 3408268646583160109, guid: 655fb271c7d2d7f49a66182866f46cb3, type: 3}
+  - {fileID: 3408268646583160109, guid: 4021f5b116be36e40aa4758643c96716, type: 3}
+  - {fileID: 3408268646583160109, guid: 7e2ed6a27bc4984469ec7feaa6637bdf, type: 3}
+  - {fileID: 3408268646583160109, guid: a4c3f96d758714e44b2d6d79e9a626a3, type: 3}
+  - {fileID: 3408268646583160109, guid: 77287f0341c08c7489e7dad92f3839ce, type: 3}
+  - {fileID: 3408268646583160109, guid: 93a109a67b8281543b8a54746eb27837, type: 3}
+  - {fileID: 3408268646583160109, guid: bd1a8b1b8151ff34cbdd62b7296ff7c6, type: 3}
+  - {fileID: 3408268646583160109, guid: 5862fa515a1cb524c9a63aa52da14964, type: 3}
+  - {fileID: 3408268646583160109, guid: 3e5ef21aa26ce504093482d6d0273579, type: 3}
+  itemUnHealth:
+  - {fileID: 3408268646583160109, guid: 764f0dace8cb7314eb1764a31c60cd86, type: 3}
+  - {fileID: 3408268646583160109, guid: 382514f9134043f4786bebfff068f0fe, type: 3}
+  - {fileID: 3408268646583160109, guid: b207806140d4c994e856c9f4f41fe35c, type: 3}
+  - {fileID: 3408268646583160109, guid: 418b45119b1536b4695c3d708d094ad5, type: 3}
+  - {fileID: 3408268646583160109, guid: b9d717ff3a5854743bea27eb65137513, type: 3}
+  - {fileID: 3408268646583160109, guid: 95b87f944ca71144880ea59c88684545, type: 3}
+  - {fileID: 3408268646583160109, guid: a5c68f8637d13794898a7052a277a1b0, type: 3}
+  - {fileID: 3408268646583160109, guid: 8f8de0f1e648d814fa410c2492eb2f9e, type: 3}
   dropChance:
   - 0.2
+  - 0.5
   - 1
---- !u!114 &7768420912093910695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2250315048747326931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd2693f6f03dc49408cda2e00dad2128, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
