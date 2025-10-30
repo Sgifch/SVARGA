@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 2683295425915792507}
   - component: {fileID: 8863940548726781084}
   - component: {fileID: 514437260702385821}
+  - component: {fileID: 1639151802058697202}
   m_Layer: 0
   m_Name: Shmegma
   m_TagString: Enemy
@@ -410,4 +411,20 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   effectDamage: {fileID: 8238514059131387485, guid: e969a850252868948a20f1d9bc741e64, type: 3}
+  useEnemy: 1
   useGameManager: 0
+--- !u!114 &1639151802058697202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8611874133657231278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ba201d63bcf5e4bb1578b017af0524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropItem: {fileID: 3408268646583160109, guid: 0a8840f11bead2249b522a0eea335c3a, type: 3}
+  min: 1
+  max: 3

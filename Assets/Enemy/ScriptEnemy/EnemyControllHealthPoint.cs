@@ -14,6 +14,7 @@ public class EnemyControllHealthPoint : MonoBehaviour
     public AnimationCurve flashCurve;
     public GameObject effectDamage;
 
+    public bool useEnemy = false;
     public bool useGameManager = false;
     private GameObject gameManager;
 
@@ -66,6 +67,12 @@ public class EnemyControllHealthPoint : MonoBehaviour
         {
             gameManager.GetComponent<GameManager>().ActivateTrigger();
         }
+
+        if (useEnemy)
+        {
+            gameObject.GetComponent<DropItemEnemy>().DropInInventory(); 
+        }
+
         Destroy(gameObject);
     }
 
