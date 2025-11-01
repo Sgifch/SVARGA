@@ -24,6 +24,7 @@ TagManager:
   - FontainUI
   - UIControll
   - Chest
+  - Altar
   layers:
   - Default
   - TransparentFX

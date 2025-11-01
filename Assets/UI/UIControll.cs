@@ -30,6 +30,7 @@ public class UIControll : MonoBehaviour
     [Header("Прочие меню")]
     public GameObject upgradeMenu;
     public GameObject fontainMenu;
+    public GameObject altarMenu;
     public GameObject developerMenu;
 
     public GameObject fontain;
@@ -59,6 +60,7 @@ public class UIControll : MonoBehaviour
     public bool isHint = false;
     public bool isSign = false;
     public bool isChest = false;
+    public bool isAltar = false;
     public Collider2D collision;
 
     [Header("Слоты")]
@@ -81,6 +83,7 @@ public class UIControll : MonoBehaviour
         otherMenuOpen,
         pausedOpen,
         chestInventoryOpen,
+        altarMenu
     }
 
     public StateUI stateUI;
@@ -194,6 +197,13 @@ public class UIControll : MonoBehaviour
                 isStay = true;
                 isChest = true;
                 break;
+
+            case StateUI.altarMenu:
+                ControllActiveHUD(false);
+                HintClose();
+                isStay = true;
+                isAltar = true;
+                break;
         }
 
         if (Input.GetKeyDown(KeyCode.Tab) && stateUI!=StateUI.otherMenuOpen && stateUI!=StateUI.chestInventoryOpen)
@@ -220,7 +230,6 @@ public class UIControll : MonoBehaviour
                 {
                     case "Kipishe":
                         UpgradeMenuOpen();
-                        print("kipishe");
                         break;
 
                     case "Fontain":
@@ -237,6 +246,10 @@ public class UIControll : MonoBehaviour
 
                     case "Chest":
                         ChestMenu();
+                        break;
+
+                    case "Altar":
+                        AltarMenu();
                         break;
                 }
             }
@@ -264,6 +277,8 @@ public class UIControll : MonoBehaviour
         }
 
     }
+
+    //Меню-колодца--------------------------------------------------------------------------------------------------
     public void FontainMenu()
     {
         collision.gameObject.GetComponent<FontainFunction>().FontainStart();
@@ -273,7 +288,7 @@ public class UIControll : MonoBehaviour
     }
 
 
-    //Появление цифр при нанесении урона
+    //Появление цифр при нанесении урона----------------------------------------------------------------------------
     public void DamageUI(int sumDamage)
     {
         Animator anim = damageText.GetComponent<Animator>();
@@ -282,7 +297,7 @@ public class UIControll : MonoBehaviour
         
     }
 
-    //Меню улучшений-------------------------------------------------------------------------------------------------
+    //Меню улучшений------------------------------------------------------------------------------------------------
     public void UpgradeMenuOpen()
     {
         if (!isUpgradeMenu)
@@ -306,7 +321,7 @@ public class UIControll : MonoBehaviour
  
     }
 
-    //Инвентарь--------------------------------------------------------------------------------------------------------
+    //Инвентарь-----------------------------------------------------------------------------------------------------
     public void InventoryClose()
     {
         if (informationUI != null)
@@ -321,6 +336,7 @@ public class UIControll : MonoBehaviour
         informationUI.SetActive(true);
     }
 
+    //Меню-улучшения------------------------------------------------------------------------------------------------
     public void UpgradeInventory()
     {
         hpInf.text = "ОЗ: " + statManager.currentHP.ToString() + "/" + statManager.currentMaxHP.ToString();
@@ -345,6 +361,22 @@ public class UIControll : MonoBehaviour
 
     }
 
+    //Меню-алтаря--------------------------------------------------------------------------------------------
+    public void AltarMenu()
+    {
+        if (!isAltar)
+        {
+            stateUI = StateUI.altarMenu;
+            altarMenu.SetActive(true);
+        }
+        else
+        {
+            altarMenu.SetActive(false);
+            stateUI = StateUI.idle;
+            isAltar = false;
+        }
+    }
+
     //Открыте_закрытие_HUD_меню-------------------------------------------------------------------------------
     public void ControllActiveHUD(bool active)
     {
@@ -363,7 +395,7 @@ public class UIControll : MonoBehaviour
     {
         string tag = collision.gameObject.tag;
 
-        if (tag == "Kipishe" || tag == "Fontain" || tag == "WeaponSpawn" || tag == "Chest")
+        if (tag == "Kipishe" || tag == "Fontain" || tag == "WeaponSpawn" || tag == "Chest" || tag == "Altar")
         {
             hintKey.GetComponent<Animator>().SetTrigger("Open");
             isHint = true;
