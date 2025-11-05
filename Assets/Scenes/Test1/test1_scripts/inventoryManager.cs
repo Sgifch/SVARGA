@@ -448,7 +448,7 @@ public class inventoryManager : MonoBehaviour
         }
     }
 
-    public void LostAmulet() //удаление-всех-оберегов-------------------------------------------------------------------------
+    public void LostAmulet() //удаление-всех-оберегов---------------------------------------------------==
     {
         foreach(inventorySlot _slots in slots)
         {
