@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using static UnityEditor.Progress;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class GameManager : MonoBehaviour
     public PlayerStatManager playerStat;
 
     public GameObject screenDeath;
+    public GameObject lostMenu;
+    public GameObject lostContent;
+    public GameObject lostSlot;
+
     private int counterEnemy;
     void Awake()
     {
@@ -65,11 +70,29 @@ public class GameManager : MonoBehaviour
 
     public void DeathGeneration()
     {
-        player.GetComponent<inventoryManager>().LostItem();
+        List <inventorySlot> lostItems = player.GetComponent<inventoryManager>().LostItem();
         player.GetComponent<ControllHealthPoint>().FullRecovery();
-        SaveAll();
+        //SaveAll();
+        LostMenu(lostItems);
+        //Time.timeScale = 1;
+        //SceneManager.LoadScene(1);
+        
+    }
+
+    public void LostMenu(List<inventorySlot> lostItems)
+    {
+        screenDeath.SetActive(false);
+        lostMenu.SetActive(true);
         Time.timeScale = 1;
-        SceneManager.LoadScene(1);
+
+        foreach (inventorySlot _lostItems in lostItems)
+        {
+            GameObject slot = Instantiate(lostSlot, transform.position, transform.rotation, lostContent.transform);
+            inventorySlot _slot = slot.GetComponent<inventorySlot>();
+            _slot.SetIcon(_lostItems.item.icon);
+            _slot.itemAmount.text = _lostItems.amount.ToString();
+
+        }
         
     }
 

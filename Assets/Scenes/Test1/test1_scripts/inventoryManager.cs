@@ -416,8 +416,10 @@ public class inventoryManager : MonoBehaviour
     }
 
     //Потеря-предметов------------------------------------------------------------------------------------
-    public void LostItem()
+    public List<inventorySlot> LostItem()
     {
+        List<inventorySlot> lostItems = new List<inventorySlot>();
+
         foreach (inventorySlot _slots in slots)
         {
             if (!_slots.isEmpty)
@@ -425,13 +427,20 @@ public class inventoryManager : MonoBehaviour
                 float rnd = Random.Range(0, 1);
                 if (rnd <= lostChance)
                 {
+                    inventorySlot newSlot = new inventorySlot();
+                    newSlot.item = _slots.item;
+
+                    int rndAmount = 0;
+
                     if (_slots.amount == 1)
                     {
                         DestroyItem(_slots);
+                        rndAmount = 1;
+
                     }
                     else
                     {
-                        int rndAmount = Random.Range(1, _slots.amount);
+                        rndAmount = Random.Range(1, _slots.amount);
 
                         if(rndAmount == _slots.amount)
                         {
@@ -442,10 +451,17 @@ public class inventoryManager : MonoBehaviour
                             _slots.amount = _slots.amount - rndAmount;
                         }
                     }
+
+                    //Список потерянных предметов для вывода в меню
+                    newSlot.amount = rndAmount;
+                    lostItems.Add(newSlot);
+
                 }
             }
-
         }
+
+        print(lostItems);
+        return lostItems;
     }
 
     public void LostAmulet() //удаление-всех-оберегов---------------------------------------------------==
