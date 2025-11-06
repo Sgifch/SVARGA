@@ -15,11 +15,6 @@ public class Paused : MonoBehaviour
     [SerializeField]
     GameObject exit;
     [SerializeField]
-    GameObject healthbar;
-    [SerializeField]
-    GameObject weaponfast;
-    [SerializeField]
-    GameObject inventoryfast;
 
     public float volume = 0; //Громкость
     public int quality = 0; //Качество
