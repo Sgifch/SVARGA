@@ -131,10 +131,10 @@ TextureImporter:
       name: Frog_attack_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 3
-        width: 29
-        height: 20
+        x: 3
+        y: 4
+        width: 27
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,10 +152,10 @@ TextureImporter:
       name: Frog_attack_1
       rect:
         serializedVersion: 2
-        x: 47
-        y: 3
-        width: 29
-        height: 22
+        x: 48
+        y: 4
+        width: 27
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,10 +173,10 @@ TextureImporter:
       name: Frog_attack_2
       rect:
         serializedVersion: 2
-        x: 92
-        y: 3
-        width: 29
-        height: 22
+        x: 93
+        y: 4
+        width: 27
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,10 +194,10 @@ TextureImporter:
       name: Frog_attack_3
       rect:
         serializedVersion: 2
-        x: 137
-        y: 3
-        width: 39
-        height: 22
+        x: 138
+        y: 4
+        width: 37
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,10 +215,10 @@ TextureImporter:
       name: Frog_attack_4
       rect:
         serializedVersion: 2
-        x: 182
-        y: 3
-        width: 38
-        height: 22
+        x: 183
+        y: 4
+        width: 36
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,10 +236,10 @@ TextureImporter:
       name: Frog_attack_5
       rect:
         serializedVersion: 2
-        x: 227
-        y: 3
-        width: 29
-        height: 22
+        x: 228
+        y: 4
+        width: 27
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,10 +257,10 @@ TextureImporter:
       name: Frog_attack_6
       rect:
         serializedVersion: 2
-        x: 272
-        y: 3
-        width: 29
-        height: 21
+        x: 273
+        y: 4
+        width: 27
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

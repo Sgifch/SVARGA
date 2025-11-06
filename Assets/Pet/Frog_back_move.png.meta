@@ -119,10 +119,10 @@ TextureImporter:
       name: Frog_back_move_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1
-        width: 28
-        height: 23
+        x: 3
+        y: 2
+        width: 26
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,10 +140,10 @@ TextureImporter:
       name: Frog_back_move_1
       rect:
         serializedVersion: 2
-        x: 33
-        y: 1
-        width: 30
-        height: 22
+        x: 34
+        y: 2
+        width: 28
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,10 +161,10 @@ TextureImporter:
       name: Frog_back_move_2
       rect:
         serializedVersion: 2
-        x: 66
-        y: 1
-        width: 28
-        height: 27
+        x: 67
+        y: 2
+        width: 26
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
