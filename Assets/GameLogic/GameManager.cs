@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public GameObject lostMenu;
     public GameObject lostContent;
     public GameObject lostSlot;
+    public GameObject dash;
+    public GameObject endMenu;
 
     private int counterEnemy;
     void Awake()
@@ -79,25 +81,42 @@ public class GameManager : MonoBehaviour
         
     }
 
+    //Пройгрыш--------------------------------------------------------------------------
     public void LostMenu(List<inventorySlot> lostItems)
     {
         screenDeath.SetActive(false);
-        lostMenu.SetActive(true);
         Time.timeScale = 1;
-
-        foreach (inventorySlot _lostItems in lostItems)
+        lostMenu.SetActive(true);
+        dash.SetActive(false);
+        print(lostItems.Count);
+        if (lostItems.Count > 0)
         {
-            GameObject slot = Instantiate(lostSlot, transform.position, transform.rotation, lostContent.transform);
-            inventorySlot _slot = slot.GetComponent<inventorySlot>();
-            _slot.SetIcon(_lostItems.item.icon);
-            _slot.itemAmount.text = _lostItems.amount.ToString();
+            foreach (inventorySlot _lostItems in lostItems)
+            {
+                GameObject slot = Instantiate(lostSlot, transform.position, transform.rotation, lostContent.transform);
+                inventorySlot _slot = slot.GetComponent<inventorySlot>();
+                _slot.SetIcon(_lostItems.item.icon);
+                _slot.itemAmount.text = _lostItems.amount.ToString();
 
+            }
         }
-        
+        else
+        {
+            dash.SetActive(true);
+        }
+        Time.timeScale = 0;
     }
 
+    //Выйгрыш---------------------------------------------------------------------------
+    public void EndMenu()
+    {
+        endMenu.SetActive(true);
+    }
+
+    //Выход-в-лобби---------------------------------------------------------------------
     public void ExitGeneration()
     {
+        Time.timeScale = 1;
         GameObject.FindWithTag("GenerationManager").GetComponent<GenerationStatManager>().DeleteStatGeneration();
         player.GetComponent<inventoryManager>().LostAmulet();
         SaveAll();

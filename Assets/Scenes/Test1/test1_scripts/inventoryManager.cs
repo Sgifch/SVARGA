@@ -424,7 +424,8 @@ public class inventoryManager : MonoBehaviour
         {
             if (!_slots.isEmpty)
             {
-                float rnd = Random.Range(0, 1);
+                float rnd = Random.Range(0f, 1f);
+                print(rnd);
                 if (rnd <= lostChance)
                 {
                     inventorySlot newSlot = new inventorySlot();

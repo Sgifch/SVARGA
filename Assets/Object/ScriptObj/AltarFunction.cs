@@ -8,7 +8,7 @@ public class AltarFunction : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            GameObject.FindWithTag("GameManager").GetComponent<GameManager>().ExitGeneration();
+            GameObject.FindWithTag("GameManager").GetComponent<GameManager>().EndMenu();
         }
 
     }
