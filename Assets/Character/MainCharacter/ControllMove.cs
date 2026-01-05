@@ -97,6 +97,17 @@ public class ControllMove : MonoBehaviour
         }
 
         moveD = new Vector2(LeftRight, ForwardBehind).normalized;
+        if (moveD != new Vector2(0, 0))
+        {   
+            if (!gameObject.GetComponent<AudioSource>().isPlaying)
+            {
+                gameObject.GetComponent<AudioSource>().Play();
+            }
+        }
+        else
+        {
+            gameObject.GetComponent<AudioSource>().Stop();
+        }
 
     }
 
@@ -170,6 +181,13 @@ public class ControllMove : MonoBehaviour
             isShiftAttack = true;
 
             GameObject attackWeapon = Instantiate(weapon.item.itemObject, spawnPosition + shift, gameObject.transform.rotation, gameObject.transform);
+
+            //Если у оружия есть звук
+            if (attackWeapon.GetComponent<AudioSource>() != null)
+            {
+                attackWeapon.GetComponent<AudioSource>().Play();
+            }
+
             Animator animWeapon = attackWeapon.GetComponent<Animator>();
 
 
