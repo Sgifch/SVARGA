@@ -83,7 +83,8 @@ public class UIControll : MonoBehaviour
         otherMenuOpen,
         pausedOpen,
         chestInventoryOpen,
-        altarMenu
+        altarMenu,
+        cutscene
     }
 
     public StateUI stateUI;
@@ -204,9 +205,15 @@ public class UIControll : MonoBehaviour
                 isStay = true;
                 isAltar = true;
                 break;
+
+            case StateUI.cutscene:
+                inventory.SetActive(false);
+                inventoryChest.SetActive(false);
+                informationUI.SetActive(false);
+                break;
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab) && stateUI!=StateUI.otherMenuOpen && stateUI!=StateUI.chestInventoryOpen)
+        if (Input.GetKeyDown(KeyCode.Tab) && stateUI!=StateUI.otherMenuOpen && stateUI!=StateUI.chestInventoryOpen && stateUI != StateUI.cutscene)
         {
             if (!isInventoryOpen)
             {
