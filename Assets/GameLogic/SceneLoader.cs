@@ -9,6 +9,11 @@ public class SceneLoader : MonoBehaviour
     public string sceneName;
     public bool useGeneration;
 
+    //Анимация перехода
+    public Animator animChanger;
+    public GameObject sceneChangerCanvas;
+    public int n;
+
     public void Awake()
     {
         playerStat = GameObject.FindWithTag("PlayerStatManager").GetComponent<PlayerStatManager>();
@@ -22,7 +27,19 @@ public class SceneLoader : MonoBehaviour
             {
                 GameObject.FindWithTag("GenerationManager").GetComponent<GenerationStatManager>().DeleteStatGeneration();
             }
-            SceneManager.LoadScene(sceneName);
+
+            sceneChangerCanvas.SetActive(true);
+            animChanger.SetInteger("isTrigger", n);
         }
+    }
+
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void StartScene()
+    {
+        sceneChangerCanvas.SetActive(false);
     }
 }

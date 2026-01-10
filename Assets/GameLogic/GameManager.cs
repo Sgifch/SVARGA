@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
     public GameObject endMenu;
 
     private int counterEnemy;
+
+    //Анимация-перехода
+    public Animator animChanger;
+    public int n;
     void Awake()
     {
         playerStat = GameObject.Find("PlayerStatManager").GetComponent<PlayerStatManager>();
@@ -40,6 +44,8 @@ public class GameManager : MonoBehaviour
     {
         //LoadAllInventory();
         //GameObject.FindWithTag("UIControl");
+
+        animChanger.SetInteger("isTrigger", n);
     }
 
     void Update()
@@ -81,7 +87,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    //Пройгрыш--------------------------------------------------------------------------
+    //Проигрыш--------------------------------------------------------------------------
     public void LostMenu(List<inventorySlot> lostItems)
     {
         screenDeath.SetActive(false);

@@ -54,7 +54,7 @@ public class ControllHealthPoint : MonoBehaviour
     {
         if(playerStat.currentHP < playerStat.currentMaxHP)
         {
-            if((playerStat.currentMaxHP - playerStat.currentHP) <= _recoveryPoint)
+            if((playerStat.currentMaxHP - playerStat.currentHP) >= _recoveryPoint)
             {
                 playerStat.currentHP = playerStat.currentHP + _recoveryPoint;
             }
