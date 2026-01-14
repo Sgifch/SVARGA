@@ -1,11 +1,10 @@
+using GameLogic.Utilits;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using GameLogic.Utilits;
-using UnityEngine.Tilemaps;
 
-public class EnemyAi : MonoBehaviour
+public class AIMashroom : MonoBehaviour
 {
     [SerializeField] private State startingState;
 
@@ -16,7 +15,7 @@ public class EnemyAi : MonoBehaviour
     public float roamingTimerMax = 2f; //Время в течение которрого объект двигается
 
     private NavMeshAgent navMeshAgent;
-    private State state; //Текущие состояние агента
+    public State state; //Текущие состояние агента
     private float roamingTime; //Текущие время roamoing
     private Vector3 roamPosition; //Новая точка движения
     private Vector3 startingPosition;
@@ -24,7 +23,8 @@ public class EnemyAi : MonoBehaviour
 
     private Animator animation;
     private bool isMove;
-    private enum State
+    public GameObject followObject;
+    public enum State
     {
         Idle,
         Roaming
@@ -53,20 +53,18 @@ public class EnemyAi : MonoBehaviour
         {
             default:  //Если ничего не задано значит по умолчанию будет состояние Idle
             case State.Idle:
+                animation.SetTrigger("Idle");
+                isMove = false;
                 break;
 
             case State.Roaming:
-                roamingTime -= Time.deltaTime;
-                if (roamingTime < 0)
+                Roaming();
+                if (!isMove)
                 {
-                    Roaming();
-                    if (!isMove)
-                    {
-                        animation.SetTrigger("Roaming");
-                        isMove = true;
-                    }
-                    roamingTime = roamingTimerMax;
+                    animation.SetTrigger("Roaming");
+                    isMove = true;
                 }
+
                 break;
         }
 
@@ -75,16 +73,16 @@ public class EnemyAi : MonoBehaviour
 
     private void Roaming()
     {
-        roamPosition = GetRoamingPosition();
+        roamPosition = followObject.transform.position;
 
         navMeshAgent.SetDestination(roamPosition); //Новая точка для движения
     }
 
-    private Vector3 GetRoamingPosition()
+    /*private Vector3 GetRoamingPosition()
     {
         vectorRoaming = GameUtilits.GetRandomDir();
         return startingPosition + vectorRoaming * UnityEngine.Random.Range(roamingDistanceMin, roamingDistanceMax);
-    }
+    }*/
 
     private void Animated()
     {
