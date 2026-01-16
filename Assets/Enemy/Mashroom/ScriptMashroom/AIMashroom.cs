@@ -8,26 +8,26 @@ public class AIMashroom : MonoBehaviour
 {
     [SerializeField] private State startingState;
 
-    public GameObject visualComponent; //Потом переделать под гетКомпонент
+    public EnemyScriptableObject enemyProfile;
 
-    public float roamingDistanceMax = 7f; //Максимальное расстояние на которое уходит объект
-    public float roamingDistanceMin = 3f; //Максимальное расстояние на которое уходит объект
-    public float roamingTimerMax = 2f; //Время в течение которрого объект двигается
+    public GameObject visualComponent; //Потом переделать под гетКомпонент
+    public GameObject triggerComponent;
 
     private NavMeshAgent navMeshAgent;
     public State state; //Текущие состояние агента
-    private float roamingTime; //Текущие время roamoing
+
     private Vector3 roamPosition; //Новая точка движения
-    private Vector3 startingPosition;
     private Vector3 vectorRoaming;
 
     private Animator animation;
     private bool isMove;
+    private bool isAttack;
     public GameObject followObject;
     public enum State
     {
         Idle,
-        Roaming
+        Roaming,
+        Attack
     }
 
     private void Awake()
@@ -40,7 +40,6 @@ public class AIMashroom : MonoBehaviour
 
     private void Start()
     {
-        startingPosition = transform.position;
         if (visualComponent != null)
         {
             animation = visualComponent.GetComponent<Animator>();
@@ -53,7 +52,6 @@ public class AIMashroom : MonoBehaviour
         {
             default:  //Если ничего не задано значит по умолчанию будет состояние Idle
             case State.Idle:
-                animation.SetTrigger("Idle");
                 isMove = false;
                 break;
 
@@ -61,10 +59,15 @@ public class AIMashroom : MonoBehaviour
                 Roaming();
                 if (!isMove)
                 {
-                    animation.SetTrigger("Roaming");
+                    animation.SetBool("Roaming", true);
                     isMove = true;
                 }
-
+                break;
+            case State.Attack:
+                if (!isAttack)
+                {
+                    animation.SetTrigger("Attack");
+                }
                 break;
         }
 
@@ -76,13 +79,20 @@ public class AIMashroom : MonoBehaviour
         roamPosition = followObject.transform.position;
 
         navMeshAgent.SetDestination(roamPosition); //Новая точка для движения
+
+        vectorRoaming = navMeshAgent.velocity; //Фактический вектор скорости
+        vectorRoaming.Normalize();
     }
 
-    /*private Vector3 GetRoamingPosition()
+    public void Attack()
     {
-        vectorRoaming = GameUtilits.GetRandomDir();
-        return startingPosition + vectorRoaming * UnityEngine.Random.Range(roamingDistanceMin, roamingDistanceMax);
-    }*/
+        if (triggerComponent.GetComponent<TriggerMashroom>().isTrigger)
+        {
+            GameObject.FindWithTag("Player").GetComponent<ControllHealthPoint>().Damage(enemyProfile.attackPoint);
+        }
+
+        gameObject.GetComponent<EnemyControllHealthPoint>().Dead();
+    }
 
     private void Animated()
     {
