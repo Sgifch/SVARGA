@@ -50,7 +50,9 @@ public class RoomManager : MonoBehaviour
         shiftPositionX = Random.Range(-maxShiftPosition, maxShiftPosition);
         shiftPositionY = Random.Range(-maxShiftPosition, maxShiftPosition);
 
-        Instantiate(enemy.enemyList[enemy.enemyList.Count - 1], transform.position + new Vector3(shiftPositionX, shiftPositionY, 0), transform.rotation, currentEnemy.transform);
+        int rndEnemy = Random.Range(0, enemy.enemyList.Count);
+        print(rndEnemy);
+        Instantiate(enemy.enemyList[rndEnemy], transform.position + new Vector3(shiftPositionX, shiftPositionY, 0), transform.rotation, currentEnemy.transform);
     }
 
     public void WallSpawn()
