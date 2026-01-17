@@ -213,7 +213,7 @@ public class UIControll : MonoBehaviour
                 break;
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab) && stateUI!=StateUI.otherMenuOpen && stateUI!=StateUI.chestInventoryOpen && stateUI != StateUI.cutscene)
+        if (Input.GetKeyDown(KeyCode.Tab) && (stateUI==StateUI.idle || stateUI==StateUI.inventoryOpen))
         {
             if (!isInventoryOpen)
             {
@@ -262,6 +262,7 @@ public class UIControll : MonoBehaviour
             }
         }
 
+        //„ит-меню
         if (Input.GetKeyDown(KeyCode.F3))
         {
             if (!isOpenDev)
@@ -278,7 +279,7 @@ public class UIControll : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && stateUI==StateUI.idle)
         {
             stateUI = StateUI.pausedOpen; 
         }
