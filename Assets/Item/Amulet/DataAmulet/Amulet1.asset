@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83e90622cf2fcc459d2535a6502b2ed, type: 3}
   m_Name: Amulet1
   m_EditorClassIdentifier: 
-  itemType: 2
+  itemType: 3
   itemObject: {fileID: 2246976019635565786, guid: 0e0f12860268dd04a8c6ac74843c2594, type: 3}
   icon: {fileID: 21300000, guid: c157e509fb25d034eb8d336011f7dfe1, type: 3}
   itemName: HealthAmulet

@@ -5440,6 +5440,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6244dffbdd8bd541b5bc6fdc8ae8356, type: 3}
+--- !u!1 &271858617 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1627317378416981672, guid: bb2eccffac44f6a4a866c0344167a144, type: 3}
+  m_PrefabInstance: {fileID: 562142600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &278422885
 GameObject:
   m_ObjectHideFlags: 0
@@ -5538,7 +5543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93903356ddd47994ebc3b2f30a0e0ffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 200
+  timer: 100
 --- !u!82 &281830904
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8087,6 +8092,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 823809887823046952, guid: bb2eccffac44f6a4a866c0344167a144, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c1a237f5f46953543ba120b252d40239, type: 2}
+    - target: {fileID: 5273762724427823243, guid: bb2eccffac44f6a4a866c0344167a144, type: 3}
+      propertyPath: animChanger
+      value: 
+      objectReference: {fileID: 2076738920}
     - target: {fileID: 5273762724427823243, guid: bb2eccffac44f6a4a866c0344167a144, type: 3}
       propertyPath: sceneChangerCanvas
       value: 
@@ -8182,7 +8195,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1627317378416981672, guid: bb2eccffac44f6a4a866c0344167a144, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2076738925}
   m_SourcePrefab: {fileID: 100100000, guid: bb2eccffac44f6a4a866c0344167a144, type: 3}
 --- !u!4 &571441891 stripped
 Transform:
@@ -10474,8 +10490,8 @@ PolygonCollider2D:
       - {x: -1.4639215, y: -1.9140267}
       - {x: -1.6518965, y: -1.8500736}
       - {x: -1.6365409, y: -2.5289755}
-      - {x: -1.3231739, y: -2.5498226}
-      - {x: -0.89061356, y: -2.2253985}
+      - {x: -1.3231739, y: -2.6543872}
+      - {x: -0.7163391, y: -2.364818}
       - {x: -0.8809576, y: -1.7929978}
   m_UseDelaunayMesh: 0
 --- !u!60 &1061467785
@@ -10525,9 +10541,9 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -2.7167635, y: 0.8054085}
-      - {x: -2.7208872, y: 0.11036232}
-      - {x: -2.232213, y: -0.17289591}
-      - {x: -1.8961143, y: 0.13486004}
+      - {x: -2.7383146, y: -0.42988703}
+      - {x: -2.3019228, y: -0.45173454}
+      - {x: -1.7044125, y: -0.23111534}
       - {x: -1.9248352, y: 0.6318741}
       - {x: -2.0695152, y: 0.7357054}
       - {x: -2.067411, y: 0.80654204}
@@ -10587,10 +10603,11 @@ PolygonCollider2D:
       - {x: 1.7701616, y: 0.85311055}
       - {x: 1.7615228, y: 0.80828106}
       - {x: 1.4379034, y: 0.55946636}
-      - {x: 1.4448153, y: 0.2553594}
-      - {x: 1.8243046, y: 0.096713066}
-      - {x: 2.366949, y: 0.10107994}
-      - {x: 2.5791302, y: 0.18931389}
+      - {x: 1.4099604, y: 0.063658}
+      - {x: 1.7545948, y: -0.3041172}
+      - {x: 2.401804, y: -0.247468}
+      - {x: 2.6662674, y: -0.05466938}
+      - {x: 2.7218351, y: 0.4828272}
       - {x: 2.5243492, y: 0.8255544}
   m_UseDelaunayMesh: 0
 --- !u!60 &1061467787
@@ -11228,7 +11245,7 @@ GameObject:
   m_Layer: 0
   m_Name: TriggerGeneration
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -11305,6 +11322,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a27803383abaf042a9d86dd800c0c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneChangerCanvas: {fileID: 1553758457}
+  animChanger: {fileID: 2076738920}
+  n: -1
 --- !u!1001 &1234651984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21832,6 +21852,21 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 823809887823046952, guid: bb2eccffac44f6a4a866c0344167a144, type: 3}
   m_PrefabInstance: {fileID: 562142600}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2076738925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271858617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a27803383abaf042a9d86dd800c0c77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneChangerCanvas: {fileID: 1553758457}
+  animChanger: {fileID: 0}
+  n: -1
 --- !u!4 &2099042865 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5889626258787990974, guid: 76029d1d115a8554f9accb534b77a458, type: 3}
