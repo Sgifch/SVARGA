@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 5579972723426588840}
   - component: {fileID: 3385709399868084540}
   m_Layer: 0
-  m_Name: HealthAmulet
-  m_TagString: Untagged
+  m_Name: ClawAmulet
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: c157e509fb25d034eb8d336011f7dfe1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0af4c423bb69dbb4ca476c0171b1249b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 779a79314fbc8b843a63a11deef3cd79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: ced359a439cac894a8fba568282338ea, type: 2}
+  item: {fileID: 11400000, guid: 7abdc7972a8e7af4d860cbdd0f01e608, type: 2}
   amount: 1
 --- !u!58 &3385709399868084540
 CircleCollider2D:

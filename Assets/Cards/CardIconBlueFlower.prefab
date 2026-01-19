@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 499506083172124318}
   - component: {fileID: 5880722165273566294}
   m_Layer: 5
-  m_Name: Card3Icon
+  m_Name: CardIconBlueFlower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 779a79314fbc8b843a63a11deef3cd79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: ced359a439cac894a8fba568282338ea, type: 2}
+  item: {fileID: 11400000, guid: fef912d0f08a5464c8d0c3c3849ad9ca, type: 2}
   amount: 1
 --- !u!1 &5679441651594800644
 GameObject:
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041C\u0430\u043D\u043D\u0430 \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
+  m_text: "\u041C\u0430\u043D\u0430 \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
     \u043D\u0430 2 \u0435\u0434."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 47ee2e0f208edee49a0d6f430d7cf56d, type: 2}

@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a404beecf1a94a1458de03b0b1a6144d, type: 3}
-  m_Name: Mashroom
+  m_Script: {fileID: 11500000, guid: f7940a7f34b28c74d8a8974bf1cb285e, type: 3}
+  m_Name: CardBlueFlower
   m_EditorClassIdentifier: 
-  enemyType: 1
-  name: Mashroom
-  healthPoint: 1
-  attackPoint: 12
-  exp: 2
+  cards: {fileID: 11400000, guid: fef912d0f08a5464c8d0c3c3849ad9ca, type: 2}
+  iconFontainMenu: {fileID: 5473996489514863051, guid: 8362d8c88d49d094286f2b3d2bc36390, type: 3}
+  description: 

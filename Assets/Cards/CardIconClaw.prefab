@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 499506083172124318}
   - component: {fileID: 5880722165273566294}
   m_Layer: 5
-  m_Name: Card2Icon
+  m_Name: CardIconClaw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 779a79314fbc8b843a63a11deef3cd79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: ced359a439cac894a8fba568282338ea, type: 2}
+  item: {fileID: 11400000, guid: 7abdc7972a8e7af4d860cbdd0f01e608, type: 2}
   amount: 1
 --- !u!1 &5679441651594800644
 GameObject:

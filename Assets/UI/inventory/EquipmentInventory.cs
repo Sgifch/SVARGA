@@ -5,8 +5,12 @@ using UnityEngine;
 public class EquipmentInventory : MonoBehaviour
 {
     public inventorySlot slot;
+
+    //Текущие-бонусы
     public int currentHealthBonus = 0;
     public int currentStrongBonus = 0;
+    public int currentManaBonus = 0;
+
     public PlayerStatManager playerStatManager;
     private GameObject player;
     private UIControll uiControll;
@@ -23,6 +27,8 @@ public class EquipmentInventory : MonoBehaviour
         playerStatManager.currentStrong += currentStrongBonus;
 
     }
+
+    //Прибавление-бонусов
     public void EquipmentAmulet()
     {
         CradsItem amulet = (CradsItem)slot.item;
@@ -36,18 +42,25 @@ public class EquipmentInventory : MonoBehaviour
                 case "strong":
                     currentStrongBonus += _bonus.bonusUnit;
                     break;
+                case "mana":
+                    currentManaBonus += _bonus.bonusUnit;
+                    break;
             }
         }
 
         playerStatManager.currentMaxHP += currentHealthBonus;
         playerStatManager.currentStrong += currentStrongBonus;
+        playerStatManager.currentMaxManna += currentManaBonus;
         
         player.GetComponent<ControllHealthPoint>().ChangeHealthBar();
         uiControll.UpgradeInventory();
 
     }
+
+    //Снятие-бонусов
     public void UnequipmentAmulet()
     {
+        //Снятие-бонусов-здоровья
         playerStatManager.currentMaxHP -= currentHealthBonus;
         if (playerStatManager.currentHP > playerStatManager.currentMaxHP)
         {
@@ -55,8 +68,20 @@ public class EquipmentInventory : MonoBehaviour
         }
         currentHealthBonus = 0;
 
+        //Снятие-бонусов-силы
         playerStatManager.currentStrong -= currentStrongBonus;
+        currentStrongBonus = 0;
+
+        //Снятие-бонусов-маны
+        playerStatManager.currentMaxManna -= currentManaBonus;
+        if (playerStatManager.currentManna > playerStatManager.currentMaxManna)
+        {
+            playerStatManager.currentManna = playerStatManager.currentMaxManna;
+        }
+        currentManaBonus = 0;
+
         player.GetComponent<ControllHealthPoint>().ChangeHealthBar();
         uiControll.UpgradeInventory();
+
     }
 }
