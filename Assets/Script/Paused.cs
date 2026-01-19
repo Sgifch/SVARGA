@@ -74,7 +74,7 @@ public class Paused : MonoBehaviour
 
     public void ChangeVolume(float val) //Изменение звука
     {
-        volume = val;
+        volume = val; 
     }
 
     public void ChangeResolution(int index) //Изменение разрешения
@@ -109,10 +109,10 @@ public class Paused : MonoBehaviour
 
     public void SaveSettings()
     {
-        audioMixer.SetFloat("MasterVolume", volume); 
+        audioMixer.SetFloat("MyExposedParam", volume); 
         QualitySettings.SetQualityLevel(quality); 
         Screen.fullScreen = isFullscreen; 
-        Screen.SetResolution(Screen.resolutions[currResolutionIndex].width, Screen.resolutions[currResolutionIndex].height, isFullscreen); 
+        Screen.SetResolution(Screen.resolutions[currResolutionIndex].width, Screen.resolutions[currResolutionIndex].height, isFullscreen);
     }
 
     public void SaveLobby()
