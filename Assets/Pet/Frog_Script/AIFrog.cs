@@ -7,17 +7,20 @@ public class AIFrog : MonoBehaviour
     [SerializeField] private Transform playerTransform;
     [SerializeField] private State startingState = State.Idle;
 
+    //public Rigidbody2D rb;
+
     public float stopDistance = 2f;
     public float activationDistance = 5f; // Дистанция активации по R
 
     public KeyCode activationKey = KeyCode.R;
-    public bool isActive = false; // Включен ли агент
+    public bool isActive = false; // Активация агента
 
     private UnityEngine.AI.NavMeshAgent navMeshAgent;
     private State state;
 
     private Vector3 roamPosition; //Новая точка движения
     private Vector3 vectorRoaming;
+    private Vector3 directionToPlayer; //Направление к игроку
 
     private Animator animator;
     private bool isMove;
@@ -47,12 +50,14 @@ public class AIFrog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //rb = GetComponent<Rigidbody2D>();
+        UpdateDirectionToPlayer();
         CheckActivation();
 
         if (!isActive)
         {
             SetState(State.Idle);
+            Animated();
             return;
         }
 
@@ -94,6 +99,11 @@ public class AIFrog : MonoBehaviour
             {
                 SetState(State.Roaming);
             }
+            else
+            {
+                SetState(State.Idle);
+                navMeshAgent.SetDestination(transform.position);
+            }
         }
     }
 
@@ -109,16 +119,42 @@ public class AIFrog : MonoBehaviour
         else
         {
             navMeshAgent.SetDestination(transform.position);
+            vectorRoaming = Vector3.zero;
         }
 
+        UpdateDirectionToPlayer();
         vectorRoaming = navMeshAgent.velocity; 
         vectorRoaming.Normalize();
     }
 
+    private void UpdateDirectionToPlayer()
+    {
+        if (playerTransform != null)
+        {
+            directionToPlayer = playerTransform.position - transform.position;
+            directionToPlayer.Normalize();
+        }
+    }
+
     private void Animated()
     {
-        GetComponent<Animator>().SetFloat("Horizontal", vectorRoaming.x);
-        GetComponent<Animator>().SetFloat("Vertical", vectorRoaming.y);
+        Vector3 directionForAnimation;
+
+        // Если двигаемся, используем вектор движения
+        if (vectorRoaming != Vector3.zero && vectorRoaming.magnitude > 0.1f)
+        {
+            directionForAnimation = vectorRoaming;
+        }
+        // Иначе всегда смотрим на игрока
+        else
+        {
+            directionForAnimation = directionToPlayer;
+        }
+
+        animator.SetFloat("Horizontal", directionForAnimation.x);
+        animator.SetFloat("Vertical", directionForAnimation.y);
+        //GetComponent<Animator>().SetFloat("Horizontal", vectorRoaming.x);
+        //GetComponent<Animator>().SetFloat("Vertical", vectorRoaming.y);
     }
 
     private void SetState(State newState)
