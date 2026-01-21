@@ -1,5 +1,86 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1790204878938216580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5112462356174487046}
+  - component: {fileID: 6050740527791120944}
+  - component: {fileID: 8487836458287529208}
+  m_Layer: 0
+  m_Name: WitchTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5112462356174487046
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790204878938216580}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5166083786694195454}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &6050740527791120944
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790204878938216580}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 3
+--- !u!114 &8487836458287529208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790204878938216580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbf2c14fd3488143b295b8c7f1d5eb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3017663608279196646
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +176,7 @@ GameObject:
   - component: {fileID: 7529403987805233780}
   - component: {fileID: 3757121259336488885}
   - component: {fileID: 2207520513384249428}
+  - component: {fileID: 4042080875044893558}
   m_Layer: 0
   m_Name: WitchVisual
   m_TagString: Untagged
@@ -180,7 +262,7 @@ Animator:
   m_GameObject: {fileID: 7229385937064285878}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0aed0549573f876429cb30f75ff3efc3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 96e40a0eb37049a4d87498f5c95c6b34, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -192,6 +274,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4042080875044893558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7229385937064285878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29978bd1ce777e344b4fd9876ecb3a1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8611874133657231278
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,10 +298,9 @@ GameObject:
   - component: {fileID: 5911254404638565775}
   - component: {fileID: 4294336417213591863}
   - component: {fileID: 5567267137816702541}
-  - component: {fileID: 2683295425915792507}
-  - component: {fileID: 8863940548726781084}
   - component: {fileID: 514437260702385821}
   - component: {fileID: 1639151802058697202}
+  - component: {fileID: 4066400248034476671}
   m_Layer: 0
   m_Name: Witch
   m_TagString: Enemy
@@ -229,6 +322,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7529403987805233780}
+  - {fileID: 5112462356174487046}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5911254404638565775
@@ -340,37 +434,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 3
---- !u!114 &2683295425915792507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8611874133657231278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ad35169c16ad64a90e7fe5da950541, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingState: 1
-  visualComponent: {fileID: 7229385937064285878}
-  roamingDistanceMax: 7
-  roamingDistanceMin: 3
-  roamingTimerMax: 2
---- !u!114 &8863940548726781084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8611874133657231278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 606bb53ab6c331e4eb02eb3efb51d970, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyProfile: {fileID: 11400000, guid: 9f4710c3daeca854e894fc3931b33264, type: 2}
-  intervalAttack: 2
 --- !u!114 &514437260702385821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,3 +493,24 @@ MonoBehaviour:
   dropItem: {fileID: 3408268646583160109, guid: 0a8840f11bead2249b522a0eea335c3a, type: 3}
   min: 1
   max: 3
+--- !u!114 &4066400248034476671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8611874133657231278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfb4426d59198ac438a7ae1c61ed01c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingState: 0
+  visualComponent: {fileID: 7229385937064285878}
+  attackDistance: 4
+  retreatDistance: 2
+  state: 0
+  isMove: 0
+  isAttack: 0
+  isIdle: 0
+  followObject: {fileID: 0}
