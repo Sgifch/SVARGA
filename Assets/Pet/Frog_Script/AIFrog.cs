@@ -63,6 +63,16 @@ public class AIFrog : MonoBehaviour
 
         float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
 
+        if (distanceToPlayer > stopDistance)
+        {
+            SetState(State.Roaming);
+        }
+        else 
+        {
+            SetState(State.Idle);
+            navMeshAgent.SetDestination(transform.position);
+        }
+
         switch (state)
         {
             default:  
@@ -91,17 +101,13 @@ public class AIFrog : MonoBehaviour
     private void CheckActivation()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
+
         if (Input.GetKeyDown(activationKey) && distanceToPlayer <= activationDistance)
         {
             isActive = !isActive; // Переключаем состояние
 
-            if (isActive)
+            if (!isActive)
             {
-                SetState(State.Roaming);
-            }
-            else
-            {
-                SetState(State.Idle);
                 navMeshAgent.SetDestination(transform.position);
             }
         }
@@ -120,6 +126,7 @@ public class AIFrog : MonoBehaviour
         {
             navMeshAgent.SetDestination(transform.position);
             vectorRoaming = Vector3.zero;
+            
         }
 
         UpdateDirectionToPlayer();

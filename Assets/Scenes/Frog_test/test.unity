@@ -160,6 +160,7 @@ MonoBehaviour:
   activationDistance: 5
   activationKey: 114
   isActive: 0
+  isMove: 0
 --- !u!1 &707479104
 GameObject:
   m_ObjectHideFlags: 0
