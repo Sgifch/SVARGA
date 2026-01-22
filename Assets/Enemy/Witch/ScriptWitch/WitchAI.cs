@@ -15,7 +15,7 @@ public class WitchAI : MonoBehaviour
     private float currentDistance;
 
     public float interval;
-    private float time = 0;
+    public float time;
 
     private NavMeshAgent navMeshAgent;
     public State state;
@@ -23,6 +23,7 @@ public class WitchAI : MonoBehaviour
     private Vector3 roamPosition;
     private Vector3 vectorRoaming;
     private Vector3 targetLook;
+    public Vector3 lookDirection;
 
     private Animator animation;
 
@@ -52,6 +53,7 @@ public class WitchAI : MonoBehaviour
         {
             animation = visualComponent.GetComponent<Animator>();
         }
+        time = interval;
     }
 
     private void Update()
@@ -60,13 +62,14 @@ public class WitchAI : MonoBehaviour
         {
             default:
             case State.Idle:
-                if (followObject != null)
+                if (currentDistance <= attackDistance)
                 {
                     state = State.Roaming;
                 }
 
                 if (!isIdle)
                 {
+                    //animation.SetTrigger("Idle");
                     isIdle = true;
                     isMove = false;
                     isAttack = false;
@@ -74,11 +77,10 @@ public class WitchAI : MonoBehaviour
                 break;
 
             case State.Roaming:
-                navMeshAgent.isStopped = false;
-                Roaming();
+                //Roaming();
                 if (!isMove)
                 {
-                    animation.SetTrigger("Roaming");
+                    //animation.SetTrigger("Roaming");
                     isMove = true;
                     isIdle = false;
                     isAttack = false;
@@ -86,13 +88,22 @@ public class WitchAI : MonoBehaviour
                 break;
 
             case State.Attack:
+
+                //Attack();
+                navMeshAgent.isStopped = true;
+                if (!isAttack)
+                {
+                    animation.SetTrigger("Attack");
+                    isMove = false;
+                    isIdle = false;
+                    isAttack = true;
+                }
                 
-                animation.SetTrigger("Attack");
-                isMove = false;
-                isIdle = false;
-                isAttack = true;
                 break;
         }
+
+        Roaming();
+        currentDistance = Vector3.Distance(transform.position, followObject.transform.position);
 
         time += Time.deltaTime;
 
@@ -100,49 +111,61 @@ public class WitchAI : MonoBehaviour
         {
             Animated();
         }
+
     }
 
     private void Roaming()
     {
-        currentDistance = Vector3.Distance(transform.position, followObject.transform.position);
-        //print(currentDistance);
+        //currentDistance = Vector3.Distance(transform.position, followObject.transform.position);
+        //navMeshAgent.isStopped = false;
 
         if (currentDistance <= attackDistance)
         {
+            state = State.Roaming;
+            navMeshAgent.isStopped = false;
             roamPosition = Retreat();
+            navMeshAgent.SetDestination(roamPosition); //Новая точка для движения
+
+            vectorRoaming = navMeshAgent.velocity; //Фактический вектор скорости
+            vectorRoaming.Normalize();
         }
         else if(currentDistance >= attackDistance)
         {
-            //Разворот в сторону игрока
-            navMeshAgent.isStopped = true;
             if (state != State.Attack && time>=interval)
             {
                 targetLook = (followObject.transform.position).normalized;
-                print(targetLook);
-                animation.SetFloat("MoveX", targetLook.x);
-                animation.SetFloat("MoveY", targetLook.y);
+                Attack();
                 state = State.Attack;
                 
                 time = 0;
             }
+            else
+            {
+                navMeshAgent.SetDestination(transform.position);
+            }
         }
 
-        navMeshAgent.SetDestination(roamPosition); //Новая точка для движения
-
-        vectorRoaming = navMeshAgent.velocity; //Фактический вектор скорости
-        vectorRoaming.Normalize();
     }
 
     private void Animated()
     {
-        animation.SetFloat("MoveX", vectorRoaming.x);
-        animation.SetFloat("MoveY", vectorRoaming.y);
+        if (navMeshAgent.velocity.magnitude > 0.1f)
+        {
+            animation.SetTrigger("Roaming");
+            animation.SetFloat("MoveX", vectorRoaming.x);
+            animation.SetFloat("MoveY", vectorRoaming.y);
+        }
+        else
+        {
+            animation.SetTrigger("Idle");
+        }
+        
     }
 
     private Vector3 Retreat()
     {
-        Vector3 directionToPlayer = transform.position - followObject.transform.position; //Направление от игрока
-        Vector3 retreatTarget = transform.position + directionToPlayer.normalized;
+        Vector3 directionAwayFromPlayer = transform.position - followObject.transform.position;
+        Vector3 retreatTarget = transform.position + directionAwayFromPlayer.normalized * retreatDistance;
 
         //Чтобы враг не пытался выбежать за пределы NavMesh
         NavMeshHit hit;
@@ -150,11 +173,14 @@ public class WitchAI : MonoBehaviour
         {
             return hit.position;
         }
-        return retreatTarget;
+        return transform.position;
     }
 
-    public void AttackFinished()
+    public void Attack()
     {
-        state = State.Roaming;
+        //navMeshAgent.isStopped = true;
+        lookDirection = (followObject.transform.position - transform.position).normalized;
+        animation.SetFloat("MoveX", lookDirection.x);
+        animation.SetFloat("MoveY", lookDirection.y);
     }
 }
