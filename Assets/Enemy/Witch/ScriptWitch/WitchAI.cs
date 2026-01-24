@@ -102,8 +102,16 @@ public class WitchAI : MonoBehaviour
                 break;
         }
 
-        Roaming();
-        currentDistance = Vector3.Distance(transform.position, followObject.transform.position);
+        if (followObject == null)
+        {
+            return;
+        }
+
+        if (state != State.Attack)
+        {
+            Roaming();
+            currentDistance = Vector3.Distance(transform.position, followObject.transform.position);
+        }
 
         time += Time.deltaTime;
 
