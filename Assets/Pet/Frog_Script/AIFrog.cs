@@ -50,13 +50,13 @@ public class AIFrog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //rb = GetComponent<Rigidbody2D>();
         UpdateDirectionToPlayer();
         CheckActivation();
 
         if (!isActive)
         {
-            SetState(State.Idle);
+            state = State.Idle;
+            animator.SetBool("Roaming", false);
             Animated();
             return;
         }
@@ -65,28 +65,36 @@ public class AIFrog : MonoBehaviour
 
         if (distanceToPlayer > stopDistance)
         {
-            SetState(State.Roaming);
+            state = State.Roaming;
+            animator.SetBool("Roaming", true);
         }
         else 
         {
-            SetState(State.Idle);
+            state = State.Idle;
             navMeshAgent.SetDestination(transform.position);
+            vectorRoaming = Vector3.zero;
+            animator.SetBool("Roaming", false);
         }
 
         switch (state)
         {
             default:  
             case State.Idle:
+
                 isMove = false;
+                animator.SetBool("Roaming", false);
                 break;
+
             case State.Roaming:
+
                 Roaming();
                 if (!isMove)
                 {
-                    GetComponent<Animator>().SetBool("Roaming", true);
+                    animator.SetBool("Roaming", true);
                     isMove = true;
                 }
                 break;
+
                 //case State.Attack:
                 //if (!isAttack)
                 //{
@@ -125,13 +133,19 @@ public class AIFrog : MonoBehaviour
         else
         {
             navMeshAgent.SetDestination(transform.position);
-            vectorRoaming = Vector3.zero;
             
         }
 
         UpdateDirectionToPlayer();
-        vectorRoaming = navMeshAgent.velocity; 
-        vectorRoaming.Normalize();
+        if (navMeshAgent.velocity.magnitude > 0.1f)
+        {
+            vectorRoaming = navMeshAgent.velocity;
+            vectorRoaming.Normalize();
+        }
+        else
+        {
+            vectorRoaming = Vector3.zero;
+        }
     }
 
     private void UpdateDirectionToPlayer()
@@ -164,24 +178,5 @@ public class AIFrog : MonoBehaviour
         //GetComponent<Animator>().SetFloat("Vertical", vectorRoaming.y);
     }
 
-    private void SetState(State newState)
-    {
-        state = newState;
-    }
-
-     public void SetActive(bool active)
-    {
-        isActive = active;
-        
-        if (isActive)
-        {
-            SetState(State.Roaming);
-        }
-        else
-        {
-            SetState(State.Idle);
-            navMeshAgent.SetDestination(transform.position);
-        }
-    }
 }
 
