@@ -134,10 +134,10 @@ TextureImporter:
       name: KikimoraAtack-forward_0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 0
         y: 0
-        width: 24
-        height: 37
+        width: 34
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,10 +155,10 @@ TextureImporter:
       name: KikimoraAtack-forward_1
       rect:
         serializedVersion: 2
-        x: 38
+        x: 34
         y: 0
-        width: 25
-        height: 37
+        width: 34
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,10 +176,10 @@ TextureImporter:
       name: KikimoraAtack-forward_2
       rect:
         serializedVersion: 2
-        x: 70
+        x: 68
         y: 0
-        width: 30
-        height: 36
+        width: 34
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,10 +197,10 @@ TextureImporter:
       name: KikimoraAtack-forward_3
       rect:
         serializedVersion: 2
-        x: 106
+        x: 102
         y: 0
-        width: 28
-        height: 36
+        width: 34
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

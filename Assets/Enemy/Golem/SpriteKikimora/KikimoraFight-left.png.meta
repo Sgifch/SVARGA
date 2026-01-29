@@ -136,8 +136,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 33
-        height: 33
+        width: 34
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,10 +155,10 @@ TextureImporter:
       name: KikimoraFight-left_1
       rect:
         serializedVersion: 2
-        x: 33
+        x: 34
         y: 0
-        width: 33
-        height: 33
+        width: 34
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,10 +176,10 @@ TextureImporter:
       name: KikimoraFight-left_2
       rect:
         serializedVersion: 2
-        x: 66
+        x: 68
         y: 0
-        width: 33
-        height: 33
+        width: 34
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,10 +197,10 @@ TextureImporter:
       name: KikimoraFight-left_3
       rect:
         serializedVersion: 2
-        x: 99
+        x: 102
         y: 0
-        width: 33
-        height: 33
+        width: 34
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,7 +217,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ad012feea180bd140a08a3e9cf56f752
+    spriteID: 04c0fbab9c82f904d84b4609fcbc4bef
     internalID: 0
     vertices: []
     indices: 
