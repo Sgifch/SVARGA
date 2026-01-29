@@ -88,9 +88,10 @@ public class AIKikimora : MonoBehaviour
     {
         currentDistance = Vector3.Distance(transform.position, followObject.transform.position);
 
-        if (currentDistance >= attackDistance)
+        if (currentDistance > attackDistance)
         {
             state = State.Roaming;
+            roamPosition = followObject.transform.position;
             navMeshAgent.SetDestination(roamPosition); //Новая точка для движения
 
             vectorRoaming = navMeshAgent.velocity; //Фактический вектор скорости
@@ -105,12 +106,7 @@ public class AIKikimora : MonoBehaviour
 
     public void Attack()
     {
-        if (triggerComponent.GetComponent<TriggerMashroom>().isTrigger)
-        {
-            GameObject.FindWithTag("Player").GetComponent<ControllHealthPoint>().Damage(enemyProfile.attackPoint);
-        }
 
-        gameObject.GetComponent<EnemyControllHealthPoint>().Dead();
     }
 
     private void Animated()
