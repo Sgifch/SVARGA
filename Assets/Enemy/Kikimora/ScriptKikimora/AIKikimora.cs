@@ -67,7 +67,7 @@ public class AIKikimora : MonoBehaviour
                 navMeshAgent.isStopped = true;
                 if (!isAttack)
                 {
-                    animation.SetTrigger("Attack");
+                    //animation.SetTrigger("Attack");
                 }
                 break;
         }
@@ -104,10 +104,6 @@ public class AIKikimora : MonoBehaviour
         }
     }
 
-    public void Attack()
-    {
-
-    }
 
     private void Animated()
     {
@@ -119,7 +115,7 @@ public class AIKikimora : MonoBehaviour
         }
         else
         {
-            animation.SetTrigger("Idle");
+            //animation.SetTrigger("Idle");
         }
     }
 }

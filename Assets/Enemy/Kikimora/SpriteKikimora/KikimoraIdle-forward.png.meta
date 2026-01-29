@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: e18632656c8e2684ab360827bba9644e
+guid: 8fee493156db08f4eac0079ebad23f70
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5832192384191964795
-    second: KikimoraIdle-behind_0
+      213: -2147826567353828481
+    second: KikimoraIdle-forward_0
   - first:
-      213: -2395244215056412730
-    second: KikimoraIdle-behind_1
+      213: -3734382271026377173
+    second: KikimoraIdle-forward_1
   - first:
-      213: -5690320654770669846
-    second: KikimoraIdle-behind_2
+      213: 6507385568713491221
+    second: KikimoraIdle-forward_2
+  - first:
+      213: 6805070517668207053
+    second: KikimoraIdle-forward_3
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -128,13 +131,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KikimoraIdle-behind_0
+      name: KikimoraIdle-forward_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 1
-        width: 26
-        height: 30
+        x: 0
+        y: 0
+        width: 34
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b762089b21c10f050800000000000000
-      internalID: 5832192384191964795
+      spriteID: f7b7abddd136132e0800000000000000
+      internalID: -2147826567353828481
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KikimoraIdle-behind_1
+      name: KikimoraIdle-forward_1
       rect:
         serializedVersion: 2
-        x: 38
-        y: 1
-        width: 26
-        height: 30
+        x: 34
+        y: 0
+        width: 34
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6cfc043b31262ced0800000000000000
-      internalID: -2395244215056412730
+      spriteID: b2ec4ff2c1fcc2cc0800000000000000
+      internalID: -3734382271026377173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KikimoraIdle-behind_2
+      name: KikimoraIdle-forward_2
       rect:
         serializedVersion: 2
-        x: 72
-        y: 1
-        width: 26
-        height: 30
+        x: 68
+        y: 0
+        width: 34
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,8 +187,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ae6735a538be701b0800000000000000
-      internalID: -5690320654770669846
+      spriteID: 513cba772b0ee4a50800000000000000
+      internalID: 6507385568713491221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KikimoraIdle-forward_3
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 0
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc9d81db497707e50800000000000000
+      internalID: 6805070517668207053
       vertices: []
       indices: 
       edges: []
@@ -193,7 +217,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 07cb558cb8c445748adad42a502d4840
+    spriteID: 2da9381cf21dbc04da49f4800095f547
     internalID: 0
     vertices: []
     indices: 
@@ -201,9 +225,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      KikimoraIdle-behind_0: 5832192384191964795
-      KikimoraIdle-behind_1: -2395244215056412730
-      KikimoraIdle-behind_2: -5690320654770669846
+      KikimoraIdle-forward_0: -2147826567353828481
+      KikimoraIdle-forward_1: -3734382271026377173
+      KikimoraIdle-forward_2: 6507385568713491221
+      KikimoraIdle-forward_3: 6805070517668207053
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
