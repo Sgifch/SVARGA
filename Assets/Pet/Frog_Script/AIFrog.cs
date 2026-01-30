@@ -5,32 +5,38 @@ using UnityEngine;
 public class AIFrog : MonoBehaviour
 {
     [SerializeField] private Transform playerTransform;
-    [SerializeField] private State startingState = State.Idle;
+    [SerializeField] public State startingState = State.Idle;
+    public Transform currentEnemy;
 
     //public Rigidbody2D rb;
 
-    public float stopDistance = 2f;
+    public float stopDistance = 1.5f;
     public float activationDistance = 5f; // Дистанция активации по R
+    public float attackDistance = 0.5f;
+
+    public float AttackInterval =1f;
+    public float AttackTimer =0f;
 
     public KeyCode activationKey = KeyCode.R;
     public bool isActive = false; // Активация агента
 
     private UnityEngine.AI.NavMeshAgent navMeshAgent;
-    private State state;
+    public State state;
 
     private Vector3 roamPosition; //Новая точка движения
     private Vector3 vectorRoaming;
     private Vector3 directionToPlayer; //Направление к игроку
+    private Vector3 directionToEnemy; //Направление к врагу
 
     private Animator animator;
     private bool isMove;
-    //private bool isAttack;
+    private bool isAttack;
 
-    private enum State
+    public enum State
     {
         Idle,
         Roaming,
-        //Attack
+        Attack
     }
 
     private void Awake()
@@ -50,30 +56,22 @@ public class AIFrog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateDirectionToPlayer();
+        if (currentEnemy != null)
+        {
+            UpdateDirectionToEnemy();
+        }
+        else
+        {
+            UpdateDirectionToPlayer();
+        }
+
         CheckActivation();
 
         if (!isActive)
         {
             state = State.Idle;
-            animator.SetBool("Roaming", false);
             Animated();
             return;
-        }
-
-        float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
-
-        if (distanceToPlayer > stopDistance)
-        {
-            state = State.Roaming;
-            animator.SetBool("Roaming", true);
-        }
-        else 
-        {
-            state = State.Idle;
-            navMeshAgent.SetDestination(transform.position);
-            vectorRoaming = Vector3.zero;
-            animator.SetBool("Roaming", false);
         }
 
         switch (state)
@@ -95,13 +93,22 @@ public class AIFrog : MonoBehaviour
                 }
                 break;
 
-                //case State.Attack:
-                //if (!isAttack)
-                //{
-                //    animation.SetTrigger("Attack");
-                //}
-                //break;
+            case State.Attack:
+                if (!isAttack)
+                {
+                    animator.SetTrigger("Attack");
+                    isMove = false;
+                    isAttack = true;
+                }
+                break;
         }
+
+        if (state != State.Attack)
+        {
+            Roaming();
+        }
+
+        AttackTimer += Time.deltaTime;
 
         Animated();
     }
@@ -123,20 +130,40 @@ public class AIFrog : MonoBehaviour
 
     private void Roaming()
     {
-        roamPosition = playerTransform.position;
-
-        float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
-        if (distanceToPlayer > stopDistance)
+        if (currentEnemy == null)
         {
-            navMeshAgent.SetDestination(roamPosition);
+
+            roamPosition = playerTransform.position;
+
+            float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
+            if (distanceToPlayer > stopDistance)
+            {
+                navMeshAgent.SetDestination(roamPosition);
+                state = State.Roaming;
+            }
+            else
+            {
+                navMeshAgent.SetDestination(transform.position);
+                state = State.Idle;
+            }
         }
-        else
+        else if (currentEnemy  != null)
         {
-            navMeshAgent.SetDestination(transform.position);
-            
+            roamPosition = currentEnemy.position;
+            float distanceToEnemy = Vector3.Distance(transform.position, currentEnemy.position);
+
+            if (distanceToEnemy > attackDistance)
+            {
+                navMeshAgent.SetDestination(roamPosition);
+                state = State.Roaming;
+            }
+            else if (distanceToEnemy <= attackDistance)
+            {
+                navMeshAgent.SetDestination(transform.position);
+                state = State.Attack;
+            }
         }
 
-        UpdateDirectionToPlayer();
         if (navMeshAgent.velocity.magnitude > 0.1f)
         {
             vectorRoaming = navMeshAgent.velocity;
@@ -157,14 +184,30 @@ public class AIFrog : MonoBehaviour
         }
     }
 
+    public void UpdateDirectionToEnemy()
+    {
+        if (currentEnemy != null)
+        {
+            directionToEnemy = currentEnemy.transform.position - transform.position;
+            directionToEnemy.Normalize();
+        }
+    }
+
     private void Animated()
     {
         Vector3 directionForAnimation;
 
+        if (state == State.Attack && currentEnemy != null)
+        {
+            directionForAnimation = directionToEnemy;
+            GetComponent<Animator>().SetTrigger("Attack");
+            animator.SetBool("Roaming", false);
+        }
         // Если двигаемся, используем вектор движения
-        if (vectorRoaming != Vector3.zero && vectorRoaming.magnitude > 0.1f)
+        else if (vectorRoaming != Vector3.zero && vectorRoaming.magnitude > 0.1f)
         {
             directionForAnimation = vectorRoaming;
+            GetComponent<Animator>().SetTrigger("Roaming");
         }
         // Иначе всегда смотрим на игрока
         else
@@ -174,8 +217,6 @@ public class AIFrog : MonoBehaviour
 
         animator.SetFloat("Horizontal", directionForAnimation.x);
         animator.SetFloat("Vertical", directionForAnimation.y);
-        //GetComponent<Animator>().SetFloat("Horizontal", vectorRoaming.x);
-        //GetComponent<Animator>().SetFloat("Vertical", vectorRoaming.y);
     }
 
 }
