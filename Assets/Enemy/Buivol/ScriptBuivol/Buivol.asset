@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7940a7f34b28c74d8a8974bf1cb285e, type: 3}
-  m_Name: CardChest
+  m_Script: {fileID: 11500000, guid: a404beecf1a94a1458de03b0b1a6144d, type: 3}
+  m_Name: Buivol
   m_EditorClassIdentifier: 
-  cards: {fileID: 11400000, guid: 211f069556a1f0e41ba6f34259e7f5dd, type: 2}
-  iconFontainMenu: {fileID: 5473996489514863051, guid: 1710c6ff256a2d04190f7bea6384d588, type: 3}
-  description: 
+  enemyType: 1
+  name: Buivol
+  healthPoint: 20
+  attackPoint: 10
+  exp: 8
