@@ -8,9 +8,9 @@ public class AIFrog : MonoBehaviour
     [SerializeField] public State startingState = State.Idle;
     public Transform currentEnemy;
 
-    public float stopDistance = 3f;
-    public float activationDistance = 5f; // Дистанция активации по R
-    public float attackDistance = 2f;
+    public float stopDistance;
+    public float activationDistance; // Дистанция активации по R
+    public float attackDistance;
 
     public KeyCode activationKey = KeyCode.R;
     public bool isActive = false; // Активация агента
@@ -66,13 +66,11 @@ public class AIFrog : MonoBehaviour
         {
             default:  
             case State.Idle:
-                navMeshAgent.isStopped = true;
                 isMove = false;
                 isAttack = false;
                 break;
 
             case State.Roaming:
-                navMeshAgent.isStopped = false;
                 if (!isMove)
                 {
                     isMove = true;
@@ -80,15 +78,15 @@ public class AIFrog : MonoBehaviour
                 break;
 
             case State.Attack:
-                navMeshAgent.isStopped = true;
                 if (!isAttack)
                 {
+                    isMove = false;
                     isAttack = true;
                 }
                 break;
         }
 
-        if (isActive && state != State.Attack)
+        if (isActive)
         {
             Roaming();
         }
@@ -129,7 +127,7 @@ public class AIFrog : MonoBehaviour
                 state = State.Idle;
             }
         }
-        else if (currentEnemy  != null)
+        else
         {
             float distanceToEnemy = Vector3.Distance(transform.position, currentEnemy.position);
 
@@ -139,7 +137,7 @@ public class AIFrog : MonoBehaviour
                 navMeshAgent.SetDestination(roamPosition);
                 state = State.Roaming;
             }
-            else if (distanceToEnemy <= attackDistance)
+            else 
             {
                 navMeshAgent.SetDestination(transform.position);
                 state = State.Attack;
@@ -200,6 +198,18 @@ public class AIFrog : MonoBehaviour
 
         animator.SetFloat("Horizontal", directionForAnimation.x);
         animator.SetFloat("Vertical", directionForAnimation.y);
+    }
+
+    private void OnDrawGizmosSelected() // Проверка дистанции от игрока и врага
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, stopDistance);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackDistance);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, activationDistance);
     }
 
 }
