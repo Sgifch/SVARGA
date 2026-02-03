@@ -8,14 +8,9 @@ public class AIFrog : MonoBehaviour
     [SerializeField] public State startingState = State.Idle;
     public Transform currentEnemy;
 
-    //public Rigidbody2D rb;
-
-    public float stopDistance = 1.5f;
+    public float stopDistance = 3f;
     public float activationDistance = 5f; // Дистанция активации по R
-    public float attackDistance = 0.5f;
-
-    public float AttackInterval =1f;
-    public float AttackTimer =0f;
+    public float attackDistance = 2f;
 
     public KeyCode activationKey = KeyCode.R;
     public bool isActive = false; // Активация агента
@@ -67,48 +62,36 @@ public class AIFrog : MonoBehaviour
 
         CheckActivation();
 
-        if (!isActive)
-        {
-            state = State.Idle;
-            Animated();
-            return;
-        }
-
         switch (state)
         {
             default:  
             case State.Idle:
-
+                navMeshAgent.isStopped = true;
                 isMove = false;
-                animator.SetBool("Roaming", false);
+                isAttack = false;
                 break;
 
             case State.Roaming:
-
-                Roaming();
+                navMeshAgent.isStopped = false;
                 if (!isMove)
                 {
-                    animator.SetBool("Roaming", true);
                     isMove = true;
                 }
                 break;
 
             case State.Attack:
+                navMeshAgent.isStopped = true;
                 if (!isAttack)
                 {
-                    animator.SetTrigger("Attack");
-                    isMove = false;
                     isAttack = true;
                 }
                 break;
         }
 
-        if (state != State.Attack)
+        if (isActive && state != State.Attack)
         {
             Roaming();
         }
-
-        AttackTimer += Time.deltaTime;
 
         Animated();
     }
@@ -132,12 +115,11 @@ public class AIFrog : MonoBehaviour
     {
         if (currentEnemy == null)
         {
-
-            roamPosition = playerTransform.position;
-
             float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
+
             if (distanceToPlayer > stopDistance)
             {
+                roamPosition = playerTransform.position;
                 navMeshAgent.SetDestination(roamPosition);
                 state = State.Roaming;
             }
@@ -149,11 +131,11 @@ public class AIFrog : MonoBehaviour
         }
         else if (currentEnemy  != null)
         {
-            roamPosition = currentEnemy.position;
             float distanceToEnemy = Vector3.Distance(transform.position, currentEnemy.position);
 
             if (distanceToEnemy > attackDistance)
             {
+                roamPosition = currentEnemy.position;
                 navMeshAgent.SetDestination(roamPosition);
                 state = State.Roaming;
             }
@@ -200,19 +182,20 @@ public class AIFrog : MonoBehaviour
         if (state == State.Attack && currentEnemy != null)
         {
             directionForAnimation = directionToEnemy;
-            GetComponent<Animator>().SetTrigger("Attack");
+            animator.SetTrigger("Attack");
             animator.SetBool("Roaming", false);
         }
         // Если двигаемся, используем вектор движения
         else if (vectorRoaming != Vector3.zero && vectorRoaming.magnitude > 0.1f)
         {
             directionForAnimation = vectorRoaming;
-            GetComponent<Animator>().SetTrigger("Roaming");
+            animator.SetBool("Roaming", true);
         }
         // Иначе всегда смотрим на игрока
         else
         {
             directionForAnimation = directionToPlayer;
+            animator.SetBool("Roaming", false);
         }
 
         animator.SetFloat("Horizontal", directionForAnimation.x);
