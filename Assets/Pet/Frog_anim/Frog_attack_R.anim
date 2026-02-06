@@ -92,14 +92,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.45
-    functionName: 
+    functionName: BoxColliderTurnOn
     data: 
     objectReferenceParameter: {fileID: 5593437393694590610, guid: 392eb35e7b70f0f42927b2e736c22fdd, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.6166667
-    functionName: 
+  - time: 0.75
+    functionName: BoxColliderTurnOff
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

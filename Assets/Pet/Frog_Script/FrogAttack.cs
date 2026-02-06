@@ -5,6 +5,7 @@ using UnityEngine;
 public class FrogAttack : MonoBehaviour
 {
     private BoxCollider2D boxCollider2D;
+    
     void Awake()
     {
         boxCollider2D = GetComponent<BoxCollider2D>();
@@ -18,5 +19,14 @@ public class FrogAttack : MonoBehaviour
     public void BoxColliderTurnOff()
     {
         boxCollider2D.enabled = false;
+    }
+
+    public PetSO frog;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<EnemyControllHealthPoint>().Damage(frog.PetDamagePoint);
+        }
     }
 }
