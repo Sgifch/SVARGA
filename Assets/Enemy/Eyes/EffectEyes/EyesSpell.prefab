@@ -57,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c605f25fab121524fb91120f740d81e8, type: 2}
+  - {fileID: 2100000, guid: 4a9f54363f61bb541a613b38aa34a7ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 2665775950664428731, guid: 7fd222ab29ff6b845984ef41e6292a42, type: 3}
+  m_Sprite: {fileID: 382132728447266975, guid: 5bc20ab75365fc8478e347b7ed84f4bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ Animator:
   m_GameObject: {fileID: 2692512781416022514}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f7fe7dc32e143034e93888b25dc23baf, type: 2}
+  m_Controller: {fileID: 9100000, guid: 57c96ef2d7b8eef43892db701cd8f13f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -236,10 +236,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ComponentVersion: 2
   m_LightType: 3
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.86
-  m_Color: {r: 0, g: 0.20987177, b: 1, a: 1}
-  m_Intensity: 2.79
+  m_BlendStyleIndex: 1
+  m_FalloffIntensity: 0.36
+  m_Color: {r: 1, g: 0.1707349, b: 0, a: 1}
+  m_Intensity: 1.57
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
-  m_ShadowsEnabled: 1
+  m_ShadowsEnabled: 0
   m_ShadowIntensity: 0.87
   m_ShadowSoftness: 0.3
   m_ShadowSoftnessFalloffIntensity: 0.5
@@ -262,8 +262,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0.04
-  m_PointLightOuterRadius: 1
+  m_PointLightInnerRadius: 0.09
+  m_PointLightOuterRadius: 0.38
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
