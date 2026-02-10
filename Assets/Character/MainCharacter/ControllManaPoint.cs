@@ -5,24 +5,52 @@ using UnityEngine.UI;
 
 public class ControllManaPoint : MonoBehaviour
 {
+    public int currentMana;
+
     public PlayerStatManager playerStat;
-    public float flashTime = 1f;
-    public AnimationCurve flashCurve;
-    public GameObject effectDamage;
-    public GameObject effectRecovery;
 
-    public bool useGameManager;
-
-    private GameObject gameManager;
-    private float currentManaPoint; //Текущие очки
-    private GameObject manaBar;
-    private Material material;
+    private float currentManaPoint;
+    public GameObject manaBar;
 
     private Coroutine _manaRecovery;
 
+    private void Start()
+    {
+        currentMana = playerStat.currentMaxMana;
+        ChangeManaBar();
+    }
+
     public void ChangeManaBar()
     {
-        currentManaPoint = (float)(playerStat.currentHP) / playerStat.currentMaxHP;
+        currentManaPoint = (float)(currentMana) / playerStat.currentMaxMana;
         manaBar.GetComponent<Image>().fillAmount = currentManaPoint;
+    }
+
+    public void AddManaPoint(int point)
+    {
+        if (currentMana + point < playerStat.currentMaxMana)
+        {
+            currentMana += point;
+        }
+        else
+        {
+            currentMana = playerStat.currentMaxMana;
+        }
+
+        ChangeManaBar();
+    }
+
+    public void SubstractManaPoint(int point)
+    {
+        if (currentMana - point >= 0)
+        {
+            currentMana -= point;
+        }
+        else
+        {
+            currentMana = 0;
+        }
+
+        ChangeManaBar();
     }
 }

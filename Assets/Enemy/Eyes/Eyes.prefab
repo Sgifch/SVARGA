@@ -614,6 +614,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ba201d63bcf5e4bb1578b017af0524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minM: 3
+  maxM: 10
   dropItem: {fileID: 3408268646583160109, guid: 0a8840f11bead2249b522a0eea335c3a, type: 3}
   min: 1
   max: 3

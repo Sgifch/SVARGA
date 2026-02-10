@@ -348,7 +348,7 @@ public class UIControll : MonoBehaviour
     public void UpgradeInventory()
     {
         hpInf.text = "Œ«: " + statManager.currentHP.ToString() + "/" + statManager.currentMaxHP.ToString();
-        mannaInf.text = "ŒÃ: " + statManager.currentManna.ToString() + "/" + statManager.currentMaxManna.ToString();
+        mannaInf.text = "ŒÃ: " + statManager.currentMana.ToString() + "/" + statManager.currentMaxMana.ToString();
         strongInf.text = "—ËÎ‡: " + statManager.currentStrong.ToString();
     }
 

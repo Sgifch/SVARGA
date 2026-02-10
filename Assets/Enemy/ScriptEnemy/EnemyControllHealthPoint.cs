@@ -70,7 +70,8 @@ public class EnemyControllHealthPoint : MonoBehaviour
 
         if (useEnemy)
         {
-            gameObject.GetComponent<DropItemEnemy>().DropInInventory(); 
+            gameObject.GetComponent<DropItemEnemy>().DropInInventory();
+            gameObject.GetComponent<DropItemEnemy>().DropMana();
         }
 
         Destroy(gameObject);

@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerStatsPoint", menuName = "Player/StatsPoint")]
 public class characterStat : ScriptableObject
 {
+    //Описание статов, которые будут улучшены
     //Здесь должны быть просто настройки и базовые значения не более
     public int maxHealthPoint;
     public int maxMannaPoint;

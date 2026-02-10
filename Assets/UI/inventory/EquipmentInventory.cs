@@ -50,7 +50,7 @@ public class EquipmentInventory : MonoBehaviour
 
         playerStatManager.currentMaxHP += currentHealthBonus;
         playerStatManager.currentStrong += currentStrongBonus;
-        playerStatManager.currentMaxManna += currentManaBonus;
+        playerStatManager.currentMaxMana += currentManaBonus;
         
         player.GetComponent<ControllHealthPoint>().ChangeHealthBar();
         uiControll.UpgradeInventory();
@@ -73,10 +73,10 @@ public class EquipmentInventory : MonoBehaviour
         currentStrongBonus = 0;
 
         //Снятие-бонусов-маны
-        playerStatManager.currentMaxManna -= currentManaBonus;
-        if (playerStatManager.currentManna > playerStatManager.currentMaxManna)
+        playerStatManager.currentMaxMana -= currentManaBonus;
+        if (playerStatManager.currentMana > playerStatManager.currentMaxMana)
         {
-            playerStatManager.currentManna = playerStatManager.currentMaxManna;
+            playerStatManager.currentMana = playerStatManager.currentMaxMana;
         }
         currentManaBonus = 0;
 

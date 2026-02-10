@@ -76,4 +76,9 @@ public class DeveloperScript : MonoBehaviour
         GameObject.FindWithTag("Player").GetComponent<inventoryManager>().LoadDataChest();
     }
 
+    public void SubMana()
+    {
+        GameObject.FindWithTag("Player").GetComponent<ControllManaPoint>().SubstractManaPoint(5);
+    }
+
 }

@@ -45,9 +45,9 @@ public class KipisheFunction : MonoBehaviour
     {
         if (playerStat.upPoint > 0)
         {
-            if (playerStat.maxManna < maxUpgradeManna)
+            if (playerStat.maxMana < maxUpgradeManna)
             {
-                playerStat.maxManna += playerConfig.upgradeManna[playerStat.lvl-1];
+                playerStat.maxMana += playerConfig.upgradeManna[playerStat.lvl-1];
                 playerStat.upPoint--;
                 ShowKipishe();
             }
@@ -73,7 +73,7 @@ public class KipisheFunction : MonoBehaviour
         float currentUpgradeHP = (float)playerStat.maxHP / maxUpgradeHP;
         barHP.GetComponent<Image>().fillAmount = currentUpgradeHP;
 
-        float currentUpgradeManna = (float)playerStat.maxManna / maxUpgradeManna;
+        float currentUpgradeManna = (float)playerStat.maxMana / maxUpgradeManna;
         barManna.GetComponent<Image>().fillAmount = currentUpgradeManna;
 
         float currentUpgradeStrong = (float)playerStat.strong / maxUpgradeStrong;
@@ -86,7 +86,7 @@ public class KipisheFunction : MonoBehaviour
             barHP.GetComponent<Image>().fillAmount = 0f;
         }
 
-        if (playerStat.maxManna == playerConfig.baseManna)
+        if (playerStat.maxMana == playerConfig.baseManna)
         {
             barManna.GetComponent<Image>().fillAmount = 0f;
         }

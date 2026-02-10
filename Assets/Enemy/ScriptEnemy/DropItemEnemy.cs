@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class DropItemEnemy : MonoBehaviour
 {
+    /* ВЫПАДЕНИЕ БОНУСОВ С ВРАГОВ */
+    //Мб перенести сюда экспу
+
+    //Выпадение-маны
+    public int minM;
+    public int maxM;
+
+    //Выпадение-предметов
     public GameObject dropItem;
     public int min;
     public int max;
     
-    public int DropRandom()
+    public int DropRandom(int min, int max)
     {
         int n = Random.Range(min, max);
         return n;
@@ -16,9 +24,15 @@ public class DropItemEnemy : MonoBehaviour
 
     public void DropInInventory()
     {
-        int n = DropRandom();
+        int n = DropRandom(min, max);
         GameObject player = GameObject.FindWithTag("Player");
         player.GetComponent<inventoryManager>().AddItem(dropItem.GetComponent<Item>().item, n);
-        print("+soul");
+    }
+
+    public void DropMana()
+    {
+        int n = DropRandom(minM, maxM);
+        GameObject player = GameObject.FindWithTag("Player");
+        player.GetComponent<ControllManaPoint>().AddManaPoint(n);
     }
 }

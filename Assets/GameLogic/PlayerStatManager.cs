@@ -13,9 +13,9 @@ public class PlayerStatManager : MonoBehaviour
     public int currentMaxHP; //если этот стат будет работать то надо потом подправить
     public int currentHP;
 
-    public int maxManna;
-    public int currentMaxManna;
-    public int currentManna;
+    public int maxMana;
+    public int currentMaxMana;
+    public int currentMana;
 
     public int strong;
 
@@ -31,7 +31,7 @@ public class PlayerStatManager : MonoBehaviour
     {
         currentStrong = strong;
         currentMaxHP = maxHP;
-        currentMaxManna = maxManna;
+        currentMaxMana = maxMana;
         currentMaxHP += _currentHealthBonus;
         GameObject.FindWithTag("UIControll").GetComponent<UIControll>().UpgradeInventory();
         //Возможно здесь прописать обновление бара
@@ -44,11 +44,12 @@ public class PlayerStatManager : MonoBehaviour
         PlayerPrefs.SetInt("upPoint", upPoint);
 
         PlayerPrefs.SetInt("maxHP", maxHP);
-        PlayerPrefs.SetInt("maxManna", maxManna);
-        PlayerPrefs.SetInt("currentMaxManna", currentMaxManna);
+        PlayerPrefs.SetInt("maxMana", maxMana);
+        PlayerPrefs.SetInt("currentMaxManna", currentMaxMana);
         PlayerPrefs.SetInt("strong", strong);
         PlayerPrefs.SetInt("currentHP", currentHP);
 
+        //По-моемому здесь написано про сохранение статов но это и не нужно вроде как ??? 
         GameObject panellArmor = GameObject.FindWithTag("UIControll").GetComponent<UIControll>().inventoryArmor;
         for (int i = 0; i<panellArmor.transform.childCount; i++)
         {
@@ -71,8 +72,8 @@ public class PlayerStatManager : MonoBehaviour
         upPoint = PlayerPrefs.GetInt("upPoint");
 
         maxHP = PlayerPrefs.GetInt("maxHP");
-        maxManna = PlayerPrefs.GetInt("maxManna");
-        currentMaxManna = PlayerPrefs.GetInt("currentMaxManna");
+        maxMana = PlayerPrefs.GetInt("maxManna");
+        currentMaxMana = PlayerPrefs.GetInt("currentMaxManna");
         strong = PlayerPrefs.GetInt("strong");
         currentHP = PlayerPrefs.GetInt("currentHP");
 
