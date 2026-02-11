@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class FrogAttack : MonoBehaviour
 {
-    private BoxCollider2D boxCollider2D;
+    private BoxCollider2D Collider2D;
     
     void Awake()
     {
-        boxCollider2D = GetComponent<BoxCollider2D>();
+        Collider2D = GetComponent<BoxCollider2D>();
     }
 
     public void BoxColliderTurnOn()
     {
-        boxCollider2D.enabled = true;
+        Collider2D.enabled = true;
     }
 
     public void BoxColliderTurnOff()
     {
-        boxCollider2D.enabled = false;
+        Collider2D.enabled = false;
     }
 
     public PetSO frog;
@@ -26,7 +26,7 @@ public class FrogAttack : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<EnemyControllHealthPoint>().Damage(frog.PetDamagePoint);
+            collision.gameObject.GetComponent<EnemyControllHealthPoint>().Damage(frog.AttackPoint);
         }
     }
 }

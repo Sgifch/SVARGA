@@ -4,5 +4,5 @@ using UnityEngine;
 public class PetSO : ScriptableObject
 {
     public string PetName;
-    public int PetDamagePoint;
+    public int AttackPoint;
 }

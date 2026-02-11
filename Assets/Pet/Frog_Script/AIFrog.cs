@@ -200,17 +200,5 @@ public class AIFrog : MonoBehaviour
         animator.SetFloat("Vertical", directionForAnimation.y);
     }
 
-    private void OnDrawGizmosSelected() // Проверка дистанции от игрока и врага
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, stopDistance);
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackDistance);
-
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, activationDistance);
-    }
-
 }
 

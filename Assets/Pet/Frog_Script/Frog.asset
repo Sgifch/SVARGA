@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711fd1e914f98684e89f9d79985504a3, type: 3}
   m_Name: Frog
   m_EditorClassIdentifier: 
-  PetName: Frog
-  PetDamagePoint: 1
+  PetName: frog
+  AttackPoint: 1
