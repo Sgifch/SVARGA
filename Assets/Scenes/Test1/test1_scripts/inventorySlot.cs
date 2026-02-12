@@ -11,6 +11,7 @@ public class inventorySlot : MonoBehaviour
     public bool isEmpty = true;
     public bool weaponSlot = false;
     public bool equipmentSlot = false;
+    public bool spellSlot = false;
     public GameObject iconItem;
     public TMP_Text itemAmount;
 

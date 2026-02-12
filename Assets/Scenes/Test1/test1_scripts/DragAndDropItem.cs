@@ -110,6 +110,14 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             }*/
         }
 
+        if (newSlot.spellSlot)
+        {
+            if(!(oldSlot.item.itemType is ItemType.magicBook))
+            {
+                return;
+            }
+        }
+
         // Заменяем значения newSlot на значения oldSlot
         newSlot.item = oldSlot.item;
         newSlot.amount = oldSlot.amount;

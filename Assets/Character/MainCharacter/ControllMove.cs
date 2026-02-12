@@ -48,6 +48,11 @@ public class ControllMove : MonoBehaviour
             AttackWeapon();
         }
 
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+
+        }
+
     }
 
     void FixedUpdate()
@@ -199,6 +204,12 @@ public class ControllMove : MonoBehaviour
             animWeapon.SetTrigger("Attack");
         }
     }
+
+    //Блок магии-------------------------------------------------------------------------------------
+     public void SpawnMagic()
+     {
+
+     }
 
     //Блок апимации----------------------------------------------------------------------------------
     void Animated()
