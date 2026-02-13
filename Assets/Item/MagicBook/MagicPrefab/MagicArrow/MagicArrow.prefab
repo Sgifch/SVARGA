@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 284774686008538956}
   - component: {fileID: 6577252408025444974}
   - component: {fileID: 4347499765562333521}
-  - component: {fileID: 5767679195358954182}
   - component: {fileID: 7736821679457067810}
+  - component: {fileID: 1723004709967136636}
   m_Layer: 0
   m_Name: MagicArrow
   m_TagString: Untagged
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 2665775950664428731, guid: 7fd222ab29ff6b845984ef41e6292a42, type: 3}
+  m_Sprite: {fileID: 6702012573378223531, guid: b1bd0a169523bf5438c9a6956a648516, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ Animator:
   m_GameObject: {fileID: 2692512781416022514}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f7fe7dc32e143034e93888b25dc23baf, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4ba3a3529965d94469bf001c0ad55e59, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -138,8 +138,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &5767679195358954182
-CircleCollider2D:
+--- !u!114 &7736821679457067810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2692512781416022514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96de2ed444d4bc649952148a6d5e5059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: ca6c5d7d445678741816945b43312548, type: 2}
+  lifeTime: 5
+  speed: 3
+  anim: {fileID: 6577252408025444974}
+--- !u!60 &1723004709967136636
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -172,24 +188,30 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0012454987, y: 0.0024924278}
-  m_Radius: 0.16403055
---- !u!114 &7736821679457067810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2692512781416022514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96de2ed444d4bc649952148a6d5e5059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: ca6c5d7d445678741816945b43312548, type: 2}
-  lifeTime: 5
-  speed: 3
-  anim: {fileID: 6577252408025444974}
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.04477501, y: 0.50612164}
+      - {x: -0.054599762, y: 0.4938774}
+      - {x: -0.2035904, y: 0.20650673}
+      - {x: -0.3321476, y: 0.027402878}
+      - {x: -0.18700409, y: 0.02725792}
+      - {x: -0.034952164, y: 0.31725407}
+      - {x: 0.048332214, y: 0.32643795}
+      - {x: 0.17229462, y: 0.030537605}
+      - {x: 0.31474876, y: 0.030463219}
+      - {x: 0.31653976, y: 0.060707092}
+      - {x: 0.18458366, y: 0.23277187}
+  m_UseDelaunayMesh: 0
 --- !u!1 &7415833829144964430
 GameObject:
   m_ObjectHideFlags: 0

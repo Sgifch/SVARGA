@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 8
   itemObject: {fileID: 3408268646583160109, guid: c5047d1ee37e2724c9f5137823e1f75d, type: 3}
-  icon: {fileID: 21300000, guid: ebe196c4ba36c314b903337f65ab5e6f, type: 3}
+  icon: {fileID: 21300000, guid: eb8f3de78c580504b9bc6ca839b3e2ca, type: 3}
   itemName: 
   maximumAmaunt: 1
   itemDescription: 
   magic: {fileID: 2692512781416022514, guid: c0928c4b6c3a02a4d8b77deb1c7414a5, type: 3}
-  damage: 3
-  price: 2
+  damage: 1
+  price: 5

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9acd23409981c864dac2f8e27ab9824a, type: 3}
-  m_Name: SwordWood
+  m_Name: SwordSteel
   m_EditorClassIdentifier: 
   itemType: 2
-  itemObject: {fileID: 2595154827602962897, guid: 7673002995f853143b038fcadcc4e246, type: 3}
-  icon: {fileID: 21300000, guid: 25fb257a7a749a04b8b0d17143a776a3, type: 3}
-  itemName: Wood Sword
+  itemObject: {fileID: 2595154827602962897, guid: af0018a41e0bdb64195798e48a1c2f43, type: 3}
+  icon: {fileID: 21300000, guid: 40c44ae799320b14a91a193701854e2b, type: 3}
+  itemName: "\u0421\u0442\u0430\u043B\u044C\u043D\u043E\u0439 \u043C\u0435\u0447"
   maximumAmaunt: 1
   itemDescription: 
-  damage: 1
+  damage: 3
   effect: {fileID: 0}
