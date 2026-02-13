@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6577252408025444974}
   - component: {fileID: 4347499765562333521}
   - component: {fileID: 5767679195358954182}
-  - component: {fileID: 8277638243839118807}
+  - component: {fileID: 7736821679457067810}
   m_Layer: 0
   m_Name: MagicArrow
   m_TagString: Untagged
@@ -174,7 +174,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.0012454987, y: 0.0024924278}
   m_Radius: 0.16403055
---- !u!114 &8277638243839118807
+--- !u!114 &7736821679457067810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,12 +183,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2692512781416022514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6682322ee28248e41b96204eb5dbefe6, type: 3}
+  m_Script: {fileID: 11500000, guid: 96de2ed444d4bc649952148a6d5e5059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 6577252408025444974}
-  enemy: {fileID: 11400000, guid: b8bbc7e99af319a42bb64a2499a3f72b, type: 2}
+  profile: {fileID: 11400000, guid: ca6c5d7d445678741816945b43312548, type: 2}
   lifeTime: 5
+  speed: 3
+  anim: {fileID: 6577252408025444974}
 --- !u!1 &7415833829144964430
 GameObject:
   m_ObjectHideFlags: 0

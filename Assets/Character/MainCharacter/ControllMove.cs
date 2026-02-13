@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,11 +23,18 @@ public class ControllMove : MonoBehaviour
     //Доступ к статам
     public inventoryManager dataItem;
     public GameObject uiControll;
+    public ControllHealthPoint controllHP;
+    public ControllManaPoint controllMana;
+
+    //Магия
+    //public GameObject spawnPointMagic;
 
 
 
     void Start()
     {
+        controllHP = gameObject.GetComponent<ControllHealthPoint>();
+        controllMana = gameObject.GetComponent<ControllManaPoint>();
         anim = gameObject.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         dataItem = gameObject.GetComponent<inventoryManager>();
@@ -44,13 +52,12 @@ public class ControllMove : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && !uiControll.GetComponent<UIControll>().isStay && !isAttack && !isMove)
         {
-
             AttackWeapon();
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && !uiControll.GetComponent<UIControll>().isStay && !isAttack && !isMove)
         {
-
+            SpawnMagic();
         }
 
     }
@@ -208,7 +215,18 @@ public class ControllMove : MonoBehaviour
     //Блок магии-------------------------------------------------------------------------------------
      public void SpawnMagic()
      {
-
+        //Просмотр ячейки инвентаря
+        if (!dataItem.slotsWeapon[1].isEmpty)
+        {
+            //Просмотр стоимости заклинания
+            MagicBookItem magic = (MagicBookItem)dataItem.slotsWeapon[1].GetComponent<inventorySlot>().item;
+            if (controllMana.currentMana > magic.price)
+            {
+                controllMana.SubstractManaPoint(magic.price);
+                Instantiate(magic.magic, transform.position, transform.rotation);
+            }
+            
+        }
      }
 
     //Блок апимации----------------------------------------------------------------------------------
