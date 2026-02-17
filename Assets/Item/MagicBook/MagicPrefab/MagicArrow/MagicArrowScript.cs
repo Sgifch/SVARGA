@@ -12,10 +12,20 @@ public class MagicArrowScript : MonoBehaviour
     public float speed;
 
     public Animator anim;
+    private float time = 0f;
 
     void Start()
     {
         Running();
+    }
+
+    private void Update()
+    {
+        time += Time.deltaTime;
+        if (time >= lifeTime)
+        {
+            anim.SetTrigger("Final");
+        }
     }
 
     private void Running()
