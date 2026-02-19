@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 66353df53dd82d3469d9841bdaf8de10
+guid: 5faa5365bbcbe5a4991e83e14706e511
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6561113959335900333
-    second: Frog_forwardt_0
-  - first:
-      213: 3223682994479049888
-    second: Frog_forwardt_1
-  - first:
-      213: -7538639142569843256
-    second: Frog_forwardt_2
-  - first:
-      213: 5446132198510523818
-    second: Frog_forwardt_3
+      213: -4242669084448021404
+    second: MagicSmallSunBook_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -55,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -92,6 +83,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -115,29 +118,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 1
-    textureFormat: 4
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Frog_forwardt_0
+      name: MagicSmallSunBook_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
-        width: 24
-        height: 20
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,71 +136,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: da4b21d3262cd0b50800000000000000
-      internalID: 6561113959335900333
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Frog_forwardt_1
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 4
-        width: 26
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0ac246a8a92dcbc20800000000000000
-      internalID: 3223682994479049888
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Frog_forwardt_2
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 4
-        width: 28
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8c5e44924af516790800000000000000
-      internalID: -7538639142569843256
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Frog_forwardt_3
-      rect:
-        serializedVersion: 2
-        x: 99
-        y: 4
-        width: 26
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aa57904316c849b40800000000000000
-      internalID: 5446132198510523818
+      spriteID: 464a1f142f20f15c0800000000000000
+      internalID: -4242669084448021404
       vertices: []
       indices: 
       edges: []
@@ -225,10 +153,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Frog_forwardt_0: 6561113959335900333
-      Frog_forwardt_1: 3223682994479049888
-      Frog_forwardt_2: -7538639142569843256
-      Frog_forwardt_3: 5446132198510523818
+      MagicSmallSunBook_0: -4242669084448021404
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

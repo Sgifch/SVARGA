@@ -18,5 +18,7 @@ public class MagicArrowBetterSpawn : MonoBehaviour
         arrow3.GetComponent<Rigidbody2D>().velocity = new Vector2(-1 * speed, 0);
         arrow4.GetComponent<Rigidbody2D>().velocity = new Vector2(1 * speed, 0);
 
+        Destroy(gameObject);
+
     }
 }
