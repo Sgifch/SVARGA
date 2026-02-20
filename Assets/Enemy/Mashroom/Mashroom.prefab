@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 5970508761418297663}
   - component: {fileID: 6287364462269279612}
   - component: {fileID: 3223548312717585597}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mashroom
   m_TagString: Enemy
   m_Icon: {fileID: 0}

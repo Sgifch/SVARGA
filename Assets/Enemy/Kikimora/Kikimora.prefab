@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 1968659242277588592}
   - component: {fileID: 5970508761418297663}
   - component: {fileID: 4039745327228661245}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Kikimora
   m_TagString: Enemy
   m_Icon: {fileID: 0}

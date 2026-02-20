@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6249398056890314636}
   - component: {fileID: 6918021308280746448}
   - component: {fileID: 2275617124044138206}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttackTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 786864904885818542}
   - component: {fileID: 7418722100059465125}
   - component: {fileID: 646009597680026354}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BuivolVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 815361518304194201}
   - component: {fileID: 6949540142077772708}
   - component: {fileID: 3809221123131025302}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BuivolTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 1968659242277588592}
   - component: {fileID: 5970508761418297663}
   - component: {fileID: 7385121251317020597}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Buivol
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -585,7 +585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 65928864016643635}
   - component: {fileID: 1185075331666336849}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
