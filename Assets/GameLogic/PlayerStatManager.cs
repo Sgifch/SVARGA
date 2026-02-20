@@ -44,8 +44,8 @@ public class PlayerStatManager : MonoBehaviour
         PlayerPrefs.SetInt("upPoint", upPoint);
 
         PlayerPrefs.SetInt("maxHP", maxHP);
-        PlayerPrefs.SetInt("maxMana", maxMana);
-        PlayerPrefs.SetInt("currentMaxManna", currentMaxMana);
+        //PlayerPrefs.SetInt("maxMana", maxMana);
+        //PlayerPrefs.SetInt("currentMaxManna", currentMaxMana);
         PlayerPrefs.SetInt("strong", strong);
         PlayerPrefs.SetInt("currentHP", currentHP);
 
@@ -72,8 +72,8 @@ public class PlayerStatManager : MonoBehaviour
         upPoint = PlayerPrefs.GetInt("upPoint");
 
         maxHP = PlayerPrefs.GetInt("maxHP");
-        maxMana = PlayerPrefs.GetInt("maxManna");
-        currentMaxMana = PlayerPrefs.GetInt("currentMaxManna");
+        //maxMana = PlayerPrefs.GetInt("maxManna");
+        //currentMaxMana = PlayerPrefs.GetInt("currentMaxManna");
         strong = PlayerPrefs.GetInt("strong");
         currentHP = PlayerPrefs.GetInt("currentHP");
 
