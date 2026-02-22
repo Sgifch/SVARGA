@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class CrowBonus : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float speedMultiplier = 1.2f;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.tag == "Player")
+        {
+            ControllMove playerMove = collision.gameObject.GetComponent<ControllMove>();
+            playerMove.speed *= speedMultiplier;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.tag == "Player")
+        {
+            MoveBasic playerMove = collision.gameObject.GetComponent<MoveBasic>();
+            playerMove.speed /= speedMultiplier;
+        }
     }
 }

@@ -11,6 +11,7 @@ public class AICrow : MonoBehaviour
     public float activationDistance; // Дистанция активации по R
 
     public KeyCode activationKey = KeyCode.R;
+    private CircleCollider2D Collider2D;
     public bool isActive = false; // Активация агента
 
     private UnityEngine.AI.NavMeshAgent navMeshAgent;
@@ -41,6 +42,7 @@ public class AICrow : MonoBehaviour
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
+        Collider2D = GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame
@@ -48,7 +50,7 @@ public class AICrow : MonoBehaviour
     {
 
         UpdateDirectionToPlayer();
-
+        BoxColliderTurnOn();
         CheckActivation();
 
         switch (state)
@@ -151,4 +153,18 @@ public class AICrow : MonoBehaviour
         animator.SetFloat("Horizontal", directionForAnimation.x);
         animator.SetFloat("Vertical", directionForAnimation.y);
     }
+
+    public void BoxColliderTurnOn()
+    {
+        if (isActive == true) 
+        {
+            Collider2D.enabled = true;
+        }
+        else
+        {
+            Collider2D.enabled = false;
+        }
+        
+    }
+
 }
