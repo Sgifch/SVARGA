@@ -1,0 +1,683 @@
+fileFormatVersion: 2
+guid: f97bb70b2352a364db79d68de967d7cb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3501612786620307966
+    second: PoisonousPuddle_0
+  - first:
+      213: -6393065296835258936
+    second: PoisonousPuddle_1
+  - first:
+      213: 1808109173946838954
+    second: PoisonousPuddle_2
+  - first:
+      213: -919418303030102719
+    second: PoisonousPuddle_3
+  - first:
+      213: 2226599674631399433
+    second: PoisonousPuddle_4
+  - first:
+      213: 6903122597366107008
+    second: PoisonousPuddle_5
+  - first:
+      213: 8992176196547188339
+    second: PoisonousPuddle_6
+  - first:
+      213: -4785271141273874362
+    second: PoisonousPuddle_7
+  - first:
+      213: 6510987566820568202
+    second: PoisonousPuddle_8
+  - first:
+      213: 6716506151686748875
+    second: PoisonousPuddle_9
+  - first:
+      213: -5326802848321711415
+    second: PoisonousPuddle_10
+  - first:
+      213: -2798392877227828346
+    second: PoisonousPuddle_11
+  - first:
+      213: 5988250312828847389
+    second: PoisonousPuddle_12
+  - first:
+      213: 2507111413902992551
+    second: PoisonousPuddle_13
+  - first:
+      213: -7552108474373168050
+    second: PoisonousPuddle_14
+  - first:
+      213: -6763510503994269417
+    second: PoisonousPuddle_15
+  - first:
+      213: 2259931101404973805
+    second: PoisonousPuddle_16
+  - first:
+      213: -7247648850388064568
+    second: PoisonousPuddle_17
+  - first:
+      213: -8235226381045137249
+    second: PoisonousPuddle_18
+  - first:
+      213: 5643777914042603812
+    second: PoisonousPuddle_19
+  - first:
+      213: -5617681366503712321
+    second: PoisonousPuddle_20
+  - first:
+      213: 5023591337145222546
+    second: PoisonousPuddle_21
+  - first:
+      213: -88035149103067571
+    second: PoisonousPuddle_22
+  - first:
+      213: 4779251845344120371
+    second: PoisonousPuddle_23
+  - first:
+      213: 8731145115133900170
+    second: PoisonousPuddle_24
+  - first:
+      213: 1765184705052033889
+    second: PoisonousPuddle_25
+  - first:
+      213: 2348645448221157647
+    second: PoisonousPuddle_26
+  - first:
+      213: -8892827513503435311
+    second: PoisonousPuddle_27
+  - first:
+      213: 1687319010399700639
+    second: PoisonousPuddle_28
+  - first:
+      213: -705126638761677396
+    second: PoisonousPuddle_29
+  - first:
+      213: 2195157341096806728
+    second: PoisonousPuddle_30
+  - first:
+      213: -9124680918652353655
+    second: PoisonousPuddle_31
+  - first:
+      213: -3166629034896220523
+    second: PoisonousPuddle_32
+  - first:
+      213: 5196001959378687031
+    second: PoisonousPuddle_33
+  - first:
+      213: 394225224614830959
+    second: PoisonousPuddle_34
+  - first:
+      213: -2506778611335633862
+    second: PoisonousPuddle_35
+  - first:
+      213: 7466025349509321493
+    second: PoisonousPuddle_36
+  - first:
+      213: 2163323094162126838
+    second: PoisonousPuddle_37
+  - first:
+      213: 8446314353516317986
+    second: PoisonousPuddle_38
+  - first:
+      213: -2481505328897392839
+    second: PoisonousPuddle_39
+  - first:
+      213: -3229468961120737384
+    second: PoisonousPuddle_40
+  - first:
+      213: 5598692878044142462
+    second: PoisonousPuddle_41
+  - first:
+      213: -7817604922762490924
+    second: PoisonousPuddle_42
+  - first:
+      213: -6420469751374258607
+    second: PoisonousPuddle_43
+  - first:
+      213: 438462275571210347
+    second: PoisonousPuddle_44
+  - first:
+      213: 4509706152208683343
+    second: PoisonousPuddle_45
+  - first:
+      213: 2497517460480195600
+    second: PoisonousPuddle_46
+  - first:
+      213: 3187852214634575973
+    second: PoisonousPuddle_47
+  - first:
+      213: -8478986400342195376
+    second: PoisonousPuddle_48
+  - first:
+      213: -8058594937901717390
+    second: PoisonousPuddle_49
+  - first:
+      213: -503693216087532900
+    second: PoisonousPuddle_50
+  - first:
+      213: 9220725924329681016
+    second: PoisonousPuddle_51
+  - first:
+      213: 6852276522266562275
+    second: PoisonousPuddle_52
+  - first:
+      213: -7208100609858529460
+    second: PoisonousPuddle_53
+  - first:
+      213: 3992670374770871304
+    second: PoisonousPuddle_54
+  - first:
+      213: -2827665867964921937
+    second: PoisonousPuddle_55
+  - first:
+      213: -6476339411825749708
+    second: PoisonousPuddle_56
+  - first:
+      213: -1328236284486134166
+    second: PoisonousPuddle_57
+  - first:
+      213: 741918434696391273
+    second: PoisonousPuddle_58
+  - first:
+      213: -8817669013917840834
+    second: PoisonousPuddle_59
+  - first:
+      213: -2703914429070282052
+    second: PoisonousPuddle_60
+  - first:
+      213: 8780316943475105962
+    second: PoisonousPuddle_61
+  - first:
+      213: -6662057396567927466
+    second: PoisonousPuddle_62
+  - first:
+      213: 7352123689515548812
+    second: PoisonousPuddle_63
+  - first:
+      213: 1208690391158331827
+    second: PoisonousPuddle_64
+  - first:
+      213: 7824904166437858282
+    second: PoisonousPuddle_65
+  - first:
+      213: -8170856547310395329
+    second: PoisonousPuddle_66
+  - first:
+      213: 3950573487303297311
+    second: PoisonousPuddle_67
+  - first:
+      213: 5068778547456718588
+    second: PoisonousPuddle_68
+  - first:
+      213: 6053988349942681601
+    second: PoisonousPuddle_69
+  - first:
+      213: -8945100450901249534
+    second: PoisonousPuddle_70
+  - first:
+      213: 253096228955342940
+    second: PoisonousPuddle_71
+  - first:
+      213: 9109345676249832079
+    second: PoisonousPuddle_72
+  - first:
+      213: -1417073709626078042
+    second: PoisonousPuddle_73
+  - first:
+      213: 4955433160693138372
+    second: PoisonousPuddle_74
+  - first:
+      213: -6388417333024256071
+    second: PoisonousPuddle_75
+  - first:
+      213: -1826904379490167243
+    second: PoisonousPuddle_76
+  - first:
+      213: -6868838451607445769
+    second: PoisonousPuddle_77
+  - first:
+      213: -2573435321604396900
+    second: PoisonousPuddle_78
+  - first:
+      213: 7027757228655397986
+    second: PoisonousPuddle_79
+  - first:
+      213: 1490910861897276508
+    second: PoisonousPuddle_80
+  - first:
+      213: -5708010953144293669
+    second: PoisonousPuddle_81
+  - first:
+      213: -8788862467425622712
+    second: PoisonousPuddle_82
+  - first:
+      213: 7624544716366731852
+    second: PoisonousPuddle_83
+  - first:
+      213: 3412234825396584082
+    second: PoisonousPuddle_84
+  - first:
+      213: -7573005937157978779
+    second: PoisonousPuddle_85
+  - first:
+      213: -3438442488043074932
+    second: PoisonousPuddle_86
+  - first:
+      213: 2417027498545093062
+    second: PoisonousPuddle_87
+  - first:
+      213: 3507888114685164788
+    second: PoisonousPuddle_88
+  - first:
+      213: 1262332703491672302
+    second: PoisonousPuddle_89
+  - first:
+      213: -2126254707449467908
+    second: PoisonousPuddle_90
+  - first:
+      213: 2597402040160369945
+    second: PoisonousPuddle_91
+  - first:
+      213: -4952644324848348818
+    second: PoisonousPuddle_92
+  - first:
+      213: 4395813998073575435
+    second: PoisonousPuddle_93
+  - first:
+      213: 4477124238192051243
+    second: PoisonousPuddle_94
+  - first:
+      213: 2023863990000372869
+    second: PoisonousPuddle_95
+  - first:
+      213: -2209501164103665715
+    second: PoisonousPuddle_96
+  - first:
+      213: 3877910725643720989
+    second: PoisonousPuddle_97
+  - first:
+      213: 97637582175443061
+    second: PoisonousPuddle_98
+  - first:
+      213: 8729901695225041718
+    second: PoisonousPuddle_99
+  - first:
+      213: -4930639218428418671
+    second: PoisonousPuddle_100
+  - first:
+      213: 4394137788753708392
+    second: PoisonousPuddle_101
+  - first:
+      213: -8435610620116699212
+    second: PoisonousPuddle_102
+  - first:
+      213: 5279201630734949752
+    second: PoisonousPuddle_103
+  - first:
+      213: 8286285683258904991
+    second: PoisonousPuddle_104
+  - first:
+      213: -6310892701914132304
+    second: PoisonousPuddle_105
+  - first:
+      213: 5060592072454065918
+    second: PoisonousPuddle_106
+  - first:
+      213: 748012351168259911
+    second: PoisonousPuddle_107
+  - first:
+      213: 1031831954639844475
+    second: PoisonousPuddle_108
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PoisonousPuddle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 62
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef9187fe64a389030800000000000000
+      internalID: 3501612786620307966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoisonousPuddle_1
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 0
+        width: 62
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c5d1440cf44747a0800000000000000
+      internalID: -6393065296835258936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoisonousPuddle_2
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 0
+        width: 62
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aafe934c6b1b71910800000000000000
+      internalID: 1808109173946838954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoisonousPuddle_3
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 0
+        width: 62
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 145f5e7bce19d33f0800000000000000
+      internalID: -919418303030102719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoisonousPuddle_4
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 0
+        width: 62
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 908a7676b9876ee10800000000000000
+      internalID: 2226599674631399433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoisonousPuddle_5
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 0
+        width: 62
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08b8af09d61dccf50800000000000000
+      internalID: 6903122597366107008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoisonousPuddle_6
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 0
+        width: 62
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3761be0bb90aacc70800000000000000
+      internalID: 8992176196547188339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoisonousPuddle_7
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 0
+        width: 62
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 640517e104d479db0800000000000000
+      internalID: -4785271141273874362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoisonousPuddle_8
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 0
+        width: 62
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8c235102bcab5a50800000000000000
+      internalID: 6510987566820568202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoisonousPuddle_9
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 0
+        width: 62
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcab30762c2d53d50800000000000000
+      internalID: 6716506151686748875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b8e08d64c01e26b4b907d4154961eafc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PoisonousPuddle_0: 3501612786620307966
+      PoisonousPuddle_1: -6393065296835258936
+      PoisonousPuddle_2: 1808109173946838954
+      PoisonousPuddle_3: -919418303030102719
+      PoisonousPuddle_4: 2226599674631399433
+      PoisonousPuddle_5: 6903122597366107008
+      PoisonousPuddle_6: 8992176196547188339
+      PoisonousPuddle_7: -4785271141273874362
+      PoisonousPuddle_8: 6510987566820568202
+      PoisonousPuddle_9: 6716506151686748875
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

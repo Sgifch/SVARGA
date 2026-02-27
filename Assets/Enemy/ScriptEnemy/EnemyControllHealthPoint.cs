@@ -77,6 +77,7 @@ public class EnemyControllHealthPoint : MonoBehaviour
         Destroy(gameObject);
     }
 
+    //Ёффект получени€ урона
     private IEnumerator HitDamageEffect()
     {
         float timer = 0f;
