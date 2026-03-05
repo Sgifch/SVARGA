@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 284774686008538956}
   - component: {fileID: 6577252408025444974}
   - component: {fileID: 4347499765562333521}
-  - component: {fileID: 7736821679457067810}
+  - component: {fileID: 6545568277894319401}
   - component: {fileID: 1723004709967136636}
   m_Layer: 0
   m_Name: MagicBullet
@@ -138,7 +138,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7736821679457067810
+--- !u!114 &6545568277894319401
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,12 +147,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2692512781416022514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96de2ed444d4bc649952148a6d5e5059, type: 3}
+  m_Script: {fileID: 11500000, guid: 7262cfd9c597c2145899249e0c4c5b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: f9de23626fae50e4caf695b293383a88, type: 2}
   lifeTime: 5
-  speed: 3
   anim: {fileID: 6577252408025444974}
 --- !u!60 &1723004709967136636
 PolygonCollider2D:
