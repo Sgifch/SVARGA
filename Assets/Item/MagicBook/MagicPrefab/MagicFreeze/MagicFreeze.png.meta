@@ -1,0 +1,426 @@
+fileFormatVersion: 2
+guid: 2fe68b5652a85a04683d947c7a693f44
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3014007641365649092
+    second: MagicFreeze_0
+  - first:
+      213: -7575170440898832622
+    second: MagicFreeze_1
+  - first:
+      213: 8389404896293008868
+    second: MagicFreeze_2
+  - first:
+      213: -4926310844820224495
+    second: MagicFreeze_3
+  - first:
+      213: -3139040157090501569
+    second: MagicFreeze_4
+  - first:
+      213: 6266519869005106200
+    second: MagicFreeze_5
+  - first:
+      213: 325509775443228884
+    second: MagicFreeze_6
+  - first:
+      213: 6769729449280403576
+    second: MagicFreeze_7
+  - first:
+      213: 3690686416122189643
+    second: MagicFreeze_8
+  - first:
+      213: 1159612696614659981
+    second: MagicFreeze_9
+  - first:
+      213: 399158288223929572
+    second: MagicFreeze_10
+  - first:
+      213: 8378370006454183585
+    second: MagicFreeze_11
+  - first:
+      213: 6741186173746812025
+    second: MagicFreeze_12
+  - first:
+      213: 2657786411459114436
+    second: MagicFreeze_13
+  - first:
+      213: 340568040867868705
+    second: MagicFreeze_14
+  - first:
+      213: -7100072390484603701
+    second: MagicFreeze_15
+  - first:
+      213: 5759455517432035598
+    second: MagicFreeze_16
+  - first:
+      213: 3423469718238266856
+    second: MagicFreeze_17
+  - first:
+      213: 9053009398103881330
+    second: MagicFreeze_18
+  - first:
+      213: -1301927117718093061
+    second: MagicFreeze_19
+  - first:
+      213: -6425333954582047808
+    second: MagicFreeze_20
+  - first:
+      213: 5518704732929760070
+    second: MagicFreeze_21
+  - first:
+      213: 228790218501882539
+    second: MagicFreeze_22
+  - first:
+      213: -6405573973398546546
+    second: MagicFreeze_23
+  - first:
+      213: 9149260590767567293
+    second: MagicFreeze_24
+  - first:
+      213: 3316913664408010006
+    second: MagicFreeze_25
+  - first:
+      213: -704743022782328732
+    second: MagicFreeze_26
+  - first:
+      213: 7827058038435858643
+    second: MagicFreeze_27
+  - first:
+      213: -4933763377955019496
+    second: MagicFreeze_28
+  - first:
+      213: -5872705008941905871
+    second: MagicFreeze_29
+  - first:
+      213: -5850571157423997571
+    second: MagicFreeze_30
+  - first:
+      213: 2756725812801853346
+    second: MagicFreeze_31
+  - first:
+      213: 3032834876317817239
+    second: MagicFreeze_32
+  - first:
+      213: -8216809390464525246
+    second: MagicFreeze_33
+  - first:
+      213: 8394819057433916334
+    second: MagicFreeze_34
+  - first:
+      213: -7199841681774952847
+    second: MagicFreeze_35
+  - first:
+      213: -1797969114864912252
+    second: MagicFreeze_36
+  - first:
+      213: 340622491472616965
+    second: MagicFreeze_37
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MagicFreeze_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 103
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c699ed1bf7e3d920800000000000000
+      internalID: 3014007641365649092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicFreeze_1
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 0
+        width: 103
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2179f257e969fd690800000000000000
+      internalID: -7575170440898832622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicFreeze_2
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 0
+        width: 103
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e5b770ed472d6470800000000000000
+      internalID: 8389404896293008868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicFreeze_3
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 0
+        width: 103
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1160659236a32abb0800000000000000
+      internalID: -4926310844820224495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicFreeze_4
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 0
+        width: 103
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3c2fe4cb93ef64d0800000000000000
+      internalID: -3139040157090501569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicFreeze_5
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 0
+        width: 103
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81c0af19e9627f650800000000000000
+      internalID: 6266519869005106200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicFreeze_6
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 0
+        width: 103
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d8f5388a61748400800000000000000
+      internalID: 325509775443228884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicFreeze_7
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 0
+        width: 103
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 878fbd90119e2fd50800000000000000
+      internalID: 6769729449280403576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0ed6838806494a049b5ff6e98f627d9b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      MagicFreeze_0: 3014007641365649092
+      MagicFreeze_1: -7575170440898832622
+      MagicFreeze_2: 8389404896293008868
+      MagicFreeze_3: -4926310844820224495
+      MagicFreeze_4: -3139040157090501569
+      MagicFreeze_5: 6266519869005106200
+      MagicFreeze_6: 325509775443228884
+      MagicFreeze_7: 6769729449280403576
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
