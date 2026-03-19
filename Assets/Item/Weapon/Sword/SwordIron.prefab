@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8449648494406772172}
   - component: {fileID: -8043390843432722806}
   m_Layer: 0
-  m_Name: Sword_Iron
+  m_Name: SwordIron
   m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

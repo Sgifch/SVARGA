@@ -371,46 +371,46 @@ public class inventoryManager : MonoBehaviour
                 case ItemType.food:
                     foodItem food = (foodItem)slots[_index].item;
                     gameObject.GetComponent<ControllHealthPoint>().Recovery(food.healthAmount);
-                    SubtractionItem(_index);
+                    SubtractionItem(_index, slots);
                     break;
 
                 case ItemType.foodDuration:
                     FoodItemDuration foodDuration = (FoodItemDuration)slots[_index].item;
                     gameObject.GetComponent<ControllHealthPoint>().DurationRecovery(foodDuration.healthAmount, foodDuration.time, foodDuration.interval);
-                    SubtractionItem(_index);
+                    SubtractionItem(_index, slots);
                     break;
 
                 case ItemType.unFood:
                     UnFoodItem unFood = (UnFoodItem)slots[_index].item;
                     gameObject.GetComponent<ControllHealthPoint>().Damage(unFood.unHealthAmount);
-                    SubtractionItem(_index);
+                    SubtractionItem(_index, slots);
                     break;
 
                 case ItemType.unFoodDuration:
                     UnFoodItemDuration unFoodDuration = (UnFoodItemDuration)slots[_index].item;
                     gameObject.GetComponent<ControllHealthPoint>().DurationDamage(unFoodDuration.unHealthAmount, unFoodDuration.time, unFoodDuration.interval);
-                    SubtractionItem(_index);
+                    SubtractionItem(_index, slots);
                     break;
             }
         }
     }
 
     //Отнять-предемет-----------------------------------------------------------------------------------
-    public void SubtractionItem(int _index)
+    public void SubtractionItem(int _index, List<inventorySlot> _slots)
     {
-        int _amount = slots[_index].amount;
+        int _amount = _slots[_index].amount;
         if (_amount > 1)
         {
-            slots[_index].amount = slots[_index].amount-1;
-            slots[_index].itemAmount.text = slots[_index].amount.ToString();
+            _slots[_index].amount = _slots[_index].amount-1;
+            _slots[_index].itemAmount.text = _slots[_index].amount.ToString();
         }
         else
         {
-            slots[_index].amount = 0;
-            slots[_index].itemAmount.text = "";
-            slots[_index].SetIcon(null);
-            slots[_index].isEmpty = true;
-            slots[_index].item = null;
+            _slots[_index].amount = 0;
+            _slots[_index].itemAmount.text = "";
+            _slots[_index].SetIcon(null);
+            _slots[_index].isEmpty = true;
+            _slots[_index].item = null;
 
         }
     }
