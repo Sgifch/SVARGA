@@ -40702,6 +40702,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c285c729c0898c14ea34e2fcc80f3c08, type: 3}
+--- !u!1001 &2019394199494893396
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 690645450911779922, guid: 712309cc35205a24a94b1a86247c4550, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: 712309cc35205a24a94b1a86247c4550, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: 712309cc35205a24a94b1a86247c4550, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: 712309cc35205a24a94b1a86247c4550, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: 712309cc35205a24a94b1a86247c4550, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: 712309cc35205a24a94b1a86247c4550, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: 712309cc35205a24a94b1a86247c4550, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: 712309cc35205a24a94b1a86247c4550, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: 712309cc35205a24a94b1a86247c4550, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: 712309cc35205a24a94b1a86247c4550, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595154827602962897, guid: 712309cc35205a24a94b1a86247c4550, type: 3}
+      propertyPath: m_Name
+      value: SwordRastyKrovad
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 712309cc35205a24a94b1a86247c4550, type: 3}
 --- !u!1001 &2458790514238101876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40886,6 +40943,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b17b13cc05fe6b742ad7df29ead2c3a7, type: 3}
+--- !u!1001 &3086932637572025553
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 690645450911779922, guid: e98abadbc27e6124faad32340909ec89, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -25.469
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: e98abadbc27e6124faad32340909ec89, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.702
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: e98abadbc27e6124faad32340909ec89, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: e98abadbc27e6124faad32340909ec89, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: e98abadbc27e6124faad32340909ec89, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: e98abadbc27e6124faad32340909ec89, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: e98abadbc27e6124faad32340909ec89, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: e98abadbc27e6124faad32340909ec89, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: e98abadbc27e6124faad32340909ec89, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: e98abadbc27e6124faad32340909ec89, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595154827602962897, guid: e98abadbc27e6124faad32340909ec89, type: 3}
+      propertyPath: m_Name
+      value: SwordJarochar
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e98abadbc27e6124faad32340909ec89, type: 3}
 --- !u!1001 &3360793967199680297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41101,6 +41215,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef00e7fda314e7d4280ce02536040de6, type: 3}
+--- !u!1001 &5615127858601821428
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 969614124889034510, guid: 42a72cc871b7d8547b9b649a96974200, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23.913343
+      objectReference: {fileID: 0}
+    - target: {fileID: 969614124889034510, guid: 42a72cc871b7d8547b9b649a96974200, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.141726
+      objectReference: {fileID: 0}
+    - target: {fileID: 969614124889034510, guid: 42a72cc871b7d8547b9b649a96974200, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 969614124889034510, guid: 42a72cc871b7d8547b9b649a96974200, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 969614124889034510, guid: 42a72cc871b7d8547b9b649a96974200, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 969614124889034510, guid: 42a72cc871b7d8547b9b649a96974200, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 969614124889034510, guid: 42a72cc871b7d8547b9b649a96974200, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 969614124889034510, guid: 42a72cc871b7d8547b9b649a96974200, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 969614124889034510, guid: 42a72cc871b7d8547b9b649a96974200, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 969614124889034510, guid: 42a72cc871b7d8547b9b649a96974200, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2692512781416022514, guid: 42a72cc871b7d8547b9b649a96974200, type: 3}
+      propertyPath: m_Name
+      value: SwordJarochardEffect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 42a72cc871b7d8547b9b649a96974200, type: 3}
 --- !u!1001 &5661521865416729854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41815,3 +41986,6 @@ SceneRoots:
   - {fileID: 1386145056}
   - {fileID: 6600998347094144490}
   - {fileID: 3360793967199680297}
+  - {fileID: 2019394199494893396}
+  - {fileID: 3086932637572025553}
+  - {fileID: 5615127858601821428}
