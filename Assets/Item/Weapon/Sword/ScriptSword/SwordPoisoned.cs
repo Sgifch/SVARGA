@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class SwordScript : MonoBehaviour
+public class SwordPoisoned : MonoBehaviour
 {
     public Item item;
     private int _damage;
     private int _strong;
     private int sumDamage;
-    public float speed;
+
+    public int pDamage;
+    public float chance;
+    public float pTime;
+    public float pInterval;
 
     private void Start()
     {
@@ -22,25 +25,34 @@ public class SwordScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+
         if (collision.gameObject.tag == "Enemy")
         {
             EnemyControllHealthPoint enemyProfile = collision.gameObject.GetComponent<EnemyControllHealthPoint>();
-            sumDamage = _damage + _strong;
-            GameObject.FindWithTag("UIControll").GetComponent<UIControll>().DamageUI(sumDamage);
-            enemyProfile.Damage(sumDamage);
+            if (CriticalDamage())
+            {
+                enemyProfile.DurationDamage(pDamage, pTime, pInterval);
+            }
+            else
+            {
+                sumDamage = _damage + _strong;
+                GameObject.FindWithTag("UIControll").GetComponent<UIControll>().DamageUI(sumDamage);
+                enemyProfile.Damage(sumDamage);
+            }
+                
         }
     }
 
-    public void EffectSpeed()
+    private bool CriticalDamage()
     {
-        Animator playerAnim = GameObject.FindWithTag("Player").GetComponent<Animator>();
-        playerAnim.speed = speed;
-    }
-
-    public void EndEffect()
-    {
-        Animator playerAnim = GameObject.FindWithTag("Player").GetComponent<Animator>();
-        playerAnim.speed = 1;
+        float n = Random.Range(0f, 1f);
+        if (n <= chance)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

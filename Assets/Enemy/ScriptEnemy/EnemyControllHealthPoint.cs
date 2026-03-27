@@ -20,6 +20,7 @@ public class EnemyControllHealthPoint : MonoBehaviour
 
     private Material material;
     private Coroutine _hitDamageEffect;
+    private Coroutine _DurationDamageFunction;
     private void Awake()
     {
         currentHealthPoint = enemyProfile.healthPoint;
@@ -77,6 +78,17 @@ public class EnemyControllHealthPoint : MonoBehaviour
         Destroy(gameObject);
     }
 
+    //ѕродолжительный урон
+    public void DurationDamage(int _attackPoint, float _time, float _seconds)
+    {
+        if (_DurationDamageFunction != null)
+        {
+            StopCoroutine(_DurationDamageFunction);
+        }
+
+        _DurationDamageFunction = StartCoroutine(DurationDamageFunction(_attackPoint, _time, _seconds));
+    }
+
     //Ёффект получени€ урона
     private IEnumerator HitDamageEffect()
     {
@@ -96,5 +108,24 @@ public class EnemyControllHealthPoint : MonoBehaviour
 
         material.SetFloat("_flashAmount", 0f);
         _hitDamageEffect = null;
+    }
+
+    private IEnumerator DurationDamageFunction(int _attackPoint, float _time, float _interval)
+    {
+        float timer = 0f;
+        float timerInv = 0f;
+        while (timer < _time)
+        {
+            if (timerInv > _interval)
+            {
+                Damage(_attackPoint);
+                timerInv = 0f;
+            }
+            timer += Time.deltaTime;
+            timerInv += Time.deltaTime;
+            yield return null;
+        }
+
+        _DurationDamageFunction = null;
     }
 }

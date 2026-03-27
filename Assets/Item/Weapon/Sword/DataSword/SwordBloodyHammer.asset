@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9acd23409981c864dac2f8e27ab9824a, type: 3}
+  m_Name: SwordBloodyHammer
+  m_EditorClassIdentifier: 
+  itemType: 2
+  itemObject: {fileID: 2595154827602962897, guid: 0af26a5e4ad58f042a6fd2e2bb34efb4, type: 3}
+  icon: {fileID: 21300000, guid: 56290c027dbbde146a5d87cc598b6e90, type: 3}
+  itemName: 
+  maximumAmaunt: 1
+  itemDescription: 
+  damage: 5
+  effect: {fileID: 0}
