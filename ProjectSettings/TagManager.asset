@@ -25,6 +25,7 @@ TagManager:
   - UIControll
   - Chest
   - Altar
+  - Pet
   layers:
   - Default
   - TransparentFX
