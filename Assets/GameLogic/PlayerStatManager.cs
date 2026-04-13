@@ -25,7 +25,10 @@ public class PlayerStatManager : MonoBehaviour
 
     public int currentStrong;
     public int _currentHealthBonus;
-    public List<int> currentHealthBonus = new List<int>(); 
+    public List<int> currentHealthBonus = new List<int>();
+
+    //То что касается алтаря
+    public int currentSouls;
 
     private void Start()
     {
@@ -63,6 +66,8 @@ public class PlayerStatManager : MonoBehaviour
         PlayerPrefs.SetInt("currentHealthBonus4", currentHealthBonus[3]);
 
         PlayerPrefs.SetInt("_currentHealthBonus", _currentHealthBonus);
+
+        PlayerPrefs.SetInt("currentSouls", currentSouls);
     }
 
     public void LoadStat()
@@ -83,5 +88,7 @@ public class PlayerStatManager : MonoBehaviour
         panellArmor.transform.GetChild(2).GetComponent<EquipmentInventory>().currentHealthBonus = PlayerPrefs.GetInt("currentHealthBonus3");
         panellArmor.transform.GetChild(3).GetComponent<EquipmentInventory>().currentHealthBonus = PlayerPrefs.GetInt("currentHealthBonus4");
         _currentHealthBonus = PlayerPrefs.GetInt("_currentHealthBonus");
+
+        currentSouls = PlayerPrefs.GetInt("currentSouls");
     }
 }

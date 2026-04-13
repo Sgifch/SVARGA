@@ -14952,10 +14952,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCharacter
       objectReference: {fileID: 0}
-    - target: {fileID: 1529339929942784907, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 1573041264316525218, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -17696,10 +17692,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8465598006268282464, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
-      propertyPath: spellSlot
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8536680354345860157, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -18189,14 +18181,6 @@ PrefabInstance:
     - target: {fileID: 2209435798866783108, guid: 550043b3182e2244c867a16cde05f219, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745033845379937785, guid: 550043b3182e2244c867a16cde05f219, type: 3}
-      propertyPath: maxMana
-      value: 99
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745033845379937785, guid: 550043b3182e2244c867a16cde05f219, type: 3}
-      propertyPath: currentMaxMana
-      value: 99
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

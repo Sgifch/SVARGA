@@ -287,7 +287,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item:
   - {fileID: 2595154827602962897, guid: 7673002995f853143b038fcadcc4e246, type: 3}
-  - {fileID: 3408268646583160109, guid: 277d87dcc99962e4ca0c954b89eb9465, type: 3}
+  - {fileID: 2595154827602962897, guid: af0018a41e0bdb64195798e48a1c2f43, type: 3}
+  - {fileID: 4103948861954390134, guid: 60990b9719e569e49a5c3209a26fb55d, type: 3}
+  - {fileID: 2595154827602962897, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+  - {fileID: 3408268646583160109, guid: 30071b687e35c744280b8664db0b27b4, type: 3}
+  - {fileID: 2595154827602962897, guid: 9a37794faf79ff54aabc5f1357f18137, type: 3}
+  - {fileID: 2595154827602962897, guid: 712309cc35205a24a94b1a86247c4550, type: 3}
+  - {fileID: 2595154827602962897, guid: b0cb33fd2d6a2a64cbaef5be64db4c83, type: 3}
+  - {fileID: 2595154827602962897, guid: e98abadbc27e6124faad32340909ec89, type: 3}
+  - {fileID: 2595154827602962897, guid: 7673002995f853143b038fcadcc4e246, type: 3}
+  - {fileID: 3408268646583160109, guid: c5047d1ee37e2724c9f5137823e1f75d, type: 3}
+  - {fileID: 3408268646583160109, guid: 3e7b434ae474414409c31be3f1b0c16e, type: 3}
+  - {fileID: 3408268646583160109, guid: abeed9f5f5bb0a64cbf00b11ec8c56a3, type: 3}
+  - {fileID: 3408268646583160109, guid: 07e54c8d3164df740ad08a00de791174, type: 3}
+  - {fileID: 3408268646583160109, guid: 1c5d80a8068e4454c99942c50c42cec4, type: 3}
+  - {fileID: 3408268646583160109, guid: 152a7df546368194aad89e6f2605e516, type: 3}
+  - {fileID: 3408268646583160109, guid: cbf8306ca105e194c99f95655a52b833, type: 3}
+  - {fileID: 3408268646583160109, guid: 0d2e84b3536fa734fad365455cefb328, type: 3}
+  - {fileID: 2595154827602962897, guid: c0c25fddf760c8d4ca03b84c206e7749, type: 3}
+  - {fileID: 3408268646583160109, guid: dc10cb39bc08d7a4386cf63d5d9340c5, type: 3}
+  - {fileID: 2595154827602962897, guid: 0af26a5e4ad58f042a6fd2e2bb34efb4, type: 3}
   dropChance:
-  - 0.5
   - 1
+  - 0.8
+  - 0.7
+  - 0.67
+  - 0.65
+  - 0.63
+  - 0.6
+  - 0.55
+  - 0.52
+  - 0.5
+  - 0.48
+  - 0.46
+  - 0.45
+  - 0.43
+  - 0.4
+  - 0.38
+  - 0.35
+  - 0.32
+  - 0.3
+  - 0.2
+  - 0.1

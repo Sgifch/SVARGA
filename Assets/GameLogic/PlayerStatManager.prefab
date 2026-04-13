@@ -47,10 +47,13 @@ MonoBehaviour:
   maxHP: 20
   currentMaxHP: 0
   currentHP: 20
-  maxManna: 20
-  currentManna: 0
+  maxMana: 20
+  currentMaxMana: 20
+  currentMana: 0
   strong: 1
   exp: 0
   lvl: 0
   upPoint: 0
   currentStrong: 0
+  _currentHealthBonus: 0
+  currentHealthBonus: 

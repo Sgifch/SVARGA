@@ -8,7 +8,8 @@ public class AltarMenuFunction : MonoBehaviour
 {
     public int maxSouls;
     //Сохранить
-    public int currentSouls;
+    //public int currentSouls;
+    public PlayerStatManager stat;
     public GameObject countSouls;
     void Start()
     {
@@ -17,7 +18,7 @@ public class AltarMenuFunction : MonoBehaviour
 
     public void UpdateAltar()
     {
-        float souls = (float)(currentSouls) / maxSouls;
+        float souls = (float)(stat.currentSouls) / maxSouls;
         countSouls.GetComponent<Image>().fillAmount = souls;
     }
 
@@ -32,7 +33,7 @@ public class AltarMenuFunction : MonoBehaviour
             {
                 if (_slots.item.itemType == ItemType.soul)
                 {
-                    currentSouls += _slots.amount;
+                    stat.currentSouls += _slots.amount;
                     inventory.DestroyItem(_slots);
                 }
             }
@@ -40,7 +41,7 @@ public class AltarMenuFunction : MonoBehaviour
 
         UpdateAltar();
         
-        if (maxSouls == currentSouls)
+        if (maxSouls >= stat.currentSouls)
         {
             CompleteAltar();
         }
