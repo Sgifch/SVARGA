@@ -49,6 +49,19 @@ public class CatAI : MonoBehaviour
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
+
+        if (playerTransform == null)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                playerTransform = player.transform;
+            }
+            else
+            {
+                Debug.LogWarning("Объкт с тегом 'Player' не найден на сцене!");
+            }
+        }
     }
 
     // Update is called once per frame
