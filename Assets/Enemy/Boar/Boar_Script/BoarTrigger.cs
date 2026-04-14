@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class BoarTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
+        if (collision.gameObject.tag == "Player")
+        {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            GameObject boar = gameObject.transform.parent.gameObject;
+            if (boar.GetComponent<BoarAI>().playerTransform == null)
+            {
+                boar.GetComponent<BoarAI>().playerTransform = collision.transform;
+                boar.GetComponent<BoarAI>().state = BoarAI.State.Roaming;
+            }
+
+        }
     }
 }
