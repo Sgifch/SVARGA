@@ -30,6 +30,10 @@ public class PlayerStatManager : MonoBehaviour
     //То что касается алтаря
     public int currentSouls;
 
+    //Булевые переменные
+    public int readySouls = 0;
+    public int firstReadySouls = 0;
+
     private void Start()
     {
         currentStrong = strong;
@@ -68,6 +72,9 @@ public class PlayerStatManager : MonoBehaviour
         PlayerPrefs.SetInt("_currentHealthBonus", _currentHealthBonus);
 
         PlayerPrefs.SetInt("currentSouls", currentSouls);
+
+        PlayerPrefs.SetInt("readySouls", readySouls);
+        PlayerPrefs.SetInt("firstReadySouls", firstReadySouls);
     }
 
     public void LoadStat()
@@ -90,5 +97,8 @@ public class PlayerStatManager : MonoBehaviour
         _currentHealthBonus = PlayerPrefs.GetInt("_currentHealthBonus");
 
         currentSouls = PlayerPrefs.GetInt("currentSouls");
+
+        readySouls = PlayerPrefs.GetInt("readySouls");
+        firstReadySouls = PlayerPrefs.GetInt("firstReadySouls");
     }
 }

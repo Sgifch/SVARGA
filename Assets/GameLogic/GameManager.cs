@@ -27,6 +27,13 @@ public class GameManager : MonoBehaviour
     //Анимация-перехода
     public Animator animChanger;
     public int n;
+
+    //Управление-лобби
+    public bool isLobby;
+
+    public GameObject fire1;
+    public GameObject fire2;
+    public GameObject trigger;
     void Awake()
     {
         playerStat = GameObject.Find("PlayerStatManager").GetComponent<PlayerStatManager>();
@@ -46,6 +53,11 @@ public class GameManager : MonoBehaviour
         //GameObject.FindWithTag("UIControl");
 
         animChanger.SetInteger("isTrigger", n);
+
+        if (isLobby)
+        {
+            ActivateEndRoom();
+        }
     }
 
     void Update()
@@ -162,5 +174,25 @@ public class GameManager : MonoBehaviour
 
         playerStat.SaveStat();
 
+    }
+
+    //Управление-лобби
+    public void ActivateEndRoom()
+    {
+        if (playerStat.readySouls == 1)
+        {
+            fire1.SetActive(true);
+            fire2.SetActive(true);
+            trigger.SetActive(true);
+
+            if (playerStat.firstReadySouls == 0)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
     }
 }

@@ -41,7 +41,7 @@ public class AltarMenuFunction : MonoBehaviour
 
         UpdateAltar();
         
-        if (maxSouls >= stat.currentSouls)
+        if (maxSouls <= stat.currentSouls)
         {
             CompleteAltar();
         }
@@ -49,6 +49,7 @@ public class AltarMenuFunction : MonoBehaviour
 
     public void CompleteAltar()
     {
-
+        stat.readySouls = 1;
+        GameObject.FindWithTag("GameManager").GetComponent<GameManager>().ActivateEndRoom();
     }
 }
