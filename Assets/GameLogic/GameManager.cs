@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     public GameObject fire1;
     public GameObject fire2;
     public GameObject trigger;
+    public GameObject firefly;
     void Awake()
     {
         playerStat = GameObject.Find("PlayerStatManager").GetComponent<PlayerStatManager>();
@@ -187,11 +188,9 @@ public class GameManager : MonoBehaviour
 
             if (playerStat.firstReadySouls == 0)
             {
-
-            }
-            else
-            {
-
+                firefly.SetActive(true);
+                playerStat.firstReadySouls = 1;
+                //PlayerPrefs.GetInt("firstReadySouls", 1);
             }
         }
     }
