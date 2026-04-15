@@ -20516,6 +20516,11 @@ MonoBehaviour:
   endMenu: {fileID: 0}
   animChanger: {fileID: 0}
   n: 0
+  isLobby: 0
+  fire1: {fileID: 0}
+  fire2: {fileID: 0}
+  trigger: {fileID: 0}
+  firefly: {fileID: 0}
 --- !u!4 &1095362388
 Transform:
   m_ObjectHideFlags: 0
@@ -41177,6 +41182,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1668534540165808459, guid: bb2eccffac44f6a4a866c0344167a144, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1095362387}
     - target: {fileID: 6606886672731282855, guid: bb2eccffac44f6a4a866c0344167a144, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -41261,11 +41270,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneChangerCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6850559063785920955, guid: bb2eccffac44f6a4a866c0344167a144, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb2eccffac44f6a4a866c0344167a144, type: 3}
+--- !u!1 &4182300087412804551 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1627317378416981672, guid: bb2eccffac44f6a4a866c0344167a144, type: 3}
+  m_PrefabInstance: {fileID: 4182300087412804550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4497137304386839303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41338,11 +41356,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneLoader
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 970607717987397118, guid: 8f25d16fd9ed3d941b8288f0b9c81fe1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8725493499448895801, guid: 8f25d16fd9ed3d941b8288f0b9c81fe1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4497137304386839305}
   m_SourcePrefab: {fileID: 100100000, guid: 8f25d16fd9ed3d941b8288f0b9c81fe1, type: 3}
+--- !u!1 &4497137304386839304 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8725493499448895801, guid: 8f25d16fd9ed3d941b8288f0b9c81fe1, type: 3}
+  m_PrefabInstance: {fileID: 4497137304386839303}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4497137304386839305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4497137304386839304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb1189cd3b939742ac0fed77204cec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Lobby
+  changeCanvas: {fileID: 1650908544}
+  blackout: {fileID: 4182300087412804551}
+  anim: {fileID: 1750632059}
 --- !u!1001 &4962507576157516293
 PrefabInstance:
   m_ObjectHideFlags: 0

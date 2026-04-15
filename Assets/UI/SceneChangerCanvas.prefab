@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8461996278955089083}
   - component: {fileID: 5935389785201477619}
   - component: {fileID: 823809887823046952}
-  - component: {fileID: 5273762724427823243}
+  - component: {fileID: 1668534540165808459}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -87,7 +87,7 @@ Animator:
   m_GameObject: {fileID: 1627317378416981672}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 528c6386868ee82458dc604363e9b0c7, type: 2}
+  m_Controller: {fileID: 9100000, guid: c1a237f5f46953543ba120b252d40239, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -99,7 +99,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5273762724427823243
+--- !u!114 &1668534540165808459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,15 +108,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1627317378416981672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a717bc6b8da69834e9621795ddf3664b, type: 3}
+  m_Script: {fileID: 11500000, guid: f645ac3835661e54f952dff997fcc261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStat: {fileID: 0}
-  sceneName: Lobby
-  useGeneration: 0
-  animChanger: {fileID: 0}
-  sceneChangerCanvas: {fileID: 0}
-  n: 0
+  sceneName: 
+  gameManager: {fileID: 0}
+  changeCanvas: {fileID: 6850559063785920955}
 --- !u!1 &6850559063785920955
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6606886672731282855
 RectTransform:
   m_ObjectHideFlags: 0

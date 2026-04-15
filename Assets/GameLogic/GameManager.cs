@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         //LoadAllInventory();
         //GameObject.FindWithTag("UIControl");
 
-        animChanger.SetInteger("isTrigger", n);
+        animChanger.SetTrigger("Blackin");
 
         if (isLobby)
         {

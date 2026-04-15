@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SceneLevel/GenerationScene/GenerationScene.unity
     guid: 84d4887910a0a0842beec4c5f60add75
+  - enabled: 1
+    path: Assets/SceneLevel/EndScene/End.unity
+    guid: 6f0f0e0f3de1e8a46a69b277e7f08eb8
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
