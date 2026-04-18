@@ -53,7 +53,7 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         transform.SetParent(oldSlot.transform);
         transform.position = oldSlot.transform.position;
         //Если мышка отпущена над объектом по имени UIPanel, то...
-        if (eventData.pointerCurrentRaycast.gameObject.name == "UIPanel")
+        /*if (eventData.pointerCurrentRaycast.gameObject.name == "UIPanel")
         {
             // Выброс объектов из инвентаря - Спавним префаб обекта перед персонажем
             GameObject itemObject = Instantiate(oldSlot.item.itemObject, player.position + Vector3.up + player.forward, Quaternion.identity);
@@ -61,12 +61,16 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             itemObject.GetComponent<Item>().amount = oldSlot.amount;
             // убираем значения InventorySlot
             NullifySlotData();
-        }
-        else if(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<inventorySlot>() != null)
+        }*/
+        if (eventData.pointerCurrentRaycast.gameObject != null)
         {
-            //Перемещаем данные из одного слота в другой
-            ExchangeSlotData(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<inventorySlot>());
+            if (eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<inventorySlot>() != null)
+            {
+                //Перемещаем данные из одного слота в другой
+                ExchangeSlotData(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<inventorySlot>());
+            }
         }
+        
        
     }
     void NullifySlotData()
@@ -81,86 +85,101 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     }
     void ExchangeSlotData(inventorySlot newSlot)
     {
-        // Временно храним данные newSlot в отдельных переменных
-        itemScriptableObject item = newSlot.item;
-        int amount = newSlot.amount;
-        bool isEmpty = newSlot.isEmpty;
-        GameObject iconGO = newSlot.iconItem;
-        TMP_Text itemAmountText = newSlot.itemAmount;
+        // Защита от null
+        if (newSlot == null) return;
 
-        if (newSlot.weaponSlot)
+        // 1. Сохраняем ВСЕ данные перед изменениями
+        itemScriptableObject oldSlotItem = oldSlot.item;
+        int oldSlotAmount = oldSlot.amount;
+        bool oldSlotIsEmpty = oldSlot.isEmpty;
+
+        itemScriptableObject newSlotItem = newSlot.item;
+        int newSlotAmount = newSlot.amount;
+        bool newSlotIsEmpty = newSlot.isEmpty;
+
+        // 2. Проверки совместимости (только если слоты не пустые)
+        if (!oldSlotIsEmpty)
         {
-            if (!(oldSlot.item.itemType is ItemType.sword))
-            {
+            if (newSlot.weaponSlot && oldSlotItem.itemType != ItemType.sword)
                 return;
-                /*newSlot.item = oldSlot.item;
-                newSlot.amount = oldSlot.amount;*/
-            }
-        }
-        if (newSlot.equipmentSlot)
-        {
-            if(!(oldSlot.item.itemType is ItemType.amulet))
-            {
+            if (newSlot.equipmentSlot && oldSlotItem.itemType != ItemType.amulet)
                 return;
-            }
-            /*else
-            {
-                print("Это амулет");
-                newSlot.GetComponent<EquipmentInventory>().EquipmentAmulet();
-            }*/
-        }
-
-        if (newSlot.spellSlot)
-        {
-            if(!(oldSlot.item.itemType is ItemType.magicBook))
-            {
+            if (newSlot.spellSlot && oldSlotItem.itemType != ItemType.magicBook)
                 return;
-            }
         }
 
-        // Заменяем значения newSlot на значения oldSlot
-        newSlot.item = oldSlot.item;
-        newSlot.amount = oldSlot.amount;
+        if (!newSlotIsEmpty)
+        {
+            if (oldSlot.weaponSlot && newSlotItem.itemType != ItemType.sword)
+                return;
+            if (oldSlot.equipmentSlot && newSlotItem.itemType != ItemType.amulet)
+                return;
+            if (oldSlot.spellSlot && newSlotItem.itemType != ItemType.magicBook)
+                return;
+        }
 
-        if (oldSlot.isEmpty == false)
+        // 3. Снимаем бонусы с обоих слотов (если они экипированы и не пустые)
+        if (oldSlot.equipmentSlot && !oldSlotIsEmpty)
         {
-            newSlot.SetIcon(newSlot.item.icon);
-            newSlot.itemAmount.text = oldSlot.amount.ToString();
+            oldSlot.GetComponent<EquipmentInventory>().UnequipmentAmulet();
         }
-        else
+
+        if (newSlot.equipmentSlot && !newSlotIsEmpty)
         {
-            newSlot.iconItem.GetComponent<Image>().color = new Color(1, 1, 1, 0);
-            newSlot.iconItem.GetComponent<Image>().sprite = null;
-            newSlot.itemAmount.text = "";
+            newSlot.GetComponent<EquipmentInventory>().UnequipmentAmulet();
         }
-        
-        if (newSlot.equipmentSlot)
+
+        // 4. Обмениваем данные
+        oldSlot.item = newSlotItem;
+        oldSlot.amount = newSlotAmount;
+        oldSlot.isEmpty = newSlotIsEmpty;
+
+        newSlot.item = oldSlotItem;
+        newSlot.amount = oldSlotAmount;
+        newSlot.isEmpty = oldSlotIsEmpty;
+
+        // 5. Обновляем UI для обоих слотов
+        UpdateSlotUI(oldSlot, newSlotItem, newSlotAmount, newSlotIsEmpty);
+        UpdateSlotUI(newSlot, oldSlotItem, oldSlotAmount, oldSlotIsEmpty);
+
+        // 6. Одеваем бонусы на слоты (если они экипированы и не пустые)
+        if (oldSlot.equipmentSlot && !oldSlot.isEmpty)
+        {
+            oldSlot.GetComponent<EquipmentInventory>().EquipmentAmulet();
+        }
+
+        if (newSlot.equipmentSlot && !newSlot.isEmpty)
         {
             newSlot.GetComponent<EquipmentInventory>().EquipmentAmulet();
         }
-      
-        newSlot.isEmpty = oldSlot.isEmpty;
+    }
 
-        // Заменяем значения oldSlot на значения newSlot сохраненные в переменных
-        oldSlot.item = item;
-        oldSlot.amount = amount;
-        if (isEmpty == false)
+    private void UpdateSlotUI(inventorySlot slot, itemScriptableObject item, int amount, bool isEmpty)
+    {
+        if (slot == null) return;
+
+        if (isEmpty || item == null)
         {
-            oldSlot.SetIcon(oldSlot.item.icon);
-            oldSlot.itemAmount.text = amount.ToString();
+            if (slot.iconItem != null)
+            {
+                slot.iconItem.GetComponent<Image>().color = new Color(1, 1, 1, 0);
+                slot.iconItem.GetComponent<Image>().sprite = null;
+            }
+            if (slot.itemAmount != null)
+            {
+                slot.itemAmount.text = "";
+            }
         }
         else
         {
-            oldSlot.iconItem.GetComponent<Image>().color = new Color(1, 1, 1, 0);
-            oldSlot.iconItem.GetComponent<Image>().sprite = null;
-            oldSlot.itemAmount.text = "";
-        }
-
-        oldSlot.isEmpty = isEmpty;
-
-        if (oldSlot.equipmentSlot)
-        {
-            oldSlot.GetComponent<EquipmentInventory>().UnequipmentAmulet();
+            if (slot.iconItem != null)
+            {
+                slot.SetIcon(item.icon);
+            }
+            if (slot.itemAmount != null)
+            {
+                slot.itemAmount.text = amount.ToString();
+            }
         }
     }
 }

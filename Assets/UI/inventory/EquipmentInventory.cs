@@ -25,6 +25,7 @@ public class EquipmentInventory : MonoBehaviour
         slot = gameObject.GetComponent<inventorySlot>();
         playerStatManager.currentMaxHP += currentHealthBonus;
         playerStatManager.currentStrong += currentStrongBonus;
+        playerStatManager.currentMaxMana += currentManaBonus;
 
     }
 
