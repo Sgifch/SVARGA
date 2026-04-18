@@ -26,6 +26,8 @@ TagManager:
   - Chest
   - Altar
   - Pet
+  - Blackout
+  - PostRestart
   layers:
   - Default
   - TransparentFX

@@ -39,6 +39,10 @@ public class UIControll : MonoBehaviour
     public GameObject signPanel;
     public GameObject hintKey;
 
+    [Header("Затемнение")]
+    public GameObject canvasChange;
+    public GameObject blackout;
+
     [Header("Экран смерти")]
     public GameObject screenDeath;
 
@@ -258,6 +262,11 @@ public class UIControll : MonoBehaviour
                     case "Altar":
                         AltarMenu();
                         break;
+
+                    case "PostRestart":
+                        PostRestart();
+                        break;
+
                 }
             }
         }
@@ -385,6 +394,15 @@ public class UIControll : MonoBehaviour
         }
     }
 
+    //Рестарт-генерации--------------------------------------------------------------------------------------------
+    public void PostRestart()
+    {
+        GameObject.FindWithTag("GenerationManager").GetComponent<GenerationStatManager>().SaveStatGeneration();
+        canvasChange.SetActive(true);
+        blackout.GetComponent<LobbyLoadScene>().sceneName = "GenerationScene";
+        blackout.GetComponent<Animator>().SetTrigger("Blackout");
+    }
+
     //Открыте_закрытие_HUD_меню-------------------------------------------------------------------------------
     public void ControllActiveHUD(bool active)
     {
@@ -403,7 +421,7 @@ public class UIControll : MonoBehaviour
     {
         string tag = collision.gameObject.tag;
 
-        if (tag == "Kipishe" || tag == "Fontain" || tag == "WeaponSpawn" || tag == "Chest" || tag == "Altar")
+        if (tag == "Kipishe" || tag == "Fontain" || tag == "WeaponSpawn" || tag == "Chest" || tag == "Altar" || tag == "PostRestart")
         {
             hintKey.GetComponent<Animator>().SetTrigger("Open");
             isHint = true;

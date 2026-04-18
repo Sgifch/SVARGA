@@ -85,7 +85,8 @@ public class GameManager : MonoBehaviour
 
     public void RestartGeneration()
     {
-        SaveAll();
+        //SaveAll();
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -152,11 +153,11 @@ public class GameManager : MonoBehaviour
     }
 
     //Загрузки-сцен----------------------------------------------------------------------------------------------
-    public void LoadGeneration()
+    /*public void LoadGeneration()
     {
         SaveAll();
         SceneManager.LoadScene(2);
-    }
+    }*/
 
     public void LoadAllInventory()
     {
