@@ -16,6 +16,8 @@ public class ControllMove : MonoBehaviour
     private Vector2 moveD;
     private Vector2 LastmoveD;
 
+    public float shift = 1f;
+
     public bool isMove = false;
     public bool isAttack = false;
     public bool isShiftAttack = false;
@@ -40,15 +42,19 @@ public class ControllMove : MonoBehaviour
         dataItem = gameObject.GetComponent<inventoryManager>();
         uiControll = GameObject.FindWithTag("UIControll");
 
+        anim.SetFloat("LastmoveDx", 0);
+        anim.SetFloat("LastmoveDy", -1);
+        LastmoveD = new Vector2(0, -1);
     }
 
     void Update()
     {
-        if (!uiControll.GetComponent<UIControll>().isStay)
+        if (!uiControll.GetComponent<UIControll>().isStay && !isAttack)
         {
             processInputs();
+            Animated();
         }
-        Animated();
+        
 
         if (Input.GetMouseButtonDown(0) && !uiControll.GetComponent<UIControll>().isStay && !isAttack && !isMove)
         {
@@ -64,10 +70,13 @@ public class ControllMove : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!isAttack)
+        {
+            Move();
+        }
+        
 
-        Move();
-
-        isMove = rb.velocity.magnitude > 0.1f;
+        isMove = rb.velocity.magnitude > 0.01f;
 
         if (isShiftAttack) //Сдвиг при атаке (мб потом более оптимизировано сделать) Сделать под состояния???
         {
@@ -76,19 +85,19 @@ public class ControllMove : MonoBehaviour
             switch (_lastAxes)
             {
                 case "u":
-                    rb.velocity = new Vector2(0f, 7f);
+                    rb.velocity = new Vector2(0f, shift);
                     break;
 
                 case "d":
-                    rb.velocity = new Vector2(0f, -7f);
+                    rb.velocity = new Vector2(0f, -shift);
                     break;
 
                 case "l":
-                    rb.velocity = new Vector2(-7f, 0f);
+                    rb.velocity = new Vector2(-shift, 0f);
                     break;
 
                 case "r":
-                    rb.velocity = new Vector2(7f, 0f);
+                    rb.velocity = new Vector2(shift, 0f);
                     break;
             }
 
@@ -103,12 +112,22 @@ public class ControllMove : MonoBehaviour
         ForwardBehind = Input.GetAxisRaw("Vertical");
         LeftRight = Input.GetAxisRaw("Horizontal");
 
-        if ((ForwardBehind == 0 && LeftRight == 0) && moveD.x != 0 || moveD.y != 0)
+        if ((ForwardBehind == 0 && LeftRight == 0) && (moveD.x != 0 || moveD.y != 0))
         {
             LastmoveD = moveD;
         }
 
-        moveD = new Vector2(LeftRight, ForwardBehind).normalized;
+        Vector2 rawInput = new Vector2(LeftRight, ForwardBehind);
+        
+        if(rawInput.magnitude > 1)
+        {
+            moveD = rawInput.normalized;
+        }
+        else
+        {
+            moveD = rawInput;
+        }
+
         if (moveD != new Vector2(0, 0))
         {   
             if (!gameObject.GetComponent<AudioSource>().isPlaying)
@@ -154,18 +173,24 @@ public class ControllMove : MonoBehaviour
             // Действия для направления влево
             lastAxes = "l";
         }
+        else
+        {
+            return LastmoveD.y > 0 ? "u" : "d";
+        }
 
-        return lastAxes;
+            return lastAxes;
     }
 
-    //Блок нанесения урона----------------------------------------------------------------
+    //Блок аттаки----------------------------------------------------------------
     void AttackWeapon()
     {
         if (!dataItem.slotsWeapon[0].isEmpty)
         {
-
+            isAttack = true;
+            isShiftAttack = true;
             inventorySlot weapon = dataItem.slotsWeapon[0];
             Vector3 spawnPosition = gameObject.transform.position;
+            Vector2 vector = new Vector2(0, 1);
 
             Vector3 shift = new Vector3(0f, -0.35f, 0f); //Будет изменяться в зависимости от положения
             string _lastAxes = LastAxes();
@@ -174,23 +199,28 @@ public class ControllMove : MonoBehaviour
             {
                 case "u":
                     shift = new Vector3(0f, 0.1f, 0f);
+                    vector = new Vector2(0f, 1f);
                     break;
 
                 case "d":
                     shift = new Vector3(0f, -0.35f, 0f);
+                    vector = new Vector2(0f, -1f);
                     break;
 
                 case "l":
                     shift = new Vector3(-0.15f, -0.35f, 0f);
+                    vector = new Vector2(-1f, 0f);
                     break;
 
                 case "r":
                     shift = new Vector3(0.15f, -0.35f, 0f);
+                    vector = new Vector2(1f, 0f);
                     break;
             }
+            print(shift);
 
-            isAttack = true;
-            isShiftAttack = true;
+            
+            
 
             GameObject attackWeapon = Instantiate(weapon.item.itemObject, spawnPosition + shift, gameObject.transform.rotation, gameObject.transform);
 
@@ -203,10 +233,10 @@ public class ControllMove : MonoBehaviour
             Animator animWeapon = attackWeapon.GetComponent<Animator>();
 
 
-            animWeapon.SetFloat("LastMoveDx", LastmoveD.x);
-            animWeapon.SetFloat("LastMoveDy", LastmoveD.y);
-            anim.SetFloat("LastmoveDx", LastmoveD.x);
-            anim.SetFloat("LastmoveDy", LastmoveD.y);
+            animWeapon.SetFloat("LastMoveDx", vector.x);
+            animWeapon.SetFloat("LastMoveDy", vector.y);
+            anim.SetFloat("LastmoveDx", vector.x);
+            anim.SetFloat("LastmoveDy", vector.y);
             anim.SetTrigger("Attack");
             animWeapon.SetTrigger("Attack");
         }

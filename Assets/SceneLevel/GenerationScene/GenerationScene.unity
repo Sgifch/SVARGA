@@ -4092,6 +4092,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5289803511880263554, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: shift
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5297304731360000124, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -7825,6 +7829,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0691bcf8a7e77ba46b9b736b5514000e, type: 3}
+--- !u!1001 &2007811378
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 690645450911779922, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.217053
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5545957
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595154827602962897, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_Name
+      value: SwordBetterSteel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
 --- !u!1 &2048253429
 GameObject:
   m_ObjectHideFlags: 0
@@ -8193,3 +8254,4 @@ SceneRoots:
   - {fileID: 403059890}
   - {fileID: 1396446148}
   - {fileID: 756330989}
+  - {fileID: 2007811378}
