@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 707479109}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -537,7 +537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 696327885509340816, guid: 4c3fccfcb3626b9488697d86211e6b9d, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4846380806502644378, guid: 4c3fccfcb3626b9488697d86211e6b9d, type: 3}
       propertyPath: m_SortingOrder
@@ -739,7 +739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5857088745320394927, guid: dc54fa0841baef9439431f6dbec07895, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6384412883606857468, guid: dc54fa0841baef9439431f6dbec07895, type: 3}
       propertyPath: playerTransform
@@ -841,6 +841,10 @@ PrefabInstance:
     - target: {fileID: 4206155421198924718, guid: 2895d3474edca3b499e9eca103ad977e, type: 3}
       propertyPath: m_Name
       value: Boar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206155421198924718, guid: 2895d3474edca3b499e9eca103ad977e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4614114806059757588, guid: 2895d3474edca3b499e9eca103ad977e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -978,7 +982,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 13754383314495762, guid: 392eb35e7b70f0f42927b2e736c22fdd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 13754383314495762, guid: 392eb35e7b70f0f42927b2e736c22fdd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1016,13 +1020,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3195092754475928607, guid: 392eb35e7b70f0f42927b2e736c22fdd, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5593437393694590610, guid: 392eb35e7b70f0f42927b2e736c22fdd, type: 3}
       propertyPath: m_Name
       value: Frog
       objectReference: {fileID: 0}
     - target: {fileID: 5593437393694590610, guid: 392eb35e7b70f0f42927b2e736c22fdd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839154033974852882, guid: 392eb35e7b70f0f42927b2e736c22fdd, type: 3}
+      propertyPath: attackDistance
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 5839154033974852882, guid: 392eb35e7b70f0f42927b2e736c22fdd, type: 3}
       propertyPath: playerTransform
@@ -1038,6 +1050,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7596054121776673148, guid: 392eb35e7b70f0f42927b2e736c22fdd, type: 3}
       propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162904612736479962, guid: 392eb35e7b70f0f42927b2e736c22fdd, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1099,7 +1115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6949084669014599352, guid: 7fad04efc648d6b428db2555abb621d1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
