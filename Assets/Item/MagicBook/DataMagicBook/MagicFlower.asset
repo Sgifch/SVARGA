@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: MagicFlower
   m_EditorClassIdentifier: 
   itemType: 8
+  itemID: 29
   itemObject: {fileID: 3408268646583160109, guid: 07e54c8d3164df740ad08a00de791174, type: 3}
   icon: {fileID: 21300000, guid: 2dac3d2c81852e442a808f3b53040276, type: 3}
   itemName: 

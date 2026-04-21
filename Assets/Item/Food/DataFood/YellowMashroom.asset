@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: YellowMashroom
   m_EditorClassIdentifier: 
   itemType: 0
+  itemID: 25
   itemObject: {fileID: 3408268646583160109, guid: 3e5ef21aa26ce504093482d6d0273579, type: 3}
   icon: {fileID: -1782568199, guid: e570d631d72832a4bbc09332125efaf5, type: 3}
   itemName: "\u0416\u0435\u043B\u0442\u043E\u0432\u0438\u043A"

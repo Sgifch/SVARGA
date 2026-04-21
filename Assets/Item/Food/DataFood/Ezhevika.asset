@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Ezhevika
   m_EditorClassIdentifier: 
   itemType: 0
+  itemID: 07
   itemObject: {fileID: 3408268646583160109, guid: 49808a53afc24fa4f89e2f94e26609e2, type: 3}
   icon: {fileID: 1883968956, guid: e570d631d72832a4bbc09332125efaf5, type: 3}
   itemName: "\u0415\u0436\u0435\u0432\u0438\u043A\u0430"

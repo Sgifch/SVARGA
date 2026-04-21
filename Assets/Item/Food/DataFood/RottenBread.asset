@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RottenBread
   m_EditorClassIdentifier: 
   itemType: 4
+  itemID: 19
   itemObject: {fileID: 3408268646583160109, guid: 418b45119b1536b4695c3d708d094ad5, type: 3}
   icon: {fileID: -61068605, guid: aef9c224217e55041be92afc7eca6235, type: 3}
   itemName: "\u041F\u0440\u043E\u0442\u0443\u0445\u0448\u0438\u0439 \u0445\u043B\u0435\u0431"

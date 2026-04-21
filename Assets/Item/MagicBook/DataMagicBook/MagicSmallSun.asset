@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: MagicSmallSun
   m_EditorClassIdentifier: 
   itemType: 8
+  itemID: 32
   itemObject: {fileID: 3408268646583160109, guid: 0d2e84b3536fa734fad365455cefb328, type: 3}
   icon: {fileID: 21300000, guid: b99a39c8cfc0d1347ba14b82a715d7d9, type: 3}
   itemName: 

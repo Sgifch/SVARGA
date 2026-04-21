@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SuspectJar
   m_EditorClassIdentifier: 
   itemType: 5
+  itemID: 23
   itemObject: {fileID: 3408268646583160109, guid: 8f8de0f1e648d814fa410c2492eb2f9e, type: 3}
   icon: {fileID: -1222017080, guid: aef9c224217e55041be92afc7eca6235, type: 3}
   itemName: "\u041F\u043E\u0434\u043E\u0437\u0440\u0438\u0442\u0435\u043B\u044C\u043D\u0430\u044F

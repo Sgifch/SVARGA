@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RottenMeat
   m_EditorClassIdentifier: 
   itemType: 4
+  itemID: 20
   itemObject: {fileID: 3408268646583160109, guid: b9d717ff3a5854743bea27eb65137513, type: 3}
   icon: {fileID: -1538579912, guid: aef9c224217e55041be92afc7eca6235, type: 3}
   itemName: "\u041F\u0440\u043E\u0442\u0443\u0445\u0448\u0435\u0435 \u043C\u044F\u0441\u043E"

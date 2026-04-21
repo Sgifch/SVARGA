@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: MagicTower
   m_EditorClassIdentifier: 
   itemType: 8
+  itemID: 33
   itemObject: {fileID: 3408268646583160109, guid: dc10cb39bc08d7a4386cf63d5d9340c5, type: 3}
   icon: {fileID: 21300000, guid: 12ebd38cc8369b244864590f6668c010, type: 3}
   itemName: MagicTower

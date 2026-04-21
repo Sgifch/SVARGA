@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SwordPoisoned
   m_EditorClassIdentifier: 
   itemType: 2
+  itemID: 43
   itemObject: {fileID: 2595154827602962897, guid: b0cb33fd2d6a2a64cbaef5be64db4c83, type: 3}
   icon: {fileID: 21300000, guid: 89553527abca9bf4aad0b1418a23ca7a, type: 3}
   itemName: 

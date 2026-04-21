@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Chicken
   m_EditorClassIdentifier: 
   itemType: 1
+  itemID: 05
   itemObject: {fileID: 3408268646583160109, guid: b3ce4f15f03a40849935f38c7dab8ca4, type: 3}
   icon: {fileID: 762202346, guid: e570d631d72832a4bbc09332125efaf5, type: 3}
   itemName: "\u041A\u0443\u0440\u0438\u043D\u0430\u044F \u043D\u043E\u0433\u0430"

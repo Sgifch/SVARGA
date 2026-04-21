@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Garlic
   m_EditorClassIdentifier: 
   itemType: 0
+  itemID: 09
   itemObject: {fileID: 3408268646583160109, guid: 34199f2923ca2704ea0138f973c935a2, type: 3}
   icon: {fileID: -413594078, guid: e570d631d72832a4bbc09332125efaf5, type: 3}
   itemName: "\u0427\u0435\u0441\u043D\u043E\u043A"

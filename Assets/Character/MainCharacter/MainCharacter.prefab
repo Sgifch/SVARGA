@@ -663,6 +663,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   speed: 3
   rb: {fileID: 0}
+  shift: 1
   isMove: 0
   isAttack: 0
   isShiftAttack: 0
@@ -698,6 +699,55 @@ MonoBehaviour:
   _fileNameChest: chestDataFile
   _fileNameArmor: armorDataFile
   _fileNameWeapon: weaponDataFile
+  allItem:
+  - {fileID: 11400000, guid: 1ea556ac95f42a34b8cce81cd9090327, type: 2}
+  - {fileID: 11400000, guid: 8c995966d165d49428035c107bdf0e47, type: 2}
+  - {fileID: 11400000, guid: 9c6dc11d0d37d6447b661ab62e331523, type: 2}
+  - {fileID: 11400000, guid: 302824cbecfe00340bd31cb221abb474, type: 2}
+  - {fileID: 11400000, guid: 3be75b40be61f28448c0acb78bbab701, type: 2}
+  - {fileID: 11400000, guid: 6d33948085a6ea7419bcaab32a47bfd5, type: 2}
+  - {fileID: 11400000, guid: a7971a12ce012574aa0bd3ce3a449054, type: 2}
+  - {fileID: 11400000, guid: 4adee38224d0ed24dbede7711f38573a, type: 2}
+  - {fileID: 11400000, guid: b66073e246be89249a550a63c3188e4a, type: 2}
+  - {fileID: 11400000, guid: 018b3dd57fd8a5048bcdf0aeb1e94ce6, type: 2}
+  - {fileID: 11400000, guid: 4823424249779594287825636b387e7e, type: 2}
+  - {fileID: 11400000, guid: 39e99c6425c40484bbc1d723b02bee05, type: 2}
+  - {fileID: 11400000, guid: 4e9269d8e7c758a4cb0e3dcf303676ef, type: 2}
+  - {fileID: 11400000, guid: bf0844faa834e594781626a047439708, type: 2}
+  - {fileID: 11400000, guid: 598ee9ab45a0431428432898db745b58, type: 2}
+  - {fileID: 11400000, guid: 2720ad14288610e4f848b7d00995ba4b, type: 2}
+  - {fileID: 11400000, guid: 5256cbb34f9739441b55c0cc7a4618b3, type: 2}
+  - {fileID: 11400000, guid: eb63d8f7e5c3c3c4aba22fbbc8816bba, type: 2}
+  - {fileID: 11400000, guid: 98ba32fbca4454b42a298c090257b496, type: 2}
+  - {fileID: 11400000, guid: 28e7b9e1c524c534bac4304bbfc636ec, type: 2}
+  - {fileID: 11400000, guid: 2e4f2262190c3244b89615c1cfe835c3, type: 2}
+  - {fileID: 11400000, guid: a2d8d375a43cf344289100a16ff6450a, type: 2}
+  - {fileID: 11400000, guid: 3ffb0c2997c72dd41a13f369a60d32b3, type: 2}
+  - {fileID: 11400000, guid: 6576dff763dd57449b9586f40f24c22e, type: 2}
+  - {fileID: 11400000, guid: 445c9b3a63fc65d418b3c7e5edf64d0e, type: 2}
+  - {fileID: 11400000, guid: ca6c5d7d445678741816945b43312548, type: 2}
+  - {fileID: 11400000, guid: 488b20d4db1283246a4513d89050813e, type: 2}
+  - {fileID: 11400000, guid: 928f7362b7cf32a4788ecc36c017b08f, type: 2}
+  - {fileID: 11400000, guid: 4ab7a3bcf91f3da45a372c3e319c57cc, type: 2}
+  - {fileID: 11400000, guid: ff8864504a5b17844bd75272df1a1bde, type: 2}
+  - {fileID: 11400000, guid: 7a35b826d09f7d84aa4f1872bca049ea, type: 2}
+  - {fileID: 11400000, guid: b776b341c9a559b40b19fe13701def32, type: 2}
+  - {fileID: 11400000, guid: f9de23626fae50e4caf695b293383a88, type: 2}
+  - {fileID: 11400000, guid: a91f8b80088c1a34887a022b5ffd12af, type: 2}
+  - {fileID: 11400000, guid: 9b89a086434223e448650bf2f3ca820a, type: 2}
+  - {fileID: 11400000, guid: afe84954e39fb1a4c935aa6c97f4bd4f, type: 2}
+  - {fileID: 11400000, guid: 6fc62fd0b312bf14ea5a29f6036f6721, type: 2}
+  - {fileID: 11400000, guid: 248509f74c06e1d4b914930a56f41c5f, type: 2}
+  - {fileID: 11400000, guid: 7dbc5cf761d28cd48ad2b347e557778e, type: 2}
+  - {fileID: 11400000, guid: 96e0aa86f58163e45ba49c259857d72d, type: 2}
+  - {fileID: 11400000, guid: 997d8108a793dea4bb744ecb89837d94, type: 2}
+  - {fileID: 11400000, guid: 9b2749d09bfdb384cbd26068c75046df, type: 2}
+  - {fileID: 11400000, guid: fdb455b52f5afa74d8ce80c18425fa98, type: 2}
+  - {fileID: 11400000, guid: 7df4fc2f92e89ad4b92aeb42d2226019, type: 2}
+  - {fileID: 11400000, guid: 95dbabc327b1e4f478961cdd110d7b3d, type: 2}
+  - {fileID: 11400000, guid: cab5964ce2db8fa4790a28b9162fb643, type: 2}
+  - {fileID: 11400000, guid: 116650737d049ad49804d2fd0b1234c2, type: 2}
+  - {fileID: 11400000, guid: 4a0b049f40a524b4da01e925b55a8e0f, type: 2}
 --- !u!114 &5403319387733519631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1859,7 +1909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSouls: 100
-  currentSouls: 0
+  stat: {fileID: 0}
   countSouls: {fileID: 2383615338837433996}
 --- !u!1 &4324261735499314715
 GameObject:
@@ -3477,6 +3527,8 @@ MonoBehaviour:
   fontain: {fileID: 7803874040817550094}
   signPanel: {fileID: 4797665822626507999}
   hintKey: {fileID: 4886296663231248426}
+  canvasChange: {fileID: 0}
+  blackout: {fileID: 0}
   screenDeath: {fileID: 6971662107348326292}
   paused: {fileID: 4548385260905798711}
   damageText: {fileID: 2897848073127246672}

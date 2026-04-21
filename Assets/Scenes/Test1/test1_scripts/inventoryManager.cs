@@ -46,6 +46,9 @@ public class inventoryManager : MonoBehaviour
     public string _fileNameChest;
     public string _fileNameArmor;
     public string _fileNameWeapon;
+
+    [Header("Датабаза предметов")]
+    public List<itemScriptableObject> allItem = new List<itemScriptableObject>();
     private void Awake()
     {
 
@@ -171,7 +174,8 @@ public class inventoryManager : MonoBehaviour
             {
                 InventoryDataSlot saveSlot;
                 saveSlot = JsonUtility.FromJson<InventoryDataSlot>(readed[i]);
-                slots[i].item = saveSlot.item;
+                slots[i].item = FindItemByID(saveSlot.item);
+
                 slots[i].amount = saveSlot.amount;
                 slots[i].isEmpty = saveSlot.isEmpty;
             }
@@ -201,7 +205,7 @@ public class inventoryManager : MonoBehaviour
             {
                 InventoryDataSlot saveSlot;
                 saveSlot = JsonUtility.FromJson<InventoryDataSlot>(readed[i]);
-                slotsArmor[i].item = saveSlot.item;
+                slotsArmor[i].item = FindItemByID(saveSlot.item);
                 slotsArmor[i].amount = saveSlot.amount;
                 slotsArmor[i].isEmpty = saveSlot.isEmpty;
             }
@@ -231,13 +235,26 @@ public class inventoryManager : MonoBehaviour
             {
                 InventoryDataSlot saveSlot;
                 saveSlot = JsonUtility.FromJson<InventoryDataSlot>(readed[i]);
-                slotsWeapon[i].item = saveSlot.item;
+                slotsWeapon[i].item = FindItemByID(saveSlot.item);
                 slotsWeapon[i].amount = saveSlot.amount;
                 slotsWeapon[i].isEmpty = saveSlot.isEmpty;
             }
 
             SetSlots(slotsWeapon, panelWeapon);
         }
+    }
+
+    //Поиск предемета по id
+    private itemScriptableObject FindItemByID(string id)
+    {
+        foreach(itemScriptableObject item in allItem)
+        {
+            if (item.itemID == id)
+            {
+                return item;
+            }
+        }
+        return null;
     }
 
     //Сохранение-загрузка-сундука-----------------------------------------------------------------------
@@ -262,7 +279,7 @@ public class inventoryManager : MonoBehaviour
             {
                 InventoryDataSlot saveSlot;
                 saveSlot = JsonUtility.FromJson<InventoryDataSlot>(readed[i]);
-                slotsChest[i].item = saveSlot.item;
+                slotsChest[i].item = FindItemByID(saveSlot.item);
                 slotsChest[i].amount = saveSlot.amount;
                 slotsChest[i].isEmpty = saveSlot.isEmpty;
             }

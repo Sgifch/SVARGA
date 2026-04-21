@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ShockWave
   m_EditorClassIdentifier: 
   itemType: 8
+  itemID: 35
   itemObject: {fileID: 3408268646583160109, guid: 30071b687e35c744280b8664db0b27b4, type: 3}
   icon: {fileID: 21300000, guid: 4a6d12c40c40fc64caf9e46019e821ae, type: 3}
   itemName: 

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SwordBetterSteel
   m_EditorClassIdentifier: 
   itemType: 2
+  itemID: 39
   itemObject: {fileID: 2595154827602962897, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
   icon: {fileID: 21300000, guid: 64e80a3fe7390ca42a6a7c232cd4ad5d, type: 3}
   itemName: 

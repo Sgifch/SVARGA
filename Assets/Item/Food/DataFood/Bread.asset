@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Bread
   m_EditorClassIdentifier: 
   itemType: 0
+  itemID: 03
   itemObject: {fileID: 0}
   icon: {fileID: -448998998, guid: e570d631d72832a4bbc09332125efaf5, type: 3}
   itemName: "\u0425\u043B\u0435\u0431"

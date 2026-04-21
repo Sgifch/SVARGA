@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Curd
   m_EditorClassIdentifier: 
   itemType: 0
+  itemID: 06
   itemObject: {fileID: 3408268646583160109, guid: 32a1d0a1f7f34ab4b820f22fa6fc36f4, type: 3}
   icon: {fileID: -1400662784, guid: e570d631d72832a4bbc09332125efaf5, type: 3}
   itemName: "\u0412\u0430\u0442\u0440\u0443\u0448\u043A\u0430"

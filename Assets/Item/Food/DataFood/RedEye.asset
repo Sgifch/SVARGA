@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RedEye
   m_EditorClassIdentifier: 
   itemType: 4
+  itemID: 18
   itemObject: {fileID: 3408268646583160109, guid: b207806140d4c994e856c9f4f41fe35c, type: 3}
   icon: {fileID: -1959234972, guid: aef9c224217e55041be92afc7eca6235, type: 3}
   itemName: "\u041A\u0440\u0430\u0441\u043D\u043E\u0435 \u043E\u043A\u043E"

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Potato
   m_EditorClassIdentifier: 
   itemType: 0
+  itemID: 16
   itemObject: {fileID: 3408268646583160109, guid: 93a109a67b8281543b8a54746eb27837, type: 3}
   icon: {fileID: -805705459, guid: e570d631d72832a4bbc09332125efaf5, type: 3}
   itemName: "\u041A\u0430\u0440\u0442\u043E\u0448\u043A\u0430"

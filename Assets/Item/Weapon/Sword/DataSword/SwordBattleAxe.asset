@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SwordBattleAxe
   m_EditorClassIdentifier: 
   itemType: 2
+  itemID: 38
   itemObject: {fileID: 2595154827602962897, guid: c0c25fddf760c8d4ca03b84c206e7749, type: 3}
   icon: {fileID: 21300000, guid: b904ba0fd1c6c6a4a92efcd90b12e4d5, type: 3}
   itemName: 

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SwordBloodySaber
   m_EditorClassIdentifier: 
   itemType: 2
+  itemID: 41
   itemObject: {fileID: 2595154827602962897, guid: 9a37794faf79ff54aabc5f1357f18137, type: 3}
   icon: {fileID: 21300000, guid: 7f70708b574d12f4b9c303dc1a9c74dd, type: 3}
   itemName: 

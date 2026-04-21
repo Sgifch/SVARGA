@@ -6,7 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class InventoryDataSlot
 {
-    public itemScriptableObject item;
+    public string item;
     public int amount;
     public bool isEmpty;
     public bool weaponSlot;
@@ -24,7 +24,7 @@ public class InventoryDataSlot
 
         if (slot.item != null)
         {
-            item = slot.item;
+            item = slot.item.itemID;
         }
         else
         {

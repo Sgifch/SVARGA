@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: MagicFreeze
   m_EditorClassIdentifier: 
   itemType: 8
+  itemID: 30
   itemObject: {fileID: 3408268646583160109, guid: 1c5d80a8068e4454c99942c50c42cec4, type: 3}
   icon: {fileID: 21300000, guid: 7e3898cbe41422645b4b6b8e4992cd07, type: 3}
   itemName: 

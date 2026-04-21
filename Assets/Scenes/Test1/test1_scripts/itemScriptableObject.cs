@@ -7,6 +7,7 @@ public enum ItemType {food, foodDuration, sword, amulet, unFood, unFoodDuration,
 public class itemScriptableObject : ScriptableObject
 {
     public ItemType itemType;
+    public string itemID;
     public GameObject itemObject;
     public Sprite icon;
     public string itemName;

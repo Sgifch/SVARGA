@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Meat
   m_EditorClassIdentifier: 
   itemType: 0
+  itemID: 13
   itemObject: {fileID: 3408268646583160109, guid: 7e2ed6a27bc4984469ec7feaa6637bdf, type: 3}
   icon: {fileID: -752395502, guid: e570d631d72832a4bbc09332125efaf5, type: 3}
   itemName: "\u0412\u044F\u043B\u0435\u043D\u043E\u0435 \u043C\u044F\u0441\u043E"

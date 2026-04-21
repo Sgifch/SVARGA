@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Golubovki
   m_EditorClassIdentifier: 
   itemType: 0
+  itemID: 10
   itemObject: {fileID: 3408268646583160109, guid: 58261c5ff79767c478f09f69f719c444, type: 3}
   icon: {fileID: -1061534358, guid: e570d631d72832a4bbc09332125efaf5, type: 3}
   itemName: "\u0413\u043E\u043B\u0443\u0431\u043E\u0432\u043A\u0438"

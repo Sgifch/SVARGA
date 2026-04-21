@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RottenPie
   m_EditorClassIdentifier: 
   itemType: 5
+  itemID: 21
   itemObject: {fileID: 3408268646583160109, guid: 95b87f944ca71144880ea59c88684545, type: 3}
   icon: {fileID: -1333482464657054351, guid: aef9c224217e55041be92afc7eca6235, type: 3}
   itemName: "\u041F\u0440\u043E\u0442\u0443\u0445\u0448\u0438\u0439 \u043F\u0438\u0440\u043E\u0436\u043E\u043A"

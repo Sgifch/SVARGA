@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TestSwordI2
   m_EditorClassIdentifier: 
   itemType: 1
+  itemID: 48
   itemObject: {fileID: 8236065994339467271, guid: 8a297b8a3fd8aa04bb69cfa9db0c9fa5, type: 3}
   icon: {fileID: -2976188367060261259, guid: 9f8d99be82309404c944371c19a426e9, type: 3}
   itemName: TestSword2

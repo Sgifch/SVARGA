@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SwordJarochard
   m_EditorClassIdentifier: 
   itemType: 2
+  itemID: 42
   itemObject: {fileID: 2595154827602962897, guid: e98abadbc27e6124faad32340909ec89, type: 3}
   icon: {fileID: 21300000, guid: b6aeb9cd1175b1043955bd6426aef2d4, type: 3}
   itemName: 

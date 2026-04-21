@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SwordRastyKrovad
   m_EditorClassIdentifier: 
   itemType: 2
+  itemID: 44
   itemObject: {fileID: 2595154827602962897, guid: 712309cc35205a24a94b1a86247c4550, type: 3}
   icon: {fileID: 21300000, guid: 8f30bf73b06b8e943b9c3706df4a88f6, type: 3}
   itemName: 

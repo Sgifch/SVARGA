@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PurpleMashrooms
   m_EditorClassIdentifier: 
   itemType: 1
+  itemID: 17
   itemObject: {fileID: 3408268646583160109, guid: bd1a8b1b8151ff34cbdd62b7296ff7c6, type: 3}
   icon: {fileID: -48570461, guid: e570d631d72832a4bbc09332125efaf5, type: 3}
   itemName: "\u0421\u0438\u0437\u0430\u043D\u043A\u0430"
