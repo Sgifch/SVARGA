@@ -34,6 +34,11 @@ public class GameManager : MonoBehaviour
     public GameObject fire2;
     public GameObject trigger;
     public GameObject firefly;
+
+    public GameObject canvasChange;
+    public GameObject blackout;
+
+
     void Awake()
     {
         playerStat = GameObject.Find("PlayerStatManager").GetComponent<PlayerStatManager>();
@@ -139,7 +144,9 @@ public class GameManager : MonoBehaviour
         GameObject.FindWithTag("GenerationManager").GetComponent<GenerationStatManager>().DeleteStatGeneration();
         player.GetComponent<inventoryManager>().LostAmulet();
         SaveAll();
-        SceneManager.LoadScene(1);
+        canvasChange.SetActive(true);
+        blackout.GetComponent<LobbyLoadScene>().sceneName = "Lobby";
+        blackout.GetComponent<Animator>().SetTrigger("Blackout");
     }
 
     public void ActivateTrigger()

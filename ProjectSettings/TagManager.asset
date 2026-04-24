@@ -28,6 +28,9 @@ TagManager:
   - Pet
   - Blackout
   - PostRestart
+  - EndAltar
+  - Optinal
+  - Optional
   layers:
   - Default
   - TransparentFX

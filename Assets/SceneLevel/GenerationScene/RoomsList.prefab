@@ -48,6 +48,6 @@ MonoBehaviour:
   downRoom: []
   rightRoom: []
   leftRoom: []
-  endUpRoom: {fileID: 7167564259850860525, guid: 5ceca4aa3bbe2594993e3d94380b0495, type: 3}
-  endDownRoom: {fileID: 7167564259850860525, guid: e69402509afba2b4cab9119ce88c3a21, type: 3}
-  endRightRoom: {fileID: 3825716379822227443, guid: cbb126336426cdb49b8a7acff3875612, type: 3}
+  endUpRoom: {fileID: 6716517931925313962, guid: de1910a4cba5b4041b7d18062f0a3c3e, type: 3}
+  endDownRoom: {fileID: 4796771862078491848, guid: b4cc05fae25cf824b84b0ae17c17a96b, type: 3}
+  endRightRoom: {fileID: 162213941839092134, guid: e7d5d740fc2e2d549b123ea37efa7422, type: 3}

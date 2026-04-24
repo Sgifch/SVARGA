@@ -267,6 +267,10 @@ public class UIControll : MonoBehaviour
                         PostRestart();
                         break;
 
+                    case "EndAltar":
+                        EndAltar();
+                        break;
+
                 }
             }
         }
@@ -403,6 +407,11 @@ public class UIControll : MonoBehaviour
         blackout.GetComponent<Animator>().SetTrigger("Blackout");
     }
 
+    public void EndAltar()
+    {
+        GameObject.FindWithTag("GameManager").GetComponent<GameManager>().EndMenu();
+    }
+
     //Открыте_закрытие_HUD_меню-------------------------------------------------------------------------------
     public void ControllActiveHUD(bool active)
     {
@@ -421,7 +430,7 @@ public class UIControll : MonoBehaviour
     {
         string tag = collision.gameObject.tag;
 
-        if (tag == "Kipishe" || tag == "Fontain" || tag == "WeaponSpawn" || tag == "Chest" || tag == "Altar" || tag == "PostRestart")
+        if (tag == "Kipishe" || tag == "Fontain" || tag == "WeaponSpawn" || tag == "Chest" || tag == "Altar" || tag == "PostRestart" || tag == "EndAltar")
         {
             hintKey.GetComponent<Animator>().SetTrigger("Open");
             isHint = true;
