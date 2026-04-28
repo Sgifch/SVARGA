@@ -1602,7 +1602,7 @@ GameObject:
   - component: {fileID: 7592776301403290240}
   m_Layer: 0
   m_Name: RoomPetUp
-  m_TagString: Untagged
+  m_TagString: RoomPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

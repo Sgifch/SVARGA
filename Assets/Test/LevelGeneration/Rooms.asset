@@ -25,7 +25,6 @@ MonoBehaviour:
   - {fileID: 162213941839092134, guid: 847a77fe4427c834c8b913e0e0af5eaf, type: 3}
   treasureRoomUp:
   - {fileID: 7581654910512719872, guid: b40447ad4d2aa174a855cab65d89fadb, type: 3}
-  - {fileID: 8506000859549682564, guid: 0b9e859b487495f4fb396a57496bff3a, type: 3}
   treasureRoomDown:
   - {fileID: 8821376050870307164, guid: 9d62b7b855bca764ebe21ee73d128189, type: 3}
   treasureRoomRight:

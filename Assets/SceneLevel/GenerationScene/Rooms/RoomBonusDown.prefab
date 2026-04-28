@@ -2014,7 +2014,7 @@ GameObject:
   - component: {fileID: 5337090337518715299}
   m_Layer: 0
   m_Name: RoomBonusDown
-  m_TagString: Untagged
+  m_TagString: RoomPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

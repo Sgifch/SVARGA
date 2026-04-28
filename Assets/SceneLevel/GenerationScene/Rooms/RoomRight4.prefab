@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6464019905914865466}
   m_Layer: 0
   m_Name: RoomRight4
-  m_TagString: Untagged
+  m_TagString: RoomPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1791,7 +1791,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.15666667
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0

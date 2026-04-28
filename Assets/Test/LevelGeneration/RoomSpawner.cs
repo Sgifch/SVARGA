@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class RoomSpawner : MonoBehaviour
 {
+    private bool isProcessing = false;
     public Direction direction;
     public GameObject wall;
     private float shiftWall = 35;
@@ -29,17 +30,42 @@ public class RoomSpawner : MonoBehaviour
         optional = GameObject.FindWithTag("Optional").GetComponent<OptionalGeneration>();
         variants = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomVariants>();
         managerGeneration = GameObject.FindGameObjectWithTag("GenerationManager").GetComponent<ManagerLevelGeneration>();
-        Destroy(gameObject, waitTime);
-        Invoke("Spawn", 0.5f);
         //Destroy(gameObject, waitTime);
+        float addRand = Random.Range(0f, 1f);
+        //Invoke("Spawn", 0.5f + addRand);
+        //Destroy(gameObject, waitTime);
+
+        Spawn();
         
     }
 
     public void Spawn()
     {
+        if (isProcessing) return;
+        isProcessing = true;
+
+        //ПРОВЕРКА: нужно ли вообще спавнить, если уже кто-то занял место
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.1f);
+        foreach (var col in colliders)
+        {
+            if (col.CompareTag("RoomPoint") && col != GetComponent<Collider2D>())
+            {
+                //Место уже занято
+                wallSpawn();
+                Destroy(gameObject);
+                return;
+            }
+        }
 
         if (!isSpawn)
         {
+            if (!IsPositionValid())
+            {
+                wallSpawn();
+                Destroy(gameObject);
+                return;
+            }
+
             switch (direction)
             {
                 case Direction.Up:
@@ -86,18 +112,33 @@ public class RoomSpawner : MonoBehaviour
 
             isSpawn = true;
         }
+
+        Destroy(gameObject, 0.1f);
+    }
+
+    private bool IsPositionValid()
+    {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1f);
+        foreach (var hit in hits)
+        {
+            if (hit.CompareTag("Room") || (hit.CompareTag("RoomPoint") && hit != GetComponent<Collider2D>()))
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if (isProcessing) return; // Не обрабатывать во время спавна
+
         if (collision.CompareTag("RoomPoint") && collision.GetComponent<RoomSpawner>().isSpawn)
         {
-
-            print(transform.parent.gameObject + ": Delete Room");
             wallSpawn();
             Destroy(gameObject);
         }
-        else if (collision.CompareTag("RoomPoint"))
+        else if (collision.CompareTag("Room"))
         {
             wallSpawn();
             Destroy(gameObject);
@@ -122,3 +163,6 @@ public class RoomSpawner : MonoBehaviour
         }
     }
 }
+
+
+    
