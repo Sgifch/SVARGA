@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class OptionalGeneration : MonoBehaviour
 {
@@ -8,8 +10,14 @@ public class OptionalGeneration : MonoBehaviour
 
     public GameObject postRestart;
 
+    public Button buttonSave;
+
     private void Start()
     {
+        if(SceneManager.GetActiveScene().name == "GenerationScene")
+        {
+            buttonSave.interactable = false;
+        }
         Invoke("AddPostPrefab", 20);
     }
 

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3f38008edecec84c85095ea1a24fd12, type: 3}
+  m_Name: TestRooms
+  m_EditorClassIdentifier: 
+  normalRoomUp:
+  - {fileID: 1996935996618939890, guid: 457aac87a185480458bf3bdc3f7424ea, type: 3}
+  normalRoomDown:
+  - {fileID: 1996935996618939890, guid: 457aac87a185480458bf3bdc3f7424ea, type: 3}
+  normalRoomRight:
+  - {fileID: 1996935996618939890, guid: 457aac87a185480458bf3bdc3f7424ea, type: 3}
+  treasureRoomUp:
+  - {fileID: 7581654910512719872, guid: b40447ad4d2aa174a855cab65d89fadb, type: 3}
+  treasureRoomDown:
+  - {fileID: 8821376050870307164, guid: 9d62b7b855bca764ebe21ee73d128189, type: 3}
+  treasureRoomRight:
+  - {fileID: 4764185496995953747, guid: 73f74548278c45b45a56142caad685b4, type: 3}

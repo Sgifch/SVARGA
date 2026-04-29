@@ -308,6 +308,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2333910649842690979, guid: 72d2bdcf750f44244999951a80d4edc9, type: 3}
+      propertyPath: roomData
+      value: 
+      objectReference: {fileID: 11400000, guid: a3cd4784a44d79245808c971b144f926, type: 2}
+    - target: {fileID: 2333910649842690979, guid: 72d2bdcf750f44244999951a80d4edc9, type: 3}
       propertyPath: fTreasureRoom
       value: 2
       objectReference: {fileID: 0}
@@ -7876,6 +7880,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+--- !u!114 &2020781262 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5895180773244798679, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+  m_PrefabInstance: {fileID: 955186312}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2048253429
 GameObject:
   m_ObjectHideFlags: 0
@@ -8042,6 +8057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rooms: []
   postRestart: {fileID: 7197398589072964735, guid: 9d16cfdcc2d43834ba4a6ff3e048b382, type: 3}
+  buttonSave: {fileID: 2020781262}
 --- !u!4 &2074504498
 Transform:
   m_ObjectHideFlags: 0
