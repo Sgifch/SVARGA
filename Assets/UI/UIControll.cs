@@ -192,7 +192,8 @@ public class UIControll : MonoBehaviour
             case StateUI.pausedOpen:
                 ControllActiveHUD(false);
                 paused.SetActive(true);
-                Time.timeScale = 0; 
+                isStay = true;
+                //Time.timeScale = 0; 
                 break;
 
             case StateUI.chestInventoryOpen:
@@ -294,9 +295,15 @@ public class UIControll : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape) && stateUI==StateUI.idle)
         {
-            stateUI = StateUI.pausedOpen; 
+            stateUI = StateUI.pausedOpen;
+            Invoke("TimeStop", 0.3f);
         }
 
+    }
+
+    public void TimeStop()
+    {
+        Time.timeScale = 0;
     }
 
     //Меню-колодца--------------------------------------------------------------------------------------------------
