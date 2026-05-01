@@ -334,7 +334,7 @@ public class UIControll : MonoBehaviour
             collision.gameObject.GetComponent<KipisheFunction>().ShowKipishe();
             Animator anim = upgradeMenu.GetComponent<Animator>();
             ControllActiveOtherMenu(upgradeMenu, true);
-            anim.SetTrigger("Open");
+            //anim.SetTrigger("Open");
 
             isUpgradeMenu = true;
         }
@@ -343,7 +343,8 @@ public class UIControll : MonoBehaviour
             isUpgradeMenu = false;
             //ControllActiveOtherMenu(upgradeMenu, false);
             Animator anim = upgradeMenu.GetComponent<Animator>();
-            anim.SetTrigger("Close");
+            //anim.SetTrigger("Close");
+            ControllActiveOtherMenu(upgradeMenu, false);
             stateUI = StateUI.idle;
         }
  
