@@ -330,11 +330,12 @@ public class UIControll : MonoBehaviour
     {
         if (!isUpgradeMenu)
         {
-            stateUI = StateUI.otherMenuOpen;
+           
             collision.gameObject.GetComponent<KipisheFunction>().ShowKipishe();
             Animator anim = upgradeMenu.GetComponent<Animator>();
             ControllActiveOtherMenu(upgradeMenu, true);
             //anim.SetTrigger("Open");
+            stateUI = StateUI.otherMenuOpen;
 
             isUpgradeMenu = true;
         }
@@ -343,9 +344,9 @@ public class UIControll : MonoBehaviour
             isUpgradeMenu = false;
             //ControllActiveOtherMenu(upgradeMenu, false);
             Animator anim = upgradeMenu.GetComponent<Animator>();
-            //anim.SetTrigger("Close");
-            ControllActiveOtherMenu(upgradeMenu, false);
-            stateUI = StateUI.idle;
+            anim.SetTrigger("Close");
+            //ControllActiveOtherMenu(upgradeMenu, false);
+            //stateUI = StateUI.idle;
         }
  
     }
@@ -400,8 +401,9 @@ public class UIControll : MonoBehaviour
         }
         else
         {
-            altarMenu.SetActive(false);
-            stateUI = StateUI.idle;
+            //altarMenu.SetActive(false);
+            altarMenu.GetComponent<Animator>().SetTrigger("Close");
+            //stateUI = StateUI.idle;
             isAltar = false;
         }
     }
