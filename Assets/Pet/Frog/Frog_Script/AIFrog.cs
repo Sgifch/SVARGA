@@ -12,8 +12,12 @@ public class AIFrog : MonoBehaviour
     public float activationDistance; // Дистанция активации по R
     public float attackDistance;
 
-    public KeyCode activationKey = KeyCode.R;
+    public KeyCode activationKey = KeyCode.F;
     public bool isActive = false; // Активация агента
+
+    [Header("Teleport Settings")]
+    [SerializeField] private float teleportMaxDistance = 15f;
+    [SerializeField] private float teleportOffset = 3f;
 
     private UnityEngine.AI.NavMeshAgent navMeshAgent;
     public State state;
@@ -26,6 +30,8 @@ public class AIFrog : MonoBehaviour
     private Animator animator;
     private bool isMove;
     private bool isAttack;
+
+    private Vector3 lastPlayerPosition; // Последняя позиция игрока для отслеживания телепортации
 
     public enum State
     {
@@ -59,6 +65,10 @@ public class AIFrog : MonoBehaviour
                 Debug.LogWarning("Объкт с тегом 'Player' не найден на сцене!");
             }
         }
+        else
+        {
+            lastPlayerPosition = playerTransform.position;
+        }
     }
 
     // Update is called once per frame
@@ -74,6 +84,7 @@ public class AIFrog : MonoBehaviour
         }
 
         CheckActivation();
+        CheckPlayerTeleport();
 
         switch (state)
         {
@@ -120,6 +131,30 @@ public class AIFrog : MonoBehaviour
                 navMeshAgent.SetDestination(transform.position);
             }
         }
+    }
+
+    private void CheckPlayerTeleport()
+    {
+        if (playerTransform == null) return;
+
+        float distance = Vector3.Distance(playerTransform.position, lastPlayerPosition);
+
+        // Если игрок телепортировался на большое расстояние (сменил комнату)
+        if (distance > teleportMaxDistance && isActive)
+        {
+            // Телепортируем лягушку к игроку с отступом
+            Vector3 teleportPosition = playerTransform.position + (transform.position - lastPlayerPosition).normalized * teleportOffset;
+
+            // Ограничиваем расстояние телепортации
+            if (Vector3.Distance(playerTransform.position, teleportPosition) > teleportMaxDistance)
+            {
+                teleportPosition = playerTransform.position - (playerTransform.position - teleportPosition).normalized * teleportMaxDistance;
+            }
+
+            navMeshAgent.Warp(teleportPosition);
+        }
+
+        lastPlayerPosition = playerTransform.position;
     }
 
     private void Roaming()
