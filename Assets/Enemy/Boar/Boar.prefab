@@ -487,7 +487,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
   startingState: 0
+  visualComponent: {fileID: 2915148709444742631}
   attackDistance: 1
+  staggerDuration: 10
   time: 0
   interval: 4
   state: 0

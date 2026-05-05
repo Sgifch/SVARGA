@@ -7,6 +7,8 @@ public class BoarAI : MonoBehaviour
     [SerializeField] public Transform playerTransform;
     [SerializeField] public State startingState = State.Idle;
 
+    public GameObject visualComponent;
+
     public float attackDistance;
     public float staggerDuration = 10f;
 
