@@ -6,6 +6,7 @@ using UnityEngine;
 public class WeaponSpawnScript : MonoBehaviour
 {
     public GameObject spawnItem;
+    public GameObject spawn;
     public Vector3 shiftSpawnPosition;
     public Quaternion shiftSpawnRotation;
     public float speed;
@@ -21,7 +22,7 @@ public class WeaponSpawnScript : MonoBehaviour
     {
         spawnItem = gameObject.GetComponent<RandomDrop>().RandomDropItem();
         Vector3 spawnPosition = gameObject.transform.position + shiftSpawnPosition;
-        _spawnItem = Instantiate(spawnItem, spawnPosition, shiftSpawnRotation, gameObject.transform);
+        _spawnItem = Instantiate(spawnItem, spawn.transform.position, gameObject.transform.rotation, gameObject.transform);
         //_spawnItem.GetComponent<Animator>().SetTrigger("Spawn");
         _effect = gameObject.transform.GetChild(0);
         _itemPosition = _spawnItem.transform.position;
@@ -29,7 +30,7 @@ public class WeaponSpawnScript : MonoBehaviour
 
     private void Update()
     {
-        if (!isEmpty)
+        if (!isEmpty && _spawnItem != null)
         {
             float t = Mathf.PingPong(Time.time * speed, 1f);
             _spawnItem.transform.position = Vector3.Lerp(_itemPosition, _itemPosition + shiftAnim, t);

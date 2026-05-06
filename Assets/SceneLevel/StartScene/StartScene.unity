@@ -16565,6 +16565,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5168174247087562624, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5297304731360000124, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -20521,6 +20525,8 @@ MonoBehaviour:
   fire2: {fileID: 0}
   trigger: {fileID: 0}
   firefly: {fileID: 0}
+  canvasChange: {fileID: 0}
+  blackout: {fileID: 0}
 --- !u!4 &1095362388
 Transform:
   m_ObjectHideFlags: 0
@@ -22120,6 +22126,7 @@ MonoBehaviour:
   _fileNameChest: 
   _fileNameArmor: 
   _fileNameWeapon: 
+  allItem: []
 --- !u!61 &1267757819
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41764,6 +41771,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 123149857}
     m_Modifications:
+    - target: {fileID: 5701268656233970700, guid: 2ec88b2acd93f0b4589ab1a8e76582c9, type: 3}
+      propertyPath: spawnItem
+      value: 
+      objectReference: {fileID: 2595154827602962897, guid: 7673002995f853143b038fcadcc4e246, type: 3}
     - target: {fileID: 7093779783650384474, guid: 2ec88b2acd93f0b4589ab1a8e76582c9, type: 3}
       propertyPath: m_Name
       value: WeaponSpawn

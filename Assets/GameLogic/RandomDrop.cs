@@ -9,8 +9,12 @@ public class RandomDrop : MonoBehaviour
 
     public GameObject RandomDropItem()
     {
+        dropChance.Reverse();
+        item.Reverse();
+
         float r = Random.Range(0f, 1f);
         int i = 0;
+        print (r);
         foreach (float chance in dropChance)
         {
             if (r < chance)
