@@ -13,6 +13,8 @@ public class ControllHealthPoint : MonoBehaviour
     public AnimationCurve flashCurve;
     public GameObject effectDamage;
     public GameObject effectRecovery;
+    public GameObject effectPoisened;
+    public GameObject spawnEffectPoisened;
 
     public bool useGameManager;
 
@@ -24,6 +26,8 @@ public class ControllHealthPoint : MonoBehaviour
     private Coroutine _hitDamageEffect;
     private Coroutine _DurationRecoveryFunction;
     private Coroutine _DurationDamageFunction;
+
+    private GameObject currentEffectPoisened;
     private enum State
     {
         Idle,
@@ -112,6 +116,7 @@ public class ControllHealthPoint : MonoBehaviour
     {
         if (_DurationDamageFunction != null)
         {
+            Destroy(currentEffectPoisened);
             StopCoroutine(_DurationDamageFunction);
         }
 
@@ -165,6 +170,8 @@ public class ControllHealthPoint : MonoBehaviour
     {
         float timer = 0f;
         float timerInv = 0f;
+
+        currentEffectPoisened = Instantiate(effectPoisened, spawnEffectPoisened.transform.position, gameObject.transform.rotation, gameObject.transform);
         while (timer < _time)
         {
             if (timerInv > _interval)
@@ -177,6 +184,7 @@ public class ControllHealthPoint : MonoBehaviour
             yield return null;
         }
 
+        Destroy(currentEffectPoisened);
         _DurationDamageFunction = null;
     }
 }
