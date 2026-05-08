@@ -1112,10 +1112,6 @@ PrefabInstance:
       value: Cat
       objectReference: {fileID: 0}
     - target: {fileID: 6384412883606857468, guid: dc54fa0841baef9439431f6dbec07895, type: 3}
-      propertyPath: attackDistance
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6384412883606857468, guid: dc54fa0841baef9439431f6dbec07895, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 707479108}
@@ -1265,18 +1261,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7422435684973233118, guid: 2895d3474edca3b499e9eca103ad977e, type: 3}
-      propertyPath: m_Speed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9035515373255146193, guid: 2895d3474edca3b499e9eca103ad977e, type: 3}
-      propertyPath: interval
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9035515373255146193, guid: 2895d3474edca3b499e9eca103ad977e, type: 3}
-      propertyPath: playerTransform
-      value: 
-      objectReference: {fileID: 9044137165148984055, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

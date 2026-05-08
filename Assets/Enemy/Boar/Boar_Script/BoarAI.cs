@@ -10,12 +10,12 @@ public class BoarAI : MonoBehaviour
     public GameObject visualComponent;
 
     public float attackDistance;
-    public float staggerDuration = 10f;
+    public float restDuration = 10f; // Время отдыха после выхода из зоны атаки
 
     public float time = 0f;
     public float interval = 2f;
 
-    private float staggerTimer = 0f;
+    private float restTimer = 0f; // Таймер отдыха
     private bool wasInAttackRange = false; // Был ли игрок в зоне атаки
 
     private UnityEngine.AI.NavMeshAgent navMeshAgent;
@@ -28,13 +28,13 @@ public class BoarAI : MonoBehaviour
     private Animator animator;
     private bool isMove;
     private bool isAttack;
+    private float originalAnimationSpeed;
 
     public enum State
     {
         Idle,
         Roaming,
-        Attack,
-        Stagger
+        Attack
     }
 
     private void Awake()
@@ -48,6 +48,10 @@ public class BoarAI : MonoBehaviour
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
+        if (animator != null)
+        {
+            originalAnimationSpeed = animator.speed;
+        }
     }
 
     void Update()
@@ -59,13 +63,9 @@ public class BoarAI : MonoBehaviour
             time -= Time.deltaTime;
         }
 
-        if (staggerTimer > 0)
+        if (restTimer > 0)
         {
-            staggerTimer -= Time.deltaTime;
-            if (staggerTimer <= 0 && state == State.Stagger)
-            {
-                state = State.Idle;
-            }
+            restTimer -= Time.deltaTime;
         }
 
         switch (state)
@@ -75,6 +75,7 @@ public class BoarAI : MonoBehaviour
                 isMove = false;
                 isAttack = false;
                 navMeshAgent.isStopped = true;
+                animator.speed = originalAnimationSpeed;
                 break;
 
             case State.Roaming:
@@ -83,6 +84,7 @@ public class BoarAI : MonoBehaviour
                     isMove = true;
                 }
                 navMeshAgent.isStopped = false;
+                animator.speed = originalAnimationSpeed * 2f;
                 break;
 
             case State.Attack:
@@ -92,12 +94,7 @@ public class BoarAI : MonoBehaviour
                     isAttack = true;
                 }
                 navMeshAgent.isStopped = true;
-                break;
-
-            case State.Stagger:
-                isMove = false;
-                isAttack = false;
-                navMeshAgent.isStopped = true;
+                animator.speed = originalAnimationSpeed;
                 break;
         }
 
@@ -110,10 +107,11 @@ public class BoarAI : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
         bool isInAttackRange = distanceToPlayer <= attackDistance;
 
-        // Если в состоянии отдыха - не двигаемся
-        if (state == State.Stagger)
+        // Если идет отдых - стоим на месте
+        if (restTimer > 0)
         {
             navMeshAgent.SetDestination(transform.position);
+            state = State.Idle;
             return;
         }
 
@@ -140,10 +138,10 @@ public class BoarAI : MonoBehaviour
             if (wasInAttackRange)
             {
                 wasInAttackRange = false;
-                staggerTimer = staggerDuration;
-                state = State.Stagger;
+                restTimer = restDuration;
+                state = State.Idle;
             }
-            else if (state != State.Stagger)
+            else
             {
                 // Преследуем игрока
                 roamPosition = playerTransform.position;
@@ -182,11 +180,6 @@ public class BoarAI : MonoBehaviour
         {
             directionForAnimation = directionToPlayer;
             animator.SetTrigger("Attack");
-            animator.SetBool("Roaming", false);
-        }
-        else if (state == State.Stagger)
-        {
-            directionForAnimation = directionToPlayer;
             animator.SetBool("Roaming", false);
         }
         else if (vectorRoaming != Vector3.zero && vectorRoaming.magnitude > 0.1f)

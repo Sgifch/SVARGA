@@ -379,16 +379,20 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.32799798, y: 0.1115409}
-      - {x: 0.18461291, y: 0.16711482}
-      - {x: -0.019080076, y: 0.22903606}
-      - {x: -0.22128858, y: 0.1959341}
-      - {x: -0.3524617, y: 0.08774621}
-      - {x: -0.40681422, y: -0.012345135}
-      - {x: -0.3804548, y: -0.15074301}
-      - {x: -0.19721745, y: -0.38625345}
-      - {x: 0.23014042, y: -0.37362307}
-      - {x: 0.38608116, y: -0.10046044}
+    - - {x: 0.2474614, y: 0.028990872}
+      - {x: 0.18863972, y: 0.12483311}
+      - {x: -0.031160574, y: 0.18876775}
+      - {x: -0.18504708, y: 0.15566576}
+      - {x: -0.2213607, y: 0.09474832}
+      - {x: -0.3484349, y: 0.059558388}
+      - {x: -0.27795562, y: 0.03195001}
+      - {x: -0.34421334, y: -0.15275645}
+      - {x: -0.28274018, y: -0.21528792}
+      - {x: -0.22138768, y: -0.217029}
+      - {x: -0.19117719, y: -0.3439717}
+      - {x: 0.21403311, y: -0.34140846}
+      - {x: 0.24522538, y: -0.24618906}
+      - {x: 0.3437994, y: -0.096433595}
   m_UseDelaunayMesh: 0
 --- !u!195 &7422435684973233118
 NavMeshAgent:
@@ -400,7 +404,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.38
-  m_Speed: 3.5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -485,13 +489,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b7f24e2ed53414a88153161020c17e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 9044137165148984055, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
   startingState: 0
   visualComponent: {fileID: 2915148709444742631}
   attackDistance: 1
-  staggerDuration: 10
+  restDuration: 10
   time: 0
-  interval: 4
+  interval: 2
   state: 0
 --- !u!1 &5720940146688259848
 GameObject:
