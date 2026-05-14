@@ -19,7 +19,7 @@ public class CrowBonus : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            MoveBasic playerMove = collision.gameObject.GetComponent<MoveBasic>();
+            ControllMove playerMove = collision.gameObject.GetComponent<ControllMove>();
             playerMove.speed /= speedMultiplier;
         }
     }
