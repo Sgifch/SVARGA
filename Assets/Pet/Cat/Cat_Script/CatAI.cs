@@ -148,19 +148,19 @@ public class CatAI : MonoBehaviour
 
         float distance = Vector3.Distance(playerTransform.position, lastPlayerPosition);
 
-        // Если игрок телепортировался на большое расстояние (сменил комнату)
         if (distance > teleportMaxDistance && isActive)
         {
-            // Телепортируем лягушку к игроку с отступом
             Vector3 teleportPosition = playerTransform.position + (transform.position - lastPlayerPosition).normalized * teleportOffset;
 
-            // Ограничиваем расстояние телепортации
             if (Vector3.Distance(playerTransform.position, teleportPosition) > teleportMaxDistance)
             {
                 teleportPosition = playerTransform.position - (playerTransform.position - teleportPosition).normalized * teleportMaxDistance;
             }
 
-            navMeshAgent.Warp(teleportPosition);
+            // Находим ближайшую точку на NavMesh
+            UnityEngine.AI.NavMeshHit hit;
+            UnityEngine.AI.NavMesh.SamplePosition(teleportPosition, out hit, 15f, UnityEngine.AI.NavMesh.AllAreas);
+            navMeshAgent.Warp(hit.position);
         }
 
         lastPlayerPosition = playerTransform.position;
