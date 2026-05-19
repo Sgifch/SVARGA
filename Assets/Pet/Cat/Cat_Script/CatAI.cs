@@ -262,7 +262,8 @@ public class CatAI : MonoBehaviour
             directionForAnimation = directionToPlayer;
             animator.SetBool("Roaming", false);
         }
-
+        Debug.Log($"Attack state: directionForAnimation = {directionForAnimation}, " +
+          $"Horizontal = {directionForAnimation.x}, Vertical = {directionForAnimation.y}");
         animator.SetFloat("Horizontal", directionForAnimation.x);
         animator.SetFloat("Vertical", directionForAnimation.y);
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement; 
-using UnityEngine.Audio; 
+using UnityEngine.Audio;
 
 public class Paused : MonoBehaviour
 {
@@ -16,6 +16,7 @@ public class Paused : MonoBehaviour
     GameObject exit;
     [SerializeField]
 
+    public string nameScene;
     public float volume = 0; //Громкость
     public int quality = 0; //Качество
     public bool isFullscreen = false; //Полноэкранный режим
@@ -47,12 +48,6 @@ public class Paused : MonoBehaviour
         resolutionDropdown.AddOptions(options); //Добавление элементов в выпадающий список
         resolutionDropdown.value = currResolutionIndex; //Выделение пункта с текущим разрешением
         resolutionDropdown.RefreshShownValue(); //Обновление отображаемого значения
-    }
-
-
-    void Update()
-    {
-
     }
 
     public void PauseOff()
@@ -90,6 +85,13 @@ public class Paused : MonoBehaviour
     public void ChangeQuality(int index) //Изменение качества
     {
         quality = index;
+    }
+
+    public void MainMenu(string name)
+    {
+        Time.timeScale = 1f;
+        nameScene = name;
+        SceneManager.LoadScene(name);
     }
 
     public void Exit()
