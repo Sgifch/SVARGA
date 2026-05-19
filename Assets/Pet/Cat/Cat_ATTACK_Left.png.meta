@@ -112,7 +112,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 40
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -131,9 +131,9 @@ TextureImporter:
       name: Cat_ATTACK_Left_1
       rect:
         serializedVersion: 2
-        x: 40
+        x: 32
         y: 0
-        width: 40
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -152,9 +152,9 @@ TextureImporter:
       name: Cat_ATTACK_Left_2
       rect:
         serializedVersion: 2
-        x: 80
+        x: 64
         y: 0
-        width: 40
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -173,9 +173,9 @@ TextureImporter:
       name: Cat_ATTACK_Left_3
       rect:
         serializedVersion: 2
-        x: 120
+        x: 96
         y: 0
-        width: 40
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -193,7 +193,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a1bc3c5f036a71d4a8b2148b8bc01d46
+    spriteID: d270f6dc20f9dac499bd537fe8213b47
     internalID: 0
     vertices: []
     indices: 
