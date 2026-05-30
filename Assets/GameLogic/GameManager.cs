@@ -92,8 +92,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGeneration()
     {
-        //SaveAll();
-
+        SaveAll();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

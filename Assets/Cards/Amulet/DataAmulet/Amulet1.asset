@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Amulet1
   m_EditorClassIdentifier: 
   itemType: 3
+  itemID: 90
   itemObject: {fileID: 2246976019635565786, guid: 0e0f12860268dd04a8c6ac74843c2594, type: 3}
   icon: {fileID: 21300000, guid: c157e509fb25d034eb8d336011f7dfe1, type: 3}
   itemName: HealthAmulet

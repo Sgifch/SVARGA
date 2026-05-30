@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ArrowData
   m_EditorClassIdentifier: 
   itemType: 3
+  itemID: 91
   itemObject: {fileID: 2246976019635565786, guid: 5c3b93bf3ee4c8947986ff9da7d9eaad, type: 3}
   icon: {fileID: 21300000, guid: c8f2e0b8bfa643646891e985bdbe9d9a, type: 3}
   itemName: "\u041D\u0430\u043A\u043E\u043D\u0435\u0447\u043D\u0438\u043A \u0441\u0442\u0440\u0435\u043B\u044B"

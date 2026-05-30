@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ClawData
   m_EditorClassIdentifier: 
   itemType: 3
+  itemID: 95
   itemObject: {fileID: 2246976019635565786, guid: a12bc0311649b194dae5941f357bf29d, type: 3}
   icon: {fileID: 21300000, guid: 0af4c423bb69dbb4ca476c0171b1249b, type: 3}
   itemName: Claw

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ChestData
   m_EditorClassIdentifier: 
   itemType: 3
+  itemID: 93
   itemObject: {fileID: 2246976019635565786, guid: b9fd7c3ba0e019f4fb7b28cfa3c89350, type: 3}
   icon: {fileID: 21300000, guid: 8e2e723cd01c233499ef4405c93187eb, type: 3}
   itemName: "\u041B\u0430\u0440\u0435\u0446"
