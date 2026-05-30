@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ControllManaPoint : MonoBehaviour
 {
-    public int currentMana;
+    //public int currentMana;
 
     public PlayerStatManager playerStat;
 
@@ -16,25 +16,24 @@ public class ControllManaPoint : MonoBehaviour
 
     private void Start()
     {
-        currentMana = playerStat.currentMaxMana;
         ChangeManaBar();
     }
 
     public void ChangeManaBar()
     {
-        currentManaPoint = (float)(currentMana) / playerStat.currentMaxMana;
+        currentManaPoint = (float)(playerStat.currentMana) / playerStat.currentMaxMana;
         manaBar.GetComponent<Image>().fillAmount = currentManaPoint;
     }
 
     public void AddManaPoint(int point)
     {
-        if (currentMana + point < playerStat.currentMaxMana)
+        if (playerStat.currentMana + point < playerStat.currentMaxMana)
         {
-            currentMana += point;
+            playerStat.currentMana += point;
         }
         else
         {
-            currentMana = playerStat.currentMaxMana;
+            playerStat.currentMana = playerStat.currentMaxMana;
         }
 
         ChangeManaBar();
@@ -42,15 +41,20 @@ public class ControllManaPoint : MonoBehaviour
 
     public void SubstractManaPoint(int point)
     {
-        if (currentMana - point >= 0)
+        if (playerStat.currentMana - point >= 0)
         {
-            currentMana -= point;
+            playerStat.currentMana -= point;
         }
         else
         {
-            currentMana = 0;
+            playerStat.currentMana = 0;
         }
 
         ChangeManaBar();
+    }
+
+    public float Current()
+    {
+        return playerStat.currentMana;
     }
 }

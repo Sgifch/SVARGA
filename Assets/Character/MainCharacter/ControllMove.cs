@@ -250,7 +250,7 @@ public class ControllMove : MonoBehaviour
         {
             //Просмотр стоимости заклинания
             MagicBookItem magic = (MagicBookItem)dataItem.slotsWeapon[1].GetComponent<inventorySlot>().item;
-            if (controllMana.currentMana > magic.price)
+            if (controllMana.Current() > magic.price)
             {
                 controllMana.SubstractManaPoint(magic.price);
                 Instantiate(magic.magic, transform.position, transform.rotation);

@@ -369,8 +369,8 @@ public class UIControll : MonoBehaviour
     //Меню-улучшения------------------------------------------------------------------------------------------------
     public void UpgradeInventory()
     {
-        hpInf.text = "ОЗ: " + statManager.currentHP.ToString() + "/" + statManager.currentMaxHP.ToString();
-        mannaInf.text = "ОМ: " + statManager.currentMana.ToString() + "/" + statManager.currentMaxMana.ToString();
+        hpInf.text = "ОЗ: " + statManager.currentMaxHP.ToString() + "/" + statManager.currentHP.ToString();
+        mannaInf.text = "ОМ: " + statManager.currentMaxMana.ToString() + "/" + statManager.currentMana.ToString();
         strongInf.text = "Сила: " + statManager.currentStrong.ToString();
     }
 

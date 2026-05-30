@@ -33,8 +33,8 @@ RectTransform:
   - {fileID: 5357298265688141017}
   - {fileID: 2099959604530797387}
   - {fileID: 14872438208596193}
-  - {fileID: 7955681944264912569}
   - {fileID: 7940176638260940246}
+  - {fileID: 7955681944264912569}
   m_Father: {fileID: 6531691289307278886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -901,7 +901,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6edabec3bf406ed4691e9b70ca186b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMana: 0
   playerStat: {fileID: 0}
   manaBar: {fileID: 9051840595551053932}
 --- !u!70 &5458271906684977953
@@ -3845,6 +3844,7 @@ MonoBehaviour:
   pause: {fileID: 4548385260905798711}
   settings: {fileID: 2610782057033157942}
   exit: {fileID: 7800227962530155125}
+  nameScene: 
   volume: 0
   quality: 0
   isFullscreen: 0

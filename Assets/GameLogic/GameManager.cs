@@ -57,7 +57,10 @@ public class GameManager : MonoBehaviour
         //LoadAllInventory();
         //GameObject.FindWithTag("UIControl");
 
-        animChanger.SetTrigger("Blackin");
+        if (SceneManager.GetActiveScene().name != "StartScene")
+        {
+            animChanger.SetTrigger("Blackin");
+        }
 
         if (isLobby)
         {

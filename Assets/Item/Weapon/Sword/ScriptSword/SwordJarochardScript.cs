@@ -38,7 +38,7 @@ public class SwordJarochardScript : MonoBehaviour
 
     public void SpawnMagic()
     {
-        if (price <= GameObject.FindWithTag("Player").GetComponent<ControllManaPoint>().currentMana)
+        if (price <= GameObject.FindWithTag("Player").GetComponent<ControllManaPoint>().Current())
         {
             GameObject.FindWithTag("Player").GetComponent<ControllManaPoint>().SubstractManaPoint(price);
             Vector2 axesTransform = new Vector2(0, 0);

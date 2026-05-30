@@ -37,6 +37,7 @@ public class KipisheFunction : MonoBehaviour
                 playerStat.upPoint--;
                 GameObject.FindWithTag("Player").GetComponent<ControllHealthPoint>().FullRecovery();
                 ShowKipishe();
+                playerStat.UpdateCurrentMaxStat();
             }
         }
     }
@@ -50,6 +51,7 @@ public class KipisheFunction : MonoBehaviour
                 playerStat.maxMana += playerConfig.upgradeManna[playerStat.lvl-1];
                 playerStat.upPoint--;
                 ShowKipishe();
+                playerStat.UpdateCurrentMaxStat();
             }
         }
     }
@@ -63,6 +65,7 @@ public class KipisheFunction : MonoBehaviour
                 playerStat.strong += playerConfig.upgradeStrong[playerStat.lvl-1];
                 playerStat.upPoint--;
                 ShowKipishe();
+                playerStat.UpdateCurrentMaxStat();
             }
 
         }
