@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
+//using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     public GameObject lostSlot;
     public GameObject dash;
     public GameObject endMenu;
+    public Button infoButton;
 
     private int counterEnemy;
 
@@ -56,6 +58,10 @@ public class GameManager : MonoBehaviour
     {
         //LoadAllInventory();
         //GameObject.FindWithTag("UIControl");
+        if (SceneManager.GetActiveScene().name != "GenerationScene")
+        {
+            infoButton.interactable = false;
+        }
 
         if (SceneManager.GetActiveScene().name != "StartScene")
         {

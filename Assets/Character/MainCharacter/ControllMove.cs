@@ -17,6 +17,7 @@ public class ControllMove : MonoBehaviour
     private Vector2 LastmoveD;
 
     public float shift = 1f;
+    public float force = 1f;
 
     public bool isMove = false;
     public bool isAttack = false;
@@ -51,6 +52,7 @@ public class ControllMove : MonoBehaviour
     {
         if (!uiControll.GetComponent<UIControll>().isStay && !isAttack)
         {
+            //isMove = true;
             processInputs();
             Animated();
         }
@@ -58,6 +60,7 @@ public class ControllMove : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && !uiControll.GetComponent<UIControll>().isStay && !isAttack && !isMove)
         {
+            isAttack = true;
             AttackWeapon();
         }
 
@@ -78,7 +81,7 @@ public class ControllMove : MonoBehaviour
 
         isMove = rb.velocity.magnitude > 0.01f;
 
-        if (isShiftAttack) //Сдвиг при атаке (мб потом более оптимизировано сделать) Сделать под состояния???
+        /*if (isShiftAttack) //Сдвиг при атаке (мб потом более оптимизировано сделать) Сделать под состояния???
         {
             string _lastAxes = LastAxes();
 
@@ -103,11 +106,16 @@ public class ControllMove : MonoBehaviour
 
             isShiftAttack = false;
 
-        }
+        }*/
     }
 
     void processInputs()
     {
+        if (isAttack)
+        {
+            moveD = Vector2.zero;
+            return;
+        }
 
         ForwardBehind = Input.GetAxisRaw("Vertical");
         LeftRight = Input.GetAxisRaw("Horizontal");
@@ -187,7 +195,7 @@ public class ControllMove : MonoBehaviour
         if (!dataItem.slotsWeapon[0].isEmpty)
         {
             isAttack = true;
-            isShiftAttack = true;
+            ShiftPosition();
             inventorySlot weapon = dataItem.slotsWeapon[0];
             Vector3 spawnPosition = gameObject.transform.position;
             Vector2 vector = new Vector2(0, 1);
@@ -217,9 +225,6 @@ public class ControllMove : MonoBehaviour
                     vector = new Vector2(1f, 0f);
                     break;
             }
-            print(shift);
-
-            
             
 
             GameObject attackWeapon = Instantiate(weapon.item.itemObject, spawnPosition + shift, gameObject.transform.rotation, gameObject.transform);
@@ -235,10 +240,39 @@ public class ControllMove : MonoBehaviour
 
             animWeapon.SetFloat("LastMoveDx", vector.x);
             animWeapon.SetFloat("LastMoveDy", vector.y);
-            anim.SetFloat("LastmoveDx", vector.x);
-            anim.SetFloat("LastmoveDy", vector.y);
+            //anim.SetFloat("LastmoveDx", vector.x);
+            //anim.SetFloat("LastmoveDy", vector.y);
             anim.SetTrigger("Attack");
             animWeapon.SetTrigger("Attack");
+            print("attack");
+        }
+        else
+        {
+            isAttack = false;
+        }
+    }
+
+    void ShiftPosition()
+    {
+        string _lastAxes = LastAxes();
+
+        switch (_lastAxes)
+        {
+            case "u":
+                rb.velocity = new Vector2(0f, shift) * force;
+                break;
+
+            case "d":
+                rb.velocity = new Vector2(0f, -shift) * force;
+                break;
+
+            case "l":
+                rb.velocity = new Vector2(-shift, 0f) * force;
+                break;
+
+            case "r":
+                rb.velocity = new Vector2(shift, 0f) * force;
+                break;
         }
     }
 

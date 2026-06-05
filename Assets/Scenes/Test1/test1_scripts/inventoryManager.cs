@@ -535,7 +535,7 @@ public class inventoryManager : MonoBehaviour
     //Обновление-слотов-----------------------------------------------------------------------------------
     public void SetSlots(List <inventorySlot> slotsList, GameObject panel)
     {
-        for (int i = 0; i < panel.transform.childCount-1; i++)
+        for (int i = 0; i < panel.transform.childCount; i++)
         {
             if (!slotsList[i].isEmpty)
             {

@@ -32,6 +32,10 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     {
         if (oldSlot.isEmpty)
             return;
+        if (oldSlot.equipmentSlot)
+        {
+            oldSlot.GetComponent<EquipmentInventory>().UnequipmentAmulet();
+        }
         //Делаем картинку прозрачнее
         GetComponentInChildren<Image>().color = new Color(1, 1, 1, 0.75f);
         // Делаем так чтобы нажатия мышкой не игнорировали эту картинку
@@ -44,6 +48,10 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     {
         if (oldSlot.isEmpty)
             return;
+        /*if (oldSlot.equipmentSlot && !oldSlot.isEmpty)
+        {
+            oldSlot.GetComponent<EquipmentInventory>().EquipmentAmulet();
+        }*/
         // Делаем картинку опять не прозрачной
         GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1f);
         // И чтобы мышка опять могла ее засечь
@@ -119,7 +127,7 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         }
 
         // 3. Снимаем бонусы с обоих слотов (если они экипированы и не пустые)
-        if (oldSlot.equipmentSlot && !oldSlotIsEmpty)
+        /*if (oldSlot.equipmentSlot && !oldSlotIsEmpty)
         {
             oldSlot.GetComponent<EquipmentInventory>().UnequipmentAmulet();
         }
@@ -127,7 +135,7 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         if (newSlot.equipmentSlot && !newSlotIsEmpty)
         {
             newSlot.GetComponent<EquipmentInventory>().UnequipmentAmulet();
-        }
+        }*/
 
         // 4. Обмениваем данные
         oldSlot.item = newSlotItem;

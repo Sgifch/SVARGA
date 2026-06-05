@@ -167,6 +167,9 @@ MonoBehaviour:
   item: {fileID: 0}
   amount: 0
   isEmpty: 1
+  weaponSlot: 0
+  equipmentSlot: 0
+  spellSlot: 0
   iconItem: {fileID: 0}
   itemAmount: {fileID: 0}
 --- !u!1 &6823647465355839923

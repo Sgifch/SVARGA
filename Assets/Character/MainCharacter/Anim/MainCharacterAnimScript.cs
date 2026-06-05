@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class MainCharacterAnimScript : StateMachineBehaviour
@@ -21,6 +22,7 @@ public class MainCharacterAnimScript : StateMachineBehaviour
     {
         ControllMove function = animator.gameObject.GetComponent <ControllMove> ();
         function.isAttack = false;
+        function.isMove = true;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
