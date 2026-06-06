@@ -50,6 +50,7 @@ public class KipisheFunction : MonoBehaviour
             {
                 playerStat.maxMana += playerConfig.upgradeManna[playerStat.lvl-1];
                 playerStat.upPoint--;
+                GameObject.FindWithTag("Player").GetComponent<ControllManaPoint>().FullRecoveryMana();
                 ShowKipishe();
                 playerStat.UpdateCurrentMaxStat();
             }

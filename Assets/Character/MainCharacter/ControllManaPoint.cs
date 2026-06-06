@@ -53,6 +53,12 @@ public class ControllManaPoint : MonoBehaviour
         ChangeManaBar();
     }
 
+    public void FullRecoveryMana()
+    {
+        playerStat.currentMana = playerStat.maxMana;
+        ChangeManaBar();
+    }
+
     public float Current()
     {
         return playerStat.currentMana;

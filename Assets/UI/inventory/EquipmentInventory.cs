@@ -57,6 +57,7 @@ public class EquipmentInventory : MonoBehaviour
         playerStatManager.currentMaxMana += currentManaBonus;
         
         player.GetComponent<ControllHealthPoint>().ChangeHealthBar();
+        player.GetComponent<ControllManaPoint>().ChangeManaBar();
         uiControll.UpgradeInventory();
 
     }
