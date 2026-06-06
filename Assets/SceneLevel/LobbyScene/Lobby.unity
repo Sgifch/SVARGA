@@ -3342,30 +3342,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4867492113609378146, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4867492113609378146, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4867492113609378146, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4867492113609378146, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4867492113609378146, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4867492113609378146, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4890342145953882024, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -14238,6 +14214,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 555236307558380549, guid: 471b5d40cafffdb43855bed83ca00155, type: 3}
   m_PrefabInstance: {fileID: 1678845772}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1681393125
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 690645450911779922, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.3770976
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.0099545
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690645450911779922, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595154827602962897, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
+      propertyPath: m_Name
+      value: SwordBetterSteel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c8ac546cb0b6caa43ad78e84bd228541, type: 3}
 --- !u!4 &1685100305 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4767969573793824795, guid: b6f2b629d29b2f14e89c06d1d877a36d, type: 3}
@@ -23892,3 +23925,4 @@ SceneRoots:
   - {fileID: 1001120411}
   - {fileID: 841614576}
   - {fileID: 1865765293}
+  - {fileID: 1681393125}

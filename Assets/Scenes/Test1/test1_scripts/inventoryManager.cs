@@ -4,6 +4,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class inventoryManager : MonoBehaviour
 {
@@ -47,6 +49,9 @@ public class inventoryManager : MonoBehaviour
     public string _fileNameArmor;
     public string _fileNameWeapon;
 
+    public string _fileNameWeaponGen;
+    public string _fileNameInventoryGen;
+
     [Header("Датабаза предметов")]
     public List<itemScriptableObject> allItem = new List<itemScriptableObject>();
     private void Awake()
@@ -84,10 +89,28 @@ public class inventoryManager : MonoBehaviour
 
         inventory.SetActive(false);
 
-        LoadDataInventory();
-        LoadDataChest();
-        LoadArmor();
-        LoadWeapon();
+        if (!PlayerPrefs.HasKey("counterRoom") && SceneManager.GetActiveScene().name == "GenerationScene")
+        {
+            CopyFileSave();
+            print("copy");
+            print(PlayerPrefs.HasKey("counterRoom"));
+        }
+
+        if (SceneManager.GetActiveScene().name != "GenerationScene")
+        {
+            LoadDataInventory(_fileNameInventory);
+            LoadDataChest();
+            //LoadArmor();
+            LoadWeapon(_fileNameWeapon);
+        }
+        else
+        {
+            LoadDataInventory(_fileNameInventoryGen);
+            LoadDataChest();
+            LoadArmor();
+            LoadWeapon(_fileNameWeaponGen);
+            print("load gen");
+        }
 
     }
 
@@ -153,9 +176,9 @@ public class inventoryManager : MonoBehaviour
     }
 
     //Сохранение-загрузка-инвентаря--------------------------------------------------------------------------
-    public void SaveDataInventory() //Инвентарь
+    public void SaveDataInventory(string fileName) //Инвентарь
     {
-        StreamWriter sw = new StreamWriter(Application.persistentDataPath + "/" + _fileNameInventory);
+        StreamWriter sw = new StreamWriter(Application.persistentDataPath + "/" + fileName);
         for (int i = 0; i<slots.Count; i++)
         {
             InventoryDataSlot newSlot = new(slots[i]);
@@ -165,11 +188,11 @@ public class inventoryManager : MonoBehaviour
         sw.Close();
     }
 
-    public void LoadDataInventory()
+    public void LoadDataInventory(string fileName)
     {
-        if(File.Exists(Application.persistentDataPath + "/" + _fileNameInventory))
+        if(File.Exists(Application.persistentDataPath + "/" + fileName))
         {
-            string[] readed = File.ReadAllLines(Application.persistentDataPath + "/" + _fileNameInventory);
+            string[] readed = File.ReadAllLines(Application.persistentDataPath + "/" + fileName);
             for (int i = 0; i < readed.Length; i++)
             {
                 InventoryDataSlot saveSlot;
@@ -208,15 +231,20 @@ public class inventoryManager : MonoBehaviour
                 slotsArmor[i].item = FindItemByID(saveSlot.item);
                 slotsArmor[i].amount = saveSlot.amount;
                 slotsArmor[i].isEmpty = saveSlot.isEmpty;
+
+                /*if (!slotsArmor[i].isEmpty)
+                {
+                    slotsArmor[i].gameObject.GetComponent<EquipmentInventory>().EquipmentAmulet();
+                }*/
             }
 
             SetSlots(slotsArmor, panelArmor);
         }
     }
 
-    public void SaveWeapon()
+    public void SaveWeapon(string fileName)
     {
-        StreamWriter sw = new StreamWriter(Application.persistentDataPath + "/" + _fileNameWeapon);
+        StreamWriter sw = new StreamWriter(Application.persistentDataPath + "/" + fileName);
         for (int i = 0; i < slotsWeapon.Count; i++)
         {
             InventoryDataSlot newSlot = new(slotsWeapon[i]);
@@ -226,11 +254,11 @@ public class inventoryManager : MonoBehaviour
         sw.Close();
     }
 
-    public void LoadWeapon()
+    public void LoadWeapon(string fileName)
     {
-        if (File.Exists(Application.persistentDataPath + "/" + _fileNameWeapon))
+        if (File.Exists(Application.persistentDataPath + "/" + fileName))
         {
-            string[] readed = File.ReadAllLines(Application.persistentDataPath + "/" + _fileNameWeapon);
+            string[] readed = File.ReadAllLines(Application.persistentDataPath + "/" + fileName);
             for (int i = 0; i < readed.Length; i++)
             {
                 InventoryDataSlot saveSlot;
@@ -242,6 +270,13 @@ public class inventoryManager : MonoBehaviour
 
             SetSlots(slotsWeapon, panelWeapon);
         }
+    }
+
+    //Промежуточные файлы для сохранения инвентаря
+    public void CopyFileSave()
+    {
+        File.Copy(Application.persistentDataPath + "/" + _fileNameWeapon, Application.persistentDataPath + "/" + _fileNameWeaponGen, true);
+        File.Copy(Application.persistentDataPath + "/" + _fileNameInventory, Application.persistentDataPath + "/" + _fileNameInventoryGen, true);
     }
 
     //Поиск предемета по id

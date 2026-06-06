@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject triggerZone;
 
     public PlayerStatManager playerStat;
+    private inventoryManager inventory;
 
     public GameObject screenDeath;
     public GameObject lostMenu;
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
     {
         playerStat = GameObject.Find("PlayerStatManager").GetComponent<PlayerStatManager>();
         player = GameObject.FindWithTag("Player");
+        inventory = player.GetComponent<inventoryManager>();
 
         if (PlayerPrefs.HasKey("maxHP"))
         {
@@ -99,6 +101,14 @@ public class GameManager : MonoBehaviour
     public void RestartGeneration()
     {
         SaveAll();
+
+        /*inventory.SaveDataInventory(inventory._fileNameInventoryGen);
+        inventory.SaveDataChest();
+        inventory.SaveArmor();
+        inventory.SaveWeapon(inventory._fileNameWeaponGen);
+
+        playerStat.SaveStat();*/
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -173,23 +183,37 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(2);
     }*/
 
-    public void LoadAllInventory()
+    /*public void LoadAllInventory()
     {
-        player.GetComponent<inventoryManager>().LoadDataInventory();
-        player.GetComponent<inventoryManager>().LoadDataChest();
-        player.GetComponent<inventoryManager>().LoadArmor();
-        player.GetComponent<inventoryManager>().LoadWeapon();
-    }
+
+        inventory.LoadDataInventory();
+        inventory.LoadDataChest();
+        inventory.LoadArmor();
+        inventory.LoadWeapon();
+    }*/
 
     public void SaveAll()
     {
-        player.GetComponent<inventoryManager>().SaveDataInventory();
-        player.GetComponent<inventoryManager>().SaveDataChest();
-        player.GetComponent<inventoryManager>().SaveArmor();
-        player.GetComponent<inventoryManager>().SaveWeapon();
+        if (SceneManager.GetActiveScene().name != "GenerationScene")
+        {
+            inventory.SaveDataInventory(inventory._fileNameInventory);
+            inventory.SaveDataChest();
+            inventory.SaveArmor();
+            inventory.SaveWeapon(inventory._fileNameWeapon);
+
+            playerStat.SaveStat();
+        }
+
+    }
+
+    public void SaveRestart()
+    {
+        inventory.SaveDataInventory(inventory._fileNameInventoryGen);
+        inventory.SaveDataChest();
+        inventory.SaveArmor();
+        inventory.SaveWeapon(inventory._fileNameWeaponGen);
 
         playerStat.SaveStat();
-
     }
 
     //”правление-лобби

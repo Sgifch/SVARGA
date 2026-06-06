@@ -23,9 +23,12 @@ public class EquipmentInventory : MonoBehaviour
         playerStatManager = GameObject.FindWithTag("PlayerStatManager").GetComponent<PlayerStatManager>();
 
         slot = gameObject.GetComponent<inventorySlot>();
-        playerStatManager.currentMaxHP += currentHealthBonus;
+
+        Invoke("BonusStart", 0.3f);
+
+        /*playerStatManager.currentMaxHP += currentHealthBonus;
         playerStatManager.currentStrong += currentStrongBonus;
-        playerStatManager.currentMaxMana += currentManaBonus;
+        playerStatManager.currentMaxMana += currentManaBonus;*/
 
     }
 
@@ -84,5 +87,14 @@ public class EquipmentInventory : MonoBehaviour
         player.GetComponent<ControllHealthPoint>().ChangeHealthBar();
         uiControll.UpgradeInventory();
 
+    }
+
+    private void BonusStart()
+    {
+        if (!gameObject.GetComponent<inventorySlot>().isEmpty)
+        {
+            print("addBonus");
+            EquipmentAmulet();
+        }
     }
 }

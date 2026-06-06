@@ -38,7 +38,7 @@ public class PlayerStatManager : MonoBehaviour
     {
         UpdateCurrentMaxStat();
         currentMana = currentMaxMana;
-        currentMaxHP += _currentHealthBonus;
+        //currentMaxHP += _currentHealthBonus;
 
         GameObject.FindWithTag("Player").GetComponent<ControllManaPoint>().ChangeManaBar();
         //GameObject.FindWithTag("UIControll").GetComponent<UIControll>().UpgradeInventory();
@@ -65,19 +65,19 @@ public class PlayerStatManager : MonoBehaviour
         PlayerPrefs.SetInt("currentHP", currentHP);
 
         //По-моемому здесь написано про сохранение статов но это и не нужно вроде как ??? 
-        GameObject panellArmor = GameObject.FindWithTag("UIControll").GetComponent<UIControll>().inventoryArmor;
+        /*GameObject panellArmor = GameObject.FindWithTag("UIControll").GetComponent<UIControll>().inventoryArmor;
         for (int i = 0; i<panellArmor.transform.childCount; i++)
         {
             _currentHealthBonus += panellArmor.transform.GetChild(i).GetComponent<EquipmentInventory>().currentHealthBonus;
             currentHealthBonus.Add(panellArmor.transform.GetChild(i).GetComponent<EquipmentInventory>().currentHealthBonus);
         }
 
-        PlayerPrefs.SetInt("currentHealthBonus1", currentHealthBonus[0]);
+        /*PlayerPrefs.SetInt("currentHealthBonus1", currentHealthBonus[0]);
         PlayerPrefs.SetInt("currentHealthBonus2", currentHealthBonus[1]);
         PlayerPrefs.SetInt("currentHealthBonus3", currentHealthBonus[2]);
         PlayerPrefs.SetInt("currentHealthBonus4", currentHealthBonus[3]);
 
-        PlayerPrefs.SetInt("_currentHealthBonus", _currentHealthBonus);
+        PlayerPrefs.SetInt("_currentHealthBonus", _currentHealthBonus);*/
 
         PlayerPrefs.SetInt("currentSouls", currentSouls);
 
@@ -98,11 +98,11 @@ public class PlayerStatManager : MonoBehaviour
         currentHP = PlayerPrefs.GetInt("currentHP");
 
         GameObject panellArmor = GameObject.FindWithTag("UIControll").GetComponent<UIControll>().inventoryArmor;
-        panellArmor.transform.GetChild(0).GetComponent<EquipmentInventory>().currentHealthBonus = PlayerPrefs.GetInt("currentHealthBonus1");
+        /*panellArmor.transform.GetChild(0).GetComponent<EquipmentInventory>().currentHealthBonus = PlayerPrefs.GetInt("currentHealthBonus1");
         panellArmor.transform.GetChild(1).GetComponent<EquipmentInventory>().currentHealthBonus = PlayerPrefs.GetInt("currentHealthBonus2");
         panellArmor.transform.GetChild(2).GetComponent<EquipmentInventory>().currentHealthBonus = PlayerPrefs.GetInt("currentHealthBonus3");
         panellArmor.transform.GetChild(3).GetComponent<EquipmentInventory>().currentHealthBonus = PlayerPrefs.GetInt("currentHealthBonus4");
-        _currentHealthBonus = PlayerPrefs.GetInt("_currentHealthBonus");
+        _currentHealthBonus = PlayerPrefs.GetInt("_currentHealthBonus");*/
 
         currentSouls = PlayerPrefs.GetInt("currentSouls");
 

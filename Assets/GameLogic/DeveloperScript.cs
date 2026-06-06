@@ -46,7 +46,7 @@ public class DeveloperScript : MonoBehaviour
         player.GetComponent<ControllHealthPoint>().Damage(10);
     }
 
-    public void SaveInventory()
+    /*public void SaveInventory()
     {
         GameObject.FindWithTag("Player").GetComponent<inventoryManager>().SaveDataInventory();
     }
@@ -54,7 +54,7 @@ public class DeveloperScript : MonoBehaviour
     public void LoadInventory()
     {
         GameObject.FindWithTag("Player").GetComponent<inventoryManager>().LoadDataInventory();
-    }
+    }*/
 
     public void DestroyAllAmulet()
     {

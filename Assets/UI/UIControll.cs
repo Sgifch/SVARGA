@@ -412,7 +412,7 @@ public class UIControll : MonoBehaviour
     public void PostRestart()
     {
         GameObject.FindWithTag("GenerationManager").GetComponent<GenerationStatManager>().SaveStatGeneration();
-        GameObject.FindWithTag("GameManager").GetComponent<GameManager>().SaveAll();
+        GameObject.FindWithTag("GameManager").GetComponent<GameManager>().SaveRestart();
         canvasChange.SetActive(true);
         blackout.GetComponent<LobbyLoadScene>().sceneName = "GenerationScene";
         blackout.GetComponent<Animator>().SetTrigger("Blackout");

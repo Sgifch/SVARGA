@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -18,6 +19,13 @@ public class OptionalGeneration : MonoBehaviour
         {
             buttonSave.interactable = false;
         }
+
+        /*if (!PlayerPrefs.HasKey("counterRoom"))
+        {
+
+            FileUtil.CopyFileOrDirectory("sourcepath/YourFileOrFolder", "destpath/YourFileOrFolder");
+        }*/
+
         Invoke("AddPostPrefab", 20);
     }
 
