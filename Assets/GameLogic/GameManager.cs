@@ -114,10 +114,12 @@ public class GameManager : MonoBehaviour
 
     public void DeathGeneration()
     {
+        player.GetComponent<inventoryManager>().LostAmulet();
         List <inventorySlot> lostItems = player.GetComponent<inventoryManager>().LostItem();
         player.GetComponent<ControllHealthPoint>().FullRecovery();
         //SaveAll();
         LostMenu(lostItems);
+        //SaveAll();
         //Time.timeScale = 1;
         //SceneManager.LoadScene(1);
         
@@ -146,6 +148,7 @@ public class GameManager : MonoBehaviour
         {
             dash.SetActive(true);
         }
+        //SaveAll();
         Time.timeScale = 0;
     }
 
@@ -161,7 +164,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         GameObject.FindWithTag("GenerationManager").GetComponent<GenerationStatManager>().DeleteStatGeneration();
         player.GetComponent<inventoryManager>().LostAmulet();
-        SaveAll();
+        EndSave();
         canvasChange.SetActive(true);
         blackout.GetComponent<LobbyLoadScene>().sceneName = "Lobby";
         blackout.GetComponent<Animator>().SetTrigger("Blackout");
@@ -204,6 +207,16 @@ public class GameManager : MonoBehaviour
             playerStat.SaveStat();
         }
 
+    }
+
+    public void EndSave()
+    {
+        inventory.SaveDataInventory(inventory._fileNameInventory);
+        inventory.SaveDataChest();
+        inventory.SaveArmor();
+        inventory.SaveWeapon(inventory._fileNameWeapon);
+
+        playerStat.SaveStat();
     }
 
     public void SaveRestart()

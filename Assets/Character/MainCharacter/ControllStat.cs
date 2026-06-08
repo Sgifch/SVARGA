@@ -28,12 +28,21 @@ public class ControllStat : MonoBehaviour
     public void AddExp(int _exp)
     {
         playerStat.exp += _exp;
+        //print(playerStat.lvl);
+        //print(playerConfig.maxExp.Count);
 
-        if (playerStat.exp >= playerConfig.maxExp[playerStat.lvl])
+        if (playerStat.lvl == playerConfig.maxExp.Count-1)
         {
-            playerStat.exp -= playerConfig.maxExp[playerStat.lvl];
-            playerStat.lvl++;
-            playerStat.upPoint++;
+            //return;
+        }
+        else
+        {
+            if (playerStat.exp >= playerConfig.maxExp[playerStat.lvl])
+            {
+                playerStat.exp -= playerConfig.maxExp[playerStat.lvl];
+                playerStat.lvl++;
+                playerStat.upPoint++;
+            }
         }
 
         ShowExpInformation();

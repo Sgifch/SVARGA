@@ -347,7 +347,7 @@ public class inventoryManager : MonoBehaviour
                     slot.itemAmount.text = slot.amount.ToString();
                     return;
                 }
-                break;
+                //break;
             }
         }
         foreach (inventorySlot slot in slots)
