@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Progress;
 
 public class DeveloperScript : MonoBehaviour
 {
     public GameObject player;
+    public itemScriptableObject item;
+    public int amount; 
 
     private void Awake()
     {
@@ -79,6 +83,20 @@ public class DeveloperScript : MonoBehaviour
     public void SubMana()
     {
         GameObject.FindWithTag("Player").GetComponent<ControllManaPoint>().SubstractManaPoint(5);
+    }
+
+    public void FullInventory()
+    {
+        inventoryManager inventory = GameObject.FindWithTag("Player").GetComponent<inventoryManager>();
+        
+        foreach (inventorySlot slot in inventory.slots)
+        {
+            slot.item = item;
+            slot.amount = amount;
+            slot.isEmpty = false;
+            slot.SetIcon(item.icon);
+            slot.itemAmount.text = amount.ToString();
+        }
     }
 
 }
