@@ -9,6 +9,7 @@ public class GameManagerMainMenu : MonoBehaviour
     public string nameScene;
     public Button continueButton;
     public GameObject blackout;
+    public GameObject credit;
     
     private string _fileNameInventory = "inventoryDataFile";
     private string _fileNameChest = "chestDataFile";
@@ -18,7 +19,7 @@ public class GameManagerMainMenu : MonoBehaviour
     private void Start()
     {
         //Проверка есть ли сохранения
-        if (!PlayerPrefs.HasKey("maxHP"))
+        if (!PlayerPrefs.HasKey("isLobby"))
         {
             continueButton.interactable = false;
         }
@@ -71,7 +72,12 @@ public class GameManagerMainMenu : MonoBehaviour
 
     public void PressedButtonAuthor()
     {
+        credit.SetActive(true);
+    }
 
+    public void EndCredit()
+    {
+        credit.SetActive(false);
     }
 
     /*public void FadeAnumation()

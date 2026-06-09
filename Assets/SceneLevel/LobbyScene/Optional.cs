@@ -17,6 +17,8 @@ public class Optional : MonoBehaviour
         {
             File.Delete(Application.persistentDataPath + "/" + inventory._fileNameArmor);
         }
+
+        PlayerPrefs.SetInt("isLobby", 1);
     }
 
 }

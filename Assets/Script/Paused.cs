@@ -25,6 +25,11 @@ public class Paused : MonoBehaviour
     private Resolution[] resolutions; //Список доступных разрешений
     private int currResolutionIndex = 0; //Текущее разрешение
 
+    public string sceneName;
+    public GameObject changeCanvas;
+    public GameObject blackout;
+    public Animator anim;
+
     void Start()
     {
         pause.SetActive(false);
@@ -90,8 +95,12 @@ public class Paused : MonoBehaviour
     public void MainMenu(string name)
     {
         Time.timeScale = 1f;
-        nameScene = name;
-        SceneManager.LoadScene(name);
+        //nameScene = name;
+        //SceneManager.LoadScene(name);
+
+        changeCanvas.SetActive(true);
+        blackout.GetComponent<LobbyLoadScene>().sceneName = sceneName;
+        anim.SetTrigger("Blackout");
     }
 
     public void Exit()

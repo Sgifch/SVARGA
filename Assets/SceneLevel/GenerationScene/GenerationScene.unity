@@ -884,6 +884,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 211158471447745553, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1501740602}
+    - target: {fileID: 211158471447745553, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: blackout
+      value: 
+      objectReference: {fileID: 790818675}
+    - target: {fileID: 211158471447745553, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+      propertyPath: changeCanvas
+      value: 
+      objectReference: {fileID: 1521216922}
     - target: {fileID: 229775402750039462, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
