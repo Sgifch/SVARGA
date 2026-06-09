@@ -95,7 +95,19 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             return true;
         }
 
-        // 1. Сохраняем ВСЕ данные перед изменениями
+        if (oldSlot.item == newSlot.item)
+        {
+            if ((newSlot.amount + oldSlot.amount) <= oldSlot.item.maximumAmaunt)
+            {
+                newSlot.amount += oldSlot.amount;
+                UpdateSlotUI(oldSlot, null, 0, true);
+                UpdateSlotUI(newSlot, newSlot.item, newSlot.amount, false);
+                return true;
+
+            }
+        }
+
+        //Сохраняем ВСЕ данные перед изменениями
         itemScriptableObject oldSlotItem = oldSlot.item;
         int oldSlotAmount = oldSlot.amount;
         bool oldSlotIsEmpty = oldSlot.isEmpty;
@@ -104,7 +116,7 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         int newSlotAmount = newSlot.amount;
         bool newSlotIsEmpty = newSlot.isEmpty;
 
-        // 2. Проверки совместимости (только если слоты не пустые)
+        //Проверки совместимости (только если слоты не пустые)
         if (!oldSlotIsEmpty)
         {
             if (newSlot.weaponSlot && oldSlotItem.itemType != ItemType.sword)
@@ -125,14 +137,14 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
                 return false;
         }
 
-        // 3. Снимаем бонусы с обоих слотов (если они экипированы и не пустые)
+        //Снимаем бонусы с обоих слотов (если они экипированы и не пустые)
         if (oldSlot.equipmentSlot && !oldSlotIsEmpty)
             oldSlot.GetComponent<EquipmentInventory>().UnequipmentAmulet();
 
         if (newSlot.equipmentSlot && !newSlotIsEmpty)
             newSlot.GetComponent<EquipmentInventory>().UnequipmentAmulet();
 
-        // 4. Обмениваем данные
+        //Обмениваем данные
         oldSlot.item = newSlotItem;
         oldSlot.amount = newSlotAmount;
         oldSlot.isEmpty = newSlotIsEmpty;
@@ -141,11 +153,11 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         newSlot.amount = oldSlotAmount;
         newSlot.isEmpty = oldSlotIsEmpty;
 
-        // 5. Обновляем UI для обоих слотов
+        //Обновляем UI для обоих слотов
         UpdateSlotUI(oldSlot, newSlotItem, newSlotAmount, newSlotIsEmpty);
         UpdateSlotUI(newSlot, oldSlotItem, oldSlotAmount, oldSlotIsEmpty);
 
-        // 6. Надеваем бонусы на слоты (если они экипированы и не пустые)
+        //Надеваем бонусы на слоты (если они экипированы и не пустые)
         if (oldSlot.equipmentSlot && !oldSlot.isEmpty)
             oldSlot.GetComponent<EquipmentInventory>().EquipmentAmulet();
 
