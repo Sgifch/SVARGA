@@ -4223,7 +4223,7 @@ PrefabInstance:
       objectReference: {fileID: 23800000, guid: fa4a525deab842d40b1bbb35c085aa88, type: 2}
     - target: {fileID: 1966492177988033158, guid: 435cdcfc064a74848b8da7243ad68d43, type: 3}
       propertyPath: m_UseGeometry
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6920497889054496631, guid: 435cdcfc064a74848b8da7243ad68d43, type: 3}
       propertyPath: m_Name
