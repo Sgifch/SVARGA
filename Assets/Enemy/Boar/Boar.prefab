@@ -238,11 +238,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.004170105, y: -0.07055369}
+  m_Offset: {x: 0, y: -0.03316246}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -252,7 +252,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8415333, y: 0.6253628}
+  m_Size: {x: 1.1610453, y: 0.8426881}
   m_EdgeRadius: 0
 --- !u!114 &1390192664136973790
 MonoBehaviour:
@@ -489,11 +489,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b7f24e2ed53414a88153161020c17e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 9044137165148984055, guid: 3a1a4ede38681614c987fb8e6a7ebe50, type: 3}
+  playerTransform: {fileID: 0}
   startingState: 0
   visualComponent: {fileID: 2915148709444742631}
   attackDistance: 1
-  restDuration: 10
+  restDuration: 7
   time: 0
   interval: 2
   state: 0

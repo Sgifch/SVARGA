@@ -52,6 +52,19 @@ public class BoarAI : MonoBehaviour
         {
             originalAnimationSpeed = animator.speed;
         }
+
+        if (playerTransform == null)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                playerTransform = player.transform;
+            }
+            else
+            {
+                Debug.LogWarning("Объкт с тегом 'Player' не найден на сцене!");
+            }
+        }
     }
 
     void Update()
