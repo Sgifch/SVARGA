@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 6050695239866425792}
   - component: {fileID: 2710844228721360067}
   - component: {fileID: 3091658741759256826}
+  - component: {fileID: 5048829610401970081}
   m_Layer: 0
   m_Name: Crow
   m_TagString: Pet
@@ -300,6 +301,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMultiplier: 1.2
+--- !u!50 &5048829610401970081
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8227386103553925830}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8535436579261323550
 GameObject:
   m_ObjectHideFlags: 0
