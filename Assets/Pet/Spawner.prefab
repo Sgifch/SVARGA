@@ -133,9 +133,9 @@ MonoBehaviour:
   - mobPrefab: {fileID: 5593437393694590610, guid: 392eb35e7b70f0f42927b2e736c22fdd, type: 3}
     spawnChance: 40
   - mobPrefab: {fileID: 8227386103553925830, guid: ebb84ad1376932145a649b60917670f2, type: 3}
-    spawnChance: 20
-  - mobPrefab: {fileID: 5857088745320394927, guid: dc54fa0841baef9439431f6dbec07895, type: 3}
     spawnChance: 30
+  - mobPrefab: {fileID: 5857088745320394927, guid: dc54fa0841baef9439431f6dbec07895, type: 3}
+    spawnChance: 20
   - mobPrefab: {fileID: 5753743104204218662, guid: 222d96e2a21c2ae45979651446841e81, type: 3}
     spawnChance: 10
   spawnOnStart: 1
