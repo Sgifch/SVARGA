@@ -1005,7 +1005,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5753743104204218662, guid: 792a8c3035941f34990c84eef8049b0c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1346,18 +1346,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2023255379803069923, guid: dc54fa0841baef9439431f6dbec07895, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023255379803069923, guid: dc54fa0841baef9439431f6dbec07895, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023255379803069923, guid: dc54fa0841baef9439431f6dbec07895, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2023255379803069923, guid: dc54fa0841baef9439431f6dbec07895, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.58
       objectReference: {fileID: 0}
@@ -1397,34 +1385,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5696531034117507214, guid: dc54fa0841baef9439431f6dbec07895, type: 3}
-      propertyPath: m_Speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5696531034117507214, guid: dc54fa0841baef9439431f6dbec07895, type: 3}
-      propertyPath: m_Height
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 5696531034117507214, guid: dc54fa0841baef9439431f6dbec07895, type: 3}
-      propertyPath: m_Radius
-      value: 0.4
-      objectReference: {fileID: 0}
     - target: {fileID: 5857088745320394927, guid: dc54fa0841baef9439431f6dbec07895, type: 3}
       propertyPath: m_Name
       value: Cat
-      objectReference: {fileID: 0}
-    - target: {fileID: 5857088745320394927, guid: dc54fa0841baef9439431f6dbec07895, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6384412883606857468, guid: dc54fa0841baef9439431f6dbec07895, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 707479108}
-    - target: {fileID: 8175015629154563570, guid: dc54fa0841baef9439431f6dbec07895, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 131784667450518185, guid: 9e4690d4f5159fb41b1463a7d30bac8b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1698,10 +1666,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crow
       objectReference: {fileID: 0}
-    - target: {fileID: 8227386103553925830, guid: ebb84ad1376932145a649b60917670f2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1755,42 +1719,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2593491253964761853, guid: 392eb35e7b70f0f42927b2e736c22fdd, type: 3}
-      propertyPath: m_Speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2593491253964761853, guid: 392eb35e7b70f0f42927b2e736c22fdd, type: 3}
-      propertyPath: m_Height
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2593491253964761853, guid: 392eb35e7b70f0f42927b2e736c22fdd, type: 3}
-      propertyPath: m_Radius
-      value: 0.4
-      objectReference: {fileID: 0}
     - target: {fileID: 5593437393694590610, guid: 392eb35e7b70f0f42927b2e736c22fdd, type: 3}
       propertyPath: m_Name
       value: Frog
       objectReference: {fileID: 0}
     - target: {fileID: 5839154033974852882, guid: 392eb35e7b70f0f42927b2e736c22fdd, type: 3}
-      propertyPath: attackDistance
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5839154033974852882, guid: 392eb35e7b70f0f42927b2e736c22fdd, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 707479108}
-    - target: {fileID: 8213614160646524578, guid: 392eb35e7b70f0f42927b2e736c22fdd, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162904612736479962, guid: 392eb35e7b70f0f42927b2e736c22fdd, type: 3}
-      propertyPath: m_Size.y
-      value: 0.8671521
-      objectReference: {fileID: 0}
-    - target: {fileID: 9162904612736479962, guid: 392eb35e7b70f0f42927b2e736c22fdd, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.030528724
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
