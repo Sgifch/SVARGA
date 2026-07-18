@@ -1,0 +1,147 @@
+name: ChainSaw Leg CI
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+
+  pull_request:
+    branches:
+      - develop
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+  checks: write
+
+concurrency:
+  group: chainsaw-leg-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-target-branch:
+    name: Validate Pull Request Target Branch
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate pull request branches
+        shell: bash
+        run: |
+          echo "Event: ${{ github.event_name }}"
+          echo "Target branch: ${{ github.base_ref }}"
+          echo "Source branch: ${{ github.head_ref }}"
+
+          if [ "${{ github.event_name }}" != "pull_request" ]; then
+            echo "Branch validation is not required for this event."
+            exit 0
+          fi
+
+          if [ "${{ github.base_ref }}" = "main" ] && [ "${{ github.head_ref }}" != "develop" ]; then
+            echo "Only develop can be merged into main."
+            exit 1
+          fi
+
+          if [ "${{ github.base_ref }}" = "develop" ] && [ "${{ github.head_ref }}" = "main" ]; then
+            echo "Pull requests from main into develop are forbidden."
+            exit 1
+          fi
+
+          echo "Pull request branch flow is valid."
+
+  unity-project-validation:
+    name: Validate Unity Project
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    needs:
+      - validate-target-branch
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          fetch-depth: 0
+
+      - name: Install Git LFS
+        run: git lfs install
+
+      - name: Pull Git LFS files
+        run: git lfs pull
+
+      - name: List Git LFS files
+        run: git lfs ls-files
+
+      - name: Check repository status
+        run: git status --short
+
+      - name: Validate Unity project structure
+        shell: bash
+        run: |
+          test -d Assets
+          test -d Packages
+          test -d ProjectSettings
+          test -f ProjectSettings/ProjectVersion.txt
+
+      - name: Validate project folders
+        shell: bash
+        run: |
+          test -d Assets/_Project
+          test -d Assets/_Project/Application
+          test -d Assets/_Project/Infrastructure
+          test -d Assets/_Project/Game
+          test -d Assets/_Project/UI
+
+      - name: Check Git LFS integrity
+        run: git lfs fsck
+
+      - name: Check for missing Git LFS content
+        shell: bash
+        run: |
+          pointer_files="$(grep -RIl '^version https://git-lfs.github.com/spec/v1$' Assets ProjectSettings Packages 2>/dev/null || true)"
+
+          if [ -n "$pointer_files" ]; then
+            echo "Git LFS pointer files found. Some LFS assets were not pulled correctly:"
+            echo "$pointer_files"
+            exit 1
+          fi
+
+      - name: Cache Unity Library
+        uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-${{ runner.os }}-Unity-6000.3.9f1-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-${{ runner.os }}-Unity-6000.3.9f1-
+            Library-${{ runner.os }}-Unity-
+
+      - name: Run Unity EditMode tests
+        id: unity-editmode-tests
+        timeout-minutes: 30
+        uses: game-ci/unity-test-runner@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          projectPath: .
+          unityVersion: 6000.3.9f1
+          customImage: unityci/editor:ubuntu-6000.3.9f1-base-3
+          testMode: editmode
+          artifactsPath: unity-test-artifacts
+          coverageOptions: ''
+          customParameters: -logFile /dev/stdout -assemblyNames ChainSawLeg.Project.Tests
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Unity test artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unity-editmode-test-results
+          path: unity-test-artifacts
+
+      - name: CI completed
+        run: echo "Basic CI validation completed successfully."
